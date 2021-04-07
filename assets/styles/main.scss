@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-html {
+* {
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth !important;
 }
 
 .page-enter-active,
@@ -24,8 +25,8 @@ html {
 }
 
 .layout-enter-active, .layout-leave-active {
-transition: opacity .5s
+    transition: opacity .5s
 }
 .layout-enter, .layout-leave-active {
-opacity: 0
+    opacity: 0
 }
