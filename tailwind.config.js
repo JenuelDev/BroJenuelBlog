@@ -1,5 +1,4 @@
 module.exports = {
-  purge: [],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {},
@@ -10,4 +9,16 @@ module.exports = {
     },
   },
   plugins: [],
+  purge: {
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+      'nuxt.config.js',
+      // TypeScript
+      'plugins/**/*.ts',
+      'nuxt.config.ts'
+    ]
+  }
 }

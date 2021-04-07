@@ -12,6 +12,17 @@ export default {
     ]
   },
 
+  loading: {
+    color: 'blue',
+    height: '5px',
+    continuous: true
+  },
+
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/styles/main.scss'
@@ -29,7 +40,6 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
-    'nuxt-vite'
   ],
 
   tailwindcss: {
