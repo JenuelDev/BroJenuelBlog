@@ -1,0 +1,85 @@
+/* `Atom One Light`: https://github.com/akamud/vscode-theme-onelight */
+/* `Atom One Dark`: https://github.com/akamud/vscode-theme-onedark */
+:root {
+  /* Colors definitions */
+  --color--foreground: #383a42;
+  --color--background: #fafafa;
+  --color--chalky: #c18401;
+  --color--coral: #e45649;
+  --color--dark: #a0a1a7;
+  --color--red: #ca1243;
+  --color--fountainBlue: #0184bc;
+  --color--green: #50a14f;
+  --color--malibu: #4078f2;
+  --color--purple: #a626a4;
+  --color--whiskey: #986801;
+
+  /* ---------------- Global ---------------- */
+  /* Font */
+  --prism-font-family: 'Jetbrains Mono', 'Fira Code', Hack, Consolas, 'Ubuntu Mono', monospace;
+  --prism-font-size: 0.925em;
+
+  --prism-foreground: var(--color--foreground);
+  --prism-background: var(--color--background);
+
+  /* Tokens */
+  --prism-comment: var(--color--dark);
+  --prism-string: var(--color--green);
+  --prism-literal: var(--color--coral);
+  --prism-keyword: var(--color--purple);
+  --prism-function: var(--color--malibu);
+  --prism-deleted: var(--color--coral);
+  --prism-class: var(--color--chalky);
+  --prism-builtin: var(--color--chalky);
+  --prism-property: var(--color--whiskey);
+  --prism-namespace: var(--color--chalky);
+  --prism-punctuation: var(--color--foreground);
+  --prism-decorator: var(--color--malibu);
+  --prism-operator: var(--color--fountainBlue);
+  --prism-number: var(--color--whiskey);
+  --prism-boolean: var(--color--whiskey);
+  --prism-variable: var(--color--coral);
+  --prism-constant: var(--color--chalky);
+  --prism-symbol: var(--color--fountainBlue);
+  --prism-interpolation: var(--color--red);
+  --prism-selector: var(--color--green);
+  --prism-keyword-control: var(--color--purple);
+  --prism-regex: var(--color--fountainBlue);
+  --prism-json-property: var(--color--coral);
+  --prism-tag: var(--color--coral);
+
+  /* Sizing */
+  --prism-block-radius: 1em;
+  --prism-inline-padding-x: 0.5em;
+  --prism-inline-padding-y: 0.1em;
+  --prism-inline-radius: 0.5em;
+}
+
+html:not(.dark) {
+  --prism-inline-foreground: theme('colors.amber.600');
+  --prism-block-border-color: theme('colors.gray.300');
+
+  --prism-line-number: #9d9d9f;
+  --prism-line-highlight-background: #383a420c;
+  --prism-selection-background: #e5e5e6;
+}
+
+html.dark {
+  --color--foreground: #abb2bf;
+  --color--background: #282c34;
+  --color--chalky: #e5c07b;
+  --color--coral: #e06c75;
+  --color--dark: #5c6370;
+  --color--red: #f44747;
+  --color--fountainBlue: #56b6c2;
+  --color--green: #98c379;
+  --color--malibu: #61afef;
+  --color--purple: #c678dd;
+  --color--whiskey: #d19a66;
+
+  --prism-inline-foreground: theme('colors.amber.500');
+
+  --prism-line-number: #636d83;
+  --prism-line-highlight-background: #99bbff0a;
+  --prism-selection-background: #3e4451;
+}
