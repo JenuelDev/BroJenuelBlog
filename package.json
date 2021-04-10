@@ -1,48 +1,30 @@
 {
+  "name": "bro-jenuel-blog",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "@vueuse/core": "^4.7.0",
-    "@vueuse/head": "^0.5.1",
-    "@vueuse/motion": "^1.5.4",
-    "nprogress": "^0.2.0",
-    "pinia": "^2.0.0-alpha.10",
-    "vue": "^3.0.11",
-    "vue-i18n": "^9.1.2",
-    "vue-router": "^4"
+    "@nuxt/content": "^1.14.0",
+    "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/pwa": "^3.3.5",
+    "core-js": "^3.9.1",
+    "nuxt": "^2.15.3",
+    "vue-code-highlight": "^0.7.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.6.2",
-    "@iconify/json": "^1.1.326",
-    "@intlify/vite-plugin-vue-i18n": "^2.1.1",
-    "@rollup/plugin-eslint": "^8.0.1",
-    "@sindresorhus/slugify": "^1.1.0",
-    "@tailwindcss/forms": "^0.3.2",
-    "@tailwindcss/typography": "^0.4.0",
-    "@types/markdown-it": "^12.0.1",
-    "@types/node": "^14.14.37",
-    "@types/nprogress": "^0.2.0",
-    "@vitejs/plugin-vue": "^1.2.1",
-    "@vue/compiler-sfc": "^3.0.11",
-    "eslint": "^7.23.0",
+    "@nuxt/types": "^2.15.3",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/tailwindcss": "^4.0.2",
     "eslint-config-prettier": "^8.1.0",
-    "markdown-it-anchor": "^7.1.0",
-    "markdown-it-attrs": "^4.0.0",
-    "markdown-it-prism": "^2.1.6",
-    "markdown-it-prism-backticks": "^1.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "node-sass": "^5.0.0",
     "postcss": "^8.2.9",
-    "postcss-import": "^14.0.1",
-    "precss": "^4.0.0",
-    "prettier": "2.2.1",
-    "tailwindcss": "^2.1.1",
-    "typescript": "^4.2.4",
-    "vite": "^2.1.5",
-    "vite-plugin-components": "^0.8.3",
-    "vite-plugin-icons": "^0.4.0",
-    "vite-plugin-md": "^0.6.3"
+    "prettier": "^2.2.1",
+    "sass": "^1.32.8"
   }
 }
