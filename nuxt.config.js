@@ -19,12 +19,6 @@ export default {
     continuous: true
   },
 
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  },
-
   pageTransition: {
     name: 'page',
     mode: 'out-in'
