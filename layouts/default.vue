@@ -1,5 +1,5 @@
 <template>
-    <div id="main-window" class="w-full h-screen bg-gray-900 overflow-y-scroll">
+    <div id="main-window">
         <CommonScrollUp v-show="showScrollUP" />
         <Header />
         <Nuxt />
@@ -15,14 +15,11 @@ export default Vue.extend({
         }
     },
     mounted() {
-        let scrollDocument = document.getElementById('main-window')
-        if (scrollDocument != null) {
-            scrollDocument.addEventListener('scroll', () => {
-                if (scrollDocument) {
-                    this.showScrollUP = scrollDocument.scrollTop > 400 ? true : false
-                }
-            })
-        }
+        window.addEventListener('scroll', () => {
+            if (window.scrollY) {
+                this.showScrollUP = window.scrollY > 400 ? true : false
+            }
+        })
     },
 })
 </script>
