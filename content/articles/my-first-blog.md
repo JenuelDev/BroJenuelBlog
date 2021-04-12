@@ -3,6 +3,7 @@ title: Windows Terminal Context Menu
 description: Terminals are one tool most programmers use to automatically generate something or build something. So having this kind of terminal is awesome.
 img: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.guidingtech.com%2Fmedia%2Fassets%2FWindowsTerminal_Cover.png&f=1&nofb=1
 category: Terminal
+tags: ['terminal']
 ---
 
 When I heard about The new [Windows Terminal](https://www.microsoft.com/en-ph/p/windows-terminal/9n0dx20hk701) I was mind Blown because of how beautiful it is to customize your own terminal window.
@@ -63,6 +64,6 @@ To open settings, open Windows Terminal and go to settings and add this just ins
 }
 ```
 
-# Have a Nise Day! 😄👍👊
+### Have a Nise Day! 😄👍👊
 
 [Give me Coffee ☕](https://www.buymeacoffee.com/BroJenuel) hehe 😁😘👌

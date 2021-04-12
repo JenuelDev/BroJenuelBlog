@@ -8,6 +8,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+    scrollToTop:true,
     async asyncData({$content, params }) {
         const articles = await $content('articles')
             .only(['title', 'description', 'img', 'slug', 'author', 'category','createdAt'])

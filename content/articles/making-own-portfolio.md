@@ -3,6 +3,7 @@ title: 'Making My Own Portfolio Website'
 description: 'I was searching for designs on google for a couple of days, and then I stumbled on a good design that I like. Its a design by Brittany Chiang.'
 category: 'Portfolio/ Template'
 img: https://res.cloudinary.com/practicaldev/image/fetch/s--EMaTd6A0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/jw470sglu41ep8a6zdtv.png
+tags: ['javascript','vue','html','css']
 ---
 Hi ✋😁
 I would like to introduce my self,

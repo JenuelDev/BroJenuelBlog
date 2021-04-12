@@ -11,12 +11,6 @@
                     >
                         Blog Contents
                     </h1>
-                    <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">
-                        Street art subway tile salvia four dollar toast bitters
-                        selfies quinoa yuccie synth meditation iPhone
-                        intelligentsia prism tofu. Viral gochujang bitters
-                        dreamcatcher.
-                    </p>
                 </div>
             </div>
             <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
