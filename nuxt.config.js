@@ -14,9 +14,15 @@ export default {
   target: 'static',
 
   loading: {
-    color: 'blue',
+    color: 'white',
     height: '5px',
     continuous: true
+  },
+
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
   },
 
   pageTransition: {
@@ -26,8 +32,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/styles/main.scss',
-    'vue-code-highlight/themes/window.css'
+    '~/assets/styles/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -55,6 +60,7 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/dayjs'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

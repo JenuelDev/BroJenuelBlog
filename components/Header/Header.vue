@@ -1,6 +1,6 @@
 <template>
     <header id="top-navigation" class="text-gray-400 bg-gray-900 body-font">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <div class="max-w-4xl mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                 <img src="~/assets/images/brojenuellogo.svg" alt="" srcset="" width="40px">
                 <span class="ml-3 text-xl font-bold">Bro Jenuel</span>

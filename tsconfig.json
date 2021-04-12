@@ -28,7 +28,7 @@
       "@nuxtjs/axios",
       "@nuxt/content",
       "@types/node",
-      "@types/vue-code-highlight"
+      "@nuxtjs/dayjs"
     ]
   },
   "exclude": [

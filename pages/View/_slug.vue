@@ -7,7 +7,7 @@
                 </div>
                 <div class="flex flex-col sm:flex-row mt-10">
                     <div class="w-full">
-                        <article>
+                        <article class="prose dark:prose-dark prose-sm lg:prose-lg xl:prose-2xl mx-auto" >
                             <nuxt-content :document="article" />
                         </article>
                     </div>
@@ -25,3 +25,14 @@ export default {
     },
 }
 </script>
+
+<style lang="scss">
+    @media only screen and (max-width: 632px) {
+        .nuxt-content-highlight {
+            pre {
+                width: 90vw;
+                overflow-x: scroll;
+            }
+        }
+    }
+</style>

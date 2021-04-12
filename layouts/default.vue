@@ -15,12 +15,6 @@ export default Vue.extend({
         }
     },
     mounted() {
-        // let scrollDocument = window.document.getElementById('main-window');
-        // if (scrollDocument !== null) {
-        //     scrollDocument.addEventListener('scroll', (event) => {
-        //         console.log(event.target)
-        //     })
-        // }
         let scrollDocument = document.getElementById('main-window')
         if (scrollDocument != null) {
             scrollDocument.addEventListener('scroll', () => {
