@@ -44,6 +44,14 @@ export default {
 </script>
 
 <style lang="scss">
+    .nuxt-content-container {
+        p {
+            a {
+                @apply cursor-pointer hover:text-blue-400 duration-300;
+            }
+        }
+        
+    }
     @media only screen and (max-width: 632px) {
         .nuxt-content-highlight {
             pre {
