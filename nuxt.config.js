@@ -44,6 +44,14 @@ export default {
         '@nuxtjs/tailwindcss',
     ],
 
+    generate: {
+        routes: [
+            '/view/javascript-tips-tricks-n1',
+            '/view/making-own-portfolio',
+            '/view/my-first-blog',
+        ],
+    },
+
     tailwindcss: {
         jit: true,
     },
