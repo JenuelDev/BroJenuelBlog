@@ -107,6 +107,7 @@
     </section>
 </template>
 <script>
+import { createSEOMeta } from '~/utils/seo'
 import emailjs, { init } from 'emailjs-com'
 init('user_zdO7SqNAzUeW1bl8KtMhn')
 export default {
@@ -122,6 +123,15 @@ export default {
             sent: false,
             sending: false,
         }
+    },
+    head: {
+        title: 'Contact - Bro Jenuel Blog',
+        meta: createSEOMeta({
+            title: "Contact - Bro Jenuel Blog",
+            description: "...share and to keep track and have a record of things I learned in my journey as I travel to the world of being a programmer. Bookmark this website in your browsers, and check it anytime. I will be posting here at least 1 to 2 times a week..",
+            image: 'https://i.ibb.co/WkWW3rs/Screenshot-2021-04-19-232949.png',
+            url: process.env.baseUrl
+        }),
     },
     methods: {
         sendEmail() {

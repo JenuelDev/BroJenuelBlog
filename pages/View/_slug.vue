@@ -27,11 +27,24 @@
 </template>
 <script>
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { createSEOMeta } from '@/utils/seo'
 export default {
     scrollToTop:true,
     async asyncData({ $content, params }) {
         const article = await $content('articles', params.slug).fetch()
         return { article }
+    },
+    head() {
+        return {
+            title: this.article.title,
+            meta: createSEOMeta({
+                title: this.article.title,
+                description: this.article.description,
+                image: this.article.img,
+                url: process.env.baseUrl +'/view/'+ this.$route.params.slug
+            }),
+        }
+        
     },
     methods: {
         dateNow(d) {
