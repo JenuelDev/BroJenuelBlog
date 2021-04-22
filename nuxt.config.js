@@ -49,6 +49,7 @@ export default {
             '/view/javascript-tips-tricks-n1',
             '/view/making-own-portfolio',
             '/view/my-first-blog',
+            '/view/nuxt-pwa-update'
         ],
     },
 
