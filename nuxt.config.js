@@ -24,8 +24,7 @@ export default {
         continuous: true,
     },
     env: {
-        baseUrl: 'https://bro-jenuel-blog.netlify.app/',
-        main_base_URL: 'https://brojenuel-blog.ml',
+        baseUrl: 'https://brojenuel-blog.ml'
     },
 
     pageTransition: {
@@ -77,19 +76,21 @@ export default {
 
     sitemap: {
         // options
-        hostname: process.env.main_base_URL,
+        hostname:'https://brojenuel-blog.ml',
         gzip: true,
-        exclude: ['/secret', '/admin/**'],
         routes: [
             '/about',
             '/contact',
-            {
-                url: '/view/javascript-tips-tricks-n1',
-                changefreq: 'daily',
-                priority: 1,
-                lastmodISO: '2017-06-30T13:30:00.000Z',
-            },
         ],
+        routes: async () => {
+            const { $content } = require('@nuxt/content')
+            const articles = await $content('articles')
+            .only(['title', 'description', 'img', 'slug', 'author', 'category','createdAt'])
+            .sortBy('createdAt', 'desc')
+            .fetch()
+
+            return articles.map((article) => `/view/${article.slug}`)
+        }
     },
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {},
