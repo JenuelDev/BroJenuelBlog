@@ -1,14 +1,18 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'BroJenuelBlog',
+        title: 'Jenuel Ganawed - Blog',
         meta: [
             { charset: 'utf-8' },
             {
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1',
             },
-            { hid: 'description', name: 'description', content: '' },
+            {
+                hid: 'description',
+                name: 'description',
+                content: 'This is BroJenuel Blog Site.',
+            },
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
@@ -21,6 +25,7 @@ export default {
     },
     env: {
         baseUrl: 'https://bro-jenuel-blog.netlify.app/',
+        main_base_URL: 'https://brojenuel-blog.ml',
     },
 
     pageTransition: {
@@ -49,7 +54,7 @@ export default {
             '/view/javascript-tips-tricks-n1',
             '/view/making-own-portfolio',
             '/view/my-first-blog',
-            '/view/nuxt-pwa-update'
+            '/view/nuxt-pwa-update',
         ],
     },
 
@@ -66,8 +71,26 @@ export default {
         // https://go.nuxtjs.dev/content
         '@nuxt/content',
         '@nuxtjs/dayjs',
+        // keep this module at the end
+        '@nuxtjs/sitemap',
     ],
 
+    sitemap: {
+        // options
+        hostname: process.env.main_base_URL,
+        gzip: true,
+        exclude: ['/secret', '/admin/**'],
+        routes: [
+            '/about',
+            '/contact',
+            {
+                url: '/view/javascript-tips-tricks-n1',
+                changefreq: 'daily',
+                priority: 1,
+                lastmodISO: '2017-06-30T13:30:00.000Z',
+            },
+        ],
+    },
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {},
 
