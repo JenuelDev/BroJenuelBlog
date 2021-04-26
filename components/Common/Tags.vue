@@ -20,7 +20,7 @@ export default {
             color: rgb(16, 16, 16);
         }
 
-        &.tag-vue {
+        &.tag-vue, &.tag-VueJs {
             color: rgb(16, 16, 16);
             background-color: #42b883;
         }
@@ -43,6 +43,11 @@ export default {
         &.tag-PWA {
             background-color: #e19e21;
             color: rgb(16, 16, 16);
+        }
+
+        &.tag-Developer, &.tag-developer {
+            background-color: #000;
+            color: #fff;
         }
     }
 </style>
