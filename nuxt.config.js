@@ -13,6 +13,10 @@ export default {
                 name: 'description',
                 content: 'This is BroJenuel Blog Site.',
             },
+            {
+                name: 'google-site-verification',
+                content: 'qzl2pT4zCXY7pcGP4ZGPdDuwKVcysmXbD9me0cyI2xo'
+            }
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
