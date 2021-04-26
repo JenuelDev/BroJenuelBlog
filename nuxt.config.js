@@ -55,12 +55,15 @@ export default {
     ],
 
     generate: {
-        routes: [
-            '/view/javascript-tips-tricks-n1',
-            '/view/making-own-portfolio',
-            '/view/my-first-blog',
-            '/view/nuxt-pwa-update',
-        ],
+        routes: async () => {
+            const { $content } = require('@nuxt/content')
+            const articles = await $content('articles')
+            .only(['title', 'description', 'img', 'slug', 'author', 'category','createdAt'])
+            .sortBy('createdAt', 'desc')
+            .fetch()
+
+            return articles.map((article) => `/view/${article.slug}`)
+        }
     },
 
     tailwindcss: {

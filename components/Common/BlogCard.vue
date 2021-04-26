@@ -8,7 +8,7 @@
                         <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">{{article.category}}</h2>
                         <h1 class="title-font text-lg font-medium text-white mb-3 cursor-pointer hover:text-blue-400 duration-300"
                         @click="$router.push(`/view/${article.slug}`)">{{article.title}}</h1>
-                        <p class="leading-relaxed mb-3">{{article.description}}</p>
+                        <p class="leading-relaxed mb-3">{{article.description.slice(0, 140)}} ...</p>
                     </div>
                 </div>
             </div>

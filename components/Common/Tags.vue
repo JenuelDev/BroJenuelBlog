@@ -15,7 +15,7 @@ export default {
         border-radius: 5px;
         margin: 0 3px;
 
-        &.tag-javascript {
+        &.tag-javascript, &.tag-JavaScript {
             background-color: #f0db4f;
             color: rgb(16, 16, 16);
         }
@@ -32,6 +32,16 @@ export default {
 
         &.tag-css {
             background-color: #264de4;
+            color: rgb(16, 16, 16);
+        }
+
+        &.tag-NuxtJs {
+            background-color: #42b883;
+            color: rgb(16, 16, 16);
+        }
+
+        &.tag-PWA {
+            background-color: #e19e21;
             color: rgb(16, 16, 16);
         }
     }
