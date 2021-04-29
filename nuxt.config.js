@@ -14,10 +14,10 @@ export default {
             },
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-        script: [
-            // Supported since 1.0
-            { src: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-608a6f134850ad1b', body: true },
-          ]
+        // script: [
+        //     // Supported since 1.0
+        //     { src: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-608a6f134850ad1b', body: true },
+        //   ]
     },
 
 
