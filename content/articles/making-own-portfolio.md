@@ -21,5 +21,5 @@ you can also check the Github [here](https://github.com/BroJenuel/jenuel-portfol
 You can use my use it whatever you like but don't forget to credit me, and especially Brittany Chiang the designer.
 
 Preview:
-<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DrgtwsZE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://github.com/BroJenuel/jenuel-portfolio-v2/blob/master/meta-image.png%3Fraw%3Dtrue" />
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DrgtwsZE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://github.com/BroJenuel/jenuel-portfolio-v2/blob/master/meta-image.png%3Fraw%3Dtrue" alt="this is a random image"/>
 

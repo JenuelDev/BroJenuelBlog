@@ -2,7 +2,7 @@
 <footer class="text-gray-400 bg-gray-900 body-font">
   <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
     <div class="flex title-font font-medium items-center md:justify-start justify-center text-white">
-      <img src="~/assets/images/brojenuellogo.svg" alt="" srcset="" width="40px">
+      <img src="~/assets/images/brojenuellogo.svg" alt="brojenuel_logo" srcset="" width="40px">
       <span class="ml-3 text-xl">Bro Jenuel</span>
     </div>
     <div class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4  whitespace-nowrap">© {{(new Date()).getFullYear()}} Bro Jenuel —

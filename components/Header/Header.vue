@@ -2,7 +2,7 @@
     <header id="top-navigation" class="text-gray-400 bg-gray-900 body-font">
         <div class="max-w-4xl mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-                <img src="~/assets/images/brojenuellogo.svg" alt="" srcset="" width="40px">
+                <img src="~/assets/images/brojenuellogo.svg" alt="bro_jenuel_logo_head" srcset="" width="40px">
                 <span class="ml-3 text-xl font-bold">Bro Jenuel</span>
             </a>
             <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">

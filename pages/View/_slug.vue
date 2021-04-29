@@ -14,8 +14,14 @@
                     </p>
                 </div>
                 <div class="flex flex-col sm:flex-row mt-10">
-                    
                     <div class="w-full">
+                        <CommonShare
+                            :url="href"
+                            :title="article.title"
+                            :description="article.description"
+                            :quote="article.description"
+                            :hashtags="article.tags"
+                        />
                         <article class="prose dark:prose-dark prose-sm lg:prose-lg xl:prose-2xl mx-auto" >
                             <nuxt-content :document="article" />
                         </article>
@@ -45,12 +51,20 @@ export default {
             }),
         }
     },
+    data: () => {
+        return {
+            href: ""
+        }
+    },
     methods: {
         dateNow(d) {
             this.$dayjs.extend(relativeTime)
 
             return this.$dayjs(d).fromNow()
-        }
+        },
+    },
+    mounted() {
+        this.href = window.location.href;
     }
 }
 </script>

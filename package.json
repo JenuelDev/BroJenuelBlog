@@ -17,7 +17,8 @@
     "@tailwindcss/typography": "^0.4.0",
     "core-js": "^3.9.1",
     "emailjs-com": "^2.6.4",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.3",
+    "vue-social-sharing": "^3.0.7"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.3",

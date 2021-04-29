@@ -8,7 +8,7 @@ tags: ['terminal']
 
 When I heard about The new [Windows Terminal](https://www.microsoft.com/en-ph/p/windows-terminal/9n0dx20hk701) I was mind Blown because of how beautiful it is to customize your own terminal window.
 
-<img src="https://github.com/MisterJ936/Explorer-Context-Menu-Integration-for-windows-terminal/blob/master/images/yzavvq4we0ao5akst1d2.jpg?raw=true" />
+<img src="https://github.com/MisterJ936/Explorer-Context-Menu-Integration-for-windows-terminal/blob/master/images/yzavvq4we0ao5akst1d2.jpg?raw=true" alt="random image" />
 
 Terminals are one tool most programmers use to automatically generate something or build something. So having this kind of terminal is awesome.
 
@@ -16,7 +16,7 @@ After Downloading the terminal there is something missing. And that is opening t
 
 What A context menu is when you right-click on a directory and an option will show up. Something like this image. This is really a good feature to have because you can just easily open your project by doing it.
 
-<img src="https://github.com/MisterJ936/Explorer-Context-Menu-Integration-for-windows-terminal/blob/master/images/1.png?raw=true" />
+<img src="https://github.com/MisterJ936/Explorer-Context-Menu-Integration-for-windows-terminal/blob/master/images/1.png?raw=true" alt="windows explorer"/>
 
 And so because of that, I created a simple [PROJECT](https://github.com/MisterJ936/Explorer-Context-Menu-Integration-for-windows-terminal) that is easy and simple to setup.
 

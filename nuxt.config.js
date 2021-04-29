@@ -80,6 +80,7 @@ export default {
         // https://go.nuxtjs.dev/content
         '@nuxt/content',
         '@nuxtjs/dayjs',
+        'vue-social-sharing/nuxt',
         // keep this module at the end
         '@nuxtjs/sitemap',
     ],
