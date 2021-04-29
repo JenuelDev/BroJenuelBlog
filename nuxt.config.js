@@ -21,7 +21,7 @@ export default {
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
     target: 'static',
-
+    ssr: true,
     loading: {
         color: 'white',
         height: '5px',
