@@ -1,7 +1,7 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'Jenuel Ganawed - Blog',
+        title: 'BroJenuel Blog - jenuel ganawed blog, bro jenuel blog',
         meta: [
             { charset: 'utf-8' },
             {
@@ -9,14 +9,9 @@ export default {
                 content: 'width=device-width, initial-scale=1',
             },
             {
-                hid: 'description',
-                name: 'description',
-                content: 'This is BroJenuel Blog Site.',
+                name: "keywords",
+                content: "bro jenuel blog, brojenuel-blog, jenuel ganawed, jenuel blog bro blog"
             },
-            {
-                name: 'google-site-verification',
-                content: 'Wp_a2hg2QkMFDK9rjWM-qQZsRC0J5ctnhKeOViZCJT4'
-            }
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },

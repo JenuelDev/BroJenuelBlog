@@ -44,7 +44,6 @@ export default {
                 url: process.env.baseUrl +'/view/'+ this.$route.params.slug
             }),
         }
-        
     },
     methods: {
         dateNow(d) {
