@@ -15,17 +15,18 @@ export default Vue.extend({
             .sortBy('createdAt', 'desc')
             .limit(2)
             .fetch()
-
         return {articles}
     },
-    head: {
-        title: 'Bro Jenuel Blog - About',
-        meta: createSEOMeta({
-            title: "Bro Jenuel Blog - About",
-            description: "...share and to keep track and have a record of things I learned in my journey as I travel to the world of being a programmer. Bookmark this website in your browsers, and check it anytime. I will be posting here at least 1 to 2 times a week..",
-            image: 'https://i.ibb.co/WkWW3rs/Screenshot-2021-04-19-232949.png',
-            url: process.env.baseUrl
-        }),
+    head() {
+        return {
+            title: 'Bro Jenuel Blog - About',
+            meta: createSEOMeta({
+                title: "Bro Jenuel Blog - About",
+                description: "...share and to keep track and have a record of things I learned in my journey as I travel to the world of being a programmer. Bookmark this website in your browsers, and check it anytime. I will be posting here at least 1 to 2 times a week..",
+                image: 'https://i.ibb.co/WkWW3rs/Screenshot-2021-04-19-232949.png',
+                url: process.env.baseUrl
+            }),
+        }
     },
 })
 </script>
