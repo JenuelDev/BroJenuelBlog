@@ -12,8 +12,8 @@ export default Vue.extend({
     scrollToTop:true,
     async asyncData({$content, params } : any) {
         const articles = await $content('articles')
-            .only(['title', 'description', 'img', 'slug', 'author', 'category','createdAt'])
-            .sortBy('createdAt', 'desc')
+            .only(['title', 'description', 'img', 'slug', 'author', 'category','createdAt','createdAtDate'])
+            .sortBy('createdAtDate', 'desc')
             .fetch()
 
         return {articles}

@@ -4,6 +4,7 @@ description: Let us learn how to update our PWA app, if their are any changes so
 img: https://pwa.nuxtjs.org/preview.png
 category: NuxtJs PWA
 tags: ['NuxtJs', 'PWA','JavaScript']
+createdAtDate: 2021-04-16T00:00:00.000Z
 ---
 
 One day I was creating my Nuxt App, and wanted it to be PWA or Progressive Web App. After Setting up the PWA, and deployed it. I saw a problem where if I have a new update, you can't see the changes you made when you redeploy. The problem here is that, it saves the caches and then thats it, when the browser check the url it will always use the caches if available. So in order to refresh the cache we need to `windows.location.reload()`.  

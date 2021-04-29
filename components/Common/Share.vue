@@ -30,7 +30,6 @@ export default Vue.extend({
     },
     methods: {
         joinArray(ar: any) {
-            console.log(ar)
             return ar.join();
         }
     },

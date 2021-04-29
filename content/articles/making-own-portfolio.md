@@ -4,6 +4,7 @@ description: 'I was searching for designs on google for a couple of days, and th
 category: 'Portfolio/ Template'
 img: https://res.cloudinary.com/practicaldev/image/fetch/s--EMaTd6A0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/jw470sglu41ep8a6zdtv.png
 tags: ['javascript','vue','html','css']
+createdAtDate: 2021-04-01T00:00:00.000Z
 ---
 Hi ✋😁
 I would like to introduce my self,

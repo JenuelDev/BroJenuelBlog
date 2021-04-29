@@ -4,6 +4,7 @@ description: Terminals are one tool most programmers use to automatically genera
 img: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.guidingtech.com%2Fmedia%2Fassets%2FWindowsTerminal_Cover.png&f=1&nofb=1
 category: Terminal
 tags: ['terminal']
+createdAtDate: 2021-04-03T00:00:00.000Z
 ---
 
 When I heard about The new [Windows Terminal](https://www.microsoft.com/en-ph/p/windows-terminal/9n0dx20hk701) I was mind Blown because of how beautiful it is to customize your own terminal window.

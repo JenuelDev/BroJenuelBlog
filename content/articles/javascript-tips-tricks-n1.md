@@ -4,6 +4,7 @@ description: In this article, we will look at some of the tips that you should k
 img: https://engineering.fb.com/wp-content/uploads/2012/12/javascript-illustration.png
 category: Cheat Sheet
 tags: ['javascript','tips and tricks']
+createdAtDate: 2021-04-27T00:00:00.000Z
 ---
 
 We already know that aside from objects, most of the time we use arrays on every javascript program. It is one of the important types that anyone should know.

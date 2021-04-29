@@ -4,6 +4,7 @@ description: According to the  State of JavaScript 2017 survey  Vue.js is the fr
 img: https://i.imgur.com/ZB7471Il.jpg
 category: VueJs
 tags: ['VueJs', 'JavaScript','Developer']
+createdAtDate: 2021-04-29T00:00:00.000Z
 ---
 
 According to the  [State of JavaScript 2017 survey](https://stateofjs.com/2017/front-end/results/)  Vue.js is the front-end library that developers would most like to learn. I’m here to explain why I think this is, and walk you through building a simple app with Vue.
