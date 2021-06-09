@@ -6,7 +6,7 @@
       <span class="ml-3 text-xl">Bro Jenuel</span>
     </div>
     <div class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4  whitespace-nowrap">© {{(new Date()).getFullYear()}} Bro Jenuel —
-      <span @click="goToLink('https://twitter.com/brojenuel')" class="text-gray-500 ml-1 hover:text-gray-200 duration-300 cursor-pointer" target="_blank" rel="noopener noreferrer">@BroJenuel</span>
+      <span @click="goToLink('https://twitter.com/brojenuel')" class="text-gray-500 ml-1 hover:text-gray-200 duration-300 cursor-pointer" target="_blank" rel="noopener">@BroJenuel</span>
     </div>
     <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
       <!-- facebook -->
