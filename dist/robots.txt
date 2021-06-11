@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: https://brojenuel.ml/sitemap.xml
