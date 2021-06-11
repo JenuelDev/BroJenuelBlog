@@ -3,10 +3,10 @@ export const createSEOMeta = (data: any) => [
     { hid: 'description', name: 'description', content: data.description },
     { hid: 'image', property: 'image', content: data.image },
     {
-      hid: 'url',
-      property: 'url',
-      content: data.url,
-  },
+        hid: 'url',
+        property: 'url',
+        content: data.url,
+    },
 
     // OGs
     { hid: 'og:title', property: 'og:title', content: data.title },
@@ -25,7 +25,11 @@ export const createSEOMeta = (data: any) => [
 
     // twitter
     { hid: 'twitter:title', property: 'twitter:title', content: data.title },
-    { hid: 'twitter:creator', property: 'twitter:creator', content: '@BroJenuel' },
+    {
+        hid: 'twitter:creator',
+        property: 'twitter:creator',
+        content: '@BroJenuel',
+    },
     {
         hid: 'twitter:card',
         name: 'twitter:card',
