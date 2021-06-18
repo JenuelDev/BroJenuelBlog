@@ -88,3 +88,5 @@ typings/
 
 # Vim swap files
 *.swp
+
+dist
