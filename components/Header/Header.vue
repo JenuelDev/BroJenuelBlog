@@ -24,7 +24,7 @@ import Vue from 'vue'
 export default Vue.extend({
     methods: {
         goToLink(url: string) {
-            window.open(url)
+            window.open(url, '_self')
         }
     }
 })
