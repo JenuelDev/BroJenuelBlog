@@ -48,7 +48,7 @@
         <div class="flex-grow">
           <h2 class="text-white text-lg title-font font-medium mb-3">About Me</h2>
           <p class="leading-relaxed text-base">Hi! I am a web developer, and I create things that live on the internet. You can check about me by clicking the button bellow.</p>
-          <div class="mt-3 text-blue-400 inline-flex items-center cursor-pointer" @click="goLink('https://jenuelganawed.ml')" >About Me
+          <div class="mt-3 text-blue-400 inline-flex items-center cursor-pointer" @click="goLink('https://jenuelganawed.com')" >About Me
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>

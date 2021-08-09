@@ -16,7 +16,7 @@ I was searching for designs on google for a couple of days, and then I stumbled 
 
 I built my portfolio based on her design using Vue Js, and with the help of the plugin Vuetify. I tweaked my portfolio a little with the taste that I like.
 
-You can check my the website [here](https://jenuelganawed.ml)
+You can check my the website [here](https://jenuelganawed.com)
 you can also check the Github [here](https://github.com/BroJenuel/jenuel-portfolio-v2)
 
 You can use my use it whatever you like but don't forget to credit me, and especially Brittany Chiang the designer.

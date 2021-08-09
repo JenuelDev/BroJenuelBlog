@@ -24,7 +24,7 @@ export default {
 
 
     target: 'static',
-    ssr: true,
+    ssr: false,
     loading: {
         color: 'white',
         height: '5px',
@@ -129,4 +129,7 @@ export default {
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},
+    generate: {
+        dir: './../BroJenuel/dist/blog'
+    }
 }
