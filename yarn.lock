@@ -387,7 +387,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nuxt/content@^2.0.1":
+"@nuxt/content@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-2.1.1.tgz#b3ebed4ad14c49bbc84f748e6bfd6413c8e800ec"
   integrity sha512-yYjmPmG9FRl6/vDQNobbHZlr0LNe9cP5PJcz4WfQN/alOAQaym0NRhlhZTkMe6Qb6yVjycE5IH2zU1f+o98c6g==
@@ -895,11 +895,11 @@
   integrity sha512-D3dl2ZB9qE6mTuWPk9RlhDeP1dgNRUKC3NJxji74A4yL8M2MwlhLKUC/49WHjrNzSPug58fWx/yFbaTzGAQSBw==
 
 "@vueuse/head@^0.7.10":
-  version "0.7.11"
-  resolved "https://registry.yarnpkg.com/@vueuse/head/-/head-0.7.11.tgz#f5a2a44e32864a9f6374b2e7c6fd6df66837a73f"
-  integrity sha512-qW2VbJnQ7c1nHqt1wWQYtPf6pMKghcBsCGQd76zFSzKZXncjOYV1I5dZcmAdj3E30JP0WKWCItVbV/cgSAPipA==
+  version "0.7.12"
+  resolved "https://registry.yarnpkg.com/@vueuse/head/-/head-0.7.12.tgz#bdb2185654399d10b10c4e94b52f6129e9ca4f67"
+  integrity sha512-sRcrE6VohiHInQR0sB0U8H8x2hAKdo+AIhd5PWBLx1jUp2vwyeQyA/4rlCzP5CMDB8z61MLvsOCApFJrRMRtTQ==
   dependencies:
-    "@zhead/schema-vue" "^0.7.1"
+    "@zhead/schema-vue" "^0.7.3"
 
 "@vueuse/shared@^9.2.0":
   version "9.2.0"
@@ -930,7 +930,7 @@
     micromatch "^4.0.5"
     windicss "^3.5.6"
 
-"@zhead/schema-vue@^0.7.1":
+"@zhead/schema-vue@^0.7.3":
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@zhead/schema-vue/-/schema-vue-0.7.3.tgz#cc87e5884b0bdeeb67d1207e05478eef85bba8af"
   integrity sha512-X9wIugL/7fFoeVbxPDgRvBLdKt2k243ZezU4N85iCHjs4OaGTgXUPQVfb9+uP7dSj2kMSAvhvY6fKe7D9TzbHA==
@@ -3800,7 +3800,7 @@ nuxi@3.0.0-rc.10:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt-windicss@^2.4.3:
+nuxt-windicss@^2.5.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/nuxt-windicss/-/nuxt-windicss-2.5.2.tgz#80fabbbe07b0bda79dfdb9be84be978dccc6f094"
   integrity sha512-LLN4XDu26tbPyKATp9RACxlLuQul6cvKMQI94Oz1uTBdWTSdtgn2qEjcfUUDZ6TvcTSiUfG7AAWXntlp/OyHMw==
@@ -4314,6 +4314,11 @@ pretty-bytes@^6.0.0:
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-6.0.0.tgz#928be2ad1f51a2e336add8ba764739f9776a8140"
   integrity sha512-6UqkYefdogmzqAZWzJ7laYeJnaXDy2/J+ZqiiMtS7t7OfpXWTlaeGMwX8U6EFvPV/YWWEKRkS8hKS4k60WHTOg==
 
+prismjs@^1.29.0:
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
+  integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -4666,7 +4671,7 @@ safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.54.0:
+sass@^1.54.9:
   version "1.54.9"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.54.9.tgz#b05f14ed572869218d1a76961de60cd647221762"
   integrity sha512-xb1hjASzEH+0L0WI9oFjqhRi51t/gagWnxLiwUNMltA0Ab6jIDkAacgKiGYKM9Jhy109osM7woEEai6SXeJo5Q==
@@ -4945,9 +4950,9 @@ strip-final-newline@^2.0.0:
   integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
 
 strip-literal@^0.4.0, strip-literal@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/strip-literal/-/strip-literal-0.4.1.tgz#fb9316ad35071c4229ed67aad1a0467e5a9b0c1a"
-  integrity sha512-z+F/xmDM8GOdvA5UoZXFxEnxdvMOZ+XEBIwjfLfc8hMSuHpGxjXAUCfuEo+t1GOHSb8+qgI/IBRpxXVMaABYWA==
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/strip-literal/-/strip-literal-0.4.2.tgz#4f9fa6c38bb157b924e9ace7155ebf8a2342cbcf"
+  integrity sha512-pv48ybn4iE1O9RLgCAN0iU4Xv7RlBTiit6DKmMiErbs9x1wH6vXBs45tWc0H5wUIF6TLTrKweqkmYF/iraQKNw==
   dependencies:
     acorn "^8.8.0"
 
@@ -5365,9 +5370,9 @@ vfile@^5.0.0:
     vfile-message "^3.0.0"
 
 vite-node@^0.23.2:
-  version "0.23.2"
-  resolved "https://registry.yarnpkg.com/vite-node/-/vite-node-0.23.2.tgz#9bb79967dd48f4a9645e186c6d409f77c59d91c5"
-  integrity sha512-LRkcAu0oQYNp+2LX84Z8NkYXzISdeLi9NxL8cWgJPxxYcv8Lv9VpqU4kNzAqTIWzgIQFnVkf5mZarcoLgQXInQ==
+  version "0.23.4"
+  resolved "https://registry.yarnpkg.com/vite-node/-/vite-node-0.23.4.tgz#f67e795045ab82d365170e259e717c74a97e5566"
+  integrity sha512-8VuDGwTWIvwPYcbw8ZycMlwAwqCmqZfLdFrDK75+o+6bWYpede58k6AAXN9ioU+icW82V4u1MzkxLVhhIoQ9xA==
   dependencies:
     debug "^4.3.4"
     mlly "^0.5.14"

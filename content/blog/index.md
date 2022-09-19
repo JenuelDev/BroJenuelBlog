@@ -228,7 +228,7 @@ console.log(/[A-Z]/.test(text)); // true - because theres a capital letter
 console.log(/A/i.test(text)); // true - because letter a/A exist on the text
 ```
 
----
+<hr />
 
 ### Give Me Coffee
 
@@ -245,5 +245,3 @@ Follow me:
 [Instgram](https://www.instagram.com/brojenuel/)
 [Facebook](https://www.facebook.com/broJenuel/)
 [Youtube](https://www.youtube.com/channel/UCNANDtTF63UTRcYioVsSCdA)
-
----

@@ -7,4 +7,9 @@ export default defineNuxtConfig({
             routes: ["/sitemap.xml"],
         },
     },
+    content: {
+        highlight: {
+            theme: "one-dark-pro",
+        },
+    },
 });
