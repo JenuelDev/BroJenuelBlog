@@ -1,6 +1,7 @@
 ---
 title: "Regular Expressions(RegEx) Basics"
 description: "In this article we will talk about basic stuffs regular expressions to get started."
+active: 1
 ---
 
 - [basic use - Let us find the word 'apple' in the string](#basic-use---let-us-find-the-word-apple-in-the-string)
@@ -242,6 +243,6 @@ check out my latest personal project:
 [Believers Sword App](https://believers-sword-app.herokuapp.com/)
 
 Follow me:
-[Instgram](https://www.instagram.com/brojenuel/)
+[Instagram](https://www.instagram.com/brojenuel/)
 [Facebook](https://www.facebook.com/broJenuel/)
 [Youtube](https://www.youtube.com/channel/UCNANDtTF63UTRcYioVsSCdA)
