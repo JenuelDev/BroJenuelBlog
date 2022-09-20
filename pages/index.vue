@@ -4,10 +4,6 @@ const blogs = await queryContent("blog").where({ active: 1 }).find();
 <template>
     <NuxtLayout>
         <div>
-            <div class="border rounded-md p-5 mb-10">
-                Hi! This blog is under construction but feel free to read some
-                of my articles.
-            </div>
             <h3 class="text-size-20px font-600">Articles:</h3>
             <div class="flex flex-col gap-20px mt-10px">
                 <NuxtLink

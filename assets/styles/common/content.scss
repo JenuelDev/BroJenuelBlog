@@ -1,8 +1,20 @@
 .view-blog-content {
-    h2 {
-        font-size: 20px;
+    h2,
+    h3 {
         font-weight: bold;
         margin: 10px 0 10px 0;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    h3 {
+        font-size: 18px;
     }
 
     pre {
@@ -10,5 +22,10 @@
         border: 1px solid #8dffe48c;
         border-radius: 10px;
         background-color: rgb(26, 26, 26);
+        overflow: auto;
+    }
+    p {
+        margin-top: 5px;
+        margin-bottom: 20px;
     }
 }

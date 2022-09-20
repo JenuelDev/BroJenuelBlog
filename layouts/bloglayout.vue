@@ -1,9 +1,5 @@
-
 <template>
-    <div class="max-w-1200px p-20px mx-auto">
-        <NuxtLink to="/" class="hover:underline">Go Back Home</NuxtLink>
-        <div class="view-blog-content mt-30px">
-            <slot />
-        </div>
+    <div class="max-w-1200px mx-auto py-10 px-15">
+        <slot />
     </div>
 </template>

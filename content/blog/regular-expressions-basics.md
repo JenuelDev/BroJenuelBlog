@@ -2,19 +2,8 @@
 title: "Regular Expressions(RegEx) Basics"
 description: "In this article we will talk about basic stuffs regular expressions to get started."
 active: 1
+keyword: ["regex", "javascript", "vue", "basics"]
 ---
-
-- [basic use - Let us find the word 'apple' in the string](#basic-use---let-us-find-the-word-apple-in-the-string)
-- [Find Many String](#find-many-string)
-  - [Using match](#using-match)
-  - [Using matchAll](#using-matchall)
-- [How to Set **_Case Insensitive_**](#how-to-set-case-insensitive)
-- [Find All Capital Letters](#find-all-capital-letters)
-- [How To Find Digits in a string](#how-to-find-digits-in-a-string)
-- [Using `Replace` Function](#using-replace-function)
-- [Using Search and Exec function](#using-search-and-exec-function)
-- [Use of test function](#use-of-test-function)
-  - [Give Me Coffee](#give-me-coffee)
 
 In JavaScript, a Regular Expression (RegEx) is an object that describes a sequence of characters used for defining a search pattern.
 
