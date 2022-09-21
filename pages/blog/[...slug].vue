@@ -61,7 +61,7 @@
         </ContentDoc>
     </NuxtLayout>
 </template>
-<style lang="scss">
+<style lang="postcss">
 .view-blog-content {
     ul {
         @apply list-upper-roman;

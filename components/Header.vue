@@ -1,6 +1,6 @@
 <template>
     <nav
-        class="mx-auto shadow shadow-lg sticky top-0 bg-[var(--background)] p-5"
+        class="mx-auto shadow shadow-lg sticky top-0 bg-[var(--background)] p-5 z-50"
     >
         <div
             class="flex items-center justify-between sm:flex-row flex-col gap-10px max-w-1200px mx-auto"

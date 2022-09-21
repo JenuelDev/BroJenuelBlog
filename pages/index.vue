@@ -25,9 +25,6 @@ const description = "Learn about programming, and all technical stuffs.";
                 content="BroJenuel, jenuelganawed936@gmail.com"
             />
             <Meta name="url" content="https://blog.brojenuel.com" />
-
-            <!-- Social Media Tags -->
-            <!-- Facebook -->
             <Meta name="og:locale" content="en_US" />
             <Meta name="og:type" content="article" />
             <Meta name="og:title" :content="title" />
@@ -38,8 +35,6 @@ const description = "Learn about programming, and all technical stuffs.";
             />
             <Meta name="og:site_name" content="blog.brojenuel.com" />
             <Meta name="og:url" content="https://blog.brojenuel.com" />
-
-            <!-- Twitter -->
             <Meta name="twitter:title" :content="title" />
             <Meta name="twitter:description" :content="description" />
             <Meta
@@ -51,18 +46,38 @@ const description = "Learn about programming, and all technical stuffs.";
         </Head>
         <div>
             <div class="flex flex-col gap-20px mt-10px">
-                <NuxtLink
+                <div
                     v-for="article in blogs"
                     :key="article._path"
-                    :to="article._path"
-                    class="hover:underline"
+                    class="max-w-300px flex-1"
                 >
-                    <h2 class="font-700 text-size-20px">
-                        {{ article.title }}
-                    </h2>
-                    <p>{{ article.description }}</p>
-                </NuxtLink>
+                    <NuxtLink :to="article._path">
+                        <img
+                            :src="article.image_thumbnail"
+                            :alt="article.image_title"
+                            class="rounded-md overflow-hidden mb-10px"
+                        />
+                        <h2 class="font-700 text-size-20px mb-2">
+                            {{ article.title }}
+                        </h2>
+                        <p class="line-clamp">
+                            {{ article.description }}
+                        </p>
+                        <small class="flex gap-4px">
+                            <span class="w-16px"><IconCalendar /></span>
+                            {{ article.date }}
+                        </small>
+                    </NuxtLink>
+                </div>
             </div>
         </div>
     </NuxtLayout>
 </template>
+<style lang="scss">
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+</style>

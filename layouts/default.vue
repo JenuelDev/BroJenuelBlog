@@ -5,7 +5,7 @@ useHead({
 </script>
 <template>
     <div class="max-w-1200px mx-auto px-20px">
-        <div class="py-10 px-5">
+        <div class="sm:py-10 sm:px-5">
             <slot />
         </div>
     </div>
