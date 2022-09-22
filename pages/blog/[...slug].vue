@@ -41,11 +41,11 @@
                 <Meta name="twitter:card" content="summery_large_image" />
             </Head>
             <main class="view-blog-content">
-                <div class="mb-50px">
-                    <h1 class="text-size-25px font-800">
+                <div class="mb-50px text-center">
+                    <h1 class="!text-size-25px !sm:text-size-30px font-800 mb-4">
                         {{ doc.title }}
                     </h1>
-                    <div class="flex gap-8px mt-10px">
+                    <div class="flex gap-8px mt-10px justify-center">
                         <span
                             v-for="word in doc.keywords"
                             :key="word"

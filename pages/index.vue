@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const blogs = await queryContent("blog")
     .where({ active: 1 })
-    .sort({ _path: -1 })
+    .sort({ _file: -1 })
     .find();
 
 const title = "BroJenuel Blog - Jenuel Ganawed";
@@ -45,11 +45,11 @@ const description = "Learn about programming, and all technical stuffs.";
             <Meta name="twitter:card" content="summery_large_image" />
         </Head>
         <div>
-            <div class="flex flex-col gap-20px mt-10px">
+            <div class="flex flex-col sm:flex-row flex-wrap gap-30px mt-10px">
                 <div
                     v-for="article in blogs"
                     :key="article._path"
-                    class="max-w-300px flex-1"
+                    class="min-w-290px max-w-350px flex-1"
                 >
                     <NuxtLink :to="article._path">
                         <img

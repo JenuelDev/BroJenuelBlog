@@ -50,6 +50,12 @@
         }
     }
 
+    img:nth-of-type(1) {
+        max-width: 800px;
+        margin: 0 auto;
+        border-radius: 15px;
+    }
+
     h2,
     h3 {
         font-weight: bold;
