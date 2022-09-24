@@ -14,6 +14,7 @@
     "sitemap": "^7.1.1"
   },
   "dependencies": {
+    "@nuxtjs/feed": "^2.0.0",
     "prismjs": "^1.29.0"
   }
 }
