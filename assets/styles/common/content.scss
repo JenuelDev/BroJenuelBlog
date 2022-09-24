@@ -15,7 +15,8 @@
             }
         }
 
-        &.javascript {
+        &.javascript,
+        &.JavaScript {
             border: 1px solid #e8d44d;
             color: #e8d44d;
             background-color: rgba(255, 222, 10, 0.082);
@@ -33,7 +34,8 @@
         }
 
         &.vue,
-        &.vuejs {
+        &.vuejs,
+        &.VueJs {
             border: 1px solid #3fb27f;
             background-color: rgba(63, 178, 126, 0.116);
             display: flex;
@@ -46,6 +48,134 @@
                 position: absolute;
                 left: 0px;
                 top: -2px;
+            }
+        }
+
+        &.career {
+            border: 1px solid #faac37;
+            color: #faac37;
+            background-color: rgba(243, 241, 94, 0.233);
+            display: flex;
+            align-items: center;
+            position: relative;
+            gap: 4px;
+
+            &::before {
+                content: "💼";
+            }
+        }
+
+        &.Developer,
+        &.developer {
+            border: 1px solid #17f7e4;
+            color: #17f7e4;
+            background-color: rgba(243, 241, 94, 0.233);
+            display: flex;
+            align-items: center;
+            position: relative;
+            gap: 4px;
+
+            &::before {
+                content: "💻";
+            }
+        }
+
+        &.tips-and-tricks,
+        &.Tips-And-Tricks {
+            border: 1px solid #17f7e4;
+            color: #17f7e4;
+            background-color: rgba(243, 241, 94, 0.233);
+            display: flex;
+            align-items: center;
+            position: relative;
+            gap: 4px;
+
+            &::before {
+                content: "👌";
+            }
+        }
+
+        &.NuxtJs,
+        &.nuxtjs {
+            border: 1px solid #00dc82;
+            background-color: rgba(63, 178, 126, 0.116);
+            display: flex;
+            position: relative;
+            padding-left: 30px;
+            color: #00dc82;
+
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg fill='%2300DC82' role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3ENuxt.js%3C/title%3E%3Cpath d='M9.078 3.965c-.588 0-1.177.289-1.514.867L.236 17.433c-.672 1.156.17 2.601 1.514 2.601h5.72a1.676 1.676 0 0 1-.35-2.117l5.547-9.513-2.076-3.572a1.734 1.734 0 0 0-1.513-.867zm7.407 2.922c-.487 0-.973.236-1.252.709L9.17 17.906c-.557.945.138 2.13 1.251 2.13h12.13c1.114 0 1.81-1.185 1.253-2.13l-6.067-10.31a1.437 1.437 0 0 0-1.252-.71z'/%3E%3C/svg%3E");
+                width: 25px;
+                position: absolute;
+                left: 2px;
+                top: 0px;
+            }
+        }
+
+        &.pwa,
+        &.PWA {
+            border: 1px solid #f76489;
+            color: #f76489;
+            background-color: rgba(245, 191, 221, 0.233);
+            display: flex;
+            align-items: center;
+            position: relative;
+            gap: 4px;
+
+            &::before {
+                content: "📱";
+            }
+        }
+
+        &.terminal,
+        &.Terminal {
+            border: 1px solid #f3b3c3;
+            color: #f3b3c3;
+            background-color: rgba(245, 191, 221, 0.233);
+            display: flex;
+            align-items: center;
+            position: relative;
+            gap: 4px;
+
+            &::before {
+                content: "🖥";
+            }
+        }
+
+        &.html,
+        &.HTML {
+            border: 1px solid #e34f26;
+            background-color: hsla(13, 77%, 52%, 0.164);
+            display: flex;
+            position: relative;
+            padding-left: 30px;
+            color: #e34f26;
+
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg fill='%23E34F26' role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EHTML5%3C/title%3E%3Cpath d='M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z'/%3E%3C/svg%3E");
+                width: 20px;
+                position: absolute;
+                left: 4px;
+                top: 4px;
+            }
+        }
+
+        &.css,
+        &.CSS {
+            border: 1px solid #d8d1fd;
+            background-color: hsla(13, 77%, 52%, 0.164);
+            display: flex;
+            position: relative;
+            padding-left: 30px;
+            color: #d8d1fd;
+
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg fill='%23d8d1fd' role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3ECSS3%3C/title%3E%3Cpath d='M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z'/%3E%3C/svg%3E");
+                width: 20px;
+                position: absolute;
+                left: 4px;
+                top: 4px;
             }
         }
     }

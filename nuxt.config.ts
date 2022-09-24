@@ -1,8 +1,8 @@
-import { serverQueryContent } from "#content/server";
+// import { serverQueryContent } from "#content/server";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    modules: ["@nuxt/content", "@nuxtjs/feed", "nuxt-windicss"],
+    modules: ["@nuxt/content", "nuxt-windicss", "@nuxtjs/feed"],
     css: ["@/assets/styles/main.scss"],
     nitro: {
         prerender: {

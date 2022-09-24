@@ -1,7 +1,8 @@
 <script setup lang="ts">
-const blogs = await queryContent("blog")
+const blogs = await queryContent()
     .where({ active: 1 })
     .sort({ _file: -1 })
+    .limit(15)
     .find();
 
 const title = "BroJenuel Blog - Jenuel Ganawed";
