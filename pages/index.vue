@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const blogs = await queryContent()
     .where({ active: 1 })
-    .sort({ _file: -1 })
+    .sort({ date: -1 })
     .limit(15)
     .find();
 

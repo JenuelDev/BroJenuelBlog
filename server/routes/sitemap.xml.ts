@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
     // Fetch all documents
     const docs = await serverQueryContent(event)
         .where({ active: 1 })
-        .sort({ _file: -1 })
+        .sort({ date: -1 })
         .limit(30000)
         .find();
 
