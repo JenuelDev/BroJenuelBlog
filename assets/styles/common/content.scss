@@ -226,5 +226,37 @@
         margin-top: 5px;
         margin-bottom: 20px;
         font-size: 20px;
+
+        code {
+            background-color: rgba(255, 255, 255, 0.795);
+            color: #0a192f;
+            border-radius: 8px;
+            padding: 3px 8px;
+        }
+    }
+
+    hr {
+        position: relative;
+        overflow: visible;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.705);
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            left: calc(50% - 20px);
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: rgba(255, 255, 255, 0.705);
+        }
     }
 }
