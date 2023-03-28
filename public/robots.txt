@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://brojenuel.com/sitemap.xml
