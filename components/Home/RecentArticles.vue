@@ -96,7 +96,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="flex justify-center mt-30px">
-            <NuxtLink class="btn btn-filled w-120px" to="/blog" alt="Read More Blogs">Read More</NuxtLink>
+            <NuxtLink class="btn btn-filled w-130px" href="/blog" alt="Read More Blogs">Read More Blogs</NuxtLink>
         </div>
     </div>
 </template>
