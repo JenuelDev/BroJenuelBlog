@@ -20,6 +20,9 @@ export default defineEventHandler(async (event) => {
         title: "BroJenuel - Articles",
         site_url: "https://brojenuel.com",
         feed_url: `https://brojenuel.com/rss.xml`,
+        description: "Latest articles in BroJenuel Site by Jenuel Oras Ganawed.",
+        copyright: `${new Date().getFullYear()} BroJenuel`,
+        language: "en",
     });
 
     const client = serverSupabaseClient(event);
