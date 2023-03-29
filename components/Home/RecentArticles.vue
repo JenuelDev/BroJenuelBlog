@@ -27,12 +27,7 @@ defineOgImageStatic({
 const blogs = ref<Array<any>>([]);
 async function getBlogs() {
     loadingBlogs.value = true;
-    let query: any = await client
-        .from("blogs")
-        .select(`*, blog_meta(*)`)
-        .eq("is_active", 1)
-        .order("id", { ascending: false })
-        .limit(6);
+    let query: any = await client.from("blogs").select(`*, blog_meta(*)`).eq("is_active", 1).order("id", { ascending: false }).limit(6);
     blogs.value = query.data;
     loadingBlogs.value = false;
 }
@@ -43,32 +38,21 @@ onMounted(() => {
 </script>
 <template>
     <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px">
-        <h2 class="mb-3 text-[var(--primary)]">Recent Articles</h2>
+        <h2 class="mb-3 text-[var(--primary)] flex justify-between">Recent Articles</h2>
         <div v-show="!loadingBlogs" class="grid sm:grid-cols-2 grid-cols-1 gap-3">
-            <NuxtLink
-                v-for="(blog, i) in blogs"
-                :key="blog.id"
-                :href="`/blog/${blog.slug}`"
-                class="group p-2 rounded-md gap-20px cursor-pointer flex gap-1"
-            >
+            <NuxtLink v-for="(blog, i) in blogs" :key="blog.id" :href="`/blog/${blog.slug}`" class="group p-2 rounded-md gap-20px cursor-pointer flex gap-1">
                 <div>
-                    <div
-                        class="bg-[var(--background-secondary)] h-25px w-25px rounded-full flex items-center justify-center text-[var(--primary)]"
-                    >
+                    <div class="bg-[var(--background-secondary)] h-25px w-25px rounded-full flex items-center justify-center text-[var(--primary)]">
                         {{ i + 1 }}
                     </div>
                 </div>
                 <div class="flex flex-col justify-between">
                     <div>
-                        <h3
-                            class="group-hover:underline decoration-[var(--primary)] text-size-25px font-800 mb-2 font-kumbhsans"
-                        >
+                        <h3 class="group-hover:underline decoration-[var(--primary)] text-size-25px font-800 mb-2 font-kumbhsans">
                             {{ blog.title }}
                         </h3>
                         <div class="text-size-14px opacity-90">{{ blog.summary.slice(0, 100) }}...</div>
-                        <span class="font-700 text-[var(--primary)]">{{
-                            $dayjs(blog.updated_at).format("DD MMM, YYYY")
-                        }}</span>
+                        <span class="font-700 text-[var(--primary)]">{{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}</span>
                     </div>
                 </div>
             </NuxtLink>
@@ -110,6 +94,9 @@ onMounted(() => {
                 <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
                 <span class="sr-only">Loading...</span>
             </div>
+        </div>
+        <div class="flex justify-center mt-30px">
+            <NuxtLink class="btn btn-filled w-120px" to="/blog" alt="Read More Blogs">Read More</NuxtLink>
         </div>
     </div>
 </template>

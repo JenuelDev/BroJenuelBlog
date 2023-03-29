@@ -2,6 +2,20 @@ import { serverSupabaseClient } from "#supabase/server";
 import RSS from "rss";
 
 export default defineEventHandler(async (event) => {
+    let limit = 5000;
+    const query = getQuery(event);
+
+    if (query.limit) {
+        try {
+            limit = parseInt(query.limit as string);
+        } catch (e) {
+            throw createError({
+                statusCode: 400,
+                statusMessage: "Limit cant be parsed",
+            });
+        }
+    }
+
     const feed = new RSS({
         title: "BroJenuel - Articles",
         site_url: "https://brojenuel.com",
@@ -9,12 +23,7 @@ export default defineEventHandler(async (event) => {
     });
 
     const client = serverSupabaseClient(event);
-    const { data, error }: any = await client
-        .from("blogs")
-        .select()
-        .order("id", { ascending: false })
-        .eq("is_active", 1)
-        .limit(5000);
+    const { data, error }: any = await client.from("blogs").select().order("id", { ascending: false }).eq("is_active", 1).limit(limit);
 
     for (const doc of data) {
         feed.item({

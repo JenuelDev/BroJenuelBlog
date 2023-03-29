@@ -70,8 +70,7 @@ function commafy(num: number) {
 useHead({
     ...setMeta({
         title: "Blog - BroJenuel",
-        description:
-            "Learn about tips and tricks about programming. Read or watch tutorials that will help you on jour journey as a developer.",
+        description: "Learn about tips and tricks about programming. Read or watch tutorials that will help you on jour journey as a developer.",
         path: route.path,
         keywords: ["brojenuel", "Jenuel", "Jenuel Ganawed", "bro jenuel", "web developer", "blog"],
         lang: "en",
@@ -90,16 +89,12 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
 </script>
 <template>
     <NuxtLayout>
-        <div
-            class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px max-w-850px mx-auto mt-90px lg:px-0 sm:px-100px px-10px"
-        >
+        <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px max-w-850px mx-auto mt-90px lg:px-0 sm:px-100px px-10px">
             <Icon name="pajamas:project" />
             Blog
         </div>
-        <div
-            class="min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pt-10px pb-5 grid lg:grid-cols-12 grid-cols-1 gap-40px"
-        >
-            <div class="col-span-12 lg:col-span-3">
+        <div class="min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pt-10px pb-5 grid lg:grid-cols-12 grid-cols-1 gap-40px">
+            <div class="lg:col-span-3 col-span-11">
                 <div class="sticky pt-5 top-50px mx-auto bg-[var(--background)] z-99 w-full">
                     <form @submit.prevent="getBlogs(true)" class="flex gap-7px">
                         <input
@@ -145,18 +140,12 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
                         Clear Filters
                     </div>
                     <div class="text-center">
-                        <a
-                            class="text-size-10px hover:bg-[var(--primary)] hover:text-[var(--background)] px-3"
-                            href="/sitemap.xml"
-                            target="_blank"
-                        >
-                            SITEMAP
-                        </a>
+                        <a class="text-size-10px hover:bg-[var(--primary)] hover:text-[var(--background)] px-3" href="/sitemap.xml" target="_blank"> SITEMAP </a>
                     </div>
                 </div>
             </div>
 
-            <div class="sm:col-span-9 col-span-12">
+            <div class="sm:col-span-9 col-span-11">
                 <div ref="blogInfiniteScroll" class="grid grid-cols-1 gap-3 sm:pl-0 pl-20px" v-if="blogsList.length">
                     <NuxtLink
                         v-for="blog in blogsList"
@@ -173,16 +162,12 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
                             ></div>
                             <div class="absolute top-40%"></div>
                             <div>
-                                <span class="group-hover:text-[var(--primary)] text-size-20px font-kumbhsans font-800">
-                                    {{ blog.title }}.
-                                </span>
+                                <span class="group-hover:text-[var(--primary)] text-size-20px font-kumbhsans font-800"> {{ blog.title }}. </span>
                                 <span class="opacity-80 font-poly">{{ blog.summary }}</span>
                             </div>
                             <div class="italic flex gap-2 my-1">
                                 <ul class="flex gap-1 flex-wrap">
-                                    <li v-for="tags in blog.tags" :key="tags" :class="`tag-${tags}`" class="tag">
-                                        #{{ tags }}
-                                    </li>
+                                    <li v-for="tags in blog.tags" :key="tags" :class="`tag-${tags}`" class="tag">#{{ tags }}</li>
                                 </ul>
                             </div>
                             <div>
@@ -198,11 +183,7 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
                     </NuxtLink>
                 </div>
                 <div>
-                    <div
-                        v-if="!noMoreData"
-                        ref="blogInfiniteScrollRef"
-                        class="text-center text-[var(--primary)] pt-20px"
-                    >
+                    <div v-if="!noMoreData" ref="blogInfiniteScrollRef" class="text-center text-[var(--primary)] pt-20px">
                         <div style="font-size: 50px">
                             <Icon name="svg-spinners:bars-scale-middle" />
                         </div>
