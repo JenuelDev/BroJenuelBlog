@@ -4,9 +4,12 @@ const { setMeta } = useMeta();
 const client = useSupabaseClient();
 const slug = route.params.slug[0];
 const showContent = ref(false);
+const runtimeConfig = useRuntimeConfig();
+const coverImageLink = ref<null | string>(null);
 
 const { data }: any = await useAsyncData("blog", async () => {
     const { data }: any = await client.from("blogs").select(`*, blog_meta(*)`).eq("slug", slug).single();
+    coverImageLink.value = data.cover_img ?? null;
     return data;
 });
 
@@ -14,7 +17,10 @@ const oldCountViews: number =
     data.value.blog_meta && data.value.blog_meta.view_count ? data.value.blog_meta.view_count : 0;
 
 async function addViewCount() {
-    const queryUpdate: any = { blogs_id: data?.value.id, view_count: oldCountViews + 1 };
+    const queryUpdate: any = {
+        blogs_id: data?.value.id,
+        view_count: oldCountViews + 1,
+    };
     await client.from("blog_meta").upsert(queryUpdate).select();
 }
 
@@ -25,15 +31,12 @@ useHead({
         path: `/blog/${data.value.slug}`,
         keywords: data.value.keywords,
         lang: "en",
+        ...(coverImageLink.value
+            ? {
+                  image: coverImageLink.value,
+              }
+            : {}),
     }),
-});
-
-defineOgImageStatic({
-    component: "DefaultOgImage",
-    path: route.path,
-    title: data.value.title,
-    description: data.value.summary,
-    appName: "www.BroJenuel.com",
 });
 
 function commafy(num: number) {
@@ -81,6 +84,14 @@ function share(social: string) {
 }
 </script>
 <template>
+    <OgImageStatic
+        v-if="!coverImageLink"
+        component="DefaultOgImage"
+        :path="route.path"
+        :title="data.title"
+        :description="data.summary"
+        appName="www.BroJenuel.com"
+    />
     <NuxtLayout>
         <main class="pt-40px min-h-80vh">
             <Transition>
@@ -100,7 +111,8 @@ function share(social: string) {
                                     />
                                 </template>
                                 <p class="text-xl lg:text-3xl md:text-2xl sm:text-xl md font-sans font-100 mb-5">
-                                    <span class="text-[var(--primary)]">/</span> {{ data.summary }}
+                                    <span class="text-[var(--primary)]">/</span>
+                                    {{ data.summary }}
                                 </p>
                             </div>
                             <div class="flex flex-wrap gap-3 mb-3">
@@ -150,16 +162,16 @@ function share(social: string) {
                                 </button>
                             </div>
                         </div>
-                        <div class="max-w-600px lg:max-w-700px">
+                        <div class="max-w-600px lg:max-w-700px" v-if="!runtimeConfig.public.isDevelopment">
                             <ClientOnly>
                                 <GoogleAdsHorizontal />
                             </ClientOnly>
                         </div>
                         <div
-                            class="content-render max-w-600px lg:max-w-700px mx-auto relative font-poly text-l md:text-xl"
+                            class="content-render max-w-600px lg:max-w-700px mx-auto relative font-poly text-l md:text-xl pt-5"
                             v-html="data.content"
                         ></div>
-                        <ClientOnly>
+                        <ClientOnly v-if="!runtimeConfig.public.isDevelopment">
                             <div class="max-w-600px mx-auto px-10px relative pb-5 mt-50px">
                                 <Disqus
                                     :identifier="`BroJenuel-${data.slug}`"

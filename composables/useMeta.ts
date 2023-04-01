@@ -90,23 +90,20 @@ const setMeta = (data: {
                 name: "twitter:card",
                 content: "summery_large_image",
             },
+            ...(data.image
+                ? [
+                      {
+                          name: "og:image",
+                          content: data.image,
+                      },
+                      {
+                          name: "twitter:image:src",
+                          content: data.image,
+                      },
+                  ]
+                : []),
         ],
     };
-
-
-    if (data.image) {
-        metaData.meta = [
-            ...metaData.meta,
-            {
-                name: "og:image",
-                content: data.image,
-            },
-            {
-                name: "twitter:image",
-                content: data.image,
-            },
-        ];
-    }
 
     return metaData;
 };
@@ -115,21 +112,21 @@ const googleStream = () => ({
     script: [
         {
             async: true,
-            src: "https://www.googletagmanager.com/gtag/js?id=G-J6ESE2YBXS"
+            src: "https://www.googletagmanager.com/gtag/js?id=G-J6ESE2YBXS",
         },
         {
             children: `window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', 'G-J6ESE2YBXS');`
-        }
-    ]
-})
+                gtag('config', 'G-J6ESE2YBXS');`,
+        },
+    ],
+});
 
 export default function () {
     return {
         setMeta,
-        googleStream
+        googleStream,
     };
 }

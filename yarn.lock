@@ -3619,7 +3619,7 @@ nuxt-icon@^0.2.7:
 
 nuxt-og-image@^1.5.5:
   version "1.5.5"
-  resolved "https://registry.npmjs.org/nuxt-og-image/-/nuxt-og-image-1.5.5.tgz"
+  resolved "https://registry.yarnpkg.com/nuxt-og-image/-/nuxt-og-image-1.5.5.tgz#6177a61430820105abf6dcb5f881913d6c97fc48"
   integrity sha512-p7JeEBs9TJ3y9ZHwUWnpUFVrBjt3QuVX/7yqst1G9MyDv3wzkkwubyd9ELlaAbytjSgUtczf9oOjEA3FG470eA==
   dependencies:
     "@nuxt/kit" "3.3.1"
