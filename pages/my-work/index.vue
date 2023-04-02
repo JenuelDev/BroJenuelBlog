@@ -30,18 +30,20 @@ defineOgImageStatic({
     <NuxtLayout>
         <Transition>
             <div v-show="isShowContent" class="pt-90px">
-                <div class="max-w-600px mx-auto px-10px">
-                    <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
-                        <Icon name="pajamas:project" />
-                        My Work
-                    </div>
-                    <div class="pt-5 mb-5">
-                        <div class="indent-md">
-                            Showing are personal projects that I made during my spare/free time. I don't add projects
-                            from my Work/Jobs, only if allowed.
+                <div>
+                    <div class="lg:max-w-800px max-w-600px mx-auto px-10px">
+                        <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
+                            <Icon name="pajamas:project" />
+                            Projects
+                        </div>
+                        <div class="pt-5 mb-5">
+                            <div class="indent-md">
+                                Showing are personal projects that I made during my spare/free time. I don't add
+                                projects from my Jobs, only if allowed.
+                            </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 gap-15">
+                    <div class="grid lg:grid-cols-2 gap-10 lg:max-w-800px max-w-600px mx-auto px-10px">
                         <NuxtLink
                             v-for="(work, i) in WORKS"
                             :key="i"
@@ -50,11 +52,11 @@ defineOgImageStatic({
                             :target="work.url_new_tab ? '_blank' : '_self'"
                         >
                             <div
-                                class="border-1 border-[var(--gray-lightest)] flex justify-center items-center overflow-hidden rounded-lg relative"
+                                class="border-1 border-[var(--gray-lightest)] flex justify-center items-center overflow-hidden rounded-lg relative h-200px"
                             >
                                 <img
                                     :src="work.img.includes('http') ? work.img : `/img/work/${work.img}`"
-                                    class="w-full transform scale-100 group-hover:scale-transform-105 transition-all duration-1000"
+                                    class="w-full transform scale-110 group-hover:scale-transform-130 transition-all"
                                     :alt="work.description"
                                     width="500"
                                 />
@@ -68,7 +70,7 @@ defineOgImageStatic({
                                 </div>
                             </div>
                             <div>
-                                <ul class="flex gap-1 flex-wrap py-10px">
+                                <ul class="flex gap-1 flex-wrap py-10px text-size-13px">
                                     <li v-for="tags in work.techs" :key="tags" :class="`tag-${tags}`" class="tag">
                                         #{{ tags }}
                                     </li>
@@ -77,7 +79,7 @@ defineOgImageStatic({
                             </div>
                         </NuxtLink>
                     </div>
-                    <div>
+                    <div class="lg:max-w-800px max-w-600px mx-auto px-10px">
                         <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px pb-5 pt-10">
                             <Icon name="material-symbols:other-admission-sharp" />
                             Other Projects

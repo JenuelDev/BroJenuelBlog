@@ -38,17 +38,13 @@ async function getBlogs(isReset = false) {
     let rangeFrom = filter.page * filter.limit - filter.limit;
     rangeFrom = rangeFrom > 0 ? rangeFrom + 1 : rangeFrom;
     let rangeTo = filter.page * filter.limit;
-
     let query = client.from("blogs").select(`*, blog_meta(*)`).eq("is_active", 1).order("id", { ascending: false });
-
     if (filter.search && filter.search != "") {
         query.textSearch("content", `'${filter.search}'`);
     }
 
     const { data }: any = await query.range(rangeFrom, rangeTo);
-
     if (data.length < filter.limit) noMoreData.value = true;
-
     blogsList.value = [...blogsList.value, ...(data as any)];
     return data;
 }
@@ -70,7 +66,8 @@ function commafy(num: number) {
 useHead({
     ...setMeta({
         title: "Blog - BroJenuel",
-        description: "Learn about tips and tricks about programming. Read or watch tutorials that will help you on jour journey as a developer.",
+        description:
+            "Learn about tips and tricks about programming. Read or watch tutorials that will help you on jour journey as a developer.",
         path: route.path,
         keywords: ["brojenuel", "Jenuel", "Jenuel Ganawed", "bro jenuel", "web developer", "blog"],
         lang: "en",
@@ -89,11 +86,15 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
 </script>
 <template>
     <NuxtLayout>
-        <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px max-w-850px mx-auto mt-90px lg:px-0 sm:px-100px px-10px">
+        <div
+            class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px max-w-850px mx-auto mt-90px lg:px-0 sm:px-100px px-10px"
+        >
             <Icon name="pajamas:project" />
             Blog
         </div>
-        <div class="min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pt-10px pb-5 grid lg:grid-cols-12 grid-cols-1 gap-40px">
+        <div
+            class="min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pt-10px pb-5 grid lg:grid-cols-12 grid-cols-1 gap-40px"
+        >
             <div class="lg:col-span-3 col-span-11">
                 <div class="sticky pt-5 top-50px mx-auto bg-[var(--background)] z-99 w-full">
                     <form @submit.prevent="getBlogs(true)" class="flex gap-7px">
@@ -140,7 +141,13 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
                         Clear Filters
                     </div>
                     <div class="text-center">
-                        <a class="text-size-10px hover:bg-[var(--primary)] hover:text-[var(--background)] px-3" href="/sitemap.xml" target="_blank"> SITEMAP </a>
+                        <a
+                            class="text-size-10px hover:bg-[var(--primary)] hover:text-[var(--background)] px-3"
+                            href="/sitemap.xml"
+                            target="_blank"
+                        >
+                            SITEMAP
+                        </a>
                     </div>
                 </div>
             </div>
@@ -151,9 +158,15 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
                         v-for="blog in blogsList"
                         :key="blog.id"
                         :href="`blog/${blog.slug}`"
-                        class="p-10px rounded-md transform translate-y-1 hover:translate-y-0 transition-transform cursor-pointer group hover:bg-[var(--background-secondary)]"
+                        class="p-10px rounded-md transform translate-y-1 hover:translate-y-0 transition-transform cursor-pointer group hover:bg-[var(--background-secondary)] flex md:flex-row flex-col gap-3"
                     >
-                        <div class="relative group">
+                        <div
+                            v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
+                            class="md:order-2 rounded-2xl overflow-hidden"
+                        >
+                            <img :src="blog.cover_img" class="float-right" />
+                        </div>
+                        <div class="relative group md:order-1">
                             <div
                                 class="absolute h-10px w-10px bg-gray-600 -left-5 group-hover:bg-[var(--primary)] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-lg delay top-[50%] transform translate-y-[-50%] translate-x-[-50%]"
                             ></div>
@@ -162,12 +175,16 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
                             ></div>
                             <div class="absolute top-40%"></div>
                             <div>
-                                <span class="group-hover:text-[var(--primary)] text-size-20px font-kumbhsans font-800"> {{ blog.title }}. </span>
+                                <span class="group-hover:text-[var(--primary)] text-size-20px font-kumbhsans font-800">
+                                    {{ blog.title }}.
+                                </span>
                                 <span class="opacity-80 font-poly">{{ blog.summary }}</span>
                             </div>
-                            <div class="italic flex gap-2 my-1">
-                                <ul class="flex gap-1 flex-wrap">
-                                    <li v-for="tags in blog.tags" :key="tags" :class="`tag-${tags}`" class="tag">#{{ tags }}</li>
+                            <div class="flex gap-2 my-1">
+                                <ul class="flex gap-1 flex-wrap text-size-13px">
+                                    <li v-for="tags in blog.tags" :key="tags" :class="`tag-${tags}`" class="tag">
+                                        #{{ tags }}
+                                    </li>
                                 </ul>
                             </div>
                             <div>
@@ -183,7 +200,11 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
                     </NuxtLink>
                 </div>
                 <div>
-                    <div v-if="!noMoreData" ref="blogInfiniteScrollRef" class="text-center text-[var(--primary)] pt-20px">
+                    <div
+                        v-if="!noMoreData"
+                        ref="blogInfiniteScrollRef"
+                        class="text-center text-[var(--primary)] pt-20px"
+                    >
                         <div style="font-size: 50px">
                             <Icon name="svg-spinners:bars-scale-middle" />
                         </div>

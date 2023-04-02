@@ -102,13 +102,26 @@ function share(social: string) {
                                 {{ data.title }}
                             </h1>
                             <div>
-                                <template v-if="/\.(jpg|gif|png)$/.test(data.cover_img)">
+                                <template
+                                    v-if="
+                                        data.cover_img &&
+                                        (/\.(jpg|gif|png)$/.test(data.cover_img) ||
+                                            !(data.cover_img.indexOf('youtube') > -1))
+                                    "
+                                >
                                     <img
                                         :src="data.cover_img"
                                         alt=""
                                         srcset=""
                                         class="float-left sm:w-450px w-full pr-20px pt-10px"
                                     />
+                                </template>
+                                <template v-else-if="data.cover_img && data.cover_img.indexOf('youtube') > -1">
+                                    <iframe
+                                        class="float-left sm:w-450px sm:h-250px w-full h-300px pr-20px pt-10px"
+                                        :src="data.cover_img"
+                                    >
+                                    </iframe>
                                 </template>
                                 <p class="text-xl lg:text-3xl md:text-2xl sm:text-xl md font-sans font-100 mb-5">
                                     <span class="text-[var(--primary)]">/</span>

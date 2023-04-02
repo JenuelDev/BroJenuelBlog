@@ -58,7 +58,7 @@ watch(
                 </NuxtLink>
                 <NuxtLink href="/my-work" class="btn btn-lg btn-filled sm:w-auto w-full group" title="My Work">
                     <Icon name="pajamas:project" class="group-hover:animate-head-shake" />
-                    My Work
+                    Projects
                 </NuxtLink>
                 <NuxtLink href="/blog" class="btn btn-lg btn-filled sm:w-auto w-full group" title="My Blog">
                     <Icon name="fluent-mdl2:blog" class="group-hover:animate-head-shake" />

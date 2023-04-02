@@ -3671,7 +3671,7 @@ nuxt-windicss@^2.6.0:
 
 nuxt@^3.3.2:
   version "3.3.2"
-  resolved "https://registry.npmjs.org/nuxt/-/nuxt-3.3.2.tgz"
+  resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-3.3.2.tgz#02f2f4594eb59a56da115651f6a5e913b47914e7"
   integrity sha512-9xNd9+7M03oYktHnuEEgNRJYfkFwjlLvRi1NsEuEyzcc0SgazGZT89CBsQnlWI3wFMhoxoYPGJ8rc4sJAhJ1Gg==
   dependencies:
     "@nuxt/devalue" "^2.0.0"
