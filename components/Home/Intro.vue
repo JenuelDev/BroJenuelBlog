@@ -26,8 +26,16 @@ watch(
                     <div class="lg:text-size-33px md:text-size-36px text-size-26px font-300 tracking-tight">
                         hi! <span class="animate-wave lg:text-size-54px md:text-size-46px text-size-30px">👋</span>
                     </div>
-                    <div class="lg:text-size-40px md:text-size-29px text-size-25px font-600 tracking-tight mt-10px text-[var(--primary)]">I'm <span> Jenuel</span></div>
-                    <div class="lg:text-size-33px md:text-size-25px text-size-20px font-300 tracking-tight md:w-250px w-150px">i create apps and websites</div>
+                    <div
+                        class="lg:text-size-40px md:text-size-29px text-size-25px font-600 tracking-tight mt-10px text-[var(--primary)]"
+                    >
+                        I'm <span> Jenuel</span>
+                    </div>
+                    <div
+                        class="lg:text-size-33px md:text-size-25px text-size-20px font-300 tracking-tight md:w-250px w-150px"
+                    >
+                        i create apps and websites
+                    </div>
                 </div>
             </div>
 
@@ -44,7 +52,11 @@ watch(
                             <Icon class="text-size-28px" :name="social.icon" />
                             <span class="ml-7px">{{ social.title }}</span>
                         </a>
-                        <NuxtLink v-else :href="social.url" class="whitespace-nowrap hover:text-[var(--primary)] flex items-center">
+                        <NuxtLink
+                            v-else
+                            :href="social.url"
+                            class="whitespace-nowrap hover:text-[var(--primary)] flex items-center"
+                        >
                             <Icon class="text-size-28px" :name="social.icon" />
                             <span class="ml-7px">{{ social.title }}</span>
                         </NuxtLink>
@@ -69,8 +81,12 @@ watch(
                     My CV
                 </NuxtLink>
             </div>
-            <SvgDotSquare class="absolute md:right-0 md:visible invisible z-20 fill-[var(--primary)] opacity-50 w-70px" />
-            <SvgArrow class="absolute md:visible invisible left-[-50px] bottom-[80px] transform rotate-[-180deg] fill-[var(--primary)] opacity-50 w-70px" />
+            <SvgDotSquare
+                class="absolute md:right-0 md:visible invisible z-20 fill-[var(--primary)] opacity-50 w-70px"
+            />
+            <SvgArrow
+                class="absolute md:visible invisible left-[-50px] bottom-[80px] transform rotate-[-180deg] fill-[var(--primary)] opacity-50 w-70px"
+            />
         </div>
     </section>
 </template>

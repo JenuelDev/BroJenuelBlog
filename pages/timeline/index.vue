@@ -44,33 +44,7 @@ defineOgImageStatic({
                     <div class="timeline-div p-10px">
                         <div class="w-full m-auto">
                             <template v-for="(experience, i) in experiences" :key="experience.url">
-                                <div v-if="experience.isCard" class="timeline-box">
-                                    <div
-                                        class="absolute top-[50%] transform translate-y-[-50%] bg-[var(--primary)] rounded-md text-[var(--background)] p-1 flex flex-col items-center text-size-12px"
-                                        :class="
-                                            i % 2 == 0
-                                                ? 'sm:right-[-20px] right-[-15px]'
-                                                : 'sm:left-[-25px] left-[-15px]'
-                                        "
-                                    >
-                                        <span v-html="experience.year"></span>
-                                        <span v-if="experience.to">to</span>
-                                        {{ experience.to ?? "" }}
-                                    </div>
-                                    <div
-                                        class="m-1 bg-[var(--background-secondary)] rounded-lg p-3 flex flex-col gap-2 items-center"
-                                    >
-                                        <div class="font-500 text-size-20px text-center">{{ experience.title }}</div>
-                                        <div v-if="experience.certificate">
-                                            <NuxtLink class="btn" :to="experience.certificate.link" target="_blank">
-                                                <Icon name="teenyicons:certificate-solid" />
-                                                {{ experience.certificate.label }}
-                                            </NuxtLink>
-                                        </div>
-                                        <div class="text-center">{{ experience.des }}</div>
-                                    </div>
-                                </div>
-                                <div v-else class="timeline-box">
+                                <div class="timeline-box">
                                     <div
                                         class="absolute top-[50%] transform translate-y-[-50%] bg-[var(--primary)] rounded-md text-[var(--background)] p-1 flex flex-col items-center text-size-12px"
                                         :class="

@@ -92,7 +92,7 @@ function share(social: string) {
         :description="data.summary"
         appName="www.BroJenuel.com"
     />
-    <NuxtLayout>
+    <NuxtLayout name="nosocial">
         <main class="pt-40px min-h-80vh">
             <Transition>
                 <div v-show="showContent" class="pt-40px max-w-600px lg:max-w-800px mx-auto pb-5 px-10px">
@@ -144,7 +144,8 @@ function share(social: string) {
                                 }}</span>
                                 <span><Icon name="ic:baseline-remove-red-eye" /> {{ commafy(oldCountViews) }}</span>
                             </div>
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 items-center">
+                                <span>Share: </span>
                                 <button
                                     class="h-30px w-30px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"
                                     @click="share('facebook')"

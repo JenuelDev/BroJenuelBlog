@@ -85,7 +85,7 @@ defineOgImageStatic({
 const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
 </script>
 <template>
-    <NuxtLayout>
+    <NuxtLayout name="nosocial">
         <div
             class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px max-w-850px mx-auto mt-90px lg:px-0 sm:px-100px px-10px"
         >
