@@ -1,24 +1,30 @@
 @font-face {
     font-family: "kumbhsans";
     src: url("./font/KumbhSans.ttf"); /* IE9 Compat Modes */
-    src: url("./font/KumbhSans.ttf") format("embedded-opentype"), /* IE6-IE8 */ url("./font/KumbhSans.ttf") format("woff"),
-        /* Modern Browsers */ url("./font/KumbhSans.ttf") format("truetype"), /* Safari, Android, iOS */ url("./font/KumbhSans.ttf") format("svg"); /* Legacy iOS */
+    src: url("./font/KumbhSans.ttf") format("embedded-opentype"),
+        /* IE6-IE8 */ url("./font/KumbhSans.ttf") format("woff"),
+        /* Modern Browsers */ url("./font/KumbhSans.ttf") format("truetype"),
+        /* Safari, Android, iOS */ url("./font/KumbhSans.ttf") format("svg"); /* Legacy iOS */
     font-display: swap;
 }
 
 @font-face {
     font-family: "poly";
     src: url("./font/Poly-Regular.ttf"); /* IE9 Compat Modes */
-    src: url("./font/Poly-Regular.ttf") format("embedded-opentype"), /* IE6-IE8 */ url("./font/Poly-Regular.ttf") format("woff"),
-        /* Modern Browsers */ url("./font/Poly-Regular.ttf") format("truetype"), /* Safari, Android, iOS */ url("./font/Poly-Regular.ttf") format("svg"); /* Legacy iOS */
+    src: url("./font/Poly-Regular.ttf") format("embedded-opentype"),
+        /* IE6-IE8 */ url("./font/Poly-Regular.ttf") format("woff"),
+        /* Modern Browsers */ url("./font/Poly-Regular.ttf") format("truetype"),
+        /* Safari, Android, iOS */ url("./font/Poly-Regular.ttf") format("svg"); /* Legacy iOS */
     font-display: swap;
 }
 
 @font-face {
     font-family: "anton";
     src: url("./font/Anton-Regular.ttf"); /* IE9 Compat Modes */
-    src: url("./font/Anton-Regular.ttf") format("embedded-opentype"), /* IE6-IE8 */ url("./font/Anton-Regular.ttf") format("woff"),
-        /* Modern Browsers */ url("./font/Anton-Regular.ttf") format("truetype"), /* Safari, Android, iOS */ url("./font/Anton-Regular.ttf") format("svg"); /* Legacy iOS */
+    src: url("./font/Anton-Regular.ttf") format("embedded-opentype"),
+        /* IE6-IE8 */ url("./font/Anton-Regular.ttf") format("woff"),
+        /* Modern Browsers */ url("./font/Anton-Regular.ttf") format("truetype"),
+        /* Safari, Android, iOS */ url("./font/Anton-Regular.ttf") format("svg"); /* Legacy iOS */
     font-display: swap;
 }
 
@@ -76,9 +82,7 @@ body {
 p {
     a {
         position: relative;
-        color: var(--color);
         font-style: italic;
-        // font-weight: 700;
         color: var(--primary);
 
         &:before {

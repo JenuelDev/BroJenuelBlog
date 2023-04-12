@@ -51,6 +51,29 @@
         margin-top: 30px;
         position: relative;
         font-weight: 700;
+
+        a {
+            position: relative;
+            color: var(--primary);
+
+            &:before {
+                content: "";
+                height: 2px;
+                position: absolute;
+                bottom: -5px;
+                width: 0;
+                background-color: var(--primary);
+                transition: all 0.2s;
+            }
+
+            &:hover {
+                color: var(--primary);
+
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
     }
 
     h2 {
@@ -83,10 +106,44 @@
     p {
         padding-bottom: 20px;
         padding-top: 10px;
+
+        a {
+            position: relative;
+            color: var(--color);
+            font-style: italic;
+            // font-weight: 700;
+            color: var(--primary);
+
+            &:before {
+                content: "";
+                height: 2px;
+                position: absolute;
+                bottom: -5px;
+                width: 0;
+                background-color: var(--primary);
+                transition: all 0.2s;
+            }
+
+            &:hover {
+                color: var(--primary);
+
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
     }
 
     *::-webkit-scrollbar {
         height: 10px;
+    }
+
+    code {
+        background-color: var(--gray-light);
+        padding: 0 6px;
+        border-radius: 5px;
+        color: black;
+        font-size: 15px;
     }
 }
 

@@ -95,9 +95,27 @@ function share(social: string) {
     <NuxtLayout name="nosocial">
         <main class="pt-40px min-h-80vh">
             <Transition>
-                <div v-show="showContent" class="pt-40px max-w-600px lg:max-w-800px mx-auto pb-5 px-10px">
+                <div v-show="showContent" class="pt-40px max-w-600px lg:max-w-800px mx-auto pb-5 md:flex">
+                    <div class="sticky top-12 bottom-0 z-50 filter backdrop-filter backdrop-blur-sm">
+                        <div
+                            class="flex md:flex-col md:gap-2 gap-8 items-center md:sticky md:top-15 md:pr-20px md:justify-start justify-center md:h-auto h-50px"
+                        >
+                            <button
+                                v-for="social in ['facebook', 'twitter', 'linkedin', 'copy']"
+                                :key="social"
+                                class="h-40px w-40px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"
+                                @click="share(social)"
+                                :title="social != 'Copy' ? `Share To ${social.toUpperCase()}` : 'Copy to Clipboard'"
+                            >
+                                <Icon v-if="social == 'facebook'" name="ri:facebook-fill"></Icon>
+                                <Icon v-if="social == 'twitter'" name="mdi:twitter"></Icon>
+                                <Icon v-if="social == 'linkedin'" name="ri:linkedin-fill"></Icon>
+                                <Icon v-if="social == 'copy'" name="ph:link-simple-bold"></Icon>
+                            </button>
+                        </div>
+                    </div>
                     <div>
-                        <div class="mb-25px">
+                        <div class="mb-25px px-10px">
                             <h1 class="text-2xl lg:text-5xl md:text-4xl md:text-3xl font-700 pb-10px font-kumbhsans">
                                 {{ data.title }}
                             </h1>
@@ -143,37 +161,6 @@ function share(social: string) {
                                     $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
                                 }}</span>
                                 <span><Icon name="ic:baseline-remove-red-eye" /> {{ commafy(oldCountViews) }}</span>
-                            </div>
-                            <div class="flex gap-2 items-center">
-                                <span>Share: </span>
-                                <button
-                                    class="h-30px w-30px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"
-                                    @click="share('facebook')"
-                                    title="Share To Facebook"
-                                >
-                                    <Icon name="ri:facebook-fill"></Icon>
-                                </button>
-                                <button
-                                    class="h-30px w-30px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"
-                                    @click="share('twitter')"
-                                    title="Share to Twitter"
-                                >
-                                    <Icon name="mdi:twitter"></Icon>
-                                </button>
-                                <button
-                                    class="h-30px w-30px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"
-                                    @click="share('linkedin')"
-                                    title="Share to LinkedIN"
-                                >
-                                    <Icon name="ri:linkedin-fill"></Icon>
-                                </button>
-                                <button
-                                    class="h-30px w-30px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"
-                                    @click="share('copy')"
-                                    title="Copy Link"
-                                >
-                                    <Icon name="ph:link-simple-bold"></Icon>
-                                </button>
                             </div>
                         </div>
                         <div class="max-w-600px lg:max-w-700px" v-if="!runtimeConfig.public.isDevelopment">
