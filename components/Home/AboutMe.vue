@@ -1,6 +1,3 @@
-<script setup lang="ts">
-const currentDate = new Date();
-</script>
 <template>
     <div id="about-me">
         <div class="font-800 text-size-20px text-[var(--primary)] w-full max-w-500px mx-auto px-20px pt-80px">
