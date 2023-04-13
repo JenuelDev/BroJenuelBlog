@@ -963,7 +963,7 @@
   dependencies:
     "@types/node" "*"
 
-"@unhead/dom@1.1.25":
+"@unhead/dom@1.1.25", "@unhead/dom@^1.1.23":
   version "1.1.25"
   resolved "https://registry.yarnpkg.com/@unhead/dom/-/dom-1.1.25.tgz#08b4809e8dc3a4f7daf4f54db326dffcd96a3c8e"
   integrity sha512-kJ5jhJFNQCyNENSw+mtmzgulA0kqUuXS3SRPl1umpofc8PH8tblSzXwqStxTj9r6E4wxJbEuygT/aHFJVioizw==
@@ -971,7 +971,7 @@
     "@unhead/schema" "1.1.25"
     "@unhead/shared" "1.1.25"
 
-"@unhead/schema@1.1.25":
+"@unhead/schema@1.1.25", "@unhead/schema@^1.1.23":
   version "1.1.25"
   resolved "https://registry.yarnpkg.com/@unhead/schema/-/schema-1.1.25.tgz#0fd0acfa1b3a672f235e41f0d2c4ba823af0ede5"
   integrity sha512-ygmaxWgGTAq9CcB6zGY4+0HlGdQt/oMq+CM18tTnvOBY0Og/uPGt7roW8eH717GpTPibKRTpagSYzZYdL0tWeg==
@@ -986,7 +986,7 @@
   dependencies:
     "@unhead/schema" "1.1.25"
 
-"@unhead/ssr@^1.1.25":
+"@unhead/ssr@^1.1.23", "@unhead/ssr@^1.1.25":
   version "1.1.25"
   resolved "https://registry.yarnpkg.com/@unhead/ssr/-/ssr-1.1.25.tgz#fc332c8e3c65d315b3a7357c7211659227cb2ae7"
   integrity sha512-2S3tiajy6n3D1WY2pVkRLr74WGaHD08w0+nFaQGNy0LszPlkWUuAmYYqDCXdh03ijEl+Tjwqjn+E9w1e3QakuQ==
@@ -994,7 +994,7 @@
     "@unhead/schema" "1.1.25"
     "@unhead/shared" "1.1.25"
 
-"@unhead/vue@^1.1.25":
+"@unhead/vue@^1.1.23", "@unhead/vue@^1.1.25":
   version "1.1.25"
   resolved "https://registry.yarnpkg.com/@unhead/vue/-/vue-1.1.25.tgz#ff9c603349ccb9f6a69e6ded1e4878566d5565f8"
   integrity sha512-ujincFHftg2N2i3G/gVkMyJ7CFzVyZ8SMb5cJCWZEnDBQGjgy3uvWT6EaM0d2jnaeXiYbB+iyY0O1o/H+XlpKQ==
@@ -1159,6 +1159,16 @@
     "@vueuse/metadata" "9.13.0"
     "@vueuse/shared" "9.13.0"
     vue-demi "*"
+
+"@vueuse/head@^1.1.23":
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/@vueuse/head/-/head-1.1.23.tgz#a94a4457aed0768d4e9a595097b9d1716a67962b"
+  integrity sha512-bJiiQXrICvCI740jR2CLK+FhXyvMx2dIfyeF3FdOsYJn6OtexdBI2wchyuKNYmiAQ8cibAHxmDUytAFqIdIRJg==
+  dependencies:
+    "@unhead/dom" "^1.1.23"
+    "@unhead/schema" "^1.1.23"
+    "@unhead/ssr" "^1.1.23"
+    "@unhead/vue" "^1.1.23"
 
 "@vueuse/metadata@9.13.0":
   version "9.13.0"
