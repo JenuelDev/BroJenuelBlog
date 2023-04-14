@@ -76,6 +76,7 @@ useHead({
 });
 
 defineOgImageStatic({
+    appName:"www.BroJenuel.com",
     component: "DefaultOgImage",
     path: route.path,
     title: "BroJenuel - Blog",
