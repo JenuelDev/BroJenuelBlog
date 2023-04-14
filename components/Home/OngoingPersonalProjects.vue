@@ -6,10 +6,10 @@ function aboutPersonalProject() {
 </script>
 <template>
     <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px py-40px">
-        <h2 class="mb-3 text-[var(--primary)]">
+        <div class="mb-3 text-[var(--primary)]">
             Ongoing Personal Projects
             <Icon @click="aboutPersonalProject" name="zondicons:information-solid" class="cursor-pointer" />
-        </h2>
+        </div>
         <div class="grid grid-cols-1 gap-3 px-20px">
             <NuxtLink
                 v-for="(work, i) in works"
