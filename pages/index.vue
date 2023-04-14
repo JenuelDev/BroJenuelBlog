@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const route = useRoute();
-const { setMeta } = useMeta();
+const { setMeta, googleStream } = useMeta();
 
 useHead({
     ...setMeta({
@@ -9,19 +9,21 @@ useHead({
             "Jenuel Ganawed is a software developer from the philippines. His passionate about coding, writing, and sharing what he know. Sharing about experiences, personal projects and articles about code, self-improvement, health, and more",
         path: route.path,
         keywords: ["brojenuel", "Jenuel", "Jenuel Ganawed", "bro jenuel", "web developer", "software developer"],
-        lang: "en"
-    })
+        lang: "en",
+    }),
+    ...(process.env.NODE_ENV != "development" ? googleStream() : {}),
 });
 
+defineOgImageStatic({
+    appName: "www.BroJenuel.com",
+    component: "DefaultOgImage",
+    path: route.path,
+    title: "BroJenuel",
+    description:
+        "Jenuel Ganawed is a software developer from the philippines. His passionate about coding, writing, and sharing what he know. Sharing about experiences, personal projects and articles about code, self-improvement, health, and more",
+});
 </script>
 <template>
-    <OgImageStatic
-        :path="route.path"
-        appName="www.BroJenuel.com"
-        component="DefaultOgImage"
-        description="Jenuel Ganawed is a software developer from the philippines. His passionate about coding, writing, and sharing what he know. Sharing about experiences, personal projects and articles about code, self-improvement, health, and more"
-        title="BroJenuel"
-    />
     <NuxtLayout>
         <HomeIntro />
         <HomeAboutMe />
