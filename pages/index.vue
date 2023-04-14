@@ -24,12 +24,15 @@ defineOgImageStatic({
 });
 </script>
 <template>
-    <NuxtLayout>
-        <HomeIntro />
-        <HomeAboutMe />
-        <HomeRecentArticles />
-        <HomeOngoingPersonalProjects />
-        <HomeSkills />
-        <HomeOffer />
+    <NuxtLayout name="nofooter">
+        <ClientOnly>
+            <HomeIntro />
+            <HomeAboutMe />
+            <HomeRecentArticles />
+            <HomeOngoingPersonalProjects />
+            <HomeSkills />
+            <HomeOffer />
+            <Footer />
+        </ClientOnly>
     </NuxtLayout>
 </template>
