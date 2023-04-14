@@ -10,6 +10,7 @@
         padding-left: 10px;
         padding-bottom: 20px;
         list-style-type: disc;
+
         a {
             position: relative;
             color: var(--primary);
@@ -46,7 +47,7 @@
     h3,
     h4,
     h5 {
-        font-family: kumbhsans;
+        font-family: kumbhsans, serif;
         margin-bottom: 15px;
         margin-top: 30px;
         position: relative;
@@ -109,7 +110,6 @@
 
         a {
             position: relative;
-            color: var(--color);
             font-style: italic;
             // font-weight: 700;
             color: var(--primary);
@@ -132,19 +132,21 @@
                 }
             }
         }
+
+        code {
+            background-color: var(--gray-light);
+            padding: 0 6px;
+            border-radius: 5px;
+            color: black;
+            font-size: 15px;
+        }
     }
 
     *::-webkit-scrollbar {
         height: 10px;
     }
 
-    code {
-        background-color: var(--gray-light);
-        padding: 0 6px;
-        border-radius: 5px;
-        color: black;
-        font-size: 15px;
-    }
+
 }
 
 .sepia {

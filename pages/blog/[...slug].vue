@@ -19,7 +19,7 @@ const oldCountViews: number =
 async function addViewCount() {
     const queryUpdate: any = {
         blogs_id: data?.value.id,
-        view_count: oldCountViews + 1,
+        view_count: oldCountViews + 1
     };
     await client.from("blog_meta").upsert(queryUpdate).select();
 }
@@ -33,14 +33,14 @@ useHead({
         lang: "en",
         ...(coverImageLink.value
             ? {
-                  image: coverImageLink.value,
-              }
-            : {}),
-    }),
+                image: coverImageLink.value
+            }
+            : {})
+    })
 });
 
 function commafy(num: number) {
-    var str = num.toString().split(".");
+    const str = num.toString().split(".");
     if (str[0].length >= 5) {
         str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1,");
     }
@@ -86,11 +86,11 @@ function share(social: string) {
 <template>
     <OgImageStatic
         v-if="!coverImageLink"
-        component="DefaultOgImage"
+        :description="data.summary"
         :path="route.path"
         :title="data.title"
-        :description="data.summary"
         appName="www.BroJenuel.com"
+        component="DefaultOgImage"
     />
     <NuxtLayout name="nosocial">
         <main class="pt-40px min-h-80vh">
@@ -103,9 +103,9 @@ function share(social: string) {
                             <button
                                 v-for="social in ['facebook', 'twitter', 'linkedin', 'copy']"
                                 :key="social"
+                                :title="social != 'Copy' ? `Share To ${social.toUpperCase()}` : 'Copy to Clipboard'"
                                 class="h-40px w-40px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"
                                 @click="share(social)"
-                                :title="social != 'Copy' ? `Share To ${social.toUpperCase()}` : 'Copy to Clipboard'"
                             >
                                 <Icon v-if="social == 'facebook'" name="ri:facebook-fill"></Icon>
                                 <Icon v-if="social == 'twitter'" name="mdi:twitter"></Icon>
@@ -130,14 +130,14 @@ function share(social: string) {
                                     <img
                                         :src="data.cover_img"
                                         alt=""
-                                        srcset=""
                                         class="float-left sm:w-450px w-full pr-20px pt-10px"
+                                        srcset=""
                                     />
                                 </template>
                                 <template v-else-if="data.cover_img && data.cover_img.indexOf('youtube') > -1">
                                     <iframe
-                                        class="float-left sm:w-450px sm:h-250px w-full h-300px pr-20px pt-10px"
                                         :src="data.cover_img"
+                                        class="float-left sm:w-450px sm:h-250px w-full h-300px pr-20px pt-10px"
                                     >
                                     </iframe>
                                 </template>
@@ -158,12 +158,12 @@ function share(social: string) {
                             </div>
                             <div class="text-lg opacity-70 mb-2">
                                 <span class="mr-10px">{{
-                                    $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
-                                }}</span>
+                                        $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
+                                    }}</span>
                                 <span><Icon name="ic:baseline-remove-red-eye" /> {{ commafy(oldCountViews) }}</span>
                             </div>
                         </div>
-                        <div class="max-w-600px lg:max-w-700px" v-if="!runtimeConfig.public.isDevelopment">
+                        <div v-if="!runtimeConfig.public.isDevelopment" class="max-w-600px lg:max-w-700px">
                             <ClientOnly>
                                 <GoogleAdsHorizontal />
                             </ClientOnly>
@@ -172,15 +172,16 @@ function share(social: string) {
                             class="content-render max-w-600px lg:max-w-700px mx-auto relative font-poly text-l md:text-xl pt-5"
                             v-html="data.content"
                         ></div>
-                        <ClientOnly v-if="!runtimeConfig.public.isDevelopment">
-                            <div class="max-w-600px mx-auto px-10px relative pb-5 mt-50px">
+                        <div v-if="!runtimeConfig.public.isDevelopment"
+                             class="max-w-600px mx-auto px-10px relative pb-5 mt-50px">
+                            <ClientOnly>
                                 <Disqus
                                     :identifier="`BroJenuel-${data.slug}`"
-                                    url="https://brojenuel.disqus.com"
                                     :title="data.title"
+                                    url="https://brojenuel.disqus.com"
                                 />
-                            </div>
-                        </ClientOnly>
+                            </ClientOnly>
+                        </div>
                     </div>
                 </div>
             </Transition>
