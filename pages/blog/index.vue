@@ -27,6 +27,14 @@ watch(
     }
 );
 
+watch(
+    () => route.query as any,
+    async (val: { search: string }) => {
+        filter.search = val.search;
+        await getBlogs(true);
+    }
+);
+
 async function getBlogs(isReset = false) {
     if (isReset) {
         blogsList.value = [];
@@ -50,6 +58,7 @@ async function getBlogs(isReset = false) {
 }
 
 await useAsyncData("blogs", async () => {
+    if (route.query.search) filter.search = route.query.search as any;
     await getBlogs();
 });
 
@@ -76,83 +85,16 @@ useHead({
 });
 
 defineOgImageStatic({
-    appName:"www.BroJenuel.com",
+    appName: "www.BroJenuel.com",
     component: "DefaultOgImage",
     path: route.path,
     title: "BroJenuel - Blog",
     description: "Learn programming tips, tricks, and best practices to make programming ",
 });
-
-const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
 </script>
 <template>
-    <NuxtLayout name="nosocial">
-        <div
-            class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px max-w-850px mx-auto mt-90px lg:px-0 sm:px-100px px-10px"
-        >
-            <Icon name="pajamas:project" />
-            Blog
-        </div>
-        <div
-            class="min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pt-10px pb-5 grid lg:grid-cols-12 grid-cols-1 gap-40px"
-        >
-            <div class="lg:col-span-3 col-span-11">
-                <div class="sticky pt-5 top-50px mx-auto bg-[var(--background)] z-99 w-full">
-                    <form @submit.prevent="getBlogs(true)" class="flex gap-7px">
-                        <input
-                            class="w-full shadow appearance-none border border-[var(--background)] rounded w-full py-2 px-3 text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)]"
-                            id="username"
-                            type="text"
-                            placeholder="Search..."
-                            v-model="filter.search"
-                        />
-                        <button
-                            type="submit"
-                            class="py-2 px-3 flex items-center justify-center bg-[var(--background-secondary)] rounded-sm cursor-pointer hover:bg-[var(--primary)] hover:text-[var(--background)]"
-                            name="search article"
-                            title="search articles"
-                        >
-                            <Icon name="ri:search-fill" />
-                        </button>
-                    </form>
-                    <div class="flex lg:flex-col justify-center flex-row mt-20px gap-1 flex-wrap">
-                        <button
-                            v-for="buttonFilter in buttonFilters"
-                            :key="buttonFilter"
-                            type="button"
-                            class="py-1 px-5 text-sm bg-[var(--background-secondary)] lg:w-full inline-block opacity-75 hover:opacity-100"
-                            :class="{
-                                '!bg-[var(--primary)] !text-[var(--background)]': filter.search == buttonFilter,
-                            }"
-                            @click="
-                                filter.search = buttonFilter;
-                                getBlogs(true);
-                            "
-                        >
-                            {{ buttonFilter }}
-                        </button>
-                    </div>
-                    <div
-                        class="text-center pt-20px pb-10px hover:text-[var(--primary)] hover:underline cursor-pointer"
-                        @click="
-                            filter.search = null;
-                            getBlogs(true);
-                        "
-                    >
-                        Clear Filters
-                    </div>
-                    <div class="text-center">
-                        <a
-                            class="text-size-10px hover:bg-[var(--primary)] hover:text-[var(--background)] px-3"
-                            href="/sitemap.xml"
-                            target="_blank"
-                        >
-                            SITEMAP
-                        </a>
-                    </div>
-                </div>
-            </div>
-
+    <NuxtLayout name="blogslayout">
+        <div class="mt-70px min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pt-10px pb-5 gap-20">
             <div class="sm:col-span-9 col-span-11">
                 <div ref="blogInfiniteScroll" class="grid grid-cols-1 gap-3 sm:pl-0 pl-20px" v-if="blogsList.length">
                     <NuxtLink
@@ -209,13 +151,13 @@ const buttonFilters = ["VueJS", "ReactJs", "SEO", "News", "Job", "Health"];
                         <div style="font-size: 50px">
                             <Icon name="svg-spinners:bars-scale-middle" />
                         </div>
-                        <h1>loading</h1>
+                        <div>loading</div>
                     </div>
                     <div v-else ref="blogInfiniteScrollRef" class="text-center text-[var(--primary)] pt-20px">
                         <div style="font-size: 50px">
                             <Icon name="wpf:empty-flag" />
                         </div>
-                        <h1>Oops! No More Data</h1>
+                        <div>Oops! No More Data</div>
                     </div>
                 </div>
             </div>

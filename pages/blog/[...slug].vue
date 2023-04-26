@@ -8,7 +8,7 @@ const runtimeConfig = useRuntimeConfig();
 const coverImageLink = ref<null | string>(null);
 
 const { data }: any = await useAsyncData("blog", async () => {
-    const { data }: any = await client.from("blogs").select(`*, blog_meta(*)`).eq("slug", slug).single();
+    const { data }: any = await client.from("blogs").select(`*, blog_meta(*)`).eq("slug", slug).eq("is_active", 1).single();
     coverImageLink.value = data.cover_img ?? null;
     return data;
 });
