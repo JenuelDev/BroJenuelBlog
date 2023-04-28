@@ -6,11 +6,14 @@
         <div class="pt-5 w-full max-w-550px mx-auto px-20px">
             <div class="pb-3">Welcome to my home on the internet! 👋</div>
             <div class="pb-3">
-                I'm a software engineer from Philippines. I'm passionate about coding, writing, and sharing what I know.
-            </div>
-            <div>
-                On this site I share my experiences, personal projects and articles about code, self-improvement,
-                health, and more.
+                I'm a Software Developer from Philippines, developing web apps, mobile apps and anything in between. I'm
+                passionate about coding, writing, and sharing what I know.
+                <NuxtLink
+                    href="/blog/Hi-I-am-Jenuel-Oras-Ganawed-BroJenuel-"
+                    title="Read More"
+                    class="text-[var(--primary)] hover:underline"
+                    >Read More...</NuxtLink
+                >
             </div>
         </div>
     </div>

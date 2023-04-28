@@ -92,7 +92,7 @@ function share(social: string) {
         appName="www.BroJenuel.com"
         component="DefaultOgImage"
     />
-    <NuxtLayout name="nosocial">
+    <NuxtLayout name="blogslayout">
         <main class="pt-40px min-h-80vh">
             <Transition>
                 <div v-show="showContent" class="pt-40px max-w-600px lg:max-w-800px mx-auto pb-5 md:flex">
