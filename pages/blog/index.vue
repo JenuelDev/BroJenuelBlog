@@ -13,7 +13,7 @@ const filter = reactive<{
     limit: 50,
     page: 1,
 });
-const loading = ref(false);
+const loading = ref(true);
 const blogsList: any = ref([]);
 const noMoreData = ref(false);
 
@@ -25,14 +25,6 @@ watch(
             filter.page += 1;
             getBlogs();
         }
-    }
-);
-
-watch(
-    () => route.query as any,
-    async (val: { search: string }) => {
-        filter.search = val.search;
-        await getBlogs(true);
     }
 );
 
@@ -93,76 +85,78 @@ defineOgImageStatic({
     component: "DefaultOgImage",
     path: route.path,
     title: "BroJenuel - Blog",
-    description: "Learn programming tips, tricks, and best practices to make programming ",
+    description:
+        "Learn programming tips, tricks, best practices to make programming and other information that will benefit you.",
 });
 </script>
 <template>
     <NuxtLayout name="blogslayout">
         <div class="mt-70px min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pt-10px pb-5 gap-20">
             <div class="sm:col-span-9 col-span-11">
-                <div ref="blogInfiniteScroll" class="grid grid-cols-1 gap-3 sm:pl-0 pl-20px" v-if="blogsList.length">
-                    <NuxtLink
-                        v-for="blog in blogsList"
-                        :key="blog.id"
-                        :href="`blog/${blog.slug}`"
-                        class="p-10px rounded-md transform translate-y-1 hover:translate-y-0 transition-transform cursor-pointer group hover:bg-[var(--background-secondary)] flex md:flex-row flex-col gap-3"
-                    >
-                        <div
-                            v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
-                            class="md:order-2 rounded-2xl overflow-hidden"
+                <div class="min-h-[100vh]">
+                    <div class="grid grid-cols-1 gap-3 sm:pl-0 pl-20px" v-if="blogsList.length">
+                        <NuxtLink
+                            v-for="blog in blogsList"
+                            :key="blog.id"
+                            :href="`blog/${blog.slug}`"
+                            class="p-10px rounded-md transform translate-y-1 hover:translate-y-0 transition-transform cursor-pointer group hover:bg-[var(--background-secondary)] flex md:flex-row flex-col gap-3"
                         >
-                            <img :src="blog.cover_img" class="float-right" />
-                        </div>
-                        <div class="relative group md:order-1">
                             <div
-                                class="absolute h-10px w-10px bg-gray-600 -left-5 group-hover:bg-[var(--primary)] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-lg delay top-[50%] transform translate-y-[-50%] translate-x-[-50%]"
-                            ></div>
-                            <div
-                                class="absolute h-1px w-1px group-hover:h-50px bg-[var(--primary)] transition-all duration-500 -left-5 top-[50%] opacity-0 group-hover:opacity-100 transform translate-y-[-50%] translate-x-[-50%]"
-                            ></div>
-                            <div class="absolute top-40%"></div>
-                            <div>
-                                <span class="group-hover:text-[var(--primary)] text-size-20px font-kumbhsans font-800">
-                                    {{ blog.title }}.
-                                </span>
-                                <span class="opacity-80 font-poly">{{ blog.summary }}</span>
+                                v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
+                                class="md:order-2 rounded-2xl overflow-hidden"
+                            >
+                                <img :src="blog.cover_img" class="float-right" />
                             </div>
-                            <div class="flex gap-2 my-1">
-                                <ul class="flex gap-1 flex-wrap text-size-13px">
-                                    <li v-for="tags in blog.tags" :key="tags" :class="`tag-${tags}`" class="tag">
-                                        #{{ tags }}
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <span class="italic font-500 opacity-50 whitespace-nowrap flex gap-20px">
-                                    {{ $dayjs(blog.created_at).format("MMM. DD, YYYY") }}
-                                    <span class="flex items-center gap-7px">
-                                        <Icon name="ic:baseline-remove-red-eye" />
-                                        {{ blog.blog_meta ? commafy(blog.blog_meta.view_count) : 0 }}
+                            <div class="relative group md:order-1">
+                                <div
+                                    class="absolute h-10px w-10px bg-gray-600 -left-5 group-hover:bg-[var(--primary)] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-lg delay top-[50%] transform translate-y-[-50%] translate-x-[-50%]"
+                                ></div>
+                                <div
+                                    class="absolute h-1px w-1px group-hover:h-50px bg-[var(--primary)] transition-all duration-500 -left-5 top-[50%] opacity-0 group-hover:opacity-100 transform translate-y-[-50%] translate-x-[-50%]"
+                                ></div>
+                                <div class="absolute top-40%"></div>
+                                <div>
+                                    <span
+                                        class="group-hover:text-[var(--primary)] text-size-20px font-kumbhsans font-800"
+                                    >
+                                        {{ blog.title }}.
                                     </span>
-                                </span>
+                                    <span class="opacity-80 font-poly">{{ blog.summary }}</span>
+                                </div>
+                                <div class="flex gap-2 my-1">
+                                    <ul class="flex gap-1 flex-wrap text-size-13px">
+                                        <li v-for="tags in blog.tags" :key="tags" :class="`tag-${tags}`" class="tag">
+                                            #{{ tags }}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <span class="italic font-500 opacity-50 whitespace-nowrap flex gap-20px">
+                                        {{ $dayjs(blog.created_at).format("MMM. DD, YYYY") }}
+                                        <span class="flex items-center gap-7px">
+                                            <Icon name="ic:baseline-remove-red-eye" />
+                                            {{ blog.blog_meta ? commafy(blog.blog_meta.view_count) : 0 }}
+                                        </span>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    </NuxtLink>
-                </div>
-                <div>
-                    <div
-                        v-if="!noMoreData || loading"
-                        ref="blogInfiniteScrollRef"
-                        class="text-center text-[var(--primary)] pt-20px"
-                    >
+                        </NuxtLink>
+                    </div>
+                    <div v-show="loading" class="text-center text-[var(--primary)] pt-20px">
                         <div style="font-size: 50px">
                             <Icon name="svg-spinners:bars-scale-middle" />
                         </div>
                         <div>loading</div>
                     </div>
-                    <div v-else ref="blogInfiniteScrollRef" class="text-center text-[var(--primary)] pt-20px">
+                </div>
+                <div ref="blogInfiniteScrollRef">
+                    <div v-show="noMoreData" class="text-center text-[var(--primary)] pt-20px">
                         <div style="font-size: 50px">
                             <Icon name="wpf:empty-flag" />
                         </div>
                         <div>Oops! No More Data</div>
                     </div>
+                    <div></div>
                 </div>
             </div>
         </div>
