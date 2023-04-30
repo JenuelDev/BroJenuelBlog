@@ -5,7 +5,7 @@ const { setMeta, googleStream } = useMeta();
 const blogInfiniteScrollRef = ref(null);
 const targetIsVisible = useElementVisibility(blogInfiniteScrollRef);
 const filter = reactive<{
-    search: null | string;
+    search: null | string | undefined;
     limit: number;
     page: number;
 }>({
@@ -13,6 +13,7 @@ const filter = reactive<{
     limit: 50,
     page: 1,
 });
+const loading = ref(false);
 const blogsList: any = ref([]);
 const noMoreData = ref(false);
 
@@ -47,11 +48,14 @@ async function getBlogs(isReset = false) {
     rangeFrom = rangeFrom > 0 ? rangeFrom + 1 : rangeFrom;
     let rangeTo = filter.page * filter.limit;
     let query = client.from("blogs").select(`*, blog_meta(*)`).eq("is_active", 1).order("id", { ascending: false });
+
     if (filter.search && filter.search != "") {
-        query.textSearch("content", `'${filter.search}'`);
+        query.textSearch("search_blogs", `'${filter.search}'`);
     }
 
+    loading.value = true;
     const { data }: any = await query.range(rangeFrom, rangeTo);
+    loading.value = false;
     if (data.length < filter.limit) noMoreData.value = true;
     blogsList.value = [...blogsList.value, ...(data as any)];
     return data;
@@ -144,7 +148,7 @@ defineOgImageStatic({
                 </div>
                 <div>
                     <div
-                        v-if="!noMoreData"
+                        v-if="!noMoreData || loading"
                         ref="blogInfiniteScrollRef"
                         class="text-center text-[var(--primary)] pt-20px"
                     >
