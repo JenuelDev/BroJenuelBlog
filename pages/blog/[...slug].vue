@@ -8,7 +8,12 @@ const runtimeConfig = useRuntimeConfig();
 const coverImageLink = ref<null | string>(null);
 
 const { data }: any = await useAsyncData("blog", async () => {
-    const { data }: any = await client.from("blogs").select(`*, blog_meta(*)`).eq("slug", slug).eq("is_active", 1).single();
+    const { data }: any = await client
+        .from("blogs")
+        .select(`*, blog_meta(*)`)
+        .eq("slug", slug)
+        .eq("is_active", 1)
+        .single();
     coverImageLink.value = data.cover_img ?? null;
     return data;
 });
@@ -19,12 +24,18 @@ const oldCountViews: number =
 async function addViewCount() {
     const queryUpdate: any = {
         blogs_id: data?.value.id,
-        view_count: oldCountViews + 1
+        view_count: oldCountViews + 1,
     };
     await client.from("blog_meta").upsert(queryUpdate).select();
 }
 
 useHead({
+    link: [
+        {
+            rel: "stylesheet",
+            href: "highlight.js/scss/agate.scss",
+        },
+    ],
     ...setMeta({
         title: data.value.title,
         description: data.value.summary,
@@ -33,10 +44,10 @@ useHead({
         lang: "en",
         ...(coverImageLink.value
             ? {
-                image: coverImageLink.value
-            }
-            : {})
-    })
+                  image: coverImageLink.value,
+              }
+            : {}),
+    }),
 });
 
 function commafy(num: number) {
@@ -149,7 +160,6 @@ function share(social: string) {
                             <div class="flex flex-wrap gap-3 mb-3">
                                 <div
                                     v-for="tags in data.tags"
-                                    :key="tags"
                                     :class="`tag-${tags}`"
                                     class="tag tag-sm !text-size-18px"
                                 >
@@ -158,8 +168,8 @@ function share(social: string) {
                             </div>
                             <div class="text-lg opacity-70 mb-2">
                                 <span class="mr-10px">{{
-                                        $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
-                                    }}</span>
+                                    $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
+                                }}</span>
                                 <span><Icon name="ic:baseline-remove-red-eye" /> {{ commafy(oldCountViews) }}</span>
                             </div>
                         </div>
@@ -172,8 +182,10 @@ function share(social: string) {
                             class="content-render max-w-600px lg:max-w-700px mx-auto relative font-poly text-l md:text-xl pt-5"
                             v-html="data.content"
                         ></div>
-                        <div v-if="!runtimeConfig.public.isDevelopment"
-                             class="max-w-600px mx-auto px-10px relative pb-5 mt-50px">
+                        <div
+                            v-if="!runtimeConfig.public.isDevelopment"
+                            class="max-w-600px mx-auto px-10px relative pb-5 mt-50px"
+                        >
                             <ClientOnly>
                                 <Disqus
                                     :identifier="`BroJenuel-${data.slug}`"

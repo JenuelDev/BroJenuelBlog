@@ -24,7 +24,7 @@ export default defineNuxtConfig({
             isDevelopment: process.env.IS_DEVELOPMENT,
         },
     },
-    css: ["@/assets/style/main.scss", "highlight.js/scss/agate.scss"],
+    css: ["@/assets/style/main.scss"],
     app: {
         head: {
             link: [
