@@ -14,7 +14,18 @@ const filter = reactive<{
     page: 1,
 });
 const loading = ref(true);
-const blogsList: any = ref([]);
+const blogsList = ref<
+    Array<{
+        id: string | number;
+        slug: string;
+        cover_img: string;
+        title: string;
+        summary: string;
+        tags: Array<any>;
+        created_at: string | number | null | undefined;
+        blog_meta: any;
+    }>
+>([]);
 const noMoreData = ref(false);
 
 watch(

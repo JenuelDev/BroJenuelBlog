@@ -12,13 +12,13 @@ function searchRoute() {
         <div
             class="fixed top-0 left-0 flex justify-between px-20px items-center transition-all dark:bg-[var(--opacity-background)] z-999 duration-300 w-full dark:shadow-md shadow-lg backdrop-filter backdrop-blur-sm bg-[var(--background)] w-full mx-auto flex flex-wrap justify-between items-center py-3 gap-10px"
         >
-            <NuxtLink href="/" class="flex items-center header-blog-title-logo">
-                <div class="font-800 text-size-20px flex items-center gap-7px lg:px-0 px-10px">
+            <NuxtLink href="/" class="flex">
+                <div class="flex items-center gap-7px lg:px-0 px-10px">
                     <Icon name="pajamas:project" class="text-[var(--primary)]" />
                     <div>
                         <span>Bro</span>
                         <span class="text-[var(--primary)] font-800">Jenuel</span>
-                        <span>.blog</span>
+                        <span>Blog</span>
                     </div>
                 </div>
             </NuxtLink>
