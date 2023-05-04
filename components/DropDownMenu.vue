@@ -19,7 +19,7 @@ const menus = [
         label: "Time Line",
     },
     {
-        path: "/#what-i-offer",
+        path: "/what-i-can-offer",
         icon: "mdi:offer",
         label: "What I Can Offer",
     },
@@ -44,7 +44,14 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
 </script>
 <template>
     <div ref="dropdownRef" class="relative inline-block text-left">
-        <button @click="show = !show" type="button" class="btn bg-[var(--background-secondary)] px-5px h-25px rounded-md" role="button" title="Menu Button" id="menu-button">
+        <button
+            @click="show = !show"
+            type="button"
+            class="btn bg-[var(--background-secondary)] px-5px h-25px rounded-md"
+            role="button"
+            title="Menu Button"
+            id="menu-button"
+        >
             <Icon name="mingcute:menu-fill" />
             Menu
         </button>

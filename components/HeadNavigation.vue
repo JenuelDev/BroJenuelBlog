@@ -2,7 +2,7 @@
     <div
         class="fixed top-0 left-0 flex justify-between px-20px items-center transition-all dark:bg-[var(--opacity-background)] z-999 duration-300 w-full h-50px dark:shadow-md shadow-lg backdrop-filter backdrop-blur-sm bg-[var(--background)]"
     >
-        <div class="w-full max-w-700px mx-auto flex justify-between items-center">
+        <div class="w-full mx-auto flex justify-between items-center">
             <NuxtLink href="/" class="flex items-center">
                 <IconLaptop class="mr-7px" />
                 <div>

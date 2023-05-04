@@ -80,6 +80,14 @@ watch(
                     <Icon name="teenyicons:pdf-outline" class="group-hover:animate-head-shake" />
                     My CV
                 </NuxtLink>
+                <NuxtLink
+                    href="/what-i-can-offer"
+                    class="btn btn-lg btn-filled sm:w-auto w-full group"
+                    title="My Resume"
+                >
+                    <Icon name="teenyicons:pdf-outline" class="group-hover:animate-head-shake" />
+                    What I Can Offer
+                </NuxtLink>
             </div>
             <SvgDotSquare
                 class="absolute md:right-0 md:visible invisible z-20 fill-[var(--primary)] opacity-50 w-70px"
