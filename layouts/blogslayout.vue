@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
 const search = ref(null);
+
 if (route.query.search) search.value = route.query.search as any;
 
 function searchRoute() {

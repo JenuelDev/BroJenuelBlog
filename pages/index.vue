@@ -22,15 +22,13 @@ useHead({
         appName="www.BroJenuel.com"
         component="DefaultOgImage"
     />
-    <NuxtLayout name="nofooter">
+    <NuxtLayout>
+        <HomeIntro />
+        <HomeAboutMe />
         <ClientOnly>
-            <HomeIntro />
-            <HomeAboutMe />
             <HomeRecentArticles />
-            <HomeOngoingPersonalProjects />
-            <HomeSkills />
-            <HomeOffer />
-            <Footer />
         </ClientOnly>
+        <HomeOngoingPersonalProjects />
+        <HomeSkills />
     </NuxtLayout>
 </template>

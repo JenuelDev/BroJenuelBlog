@@ -53,17 +53,17 @@ watch(
     </div>
 </template>
 <style lang="scss">
-.theme-button-enter-active,
-.theme-button-leave-active {
-    transition: all 0.5s ease;
-}
+// .theme-button-enter-active,
+// .theme-button-leave-active {
+//     transition: all 0.5s ease;
+// }
 
-.theme-button-enter-from {
-    transform: translateY(20px);
-    opacity: 0;
-}
-.theme-button-leave-to {
-    opacity: 0;
-    transform: translateY(-20px);
-}
+// .theme-button-enter-from {
+//     transform: translateY(20px);
+//     opacity: 0;
+// }
+// .theme-button-leave-to {
+//     opacity: 0;
+//     transform: translateY(-20px);
+// }
 </style>
