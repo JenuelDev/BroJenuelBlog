@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://brojenuel.com",
-            isDevelopment: process.env.IS_DEVELOPMENT,
+            isDevelopment: process.env.IS_DEVELOPMENT == 'TRUE',
         },
     },
     css: ["@/assets/style/main.scss"],
