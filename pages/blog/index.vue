@@ -50,7 +50,11 @@ async function getBlogs(isReset = false) {
     let rangeFrom = filter.page * filter.limit - filter.limit;
     rangeFrom = rangeFrom > 0 ? rangeFrom + 1 : rangeFrom;
     let rangeTo = filter.page * filter.limit;
-    let query = client.from("blogs").select(`*, blog_meta(*)`).eq("is_active", 1).order("id", { ascending: false });
+    let query = client
+        .from("blogs")
+        .select(`id, title, summary, slug, updated_at, cover_img, blog_meta(*), tags`)
+        .eq("is_active", 1)
+        .order("id", { ascending: false });
 
     if (filter.search && filter.search != "") {
         query.textSearch("search_blogs", `'${filter.search}'`);
