@@ -7,7 +7,7 @@ async function getBlogs() {
     loadingBlogs.value = true;
     let query: any = await client
         .from("blogs")
-        .select(`*, blog_meta(*)`)
+        .select(`title, summary, id, slug, updated_at`)
         .eq("is_active", 1)
         .order("id", { ascending: false })
         .limit(6);
