@@ -6,6 +6,7 @@ const slug = route.params.slug[0];
 const showContent = ref(false);
 const runtimeConfig = useRuntimeConfig();
 const coverImageLink = ref<null | string>(null);
+const { share } = useShareFunction();
 
 const { data }: any = await useAsyncData("blog", async () => {
     const { data }: any = await client
@@ -33,7 +34,7 @@ useHead({
     link: [
         {
             rel: "stylesheet",
-            href: "highlight.js/scss/agate.scss",
+            href: "/code-highlight/agate.css",
         },
     ],
     ...setMeta({
@@ -65,34 +66,6 @@ onMounted(() => {
     showContent.value = true;
     addViewCount();
 });
-
-function share(social: string) {
-    let url = "https://brojenuel.com" + route.fullPath;
-    if (social == "facebook") {
-        const navUrl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-        window.open(navUrl, "_blank");
-        return;
-    }
-
-    if (social == "twitter") {
-        const navUrl = "https://twitter.com/intent/tweet?text=" + url;
-        window.open(navUrl, "_blank");
-        return;
-    }
-
-    if (social == "linkedin") {
-        const navUrl = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
-        window.open(navUrl, "_blank");
-        return;
-    }
-
-    if (social == "copy") {
-        navigator.clipboard.writeText(url).then(() => {
-            alert("Link Copied.");
-        });
-        return;
-    }
-}
 </script>
 <template>
     <OgImageStatic
@@ -104,13 +77,23 @@ function share(social: string) {
         component="DefaultOgImage"
     />
     <NuxtLayout name="blogslayout">
-        <main class="pt-40px min-h-80vh">
+        <main class="pt-40px min-h-80vh md:px-50px px-10px">
             <Transition>
-                <div v-show="showContent" class="pt-40px max-w-600px lg:max-w-800px mx-auto pb-5 md:flex">
-                    <div class="sticky top-12 bottom-0 z-50 filter backdrop-filter backdrop-blur-sm">
+                <div
+                    v-show="showContent"
+                    class="md:pt-40px pt-120px w-full max-w-1000px mx-auto pb-5 grid grid-cols-6 gap-3"
+                >
+                    <div class="md:block hidden">
                         <div
-                            class="flex md:flex-col md:gap-2 gap-8 items-center md:sticky md:top-15 md:pr-20px md:justify-start justify-center md:h-auto h-50px"
+                            class="sticky top-15 sm:top-20 bottom-0 z-50 filter backdrop-filter backdrop-blur-sm flex flex-col items-end gap-3"
                         >
+                            <button
+                                title="Go back"
+                                class="h-40px w-40px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"
+                                @click="$router.back()"
+                            >
+                                <Icon name="material-symbols:arrow-back"></Icon>
+                            </button>
                             <button
                                 v-for="social in ['facebook', 'twitter', 'linkedin', 'copy']"
                                 :key="social"
@@ -125,7 +108,7 @@ function share(social: string) {
                             </button>
                         </div>
                     </div>
-                    <div>
+                    <div class="md:col-span-4 col-span-6">
                         <div class="mb-25px px-10px">
                             <h1 class="text-2xl lg:text-5xl md:text-4xl md:text-3xl font-700 pb-10px font-kumbhsans">
                                 {{ data.title }}
@@ -173,13 +156,13 @@ function share(social: string) {
                                 <span><Icon name="ic:baseline-remove-red-eye" /> {{ commafy(oldCountViews) }}</span>
                             </div>
                         </div>
-                        <div v-if="!runtimeConfig.public.isDevelopment" class="max-w-600px lg:max-w-700px">
+                        <div v-if="!runtimeConfig.public.isDevelopment" class="w-full">
                             <ClientOnly>
                                 <GoogleAdsHorizontal />
                             </ClientOnly>
                         </div>
                         <div
-                            class="content-render max-w-600px lg:max-w-700px mx-auto relative font-poly text-l md:text-xl pt-5"
+                            class="content-render mx-auto relative font-poly text-l md:text-xl pt-5"
                             v-html="data.content"
                         ></div>
                         <div
@@ -193,6 +176,21 @@ function share(social: string) {
                                     url="https://brojenuel.disqus.com"
                                 />
                             </ClientOnly>
+                        </div>
+                    </div>
+                    <div class="md:block hidden">
+                        <div
+                            class="sticky top-15 sm:top-20 max-w-700px bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex flex-col items-center"
+                        >
+                            <div class="mb-3">Hi! If you like this article and would like to give coffee.</div>
+                            <a class="" href="https://ko-fi.com/T6T5379QZ" target="_blank"
+                                ><img
+                                    height="36"
+                                    style="border: 0px; height: 30px"
+                                    src="/img/picture/kofi.webp"
+                                    border="0"
+                                    alt="Buy Me a Coffee at ko-fi.com"
+                            /></a>
                         </div>
                     </div>
                 </div>
