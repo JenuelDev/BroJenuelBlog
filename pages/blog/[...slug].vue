@@ -180,10 +180,11 @@ onMounted(() => {
                     </div>
                     <div class="md:block hidden">
                         <div
-                            class="sticky top-15 sm:top-20 max-w-700px bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex flex-col items-center"
+                            class="sticky top-15 sm:top-20 bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex flex-col items-center"
                         >
                             <div class="mb-3">Hi! If you like this article and would like to give coffee.</div>
-                            <a class="" href="https://ko-fi.com/T6T5379QZ" target="_blank"
+                            <img src="/img/blog/qrcode-donate.webp" alt="" srcset="" width="200" />
+                            <a class="mt-2" href="https://ko-fi.com/T6T5379QZ" target="_blank"
                                 ><img
                                     height="36"
                                     style="border: 0px; height: 30px"

@@ -9,6 +9,7 @@
         "nofooter",
         "nosocial",
         "offerlayout",
+        "qrcode",
         "vueuse"
     ]
 }

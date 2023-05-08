@@ -106,7 +106,9 @@ defineOgImageStatic({
 </script>
 <template>
     <NuxtLayout name="blogslayout">
-        <div class="mt-70px min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pt-10px pb-5 gap-20">
+        <div
+            class="mt-70px min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px md:pt-0px pt-90px pb-5 gap-20"
+        >
             <div class="sm:col-span-9 col-span-11">
                 <div class="min-h-[100vh]">
                     <div class="grid grid-cols-1 gap-3 sm:pl-0 pl-20px" v-if="blogsList.length">
