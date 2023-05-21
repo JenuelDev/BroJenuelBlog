@@ -1,9 +1,27 @@
 <script setup lang="ts">
 const route = useRoute();
 const search = ref(null);
+const category = ref(null);
 const colorMode = useColorMode();
 const theme = ref("");
 const { share } = useShareFunction();
+const frameworks = [
+    {
+        path: "/blog?cat=vuejs",
+        icon: "uil:vuejs-alt",
+        label: "Vue JS",
+    },
+    {
+        path: "/blog?cat=reactjs",
+        icon: "ri:reactjs-line",
+        label: "React JS",
+    },
+    {
+        path: "/blog?cat=angular",
+        icon: "ph:angular-logo-fill",
+        label: "Angular",
+    },
+];
 
 onMounted(() => (theme.value = colorMode.preference));
 
@@ -11,7 +29,9 @@ watch(
     () => colorMode.value,
     (val) => (theme.value = val)
 );
+
 if (route.query.search) search.value = route.query.search as any;
+if (route.query.category) category.value = route.query.category as any;
 
 function searchRoute() {
     location.href = `/blog?search=${search.value}`;
@@ -33,11 +53,37 @@ function searchRoute() {
                         </div>
                     </div>
                 </NuxtLink>
+            </div>
+            <div class="flex gap-10px flex-wrap justify-end items-center">
+                <DropMenu v-if="false" label="Framework" :menuOptions="frameworks" />
+                <DropMenu v-if="false" label="Browser" :menuOptions="frameworks" />
+
+                <div class="flex gap-10px">
+                    <form @submit.prevent="searchRoute" class="flex items-center">
+                        <input
+                            class="w-full shadow appearance-none border border-[var(--background)] rounded w-full text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:px-3 h-40px"
+                            type="text"
+                            placeholder="Search..."
+                            v-model="search"
+                        />
+                        <button
+                            type="submit"
+                            class="w-full shadow appearance-none border border-[var(--background)] rounded text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:w-30px w-40px h-40px flex items-center justify-center"
+                            name="search article"
+                            title="search articles"
+                        >
+                            <Icon name="ri:search-fill" />
+                        </button>
+                    </form>
+                    <div class="mt-2px">
+                        <ThemeChangerButton />
+                    </div>
+                </div>
                 <NuxtLink href="/">
                     <button
                         type="button"
                         @click="$colorMode.preference = 'dark'"
-                        class="w-25px h-25px rounded-md flex items-center justify-center transition-all duration-500"
+                        class="lg:w-25px lg:h-25px w-40px h-40px rounded-md flex items-center justify-center transition-all duration-500"
                         :class="{
                             'bg-yellow-50 text-[var(--background)]': theme == 'dark',
                             'bg-[#0a192f] text-light-50': theme == 'light',
@@ -51,29 +97,7 @@ function searchRoute() {
                     </button>
                 </NuxtLink>
             </div>
-            <div class="flex gap-10px">
-                <form @submit.prevent="searchRoute" class="flex items-center">
-                    <input
-                        class="w-full shadow appearance-none border border-[var(--background)] rounded w-full text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] h-30px px-3"
-                        type="text"
-                        placeholder="Search..."
-                        v-model="search"
-                    />
-                    <button
-                        type="submit"
-                        class="w-full shadow appearance-none border border-[var(--background)] rounded text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] h-30px w-30px flex items-center justify-center"
-                        name="search article"
-                        title="search articles"
-                    >
-                        <Icon name="ri:search-fill" />
-                    </button>
-                </form>
-
-                <div class="mt-2px">
-                    <ThemeChangerButton />
-                </div>
-            </div>
-            <div class="flex gap-2 md:hidden block">
+            <div class="flex gap-2 md:hidden block" :class="{ hidden: $route.path == '/blog' }">
                 <button
                     title="Go back"
                     class="h-40px w-40px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"

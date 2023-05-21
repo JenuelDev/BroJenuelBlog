@@ -11,8 +11,8 @@
                 </div>
             </NuxtLink>
 
-            <div class="flex gap-3 pr-20px">
-                <div><DropDownMenu /></div>
+            <div class="flex gap-3 items-center">
+                <DropDownMenu />
                 <ThemeChangerButton />
             </div>
         </div>

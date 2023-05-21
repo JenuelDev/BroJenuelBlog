@@ -8,10 +8,12 @@ const filter = reactive<{
     search: null | string | undefined;
     limit: number;
     page: number;
+    cat: null | string | undefined;
 }>({
     search: null,
     limit: 50,
     page: 1,
+    cat: null,
 });
 const loading = ref(true);
 const blogsList = ref<
@@ -60,16 +62,24 @@ async function getBlogs(isReset = false) {
         query.textSearch("search_blogs", `'${filter.search}'`);
     }
 
+    if (filter.cat && filter.cat != "") {
+        // query.textSearch("keywords", `'${filter.cat}'`);
+        query.containedBy("keywords", [`${filter.cat}`]);
+    }
+
     loading.value = true;
-    const { data }: any = await query.range(rangeFrom, rangeTo);
+    const { data } = await query.range(rangeFrom, rangeTo);
+
     loading.value = false;
-    if (data.length < filter.limit) noMoreData.value = true;
+    if ((data as any).length < filter.limit) noMoreData.value = true;
     blogsList.value = [...blogsList.value, ...(data as any)];
     return data;
 }
 
 await useAsyncData("blogs", async () => {
     if (route.query.search) filter.search = route.query.search as any;
+    if (route.query.cat) filter.cat = route.query.cat as any;
+
     await getBlogs();
 });
 

@@ -3,6 +3,33 @@ import { useMainStore } from "~/store/mainStore";
 const mainStore = useMainStore();
 const socialRef = ref(null);
 const isTargetVisible = useElementVisibility(socialRef);
+const ShortcutButtons = [
+    {
+        path: "/TimeLine",
+        label: "Experience",
+        icon: "mdi:chart-timeline",
+    },
+    {
+        path: "/my-work",
+        label: "Projects",
+        icon: "pajamas:project",
+    },
+    {
+        path: "/blog",
+        label: "Blog",
+        icon: "fluent-mdl2:blog",
+    },
+    {
+        path: "/resume",
+        label: "My CV",
+        icon: "teenyicons:pdf-outline",
+    },
+    {
+        path: "/what-i-can-offer",
+        label: "What I can Offer",
+        icon: "teenyicons:pdf-outline",
+    },
+];
 
 watch(
     () => isTargetVisible.value,
@@ -12,27 +39,27 @@ watch(
 <template>
     <section class="flex items-center justify-center px-20px pt-20px relative mt-100px">
         <div class="relative flex flex-col items-center gap-20px relative">
-            <div class="flex gap-5 sm:flex-row flex-col items-center z-99">
+            <div class="flex gap-5 sm:flex-row flex-col items-center z-99 mb-3">
                 <div
-                    class="rounded-3xl hover:rounded-2xl overflow-hidden opacity-70 relative hover:opacity-100 transition-all duration-300 border-5 border-opacity-0 border-light-50 hover:border-[var(--primary)] h-170px w-165px sm:order-2 order-1"
+                    class="rounded-3xl hover:rounded-2xl overflow-hidden opacity-70 relative hover:opacity-100 transition-all duration-300 border-5 border-opacity-0 border-light-50 hover:border-[var(--primary)] md:h-170px md:w-165px sm:order-2 order-1 w-300px h-300px"
                 >
                     <img
                         src="https://i.imgur.com/3iN1kQym.jpg"
-                        class="absolute left-0 top-0 transform rotate-0 hover:rotate-25 transition-all duration-300 scale-100 hover:scale-150 hover:top-20px hover:left-[-20px]"
+                        class="absolute left-0 top-0 transform rotate-0 hover:rotate-25 transition-all duration-300 scale-100 hover:scale-150 hover:top-20px hover:left-[-20px] w-full"
                         alt="Bro Jenuel Profile"
                     />
                 </div>
                 <div class="sm:text-right text-center sm:order-1 order-2">
-                    <div class="lg:text-size-33px md:text-size-36px text-size-26px font-300 tracking-tight">
-                        hi! <span class="animate-wave lg:text-size-54px md:text-size-46px text-size-30px">👋</span>
+                    <div class="lg:text-size-33px md:text-size-36px text-size-36px font-300 tracking-tight">
+                        hi! <span class="animate-wave lg:text-size-54px md:text-size-46px text-size-60px">👋</span>
                     </div>
                     <div
-                        class="lg:text-size-40px md:text-size-29px text-size-25px font-600 tracking-tight mt-10px text-[var(--primary)]"
+                        class="lg:text-size-40px md:text-size-29px text-size-55px font-600 tracking-tight mt-10px text-[var(--primary)]"
                     >
                         I'm <span> Jenuel</span>
                     </div>
                     <div
-                        class="lg:text-size-33px md:text-size-25px text-size-20px font-300 tracking-tight md:w-250px w-150px"
+                        class="lg:text-size-33px md:text-size-25px text-size-33px font-300 tracking-tight md:w-250px w-full"
                     >
                         i create apps and websites
                     </div>
@@ -40,7 +67,7 @@ watch(
             </div>
 
             <div class="bg-[var(--background-secondary)] w-full p-10px rounded-lg z-99">
-                <div ref="socialRef" class="flex gap-10px justify-center flex-wrap">
+                <div ref="socialRef" class="flex md:gap-10px gap-30px justify-center flex-wrap">
                     <template v-for="social in mainStore.mySocial" :key="social.title">
                         <a
                             v-if="!social.isNuxtLink"
@@ -64,29 +91,15 @@ watch(
                 </div>
             </div>
             <div class="flex justify-center gap-3 sm:flex-row flex-col sm:w-auto w-full">
-                <NuxtLink href="/TimeLine" class="btn btn-lg btn-filled sm:w-auto w-full group" title="My Time Line">
-                    <Icon name="mdi:chart-timeline" class="group-hover:animate-head-shake" />
-                    Experience
-                </NuxtLink>
-                <NuxtLink href="/my-work" class="btn btn-lg btn-filled sm:w-auto w-full group" title="My Work">
-                    <Icon name="pajamas:project" class="group-hover:animate-head-shake" />
-                    Projects
-                </NuxtLink>
-                <NuxtLink href="/blog" class="btn btn-lg btn-filled sm:w-auto w-full group" title="My Blog">
-                    <Icon name="fluent-mdl2:blog" class="group-hover:animate-head-shake" />
-                    Blog
-                </NuxtLink>
-                <NuxtLink href="/resume" class="btn btn-lg btn-filled sm:w-auto w-full group" title="My Resume">
-                    <Icon name="teenyicons:pdf-outline" class="group-hover:animate-head-shake" />
-                    My CV
-                </NuxtLink>
                 <NuxtLink
-                    href="/what-i-can-offer"
-                    class="btn btn-lg btn-filled sm:w-auto w-full group"
-                    title="My Resume"
+                    v-for="shortCutButton in ShortcutButtons"
+                    :key="shortCutButton.path"
+                    :href="shortCutButton.path"
+                    class="btn btn-lg btn-filled sm:w-auto w-full group md:text-size-18px text-size-20px"
+                    title="My Time Line"
                 >
-                    <Icon name="teenyicons:pdf-outline" class="group-hover:animate-head-shake" />
-                    What I Can Offer
+                    <Icon :name="shortCutButton.icon" class="group-hover:animate-head-shake" />
+                    {{ shortCutButton.label }}
                 </NuxtLink>
             </div>
             <SvgDotSquare
