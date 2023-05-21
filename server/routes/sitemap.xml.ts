@@ -7,19 +7,19 @@ const domain = "https://brojenuel.com";
 const pages = [
     {
         url: domain + "/timeline",
-        lastmod: "2023-02-17",
+        lastmod: "2023-04-17",
     },
     {
         url: domain + "/contact",
-        lastmod: "2023-02-17",
+        lastmod: "2023-04-17",
     },
     {
         url: domain + "/my-work",
-        lastmod: "2023-02-17",
+        lastmod: "2023-04-17",
     },
     {
         url: domain + "/blog",
-        lastmod: "2023-02-17",
+        lastmod: "2023-04-17",
     },
 ];
 

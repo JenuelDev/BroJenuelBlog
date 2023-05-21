@@ -32,7 +32,7 @@ async function submitMail() {
         form.subject = null;
         form.message = "";
     } catch (e) {
-        console.log(e);
+        alert("sending email error!..");
     }
     isLoading.value = false;
 }
@@ -68,7 +68,10 @@ defineOgImageStatic({
                         Contact
                     </div>
                     <div class="pt-5">
-                        <div class="indent-md">I am currently looking for Job. If you have other request or offer, don't hesitate to contact me using the form bellow.</div>
+                        <div class="indent-md">
+                            I am currently looking for Job. If you have other request or offer, don't hesitate to
+                            contact me using the form bellow.
+                        </div>
                     </div>
                     <form class="pt-5" @submit.prevent="submitMail()">
                         <input

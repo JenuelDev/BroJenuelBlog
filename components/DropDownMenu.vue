@@ -43,17 +43,29 @@ const menus = [
 onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : false));
 </script>
 <template>
-    <div ref="dropdownRef" class="relative inline-block text-left">
+    <div class="dropdown-menu lg:flex hidden">
+        <NuxtLink
+            v-for="menu in menus"
+            :key="menu.path"
+            @click="show = false"
+            :href="menu.path"
+            class="block px-1 py-1 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
+            :class="{ '!text-[var(--primary)]': route.path == menu.path }"
+        >
+            <Icon class="text-size-20px" :name="menu.icon" />
+            {{ menu.label }}
+        </NuxtLink>
+    </div>
+    <div ref="dropdownRef" class="relative inline-block text-left lg:hidden">
         <button
             @click="show = !show"
             type="button"
-            class="btn bg-[var(--background-secondary)] px-5px h-25px rounded-md"
+            class="btn bg-[var(--background-secondary)] h-40px !px-3 rounded-md"
             role="button"
             title="Menu Button"
             id="menu-button"
         >
             <Icon name="mingcute:menu-fill" />
-            Menu
         </button>
         <Transition name="dropdown">
             <div
