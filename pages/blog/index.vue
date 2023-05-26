@@ -15,6 +15,7 @@ const filter = reactive<{
     page: 1,
     cat: null,
 });
+const category = computed(() => filter.cat);
 const loading = ref(true);
 const blogsList = ref<
     Array<{
@@ -29,6 +30,23 @@ const blogsList = ref<
     }>
 >([]);
 const noMoreData = ref(false);
+const frameworks = [
+    {
+        key: "vuejs",
+        icon: "uil:vuejs-alt",
+        label: "Vue JS",
+    },
+    {
+        key: "reactjs",
+        icon: "ri:reactjs-line",
+        label: "React JS",
+    },
+    {
+        key: "angular",
+        icon: "ph:angular-logo-fill",
+        label: "Angular",
+    },
+];
 
 watch(
     () => targetIsVisible.value,
@@ -38,6 +56,13 @@ watch(
             filter.page += 1;
             getBlogs();
         }
+    }
+);
+
+watch(
+    () => category.value,
+    (v) => {
+        getBlogs(true);
     }
 );
 
@@ -63,8 +88,7 @@ async function getBlogs(isReset = false) {
     }
 
     if (filter.cat && filter.cat != "") {
-        // query.textSearch("keywords", `'${filter.cat}'`);
-        query.containedBy("keywords", [`${filter.cat}`]);
+        query.textSearch("search_blogs", `'${filter.cat}'`);
     }
 
     loading.value = true;
@@ -79,8 +103,6 @@ async function getBlogs(isReset = false) {
 await useAsyncData("blogs", async () => {
     if (route.query.search) filter.search = route.query.search as any;
     if (route.query.cat) filter.cat = route.query.cat as any;
-
-    await getBlogs();
 });
 
 function commafy(num: number) {
@@ -113,12 +135,42 @@ defineOgImageStatic({
     description:
         "Learn programming tips, tricks, best practices to make programming and other information that will benefit you.",
 });
+
+function searchRoute() {
+    getBlogs(true);
+}
 </script>
 <template>
-    <NuxtLayout name="blogslayout">
+    <NuxtLayout name="nofooter">
         <div
             class="mt-70px min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px md:pt-0px pt-90px pb-5 gap-20"
         >
+            <div class="mb-5">
+                <div class="flex justify-between">
+                    <div>
+                        <span class="text-[var(--primary)] font-800">Blogs</span>
+                    </div>
+                    <form @submit.prevent="searchRoute" class="flex items-center mb-1">
+                        <input
+                            class="w-full shadow appearance-none border border-[var(--background)] rounded w-full dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:px-3 h-40px"
+                            type="text"
+                            placeholder="Search..."
+                            v-model="filter.search"
+                        />
+                        <button
+                            type="submit"
+                            class="w-full shadow appearance-none border border-[var(--background)] rounded dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:w-50px w-40px h-40px flex items-center justify-center"
+                            name="search article"
+                            title="search articles"
+                        >
+                            <Icon name="ri:search-fill" />
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <DropMenu label="Framework" :menuOptions="frameworks" v-model="filter.cat" />
+                </div>
+            </div>
             <div class="sm:col-span-9 col-span-11">
                 <div class="min-h-[100vh]">
                     <div class="grid grid-cols-1 gap-3 sm:pl-0 pl-20px" v-if="blogsList.length">

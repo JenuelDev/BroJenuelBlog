@@ -55,8 +55,8 @@ function searchRoute() {
                 </NuxtLink>
             </div>
             <div class="flex gap-10px flex-wrap justify-end items-center">
-                <DropMenu v-if="false" label="Framework" :menuOptions="frameworks" />
-                <DropMenu v-if="false" label="Browser" :menuOptions="frameworks" />
+                <DropMenu label="Framework" :menuOptions="frameworks" />
+                <DropMenu label="Browser" :menuOptions="frameworks" />
 
                 <div class="flex gap-10px">
                     <form @submit.prevent="searchRoute" class="flex items-center">

@@ -43,7 +43,7 @@ const menus = [
 onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : false));
 </script>
 <template>
-    <div class="dropdown-menu lg:flex hidden">
+    <div class="dropdown-menu lg:flex gap-1 hidden">
         <NuxtLink
             v-for="menu in menus"
             :key="menu.path"

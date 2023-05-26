@@ -76,7 +76,7 @@ onMounted(() => {
         appName="www.BroJenuel.com"
         component="DefaultOgImage"
     />
-    <NuxtLayout name="blogslayout">
+    <NuxtLayout name="nofooter">
         <main class="pt-40px min-h-80vh md:px-50px px-10px">
             <Transition>
                 <div
