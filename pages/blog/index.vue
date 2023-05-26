@@ -15,6 +15,7 @@ const filter = reactive<{
     page: 1,
     cat: null,
 });
+const mounted = false;
 const category = computed(() => filter.cat);
 const loading = ref(true);
 const blogsList = ref<
@@ -59,13 +60,6 @@ watch(
     }
 );
 
-watch(
-    () => category.value,
-    (v) => {
-        getBlogs(true);
-    }
-);
-
 async function getBlogs(isReset = false) {
     if (isReset) {
         blogsList.value = [];
@@ -103,7 +97,7 @@ async function getBlogs(isReset = false) {
 await useAsyncData("blogs", async () => {
     if (route.query.search) filter.search = route.query.search as any;
     if (route.query.cat) filter.cat = route.query.cat as any;
-    if (route.query.search || route.query.cat) getBlogs(true);
+    await getBlogs(true);
 });
 
 function commafy(num: number) {
@@ -169,7 +163,7 @@ function searchRoute() {
                     </form>
                 </div>
                 <div>
-                    <DropMenu label="Framework" :menuOptions="frameworks" v-model="filter.cat" />
+                    <DropMenu label="Framework" :menuOptions="frameworks" v-model="filter.cat" @change="searchRoute" />
                 </div>
             </div>
             <div class="sm:col-span-9 col-span-11">
