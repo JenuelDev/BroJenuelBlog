@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+onMounted(() => {
+    var style = "color: tomato; background:#eee; -webkit-text-stroke: 1px black; font-size:30px;";
+    console.log("%cHi!, I am Happy 😆 to have you visit my home in the internet.", style);
+});
+</script>
 <template>
     <NuxtLoadingIndicator />
     <NuxtPage />
