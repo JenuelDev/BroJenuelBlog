@@ -8,15 +8,13 @@ const filter = reactive<{
     search: null | string | undefined;
     limit: number;
     page: number;
-    cat: null | string | undefined;
+    cat: string | undefined;
 }>({
     search: null,
-    limit: 50,
+    limit: 15,
     page: 1,
-    cat: null,
+    cat: undefined,
 });
-const mounted = false;
-const category = computed(() => filter.cat);
 const loading = ref(true);
 const blogsList = ref<
     Array<{
@@ -34,7 +32,7 @@ const noMoreData = ref(false);
 const frameworks = [
     {
         key: "vuejs",
-        icon: "uil:vuejs-alt",
+        icon: "logos:vue",
         label: "Vue JS",
     },
     {
@@ -46,6 +44,52 @@ const frameworks = [
         key: "angular",
         icon: "ph:angular-logo-fill",
         label: "Angular",
+    },
+    {
+        key: "laravel",
+        icon: "devicon:laravel",
+        label: "Laravel",
+    },
+];
+
+const otherCategories = [
+    {
+        key: "earn",
+        icon: "streamline:money-cash-search-dollar-search-pay-product-currency-query-magnifying-cash-business-money-glass",
+        label: "Earn/Earn Online",
+    },
+    {
+        key: "ai",
+        icon: "icon-park-outline:reverse-operation-in",
+        label: "AI",
+    },
+    {
+        key: "health",
+        icon: "twemoji:red-heart",
+        label: "Health",
+    },
+];
+
+const ToolCategories = [
+    {
+        key: "javascript",
+        icon: "logos:javascript",
+        label: "JavaScript",
+    },
+    {
+        key: "html",
+        icon: "skill-icons:html",
+        label: "HTML",
+    },
+    {
+        key: "css",
+        icon: "skill-icons:css",
+        label: "CSS",
+    },
+    {
+        key: "php",
+        icon: "logos:php",
+        label: "PHP",
     },
 ];
 
@@ -82,7 +126,7 @@ async function getBlogs(isReset = false) {
     }
 
     if (filter.cat && filter.cat != "") {
-        query.textSearch("search_blogs", `'${filter.cat}'`);
+        query.textSearch("keywords_str", `'${filter.cat}'`);
     }
 
     loading.value = true;
@@ -146,12 +190,23 @@ function searchRoute() {
                         <span class="text-[var(--primary)] font-800">Blogs</span>
                     </div>
                     <form @submit.prevent="searchRoute" class="flex items-center mb-1">
-                        <input
-                            class="w-full shadow appearance-none border border-[var(--background)] rounded w-full dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:px-3 h-40px"
-                            type="text"
-                            placeholder="Search..."
-                            v-model="filter.search"
-                        />
+                        <div class="relative">
+                            <input
+                                class="w-full shadow appearance-none border border-[var(--background)] rounded w-full dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:px-3 h-40px"
+                                type="text"
+                                placeholder="Search..."
+                                v-model="filter.search"
+                            />
+                            <Icon
+                                v-if="filter.search"
+                                class="absolute right-5px top-6px cursor-pointer"
+                                name="material-symbols:cancel"
+                                @click="
+                                    filter.search = null;
+                                    searchRoute();
+                                "
+                            />
+                        </div>
                         <button
                             type="submit"
                             class="w-full shadow appearance-none border border-[var(--background)] rounded dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:w-50px w-40px h-40px flex items-center justify-center"
@@ -162,8 +217,28 @@ function searchRoute() {
                         </button>
                     </form>
                 </div>
-                <div>
-                    <DropMenu label="Framework" :menuOptions="frameworks" v-model="filter.cat" @change="searchRoute" />
+                <div class="flex gap-10px">
+                    <DropMenu
+                        label="Framework"
+                        :menuOptions="frameworks"
+                        v-model="filter.cat"
+                        @change="searchRoute"
+                        position="right"
+                    />
+                    <DropMenu
+                        label="Tools"
+                        :menuOptions="ToolCategories"
+                        v-model="filter.cat"
+                        @change="searchRoute"
+                        position="right"
+                    />
+                    <DropMenu
+                        label="Others"
+                        :menuOptions="otherCategories"
+                        v-model="filter.cat"
+                        @change="searchRoute"
+                        position="right"
+                    />
                 </div>
             </div>
             <div class="sm:col-span-9 col-span-11">
