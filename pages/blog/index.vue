@@ -63,6 +63,11 @@ const otherCategories = [
         icon: "icon-park-outline:reverse-operation-in",
         label: "AI",
     },
+    {
+        key: "health",
+        icon: "twemoji:red-heart",
+        label: "Health",
+    },
 ];
 
 const ToolCategories = [
@@ -121,7 +126,7 @@ async function getBlogs(isReset = false) {
     }
 
     if (filter.cat && filter.cat != "") {
-        query.textSearch("search_blogs", `'${filter.cat}'`);
+        query.textSearch("keywords_str", `'${filter.cat}'`);
     }
 
     loading.value = true;
