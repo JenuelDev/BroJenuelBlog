@@ -103,6 +103,7 @@ async function getBlogs(isReset = false) {
 await useAsyncData("blogs", async () => {
     if (route.query.search) filter.search = route.query.search as any;
     if (route.query.cat) filter.cat = route.query.cat as any;
+    if (route.query.search || route.query.cat) getBlogs(true);
 });
 
 function commafy(num: number) {
