@@ -33,7 +33,6 @@ function selectKey(menu: MenuTypeItem) {
     }
 
     const newUrl = r.href;
-    console.log(history.state);
     window.history.pushState(
         {
             current: `/blog?cat=${menu.key}`,
@@ -42,8 +41,6 @@ function selectKey(menu: MenuTypeItem) {
         newUrl
     );
     emit("change", valueKey.value);
-    // emit("update:modelValue", valueKey.value);
-    // window.location.href = `/blog?cat=${valueKey.value}`;
 }
 onClickOutside(dropdownRef, () => (showMenu.value = showMenu.value == true ? false : false));
 </script>
