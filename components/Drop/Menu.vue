@@ -41,7 +41,8 @@ function selectKey(menu: MenuTypeItem) {
         "",
         newUrl
     );
-    emit("update:modelValue", valueKey.value);
+    emit("change", valueKey.value);
+    // emit("update:modelValue", valueKey.value);
     // window.location.href = `/blog?cat=${valueKey.value}`;
 }
 onClickOutside(dropdownRef, () => (showMenu.value = showMenu.value == true ? false : false));
