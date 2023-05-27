@@ -68,6 +68,16 @@ const otherCategories = [
         icon: "twemoji:red-heart",
         label: "Health",
     },
+    {
+        key: "software",
+        icon: "material-symbols:app-badging",
+        label: "Software",
+    },
+    {
+        key: "productivity",
+        icon: "bi:tools",
+        label: "Productivity",
+    },
 ];
 
 const ToolCategories = [
