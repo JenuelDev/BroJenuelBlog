@@ -34,4 +34,11 @@ export default defineNuxtConfig({
             ],
         },
     },
+    vite: {
+        server: {
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            }
+        }
+    }
 });
