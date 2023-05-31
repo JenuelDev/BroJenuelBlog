@@ -1,8 +1,9 @@
 import { serverSupabaseClient } from "#supabase/server";
 
 export default defineEventHandler(async (event) => {
-    let limit = 100;
     const query = getQuery(event);
+
+    let limit = 100;
 
     if (query.limit) {
         try {
@@ -15,24 +16,27 @@ export default defineEventHandler(async (event) => {
         }
     }
 
-    const articles = [];
-
     const client = serverSupabaseClient(event);
-    const { data, error } = await client.from("blogs").select().order("id", { ascending: false }).eq("is_active", 1).limit(limit);
+    let clientQuery = client
+        .from("blogs")
+        .select(`id, title, summary, slug, updated_at, cover_img, blog_meta(*), tags`)
+        .eq("is_active", 1)
+        .order("id", { ascending: false })
+        .limit(limit);
+
+    if (query.search && query.search != "") {
+        clientQuery.textSearch("search_blogs", `'${query.search}'`);
+    }
+
+    if (query.cat && query.cat != "") {
+        clientQuery.textSearch("keywords_str", `'${query.cat}'`);
+    }
+
+    const { data, error } = await clientQuery;
 
     if (error) {
         return error.message;
     }
 
-    for (const doc of data as any) {
-        articles.push({
-            title: doc.title ?? "-",
-            url: `https://brojenuel.com/blog/${doc.slug}`,
-            date: doc.updated_at,
-            description: doc.summary,
-            cover_img: doc.cover_img
-        });
-    }
-
-    return articles;
+    return data;
 });
