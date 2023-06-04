@@ -50,6 +50,11 @@ const frameworks = [
         icon: "devicon:laravel",
         label: "Laravel",
     },
+    {
+        key: "electron",
+        icon: "skill-icons:electron",
+        label: "Electron",
+    },
 ];
 
 const otherCategories = [
