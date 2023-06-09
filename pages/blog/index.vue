@@ -267,9 +267,9 @@ function searchRoute() {
                         >
                             <div
                                 v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
-                                class="md:order-2 rounded-2xl overflow-hidden"
+                                class="md:order-2 md:max-w-350px overflow-hidden"
                             >
-                                <img :src="blog.cover_img" class="float-right" />
+                                <img :src="blog.cover_img" class="float-right rounded-2xl" />
                             </div>
                             <div class="relative group md:order-1">
                                 <div
