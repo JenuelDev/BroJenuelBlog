@@ -8,15 +8,21 @@ const runtimeConfig = useRuntimeConfig();
 const coverImageLink = ref<null | string>(null);
 const { share } = useShareFunction();
 
-const { data }: any = await useAsyncData("blog", async () => {
+const { data } = await useAsyncData("blog", async () => {
     const { data }: any = await client
         .from("blogs")
         .select(`*, blog_meta(*)`)
         .eq("slug", slug)
         .eq("is_active", 1)
         .single();
+
     coverImageLink.value = data.cover_img ?? null;
     return data;
+});
+
+const author: any = await useAsyncData("author", async () => {
+    const author = await client.from("user_profile").select("*").eq("user_id", data.value.author).single();
+    return author.data;
 });
 
 const oldCountViews: number =
@@ -76,7 +82,7 @@ onMounted(() => {
         appName="www.BroJenuel.com"
         component="DefaultOgImage"
     />
-    <NuxtLayout name="nofooter">
+    <NuxtLayout name="bloglayout">
         <main class="pt-40px min-h-80vh md:px-50px px-10px">
             <Transition>
                 <div
@@ -154,6 +160,10 @@ onMounted(() => {
                                     $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
                                 }}</span>
                                 <span><Icon name="ic:baseline-remove-red-eye" /> {{ commafy(oldCountViews) }}</span>
+                                <div>
+                                    <Icon name="fluent-emoji-flat:writing-hand-light" />
+                                    <span>{{ author ? author.data.value.username : "" }}</span>
+                                </div>
                             </div>
                         </div>
                         <div v-if="!runtimeConfig.public.isDevelopment" class="w-full">

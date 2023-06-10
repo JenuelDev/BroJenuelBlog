@@ -195,7 +195,7 @@ function searchRoute() {
 }
 </script>
 <template>
-    <NuxtLayout name="nofooter">
+    <NuxtLayout name="bloglayout">
         <div
             class="mt-70px min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px md:pt-0px pt-90px pb-5 gap-20"
         >
