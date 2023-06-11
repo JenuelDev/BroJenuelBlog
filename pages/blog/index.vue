@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const client = useSupabaseClient();
 const route = useRoute();
-const { setMeta, googleStream } = useMeta();
+const { setMeta } = useMeta();
 const blogInfiniteScrollRef = ref(null);
 const targetIsVisible = useElementVisibility(blogInfiniteScrollRef);
 const filter = reactive<{
@@ -178,7 +178,6 @@ useHead({
         keywords: ["brojenuel", "Jenuel", "Jenuel Ganawed", "bro jenuel", "web developer", "blog"],
         lang: "en",
     }),
-    ...(process.env.NODE_ENV != "development" ? googleStream() : {}),
 });
 
 defineOgImageStatic({
