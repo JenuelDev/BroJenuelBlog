@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const route = useRoute();
-const { setMeta, googleStream } = useMeta();
+const { setMeta } = useMeta();
 
 useHead({
     ...setMeta({
@@ -11,7 +11,6 @@ useHead({
         keywords: ["brojenuel", "Jenuel", "Jenuel Ganawed", "bro jenuel", "web developer", "software developer"],
         lang: "en",
     }),
-    ...(process.env.NODE_ENV != "development" ? googleStream() : {}),
 });
 </script>
 <template>
