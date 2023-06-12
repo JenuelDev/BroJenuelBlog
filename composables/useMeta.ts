@@ -5,7 +5,7 @@ const setMeta = (data: {
     type?: string | undefined;
     image?: string | undefined;
     path: string;
-    lang: "en" | "cn";
+    lang: "en";
 }) => {
     let metaData = {
         title: data.title,
@@ -61,7 +61,15 @@ const setMeta = (data: {
                 content: data.title,
             },
             {
+                property: "og:title",
+                content: data.title,
+            },
+            {
                 name: "og:description",
+                content: data.description,
+            },
+            {
+                property: "og:description",
                 content: data.description,
             },
             {
@@ -72,6 +80,22 @@ const setMeta = (data: {
                 name: "og:url",
                 content: "https://blog.brojenuel.com" + data.path,
             },
+            {
+                property: "og:url",
+                content: "https://blog.brojenuel.com" + data.path,
+            },
+            ...(data.image
+                ? [
+                    {
+                        name: "og:image",
+                        content: data.image,
+                    },
+                    {
+                        property: "og:image",
+                        content: data.image,
+                    },
+                ]
+                : []),
 
             // TWITTER
             {
@@ -92,15 +116,11 @@ const setMeta = (data: {
             },
             ...(data.image
                 ? [
-                      {
-                          name: "og:image",
-                          content: data.image,
-                      },
-                      {
-                          name: "twitter:image:src",
-                          content: data.image,
-                      },
-                  ]
+                    {
+                        name: "twitter:image",
+                        content: data.image,
+                    },
+                ]
                 : []),
         ],
     };
