@@ -10,7 +10,8 @@ export default defineConfig({
             fontFamily: {
                 Roboto: ["Roboto"],
                 RobotoBold: ["Roboto-Bold"],
-                RobotoThin: ["Roboto-Thin"]
+                RobotoThin: ["Roboto-Thin"],
+                RobotoLight: ["Roboto-Light"]
             },
         },
     },

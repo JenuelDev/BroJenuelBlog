@@ -115,6 +115,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             position: absolute;
             bottom: 0;
             width: 0;
+            left: 50%;
             background-color: var(--primary);
             transition: all 0.3s;
         }
@@ -123,7 +124,8 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             color: var(--primary);
 
             &::before {
-                width: 80%;
+                left: 0;
+                width: 100%;
             }
         }
     }

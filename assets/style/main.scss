@@ -28,6 +28,16 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Roboto-Light";
+    src: url("./font/Roboto-Light.ttf"); /* IE9 Compat Modes */
+    src: url("./font/Roboto-Light.ttf") format("embedded-opentype"),
+        /* IE6-IE8 */ url("./font/Roboto-Light.ttf") format("woff"),
+        /* Modern Browsers */ url("./font/Roboto-Light.ttf") format("truetype"),
+        /* Safari, Android, iOS */ url("./font/Roboto-Light.ttf") format("svg"); /* Legacy iOS */
+    font-display: swap;
+}
+
 * {
     font-family: Roboto;
     scroll-behavior: smooth;

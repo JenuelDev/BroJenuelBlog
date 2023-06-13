@@ -85,39 +85,57 @@ onMounted(() => {
     <NuxtLayout name="bloglayout">
         <Transition>
             <main v-show="showContent" class="pt-70px w-full pb-5 relative">
-                <div class="fixed w-full">
+                <div class="fixed w-full z-999">
                     <div class="w-full max-w-800px mx-auto relative">
-                        <div class="absolute -left-50px flex flex-col gap-2">
+                        <div
+                            class="absolute lg:-left-50px left-10px flex lg:flex-col flex-row gap-2 lg:bg-none lg:p-0 p-2 lg:w-auto w-[90%] rounded-lg backdrop-filter backdrop-blur-md"
+                        >
                             <button
                                 title="Go back"
-                                class="h-40px w-40px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3"
+                                class="h-40px w-40px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3 relative group"
                                 @click="$router.back()"
                             >
                                 <Icon name="material-symbols:arrow-back"></Icon>
+                                <span
+                                    class="absolute left-50px whitespace-nowrap bg-[var(--background)] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2"
+                                >
+                                    Go Back
+                                </span>
                             </button>
                             <button
                                 v-for="social in ['facebook', 'twitter', 'linkedin', 'copy']"
                                 :key="social"
                                 :title="social != 'Copy' ? `Share To ${social.toUpperCase()}` : 'Copy to Clipboard'"
-                                class="h-40px w-40px p-3 bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)]"
+                                class="h-40px w-40px p-3 bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)] relative group"
                                 @click="share(social)"
                             >
                                 <Icon v-if="social == 'facebook'" name="ri:facebook-fill"></Icon>
                                 <Icon v-if="social == 'twitter'" name="mdi:twitter"></Icon>
                                 <Icon v-if="social == 'linkedin'" name="ri:linkedin-fill"></Icon>
                                 <Icon v-if="social == 'copy'" name="ph:link-simple-bold"></Icon>
+                                <span
+                                    class="absolute left-50px whitespace-nowrap bg-[var(--background)] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2"
+                                >
+                                    {{ social == "copy" ? "Copy Link" : `Share To ${social}` }}
+                                </span>
                             </button>
                             <a
-                                class="h-40px w-40px p-3 bg-[#FF5D5D] rounded-full flex items-center justify-center"
+                                class="h-40px w-40px p-3 bg-[#FF5D5D] rounded-full flex items-center justify-center relative group"
                                 href="https://ko-fi.com/T6T5379QZ"
                                 target="_blank"
                             >
                                 <Icon name="cib:ko-fi" />
+                                <span
+                                    class="absolute left-50px whitespace-nowrap bg-[#FF5D5D] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2 font-bold"
+                                >
+                                    Give Coffee
+                                    <Icon name="bxs:coffee" />
+                                </span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="w-full max-w-800px mx-auto px-10px">
+                <div class="w-full max-w-800px mx-auto px-10px lg:pt-0 pt-70px">
                     <div class="mb-25px px-10px">
                         <template
                             v-if="
@@ -132,11 +150,11 @@ onMounted(() => {
                             </iframe>
                         </template>
                         <div>
-                            <h1 class="text-2xl lg:text-5xl md:text-4xl md:text-3xl font-700 pb-10px font-kumbhsans">
+                            <h1 class="text-2xl lg:text-5xl md:text-4xl md:text-3xl pb-10px font-RobotoBold">
                                 {{ data.title }}
                             </h1>
                             <div>
-                                <p class="text-xl lg:text-3xl md:text-2xl sm:text-xl md font-sans font-100 mb-5">
+                                <p class="text-xl lg:text-3xl md:text-2xl sm:text-xl md font-RobotoThin font-100 mb-5">
                                     <span class="text-[var(--primary)]">/</span>
                                     {{ data.summary }}
                                 </p>
@@ -168,7 +186,7 @@ onMounted(() => {
                         </ClientOnly>
                     </div>
                     <div
-                        class="content-render mx-auto relative md:text-xl pt-5 lg:px-10 px-1"
+                        class="content-render mx-auto relative md:text-lg pt-5 lg:px-10 px-1"
                         v-html="data.content"
                     ></div>
                     <hr />
