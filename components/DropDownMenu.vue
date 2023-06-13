@@ -50,7 +50,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             @click="show = false"
             :href="menu.path"
             class="block px-1 py-1 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
-            :class="{ '!text-[var(--primary)]': route.path == menu.path }"
+            :class="{ '!text-[var(--primary)] is-active': route.path == menu.path }"
         >
             <Icon class="text-size-20px" :name="menu.icon" />
             {{ menu.label }}
@@ -127,6 +127,13 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                 left: 0;
                 width: 100%;
             }
+        }
+    }
+
+    .is-active {
+        &:before {
+            width: 100%;
+            left: 0;
         }
     }
 }

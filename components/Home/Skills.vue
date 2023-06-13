@@ -3,7 +3,8 @@ const skills = [
     {
         icon: "skill-icons:javascript",
         tech: "JavaScript",
-        description: "It's used to create interactive front-end web experiences. It's also used on the server-side through technologies such as Node.js.",
+        description:
+            "It's used to create interactive front-end web experiences. It's also used on the server-side through technologies such as Node.js.",
         yearStarted: 2017,
         tools: [
             {
@@ -31,7 +32,8 @@ const skills = [
     {
         icon: "skill-icons:html",
         tech: "HTML/CSS",
-        description: "For creating the structure, design and layout of web pages. It uses a system of tags and attributes to define the various elements on a web page.",
+        description:
+            "For creating the structure, design and layout of web pages. It uses a system of tags and attributes to define the various elements on a web page.",
         yearStarted: 2016,
         tools: [
             {
@@ -83,7 +85,8 @@ const skills = [
     {
         icon: "skill-icons:rails",
         tech: "Rails",
-        description: "Written in the Ruby and follows the Model-View-Controller (MVC) architectural pattern and emphasizes the use of convention over configuration.",
+        description:
+            "Written in the Ruby and follows the Model-View-Controller (MVC) architectural pattern and emphasizes the use of convention over configuration.",
         yearStarted: 2019,
         tools: [
             {
@@ -113,25 +116,34 @@ const skills = [
 <template>
     <div id="skills-container" class="my-work pt-30px">
         <div>
-            <div class="w-full max-w-500px mx-auto mt-50px px-20px">
+            <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px">
                 <div class="font-800 text-size-20px text-[var(--primary)]">Technical Skills</div>
                 <div class="pt-5">
-                    <div class="indent-md">I am continuously learning to keep up with the latest technologies and be able to pick the best tech for the job.</div>
+                    <div class="tracking-wide">
+                        I am continuously learning to keep up with the latest technologies and be able to pick the best
+                        tech for the job.
+                    </div>
                 </div>
             </div>
             <div class="max-w-600px lg:max-w-650px mx-auto px-10px pt-30px">
                 <div class="grid sm:grid-cols-2 grid-cols-1 gap-3">
-                    <div v-for="skill in skills" :key="skill.tech" class="flex flex-col justify-between pb-5 transform scale-98 hover:scale-100 transition-all">
+                    <div
+                        v-for="skill in skills"
+                        :key="skill.tech"
+                        class="flex flex-col justify-between pb-5 transform scale-98 hover:scale-100 transition-all"
+                    >
                         <div>
                             <div class="flex items-center gap-3 pb-3">
                                 <Icon class="text-size-25px" :name="skill.icon" />
-                                <div class="font-700">{{ skill.tech }}</div>
+                                <div class="font-RobotoBold">{{ skill.tech }}</div>
                             </div>
-                            <div class="text-size-14px tracking-wide leading-relaxed">{{ skill.description }}</div>
+                            <div class="tracking-wide leading-relaxed font-RobotoLight">{{ skill.description }}</div>
                         </div>
                         <div class="flex gap-2 pt-10px">
                             <div v-for="tool in skill.tools" :key="tool.text">
-                                <div class="whitespace-nowrap w-full max-w-35px overflow-hidden hover:max-w-200px transition-all bg-[var(--background-secondary)] p-2 rounded-md">
+                                <div
+                                    class="whitespace-nowrap w-full max-w-35px overflow-hidden hover:max-w-200px transition-all bg-[var(--background-secondary)] p-2 rounded-md"
+                                >
                                     <Icon class="text-size-20px" :name="tool.icon" />
                                     <span class="ml-2">{{ tool.text }}</span>
                                 </div>

@@ -92,12 +92,12 @@ onMounted(() => {
                         >
                             <button
                                 title="Go back"
-                                class="h-40px w-40px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3 relative group"
+                                class="h-40px w-40px bg-[var(--background-secondary)] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3 relative group"
                                 @click="$router.back()"
                             >
                                 <Icon name="material-symbols:arrow-back"></Icon>
                                 <span
-                                    class="absolute left-50px whitespace-nowrap bg-[var(--background)] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2"
+                                    class="absolute lg:left-50px left-0 lg:top-0 top-50px whitespace-nowrap bg-[var(--background)] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2 pointer-events-none"
                                 >
                                     Go Back
                                 </span>
@@ -106,7 +106,7 @@ onMounted(() => {
                                 v-for="social in ['facebook', 'twitter', 'linkedin', 'copy']"
                                 :key="social"
                                 :title="social != 'Copy' ? `Share To ${social.toUpperCase()}` : 'Copy to Clipboard'"
-                                class="h-40px w-40px p-3 bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)] relative group"
+                                class="h-40px w-40px p-3 bg-[var(--background-secondary)] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] relative group"
                                 @click="share(social)"
                             >
                                 <Icon v-if="social == 'facebook'" name="ri:facebook-fill"></Icon>
@@ -114,7 +114,7 @@ onMounted(() => {
                                 <Icon v-if="social == 'linkedin'" name="ri:linkedin-fill"></Icon>
                                 <Icon v-if="social == 'copy'" name="ph:link-simple-bold"></Icon>
                                 <span
-                                    class="absolute left-50px whitespace-nowrap bg-[var(--background)] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2"
+                                    class="absolute lg:left-50px left-0 lg:top-0 top-50px whitespace-nowrap bg-[var(--background)] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2 pointer-events-none"
                                 >
                                     {{ social == "copy" ? "Copy Link" : `Share To ${social}` }}
                                 </span>
@@ -126,7 +126,7 @@ onMounted(() => {
                             >
                                 <Icon name="cib:ko-fi" />
                                 <span
-                                    class="absolute left-50px whitespace-nowrap bg-[#FF5D5D] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2 font-bold"
+                                    class="absolute left-50px whitespace-nowrap bg-[#FF5D5D] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2 font-bold pointer-events-none"
                                 >
                                     Give Coffee
                                     <Icon name="bxs:coffee" />
