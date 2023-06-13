@@ -43,7 +43,7 @@ const setMeta = (data: {
             },
             {
                 name: "url",
-                content: "https://brojenuel.com",
+                content: "https://brojenuel.com" + data.path,
             },
 
             // Social Media Tags
@@ -54,7 +54,7 @@ const setMeta = (data: {
             },
             {
                 property: "og:url",
-                content: "https://blog.brojenuel.com" + data.path,
+                content: "https://brojenuel.com" + data.path,
             },
             ...(data.image
                 ? [
@@ -92,7 +92,7 @@ const setMeta = (data: {
             },
             {
                 name: "twitter:url",
-                content: "https://blog.brojenuel.com" + data.path,
+                content: "https://brojenuel.com" + data.path,
             },
             {
                 name: "twitter:card",
