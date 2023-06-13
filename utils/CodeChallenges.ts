@@ -23,7 +23,7 @@ export const useCodeChallenges = () => {
                     tooltip: "Open In Github",
                 },
                 {
-                    link: "https://name-selector.brojenuel.com/",
+                    link: "https://brojenuel.github.io/random-name-select/dist/",
                     icon: ExternalLink,
                     tooltip: "Open Link",
                 },
