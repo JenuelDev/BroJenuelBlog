@@ -3581,7 +3581,7 @@ nuxt-icon@^0.2.7:
     "@nuxt/kit" "^3.1.0"
     nuxt-config-schema "^0.4.4"
 
-nuxt-og-image@^1.5.7:
+nuxt-og-image@^1.5.9:
   version "1.5.9"
   resolved "https://registry.yarnpkg.com/nuxt-og-image/-/nuxt-og-image-1.5.9.tgz#2b137f9b2a1a45fdd4377ba6a49b512b1ac0d656"
   integrity sha512-N5VNIn+4jWXFRV7BoZefPljz2qDVTCVz1+CPv63sXWZSZ0rVx8ojjG9An7aM0jewZa29l40EM6VYBRwVoUzRug==

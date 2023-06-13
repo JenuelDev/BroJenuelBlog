@@ -112,7 +112,7 @@ const setMeta = (data: {
             },
             {
                 name: "twitter:card",
-                content: "summery_large_image",
+                content: "summary_large_image",
             },
             ...(data.image
                 ? [
