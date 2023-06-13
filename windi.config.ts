@@ -8,9 +8,10 @@ export default defineConfig({
     theme: {
         extend: {
             fontFamily: {
-                kumbhsans: ["kumbhsans"],
-                poly: ["poly"],
-                anton: ["anton"],
+                Roboto: ["Roboto"],
+                RobotoBold: ["Roboto-Bold"],
+                RobotoThin: ["Roboto-Thin"],
+                RobotoLight: ["Roboto-Light"]
             },
         },
     },

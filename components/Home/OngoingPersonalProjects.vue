@@ -30,7 +30,7 @@ function aboutPersonalProject() {
                     <ul class="flex gap-1 flex-wrap py-10px">
                         <li v-for="tags in work.techs" :key="tags" :class="`tag-${tags}`" class="tag">#{{ tags }}</li>
                     </ul>
-                    <div>{{ work.description }}</div>
+                    <div class="font-RobotoLight">{{ work.description }}</div>
                 </div>
             </NuxtLink>
         </div>

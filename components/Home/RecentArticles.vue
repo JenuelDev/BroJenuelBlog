@@ -44,7 +44,7 @@ onMounted(() => {
                         {{ blog.title }}
                     </h3>
                     <div>
-                        <div class="text-size-14px opacity-90 content-summary">
+                        <div class="opacity-90 content-summary font-RobotoLight">
                             {{ blog.summary }}
                         </div>
                         <span class="font-700 text-[var(--primary)]">{{

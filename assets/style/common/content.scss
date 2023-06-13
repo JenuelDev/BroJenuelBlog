@@ -45,7 +45,7 @@
     h3,
     h4,
     h5 {
-        font-family: kumbhsans, serif;
+        font-family: Roboto-Bold;
         margin-bottom: 15px;
         margin-top: 30px;
         position: relative;
@@ -100,6 +100,11 @@
         transition: all 0.25s;
         font-size: 16px;
         margin-bottom: 30px;
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 18px;
+        }
     }
 
     p {
