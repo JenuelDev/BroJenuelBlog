@@ -83,13 +83,11 @@ onMounted(() => {
         component="DefaultOgImage"
     />
     <NuxtLayout name="bloglayout">
-        <main class="md:pt-40px pt-65px min-h-80vh md:px-50px px-10px">
-            <Transition>
-                <div v-show="showContent" class="pt-40px w-full max-w-1500px mx-auto pb-5 grid grid-cols-6 gap-3">
-                    <div class="">
-                        <div
-                            class="md:sticky md:top-15 fixed top-12 z-50 filter backdrop-filter backdrop-blur-sm flex md:flex-col gap-3 md:bg-none bg-[var(--background)] md:rounded-none rounded-xl md:p-0 p-3 md:mx-auto md:w-auto w-full md:items-end items-center"
-                        >
+        <Transition>
+            <main v-show="showContent" class="pt-70px w-full pb-5 relative">
+                <div class="fixed w-full">
+                    <div class="w-full max-w-800px mx-auto relative">
+                        <div class="absolute -left-50px flex flex-col gap-2">
                             <button
                                 title="Go back"
                                 class="h-40px w-40px bg-[var(--background-secondary)] rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3"
@@ -118,99 +116,93 @@ onMounted(() => {
                             </a>
                         </div>
                     </div>
-                    <div class="md:col-span-4 col-span-6">
-                        <div class="mb-25px px-10px">
-                            <template
-                                v-if="
-                                    data.cover_img &&
-                                    (/\.(jpg|gif|png)$/.test(data.cover_img) ||
-                                        !(data.cover_img.indexOf('youtube') > -1))
-                                "
-                            >
-                                <img :src="data.cover_img" alt="" class="w-full rounded-2xl mb-5" srcset="" />
-                            </template>
-                            <template v-else-if="data.cover_img && data.cover_img.indexOf('youtube') > -1">
-                                <iframe
-                                    :src="data.cover_img"
-                                    class="sm:w-450px sm:h-250px w-full h-300px pr-20px pt-10px"
+                </div>
+                <div class="w-full max-w-800px mx-auto px-10px">
+                    <div class="mb-25px px-10px">
+                        <template
+                            v-if="
+                                data.cover_img &&
+                                (/\.(jpg|gif|png)$/.test(data.cover_img) || !(data.cover_img.indexOf('youtube') > -1))
+                            "
+                        >
+                            <img :src="data.cover_img" alt="" class="w-full rounded-2xl mb-5" srcset="" />
+                        </template>
+                        <template v-else-if="data.cover_img && data.cover_img.indexOf('youtube') > -1">
+                            <iframe :src="data.cover_img" class="sm:w-450px sm:h-250px w-full h-300px pr-20px pt-10px">
+                            </iframe>
+                        </template>
+                        <div>
+                            <h1 class="text-2xl lg:text-5xl md:text-4xl md:text-3xl font-700 pb-10px font-kumbhsans">
+                                {{ data.title }}
+                            </h1>
+                            <div>
+                                <p class="text-xl lg:text-3xl md:text-2xl sm:text-xl md font-sans font-100 mb-5">
+                                    <span class="text-[var(--primary)]">/</span>
+                                    {{ data.summary }}
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-3 mb-3">
+                                <div
+                                    v-for="tags in data.tags"
+                                    :class="`tag-${tags}`"
+                                    class="tag tag-sm !text-size-18px"
                                 >
-                                </iframe>
-                            </template>
-                            <div class="px-">
-                                <h1
-                                    class="text-2xl lg:text-5xl md:text-4xl md:text-3xl font-700 pb-10px font-kumbhsans"
-                                >
-                                    {{ data.title }}
-                                </h1>
+                                    #{{ tags }}
+                                </div>
+                            </div>
+                            <div class="text-lg opacity-70 mb-2">
+                                <span class="mr-10px">{{
+                                    $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
+                                }}</span>
+                                <span><Icon name="ic:baseline-remove-red-eye" /> {{ commafy(oldCountViews) }}</span>
                                 <div>
-                                    <p class="text-xl lg:text-3xl md:text-2xl sm:text-xl md font-sans font-100 mb-5">
-                                        <span class="text-[var(--primary)]">/</span>
-                                        {{ data.summary }}
-                                    </p>
-                                </div>
-                                <div class="flex flex-wrap gap-3 mb-3">
-                                    <div
-                                        v-for="tags in data.tags"
-                                        :class="`tag-${tags}`"
-                                        class="tag tag-sm !text-size-18px"
-                                    >
-                                        #{{ tags }}
-                                    </div>
-                                </div>
-                                <div class="text-lg opacity-70 mb-2">
-                                    <span class="mr-10px">{{
-                                        $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
-                                    }}</span>
-                                    <span><Icon name="ic:baseline-remove-red-eye" /> {{ commafy(oldCountViews) }}</span>
-                                    <div>
-                                        <Icon name="fluent-emoji-flat:writing-hand-light" />
-                                        <span>{{ author ? author.data.value.username : "" }}</span>
-                                    </div>
+                                    <Icon name="fluent-emoji-flat:writing-hand-light" />
+                                    <span>{{ author ? author.data.value.username : "" }}</span>
                                 </div>
                             </div>
                         </div>
-                        <div v-if="!runtimeConfig.public.isDevelopment" class="w-full">
-                            <ClientOnly>
-                                <GoogleAdsHorizontal />
-                            </ClientOnly>
-                        </div>
-                        <div
-                            class="content-render mx-auto relative font-poly md:text-xl pt-5 lg:px-10 px-1"
-                            v-html="data.content"
-                        ></div>
-                        <hr />
-                        <br />
-                        <div
-                            class="sticky top-15 sm:top-20 bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex flex-col items-center"
-                        >
-                            <img src="/img/blog/qrcode-donate.webp" alt="" srcset="" width="200" />
-                            <div class="mb-3">Hi! If you like this article and would like to give coffee.</div>
-                            <a class="mt-2" href="https://ko-fi.com/T6T5379QZ" target="_blank">
-                                <img
-                                    height="36"
-                                    style="border: 0px; height: 30px"
-                                    src="/img/picture/kofi.webp"
-                                    border="0"
-                                    alt="Buy Me a Coffee at ko-fi.com"
-                                />
-                            </a>
-                        </div>
-                        <div
-                            v-if="!runtimeConfig.public.isDevelopment"
-                            class="max-w-600px mx-auto px-10px relative pb-5 mt-50px"
-                        >
-                            <ClientOnly>
-                                <Disqus
-                                    :identifier="`BroJenuel-${data.slug}`"
-                                    :title="data.title"
-                                    url="https://brojenuel.disqus.com"
-                                />
-                            </ClientOnly>
-                        </div>
                     </div>
-                    <div class="md:block hidden"></div>
+                    <div v-if="!runtimeConfig.public.isDevelopment" class="w-full">
+                        <ClientOnly>
+                            <GoogleAdsHorizontal />
+                        </ClientOnly>
+                    </div>
+                    <div
+                        class="content-render mx-auto relative md:text-xl pt-5 lg:px-10 px-1"
+                        v-html="data.content"
+                    ></div>
+                    <hr />
+                    <br />
+                    <div
+                        class="sticky top-15 sm:top-20 bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex flex-col items-center"
+                    >
+                        <img src="/img/blog/qrcode-donate.webp" alt="" srcset="" width="200" />
+                        <div class="mb-3">Hi! If you like this article and would like to give coffee.</div>
+                        <a class="mt-2" href="https://ko-fi.com/T6T5379QZ" target="_blank">
+                            <img
+                                height="36"
+                                style="border: 0px; height: 30px"
+                                src="/img/picture/kofi.webp"
+                                border="0"
+                                alt="Buy Me a Coffee at ko-fi.com"
+                            />
+                        </a>
+                    </div>
+                    <div
+                        v-if="!runtimeConfig.public.isDevelopment"
+                        class="max-w-600px mx-auto px-10px relative pb-5 mt-50px"
+                    >
+                        <ClientOnly>
+                            <Disqus
+                                :identifier="`BroJenuel-${data.slug}`"
+                                :title="data.title"
+                                url="https://brojenuel.disqus.com"
+                            />
+                        </ClientOnly>
+                    </div>
                 </div>
-            </Transition>
-        </main>
+                <div class="md:block hidden"></div>
+            </main>
+        </Transition>
     </NuxtLayout>
 </template>

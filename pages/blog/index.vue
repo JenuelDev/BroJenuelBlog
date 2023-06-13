@@ -284,7 +284,7 @@ function searchRoute() {
                                     >
                                         {{ blog.title }}.
                                     </span>
-                                    <span class="opacity-80 font-poly">{{ blog.summary }}</span>
+                                    <span class="opacity-80">{{ blog.summary }}</span>
                                 </div>
                                 <div class="flex gap-2 my-1">
                                     <ul class="flex gap-1 flex-wrap text-size-13px">
