@@ -59,10 +59,6 @@ const setMeta = (data: {
             ...(data.image
                 ? [
                     {
-                        name: "og:image",
-                        content: data.image,
-                    },
-                    {
                         property: "og:image",
                         content: data.image,
                     },
@@ -79,6 +75,10 @@ const setMeta = (data: {
             {
                 property: "og:locale",
                 content: "en_US",
+            },
+            {
+                property: "fb:app_id",
+                content: "4082815788445736",
             },
 
             // TWITTER
