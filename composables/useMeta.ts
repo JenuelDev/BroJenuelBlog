@@ -14,10 +14,6 @@ const setMeta = (data: {
         },
         meta: [
             {
-                name: "description",
-                content: data.description,
-            },
-            {
                 name: "keywords",
                 content: data.keywords?.join(", "),
             },
@@ -49,6 +45,7 @@ const setMeta = (data: {
             // Social Media Tags
             // FACEBOOK
             {
+                name: "title",
                 property: "og:title",
                 content: data.title,
             },
@@ -59,6 +56,7 @@ const setMeta = (data: {
             ...(data.image
                 ? [
                     {
+                        name: "image",
                         property: "og:image",
                         content: data.image,
                     },
@@ -69,6 +67,7 @@ const setMeta = (data: {
                 content: data.type ? data.type : "article",
             },
             {
+                name: "description",
                 property: "og:description",
                 content: data.description,
             },
