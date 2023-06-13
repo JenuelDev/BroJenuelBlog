@@ -23,7 +23,7 @@ export const useCodeChallenges = () => {
                     tooltip: "Open In Github",
                 },
                 {
-                    link: "https://random-select.brojenuel.com",
+                    link: "https://brojenuel.github.io/random-name-select/dist/",
                     icon: ExternalLink,
                     tooltip: "Open Link",
                 },
@@ -71,33 +71,6 @@ export const useCodeChallenges = () => {
                 {
                     name: "socket.io",
                     icon: SocketIoIcon,
-                },
-            ],
-        },
-        {
-            title: "Portfolio",
-            des: "<p>It's is a portfolio made with vue mixed with a plugin called vuetify. It is a free open source project that you can use for your portfolio project as well.</p>",
-            headIcon: "chat",
-            links: [
-                {
-                    link: "https://i.ibb.co/wr4b0BD/portfoliov1-min.png",
-                    icon: GithubIcon,
-                    tooltip: "Open in Github",
-                },
-                {
-                    link: "https://versionone.jenuelganawed.com",
-                    icon: ExternalLink,
-                    tooltip: "Open Link",
-                },
-            ],
-            techs: [
-                {
-                    name: "vue",
-                    icon: VueJsIcon,
-                },
-                {
-                    name: "vuetify",
-                    icon: VuetifyIcon,
                 },
             ],
         },
