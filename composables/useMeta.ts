@@ -27,7 +27,7 @@ const setMeta = (data: {
             },
             {
                 name: "language",
-                content: "ES",
+                content: "es",
             },
             {
                 name: "summary",
@@ -49,36 +49,8 @@ const setMeta = (data: {
             // Social Media Tags
             // FACEBOOK
             {
-                name: "og:locale",
-                content: "en_US",
-            },
-            {
-                name: "og:type",
-                content: data.type ? data.type : "article",
-            },
-            {
-                name: "og:title",
-                content: data.title,
-            },
-            {
                 property: "og:title",
                 content: data.title,
-            },
-            {
-                name: "og:description",
-                content: data.description,
-            },
-            {
-                property: "og:description",
-                content: data.description,
-            },
-            {
-                name: "og:site_name",
-                content: "brojenuel.com",
-            },
-            {
-                name: "og:url",
-                content: "https://blog.brojenuel.com" + data.path,
             },
             {
                 property: "og:url",
@@ -96,6 +68,18 @@ const setMeta = (data: {
                     },
                 ]
                 : []),
+            {
+                property: "og:type",
+                content: data.type ? data.type : "article",
+            },
+            {
+                property: "og:description",
+                content: data.description,
+            },
+            {
+                property: "og:locale",
+                content: "en_US",
+            },
 
             // TWITTER
             {
