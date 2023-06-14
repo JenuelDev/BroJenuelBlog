@@ -12,7 +12,7 @@
             </NuxtLink>
 
             <div class="flex gap-3 items-center">
-                <DropDownMenu />
+                <MenuComponent />
                 <ThemeChangerButton />
             </div>
         </div>

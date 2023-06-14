@@ -38,7 +38,7 @@ watch(
 </script>
 <template>
     <section class="flex items-center justify-center px-20px pt-20px relative mt-100px">
-        <div class="relative flex flex-col items-center gap-20px relative">
+        <div class="relative flex flex-col items-center gap-20px relative w-full max-w-750px mx-auto">
             <div class="flex gap-5 sm:flex-row flex-col items-center z-99 mb-3">
                 <div
                     class="rounded-3xl hover:rounded-2xl overflow-hidden opacity-70 relative hover:opacity-100 transition-all duration-300 border-5 border-opacity-0 border-light-50 hover:border-[var(--primary)] md:h-170px md:w-165px sm:order-2 order-1 w-300px h-300px"

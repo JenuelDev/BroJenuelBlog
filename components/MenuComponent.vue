@@ -43,7 +43,7 @@ const menus = [
 onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : false));
 </script>
 <template>
-    <div class="dropdown-menu lg:flex gap-1 hidden">
+    <div class="dropdown-menu lg:flex gap-1 hidden order-1">
         <NuxtLink
             v-for="menu in menus"
             :key="menu.path"
@@ -56,55 +56,66 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             {{ menu.label }}
         </NuxtLink>
     </div>
-    <div ref="dropdownRef" class="relative inline-block text-left lg:hidden">
+    <div ref="dropdownRef" class="relative inline-block text-left lg:hidden order-2">
         <button
             @click="show = !show"
             type="button"
-            class="btn bg-[var(--background-secondary)] h-40px !px-3 rounded-md"
+            class="h-40px !px-3 rounded-md text-size-35px"
             role="button"
             title="Menu Button"
             id="menu-button"
         >
-            <Icon name="mingcute:menu-fill" />
+            <Icon name="solar:list-linear" />
         </button>
-        <Transition name="dropdown">
-            <div
-                v-show="show"
-                class="dropdown-menu absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-[var(--background)] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-99"
-            >
-                <div class="py-1" role="none">
-                    <NuxtLink
-                        v-for="menu in menus"
-                        :key="menu.path"
-                        @click="show = false"
-                        :href="menu.path"
-                        class="block px-4 py-2 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
-                        :class="{ '!text-[var(--primary)]': route.path == menu.path }"
-                    >
-                        <Icon class="text-size-20px" :name="menu.icon" />
-                        {{ menu.label }}
-                    </NuxtLink>
-                </div>
+        <div class="dropdown-menu-mobile" :class="{ 'active-menu': show }">
+            <div class="py-1 h-full z-999 relative bg-[var(--background)]" role="none">
+                <NuxtLink
+                    v-for="menu in menus"
+                    :key="menu.path"
+                    @click="show = false"
+                    :href="menu.path"
+                    class="block px-4 py-2 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
+                    :class="{ '!text-[var(--primary)]': route.path == menu.path }"
+                >
+                    <Icon class="text-size-20px" :name="menu.icon" />
+                    {{ menu.label }}
+                </NuxtLink>
             </div>
-        </Transition>
+            <div class="dropdown-menu-mobile-bd" @click="show = false"></div>
+        </div>
     </div>
 </template>
 <style lang="scss">
-.dropdown-enter-active {
-    transition: all 0.3s ease-out;
-}
+.dropdown-menu-mobile {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 350px;
+    height: 100vh;
+    margin-right: -370px;
+    transition: 0.2s;
 
-.dropdown-leave-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
-}
+    .dropdown-menu-mobile-bd {
+        content: "";
+        z-index: 88;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.178);
+    }
 
-.dropdown-enter-from,
-.dropdown-leave-to {
-    transform: translateY(-10px);
-    opacity: 0;
-}
+    &.active-menu {
+        margin-right: 0;
 
-.dropdown-menu {
+        .dropdown-menu-mobile-bd {
+            width: 100vw;
+        }
+    }
+
     a {
         position: relative;
         color: var(--color);
