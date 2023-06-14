@@ -57,16 +57,16 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
         </NuxtLink>
     </div>
     <div ref="dropdownRef" class="relative inline-block text-left lg:hidden order-2">
-        <button
+        <div
             @click="show = !show"
             type="button"
-            class="h-40px !px-3 rounded-md text-size-35px"
+            class="h-40px !px-3 rounded-md text-size-35px select-none"
             role="button"
             title="Menu Button"
             id="menu-button"
         >
             <Icon name="solar:list-linear" />
-        </button>
+        </div>
         <div class="dropdown-menu-mobile" :class="{ 'active-menu': show }">
             <div class="py-1 h-full z-999 relative bg-[var(--background)] pt-30px" role="none">
                 <div class="absolute right-3 top-3" @click="show = false">
