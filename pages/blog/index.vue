@@ -195,9 +195,7 @@ function searchRoute() {
 </script>
 <template>
     <NuxtLayout name="bloglayout">
-        <div
-            class="mt-70px min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px md:pt-0px pt-90px pb-5 gap-20"
-        >
+        <div class="mt-70px min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20">
             <div class="mb-5">
                 <div class="flex justify-between">
                     <div>
@@ -206,7 +204,7 @@ function searchRoute() {
                     <form @submit.prevent="searchRoute" class="flex items-center mb-1">
                         <div class="relative">
                             <input
-                                class="w-full shadow appearance-none border border-[var(--background)] rounded w-full dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:px-3 h-40px"
+                                class="w-full shadow appearance-none border border-[var(--background)] rounded w-full dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:px-3 h-40px px-2"
                                 type="text"
                                 placeholder="Search..."
                                 v-model="filter.search"

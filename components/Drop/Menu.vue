@@ -84,7 +84,7 @@ onClickOutside(dropdownRef, () => (showMenu.value = showMenu.value == true ? fal
                         v-for="menu in menus"
                         :key="menu.key"
                         @click="selectKey(menu)"
-                        class="block px-4 py-2 text-sm hover:bg-[var(--background-secondary)] flex items-center justify-between cursor-pointer"
+                        class="block px-4 lg:py-2 py-5 text-sm hover:bg-[var(--background-secondary)] flex items-center justify-between cursor-pointer"
                         :class="{ '!text-[var(--primary)]': valueKey == menu.key }"
                     >
                         <span class="flex items-center gap-6px">

@@ -68,16 +68,19 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             <Icon name="solar:list-linear" />
         </button>
         <div class="dropdown-menu-mobile" :class="{ 'active-menu': show }">
-            <div class="py-1 h-full z-999 relative bg-[var(--background)]" role="none">
+            <div class="py-1 h-full z-999 relative bg-[var(--background)] pt-30px" role="none">
+                <div class="absolute right-3 top-3" @click="show = false">
+                    <Icon class="text-size-30px" name="mdi:close" />
+                </div>
                 <NuxtLink
                     v-for="menu in menus"
                     :key="menu.path"
                     @click="show = false"
                     :href="menu.path"
-                    class="block px-4 py-2 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
+                    class="block px-4 lg:py-2 py-4 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
                     :class="{ '!text-[var(--primary)]': route.path == menu.path }"
                 >
-                    <Icon class="text-size-20px" :name="menu.icon" />
+                    <Icon class="text-size-30px" :name="menu.icon" />
                     {{ menu.label }}
                 </NuxtLink>
             </div>
