@@ -40,7 +40,7 @@ useHead({
     link: [
         {
             rel: "stylesheet",
-            href: "/code-highlight/agate.css",
+            href: "/code-highlight/atom-one-dark.css",
         },
     ],
     ...setMeta({
