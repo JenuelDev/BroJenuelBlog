@@ -85,7 +85,7 @@ onMounted(() => {
     <NuxtLayout name="bloglayout">
         <Transition>
             <main v-show="showContent" class="pt-70px w-full pb-5 relative">
-                <div class="fixed w-full z-999">
+                <div class="fixed w-full z-99">
                     <div class="w-full max-w-800px mx-auto relative">
                         <div
                             class="absolute lg:-left-50px left-10px flex lg:flex-col flex-row gap-2 lg:bg-none lg:p-0 p-2 lg:w-auto w-[90%] rounded-lg backdrop-filter backdrop-blur-md"
