@@ -89,36 +89,8 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
     </div>
 </template>
 <style lang="scss">
+.dropdown-menu,
 .dropdown-menu-mobile {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    right: 0;
-    width: 100%;
-    max-width: 350px;
-    height: 100vh;
-    margin-right: -370px;
-    transition: 0.2s;
-
-    .dropdown-menu-mobile-bd {
-        content: "";
-        z-index: 88;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 0;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.178);
-    }
-
-    &.active-menu {
-        margin-right: 0;
-
-        .dropdown-menu-mobile-bd {
-            width: 100vw;
-        }
-    }
-
     a {
         position: relative;
         color: var(--color);
@@ -148,6 +120,36 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
         &:before {
             width: 100%;
             left: 0;
+        }
+    }
+}
+.dropdown-menu-mobile {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 350px;
+    height: 100vh;
+    margin-right: -370px;
+    transition: 0.2s;
+
+    .dropdown-menu-mobile-bd {
+        content: "";
+        z-index: 88;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.178);
+    }
+
+    &.active-menu {
+        margin-right: 0;
+
+        .dropdown-menu-mobile-bd {
+            width: 100vw;
         }
     }
 }
