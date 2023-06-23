@@ -264,11 +264,14 @@ function searchRoute() {
                         >
                             <div
                                 v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
-                                class="md:order-2 md:max-w-350px overflow-hidden"
+                                class="md:order-2 md:max-w-350px overflow-hidden md:w-[40%]"
                             >
                                 <img :src="blog.cover_img" class="float-right rounded-2xl" />
                             </div>
-                            <div class="relative group md:order-1">
+                            <div
+                                class="relative group md:order-1"
+                                :class="{ 'md:w-[60%]': blog.cover_img, 'w-full': !blog.cover_img }"
+                            >
                                 <div
                                     class="absolute h-10px w-10px bg-gray-600 -left-5 group-hover:bg-[var(--primary)] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-lg delay top-[50%] transform translate-y-[-50%] translate-x-[-50%]"
                                 ></div>
