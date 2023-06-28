@@ -137,11 +137,15 @@
         }
 
         code {
-            background-color: var(--gray-light);
-            padding: 0 6px;
-            border-radius: 5px;
+            --gradient-from-color: #a2f7b6;
+            --gradient-to-color: #8fd3f4;
+            --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(162, 247, 182, 0));
+            background-image: linear-gradient(to right, var(--gradient-color-stops));
+            border-radius: 0.125rem;
+            font-size: 1.125rem;
+            overflow-wrap: break-word;
+            padding: 0.25rem 0.5rem;
             color: black;
-            font-size: 15px;
         }
     }
 
