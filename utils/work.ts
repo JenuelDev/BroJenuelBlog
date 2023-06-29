@@ -1,5 +1,16 @@
 const works = [
     {
+        title: "FaceBook Clone",
+        description:
+            "This is a facebook like Clone. I created it using VueJs and WindiCSS. WindiCSS a tailwind like library but faster.",
+        techs: ["Vue3", "vite", "windiCSS", "TypeScript"],
+        img: "https://i.imgur.com/sCZY0BHm.png",
+        date: "2023-02-17",
+        logo: "https://believers-sword.brojenuel.com/_nuxt/believers-sword.7fcefc1c.svg",
+        url: "/blog/Facebook-Like-Clone-With-Source-Code",
+        url_new_tab: false,
+    },
+    {
         title: "Believers Sword",
         description:
             "This is a simple bible reading application that gives basic functionality. I am waiting for anyone who wants to own this project, and I am willing to work with you.",
