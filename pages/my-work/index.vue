@@ -44,13 +44,17 @@ defineOgImageStatic({
                         </div>
                     </div>
                     <div class="grid lg:grid-cols-2 gap-10 lg:max-w-800px max-w-600px mx-auto px-10px">
-                        <NuxtLink
-                            v-for="(work, i) in WORKS"
-                            :key="i"
-                            :href="work.url"
-                            class="rounded-md cursor-pointer group"
-                            :target="work.url_new_tab ? '_blank' : '_self'"
-                        >
+                        <div v-for="(work, i) in WORKS" :key="i" class="relative group">
+                            <a
+                                :href="work.external_link"
+                                target="_blank"
+                                title="Open App"
+                                class="absolute top-10px right-10px z-99 bg-light-50 text-dark-100 rounded-md px-5px shadow-md invisible group-hover:visible cursor-pointer font-bold opacity-0 group-hover:opacity-100 transition-all transform scale-50 group-hover:scale-100 !hover:scale-110"
+                            >
+                                <Icon name="mdi:launch" />
+                                Open App
+                            </a>
+
                             <div
                                 class="border-1 border-[var(--gray-lightest)] flex justify-center items-center overflow-hidden rounded-lg relative h-200px"
                             >
@@ -61,23 +65,29 @@ defineOgImageStatic({
                                     width="500"
                                 />
                             </div>
-                            <div class="pt-15px flex gap-10px items-center">
-                                <div class="w-30px h-30px overflow-hidden rounded-md bg-white">
-                                    <img class="w-30px" :src="work.logo" :alt="work.title" />
+                            <NuxtLink
+                                :href="work.url"
+                                class="cursor-pointer group"
+                                :target="work.url_new_tab ? '_blank' : '_self'"
+                            >
+                                <div class="pt-15px flex gap-10px items-center">
+                                    <div class="w-30px h-30px overflow-hidden rounded-md bg-white">
+                                        <img class="w-30px" :src="work.logo" :alt="work.title" />
+                                    </div>
+                                    <div class="font-700 group-hover:text-[var(--primary)] text-size-25px">
+                                        {{ work.title }}
+                                    </div>
                                 </div>
-                                <div class="font-700 group-hover:text-[var(--primary)] text-size-25px">
-                                    {{ work.title }}
+                                <div>
+                                    <ul class="flex gap-1 flex-wrap py-10px text-size-13px">
+                                        <li v-for="tags in work.techs" :key="tags" :class="`tag-${tags}`" class="tag">
+                                            #{{ tags }}
+                                        </li>
+                                    </ul>
+                                    <div>{{ work.description }}</div>
                                 </div>
-                            </div>
-                            <div>
-                                <ul class="flex gap-1 flex-wrap py-10px text-size-13px">
-                                    <li v-for="tags in work.techs" :key="tags" :class="`tag-${tags}`" class="tag">
-                                        #{{ tags }}
-                                    </li>
-                                </ul>
-                                <div>{{ work.description }}</div>
-                            </div>
-                        </NuxtLink>
+                            </NuxtLink>
+                        </div>
                     </div>
                     <div class="lg:max-w-800px max-w-600px mx-auto px-10px">
                         <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px pb-5 pt-10">

@@ -9,6 +9,7 @@ const works = [
         logo: "https://believers-sword.brojenuel.com/_nuxt/believers-sword.7fcefc1c.svg",
         url: "/blog/Facebook-Like-Clone-With-Source-Code",
         url_new_tab: false,
+        external_link: 'https://facebook-clone-nu-ecru.vercel.app/'
     },
     {
         title: "Believers Sword",
@@ -20,6 +21,7 @@ const works = [
         logo: "https://believers-sword.brojenuel.com/_nuxt/believers-sword.7fcefc1c.svg",
         url: "/blog/Believers-Sword",
         url_new_tab: false,
+        external_link: 'https://believers-sword.brojenuel.com/'
     },
     {
         overline: "Documentation Project",
@@ -32,6 +34,7 @@ const works = [
         logo: "https://i.imgur.com/h3aGbdQs.png",
         url: "https://laravel-mongodb.vercel.app",
         url_new_tab: true,
+        external_link: "https://laravel-mongodb.vercel.app"
     },
     {
         overline: "Portfolio Website",
@@ -44,6 +47,7 @@ const works = [
         logo: "https://kateawisan.netlify.app/img/profile-img.d44572f5.jpg",
         url: "https://kateawisan.netlify.app/",
         url_new_tab: true,
+        external_link: "https://kateawisan.netlify.app/",
     },
     {
         overline: "Search Engine Project",
@@ -55,6 +59,7 @@ const works = [
         logo: "https://i.imgur.com/IFXqlzCs.png",
         url: "https://www.getgifs.ml/",
         url_new_tab: true,
+        external_link: "https://www.getgifs.ml/",
     },
     {
         overline: "Personal Website ",
@@ -67,6 +72,7 @@ const works = [
         logo: "https://i.imgur.com/3iN1kQym.jpg",
         url: "https://BroJenuel.com",
         url_new_tab: false,
+        external_link: "https://BroJenuel.com",
     },
     {
         overline: "Personal Website",
@@ -79,6 +85,7 @@ const works = [
         logo: "https://i.imgur.com/kpVp6fis.jpg",
         url: "https://jenuelganawed-v1.netlify.app/#/challenge",
         url_new_tab: true,
+        external_link: "https://jenuelganawed-v1.netlify.app/#/challenge",
     },
 ];
 
