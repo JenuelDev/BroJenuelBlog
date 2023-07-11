@@ -297,10 +297,6 @@ function searchRoute() {
                                 <div>
                                     <span class="italic font-500 opacity-50 whitespace-nowrap flex gap-20px">
                                         {{ $dayjs(blog.created_at).format("MMM. DD, YYYY") }}
-                                        <span class="flex items-center gap-7px">
-                                            <Icon name="ic:baseline-remove-red-eye" />
-                                            {{ blog.blog_meta ? commafy(blog.blog_meta.view_count) : 0 }}
-                                        </span>
                                     </span>
                                 </div>
                             </div>

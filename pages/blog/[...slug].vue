@@ -172,7 +172,6 @@ onMounted(() => {
                                 <span class="mr-10px">{{
                                     $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
                                 }}</span>
-                                <span><Icon name="ic:baseline-remove-red-eye" /> {{ commafy(oldCountViews) }}</span>
                                 <div class="whitespace-nowrap">
                                     <Icon name="fluent-emoji-flat:writing-hand-light" class="mr-2" />
                                     <span>{{ author ? author.data.value.username : "" }}</span>
