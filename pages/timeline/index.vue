@@ -35,8 +35,11 @@ defineOgImageStatic({
                     </div>
                     <div class="pt-5">
                         <div class="indent-md">
-                            This are companies/organization that I have worked for. I have learned and enjoyed working
-                            on this companies.
+                            I am a software engineer based in Luzon, Philippines. My passion lies in continuous
+                            learning, coding, writing, and sharing knowledge. My primary focus is on problem-solving to
+                            address clients' and companies' specific needs and challenges. With a client-centric
+                            approach, I strive to deliver efficient solutions that meet their requirements and
+                            contribute to their success.
                         </div>
                     </div>
                 </div>

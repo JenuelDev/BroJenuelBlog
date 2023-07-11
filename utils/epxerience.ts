@@ -4,7 +4,14 @@ export const useExperiences = () => [
         company: "Vocphone",
         workStart: "Nov. 2021",
         workUntil: '<span class="present-work">Present</span>',
-        des: "My Role is to write code and design components that meet the requirements of our mocks and fulfill our user stories. I also monitor tasks and process pull requests for production deployments. Technologies used: Laravel, JavaScript, VueJs version 2 and 3, TypeScript, SASS, C#, HTML, CSS, NodeJs.",
+        des: `As part of my role, I am deeply involved in programming, development,
+        and leadership to ensure the successful implementation of programs that
+        align with user stories. I take on the responsibility of overseeing task
+        monitoring and monitoring the progress of programs that are being
+        deployed. Drawing upon my expertise in technologies such as Laravel,
+        JavaScript, Vue.js (versions 2 and 3), TypeScript, SASS, C#, HTML, CSS,
+        and Node.js, I have the ability to create solutions that are functional and
+        optimized.`,
         url: "https://www.vocphone.com/",
         year: "2021",
         to: "present",
@@ -24,7 +31,9 @@ export const useExperiences = () => [
         company: "Webinarinc",
         workStart: "Mar. 2021",
         workUntil: "Nov. 2021",
-        des: "Maintaining Large Systems/Projects from front-end and back-end. Creating or Building web app/websites. Engaged in different kinds of frameworks and tools.",
+        des: `Maintaining large-scale systems and projects, covering both the frontend and back-end. I excel at creating and building web applications
+        and websites. I work with technologies like Laravel, Vue.js, JavaScript,
+        TypeScript, SASS, HTML, and CSS to bring these projects to life.`,
         url: "https://webinarinc.com/",
         year: "2021",
         to: 2021,
@@ -35,7 +44,11 @@ export const useExperiences = () => [
         company: "Utalk",
         workStart: "August 2019",
         workUntil: "April 2021",
-        des: "Maintaining Systems and services to lower the rate of system errors or bugs. Managed, and created front-end and back-end codes/programs. Engaged in different kinds of frameworks and tools like VueJs, AngularJs, Codeigniter, Lumen/Laravel, and Ruby on Rails. For the Database, we manage MySQL and Mongo Database.",
+        des: `Maintaining Systems and services to lower the rate of system errors or
+        bugs. Managing and creating front-end and back-end codes/programs.
+        Engaged in different kinds of frameworks and tools like VueJs, AngularIO,
+        Codeigniter, Lumen/Laravel, and Ruby on Rails. For the Database, we
+        MySQL and Mongo Database.`,
         url: "https://www.facebook.com/utalkphilippines",
         certificate: {
             link: "https://drive.google.com/file/d/1_CBroR0xY8bq9Z6kcS40opEQf_SC5AZ6/view?usp=sharing",
@@ -44,52 +57,18 @@ export const useExperiences = () => [
         year: "2019",
         to: 2021,
     },
-    // {
-    //     isCard: true,
-    //     title: "SQL Course",
-    //     year: "Mar. <br /> 2021",
-    //     certificate: {
-    //         link: "https://www.sololearn.com/Certificate/CT-LKXLDBLV/png",
-    //         label: "SQL Course Certificate",
-    //     },
-    //     des: "Re-learning the basics of SQL for refreshing my knowledge.",
-    // },
-    // {
-    //     isCard: true,
-    //     title: "JavaScript: Theoretical and Practical Understanding",
-    //     year: "Mar. <br /> 2021",
-    //     certificate: {
-    //         link: "https://www.sololearn.com/Certificate/CT-LKXLDBLV/png",
-    //         label: "JavaScript Certificate",
-    //     },
-    //     des: "JavaScript focusing in theoretical and practical understanding",
-    // },
-    // {
-    //     isCard: true,
-    //     title: "SMART Technopreneurship 101",
-    //     year: "Sept. <br /> 2020",
-    //     certificate: {
-    //         link: "https://github.com/BroJenuel/BroJenuel/raw/master/certificates/SMARTtechno101_Certificate%20of%20Completion.pdf",
-    //         label: "CERTIFICATE of COMPLETION",
-    //     },
-    //     des: "Took Technopreneurship 101",
-    // },
-    // {
-    //     isCard: true,
-    //     title: "SMART Android Mobile Apps Development for Beginners",
-    //     year: "Sept. <br /> 2020",
-    //     certificate: {
-    //         link: "https://github.com/BroJenuel/BroJenuel/raw/master/certificates/SMART%20Android%20Mobile%20Apps%20Development%20for%20Beginners_Certificate%20of%20Completion.pdf",
-    //         label: "CERTIFICATE of COMPLETION",
-    //     },
-    //     des: "Took up android mobile app development for beginner course",
-    // },
     {
         position: "Web Developer",
         company: "Dap-ayan",
         workStart: "Aug. 2018",
         workUntil: "May 2019",
-        des: "Participated as an author and a project developer for the Ordering Management System for the restaurant. We used PHP, JavaScript, HTML, CSS, and MySQL to build the web app.",
+        des: `My primary focus is on maintaining systems and services to minimize
+        system errors and bugs. I am proficient in managing and creating both
+        front-end and back-end codes and programs. I am well-versed in various
+        frameworks and tools, including Vue.js, AngularIO, Codeigniter,
+        Lumen/Laravel, and Ruby on Rails. For database management, I have
+        experience with MySQL and MongoDB. By leveraging these technologies, I
+        ensure applications and systems' smooth and efficient functioning.`,
         url: "https://www.facebook.com/DapayanCafeExtention",
         certificate: {
             link: "https://drive.google.com/file/d/1TYyF6q4L2NdaXbibUry22UWC7YQpmzPN/view?usp=sharing",
@@ -103,7 +82,13 @@ export const useExperiences = () => [
         company: "iLearn",
         workStart: "September. 2018",
         workUntil: "Dec. 2018",
-        des: "Being a part of a work that focuses on designs, I have been creating designs for simple magazines using Photoshop and Illustrator. Engaged in Video Editing using Adobe Premiere. Engaged in web programming using JavaScript and PHP.",
+        des: `I have been actively involved in design-oriented work, particularly in
+        creating designs for simple magazines using Photoshop and Illustrator.
+        Additionally, I possess expertise in video editing using Adobe Premiere. I
+        am also engaged in web programming, specializing in algorithm
+        development using JavaScript and PHP. By combining these skills, I
+        contribute to the creation of visually appealing designs and seamless web
+        experiences.`,
         url: "http://www.ilearnsda.com",
         certificate: {
             link: "https://drive.google.com/file/d/1NMz6G-fDcArzRm9odSfL_ntx5Hj0qLu_/view?usp=sharing",
@@ -127,54 +112,4 @@ export const useExperiences = () => [
         year: 2016,
         to: 2019,
     },
-    // {
-    //     isCard: true,
-    //     title: "ENTREPRENEUR SUMMIT BAGUIO 2018",
-    //     year: "Sept. <br /> 2018",
-    //     certificate: {
-    //         link: "https://drive.google.com/file/d/1-YmSIGUmX0QQyBUjCJHBVIjSsr3rwmJj/view",
-    //         label: "Certificate of Attendance",
-    //     },
-    //     des: "Joined the 2nd Entrepreneur Summit Baguio held on september 23, 2018 at the university of Baguio, Upper General Luna Baguio City Benguet, 2600",
-    // },
-    // {
-    //     isCard: true,
-    //     title: "PHP Course Certificate",
-    //     year: "March <br /> 2018",
-    //     certificate: {
-    //         link: "https://www.sololearn.com/Certificate/CT-3RLQL1CI/pdf",
-    //         label: "PHP Course Certificate",
-    //     },
-    //     des: "Learned basics of PHP in SoloLearn.",
-    // },
-    // {
-    //     isCard: true,
-    //     title: "JavaScript Course Certificate",
-    //     year: "March <br /> 2018",
-    //     certificate: {
-    //         link: "https://www.sololearn.com/Certificate/1024-214029/pdf",
-    //         label: "JavaScript Course Certificate",
-    //     },
-    //     des: "Learned basics of JavaScript in SoloLearn.",
-    // },
-    // {
-    //     isCard: true,
-    //     title: "CSS Course Certificate",
-    //     year: "January <br /> 2018",
-    //     certificate: {
-    //         link: "https://www.sololearn.com/Certificate/CT-56OTDVDU/pdf",
-    //         label: "CSS Course Certificate",
-    //     },
-    //     des: "Learned basics of CSS in SoloLearn.",
-    // },
-    // {
-    //     isCard: true,
-    //     title: "HTML Course Certificate",
-    //     year: "November <br /> 2017",
-    //     certificate: {
-    //         link: "https://www.sololearn.com/Certificate/CT-TCJJRFMV/pdf",
-    //         label: "HTML Certificate",
-    //     },
-    //     des: "Learned basics of HTML in SoloLearn.",
-    // },
 ];
