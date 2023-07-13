@@ -57,9 +57,9 @@ const works = [
         img: "gif-search.webp",
         date: "2023-02-17",
         logo: "https://i.imgur.com/IFXqlzCs.png",
-        url: "https://www.getgifs.ml/",
+        url: "https://gif-find.netlify.app",
         url_new_tab: true,
-        external_link: "https://www.getgifs.ml/",
+        external_link: "https://gif-find.netlify.app",
     },
     {
         overline: "Personal Website ",
