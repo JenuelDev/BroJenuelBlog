@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 onMounted(() => {
-    var style = "color: tomato; background:#eee; -webkit-text-stroke: 1px black; font-size:30px;";
+    var style = "color:#64ffdb;background:#0a192f;font-size:20px;";
     console.log(
-        "%cHi!, Their is nothing to do here. Instead, Follow me:\nwww.twitter.com/BroJenuel\nwww.youtube.com/@brojenuel\nwww.facebook.com/brojenuel",
+        "%cHi! ✋, Thanks For Visiting My Home In The Internet, Follow me:\nTwitter: www.twitter.com/BroJenuel\nYoutube: www.youtube.com/@brojenuel\nFacebook: www.facebook.com/BroJenuelOfficial\nThreads: www.threads.net/@brojenuel\nInstagram: www.instagram.com/brojenuel",
         style
     );
 });

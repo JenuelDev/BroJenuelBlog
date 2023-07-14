@@ -17,6 +17,8 @@
         "roboto",
         "teenyicons",
         "twotone",
-        "vueuse"
+        "Vuetify",
+        "vueuse",
+        "zondicons"
     ]
 }

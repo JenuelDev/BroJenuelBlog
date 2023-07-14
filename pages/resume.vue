@@ -17,7 +17,7 @@ useHead({
     }),
 });
 
-defineOgImageStatic({
+defineOgImage({
     component: "DefaultOgImage",
     path: route.path,
     title: "Resume - BroJenuel",

@@ -11,7 +11,7 @@ const ShortcutButtons = [
     },
     {
         path: "/my-work",
-        label: "Projects",
+        label: "My Work",
         icon: "pajamas:project",
     },
     {
@@ -21,7 +21,7 @@ const ShortcutButtons = [
     },
     {
         path: "/resume",
-        label: "My CV",
+        label: "My Resume",
         icon: "teenyicons:pdf-outline",
     },
     {
@@ -66,8 +66,11 @@ watch(
                 </div>
             </div>
 
-            <div class="bg-[var(--background-secondary)] w-full p-10px rounded-lg z-99">
-                <div ref="socialRef" class="flex md:gap-10px gap-30px justify-center flex-wrap">
+            <div class="w-full z-99 flex justify-center">
+                <div
+                    ref="socialRef"
+                    class="rounded-lg p-10px bg-[var(--background-secondary)] flex md:gap-10px gap-30px justify-center flex-wrap"
+                >
                     <template v-for="social in mainStore.mySocial" :key="social.title">
                         <a
                             v-if="!social.isNuxtLink"
@@ -90,12 +93,12 @@ watch(
                     </template>
                 </div>
             </div>
-            <div class="flex justify-center gap-3 sm:flex-row flex-col sm:w-auto w-full">
+            <div class="flex flex-wrap justify-center gap-3 sm:flex-row flex-col sm:w-auto w-full">
                 <NuxtLink
                     v-for="shortCutButton in ShortcutButtons"
                     :key="shortCutButton.path"
                     :href="shortCutButton.path"
-                    class="btn btn-lg btn-filled sm:w-auto w-full group md:text-size-18px text-size-20px"
+                    class="btn btn-filled sm:w-auto w-full group md:text-size-18px text-size-20px"
                     title="My Time Line"
                 >
                     <Icon :name="shortCutButton.icon" class="group-hover:animate-head-shake" />

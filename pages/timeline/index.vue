@@ -16,7 +16,7 @@ useHead({
     }),
 });
 
-defineOgImageStatic({
+defineOgImage({
     component: "DefaultOgImage",
     path: route.path,
     title: "BroJenuel Timeline",
@@ -31,7 +31,7 @@ defineOgImageStatic({
                 <div class="max-w-550px mx-auto px-10px">
                     <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
                         <Icon name="mdi:chart-timeline" />
-                        Timeline/Experience
+                        Timeline/Job Experience
                     </div>
                     <div class="pt-5">
                         <div class="indent-md">

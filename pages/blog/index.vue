@@ -180,7 +180,7 @@ useHead({
     }),
 });
 
-defineOgImageStatic({
+defineOgImage({
     appName: "www.BroJenuel.com",
     component: "DefaultOgImage",
     path: route.path,

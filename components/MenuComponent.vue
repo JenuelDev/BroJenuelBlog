@@ -16,7 +16,7 @@ const menus = [
     {
         path: "/timeline",
         icon: "mdi:chart-timeline",
-        label: "Time Line",
+        label: "Experience",
     },
     {
         path: "/what-i-can-offer",

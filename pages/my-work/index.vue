@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const route = useRoute();
 const isShowContent = ref(false);
-const codeChallenges = useCodeChallenges();
 const { setMeta } = useMeta();
 
 onMounted(() => (isShowContent.value = true));
@@ -18,7 +17,7 @@ useHead({
     }),
 });
 
-defineOgImageStatic({
+defineOgImage({
     component: "DefaultOgImage",
     path: route.path,
     title: "My Works",
@@ -29,12 +28,12 @@ defineOgImageStatic({
 <template>
     <NuxtLayout>
         <Transition>
-            <div v-show="isShowContent" class="pt-90px">
+            <div v-show="isShowContent" class="sm:mt-90px mt-60px sm:p-0 p-5">
                 <div>
                     <div class="lg:max-w-800px max-w-600px mx-auto px-10px">
                         <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
                             <Icon name="pajamas:project" />
-                            Projects
+                            My Works
                         </div>
                         <div class="pt-5 mb-5">
                             <div class="indent-md">
@@ -43,35 +42,29 @@ defineOgImageStatic({
                             </div>
                         </div>
                     </div>
-                    <div class="grid lg:grid-cols-2 gap-10 lg:max-w-800px max-w-600px mx-auto px-10px">
-                        <div v-for="(work, i) in WORKS" :key="i" class="relative group">
-                            <a
-                                :href="work.external_link"
-                                target="_blank"
-                                title="Open App"
-                                class="absolute top-10px right-10px z-99 bg-light-50 text-dark-100 rounded-md px-5px shadow-md invisible group-hover:visible cursor-pointer font-bold opacity-0 group-hover:opacity-100 transition-all transform scale-50 group-hover:scale-100 !hover:scale-110"
-                            >
-                                <Icon name="mdi:launch" />
-                                Open App
-                            </a>
-
+                    <div class="flex flex-col gap-20 lg:max-w-800px max-w-600px mx-auto px-10px mt-50px">
+                        <div
+                            v-for="(work, i) in WORKS"
+                            :key="i"
+                            class="relative group flex gap-15px sm:flex-row flex-col sm:opacity-80 hover:opacity-100 sm:transform sm:scale-98 sm:hover:scale-100 transition-all"
+                        >
                             <div
-                                class="border-1 border-[var(--gray-lightest)] flex justify-center items-center overflow-hidden rounded-lg relative h-200px"
+                                class="border-1 border-[var(--gray-lightest)] flex justify-center items-center overflow-hidden rounded-lg relative sm:w-[55%] w-full"
+                                :class="{ 'sm:order-2': i % 2 != 0 }"
                             >
                                 <img
-                                    :src="work.img.includes('http') ? work.img : `/img/work/${work.img}`"
+                                    :src="
+                                        work.thumbnail.includes('http') ? work.thumbnail : `/img/work/${work.thumbnail}`
+                                    "
                                     class="w-full transform scale-110 group-hover:scale-transform-130 transition-all"
                                     :alt="work.description"
                                     width="500"
                                 />
                             </div>
-                            <NuxtLink
-                                :href="work.url"
-                                class="cursor-pointer group"
-                                :target="work.url_new_tab ? '_blank' : '_self'"
-                            >
-                                <div class="pt-15px flex gap-10px items-center">
-                                    <div class="w-30px h-30px overflow-hidden rounded-md bg-white">
+                            <div class="group sm:w-[45%] w-full" :class="{ 'sm:text-right': i % 2 != 0 }">
+                                <div>{{ work.overline }}</div>
+                                <div class="flex gap-10px items-center" :class="{ 'sm:justify-end': i % 2 != 0 }">
+                                    <div v-if="work.logo" class="w-30px h-30px overflow-hidden rounded-md bg-white">
                                         <img class="w-30px" :src="work.logo" :alt="work.title" />
                                     </div>
                                     <div class="font-700 group-hover:text-[var(--primary)] text-size-25px">
@@ -79,44 +72,48 @@ defineOgImageStatic({
                                     </div>
                                 </div>
                                 <div>
-                                    <ul class="flex gap-1 flex-wrap py-10px text-size-13px">
+                                    <ul
+                                        class="flex gap-1 flex-wrap py-10px text-size-13px"
+                                        :class="{ 'sm:justify-end': i % 2 != 0 }"
+                                    >
                                         <li v-for="tags in work.techs" :key="tags" :class="`tag-${tags}`" class="tag">
                                             #{{ tags }}
                                         </li>
                                     </ul>
-                                    <div>{{ work.description }}</div>
-                                </div>
-                            </NuxtLink>
-                        </div>
-                    </div>
-                    <div class="lg:max-w-800px max-w-600px mx-auto px-10px">
-                        <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px pb-5 pt-10">
-                            <Icon name="material-symbols:other-admission-sharp" />
-                            Other Projects
-                        </div>
-                        <div class="grid sm:grid-cols-2 grid-cols-1 gap-3">
-                            <div
-                                v-for="codeChallenge in codeChallenges"
-                                :key="codeChallenge.title"
-                                class="group bg-[var(--background-secondary)] p-3 rounded-md flex flex-col justify-between transform translate-y-0 hover:translate-y-[-5px] transition-all"
-                            >
-                                <div>
-                                    <div class="font-800 group-hover:text-[var(--primary)]">
-                                        {{ codeChallenge.title }}
-                                    </div>
-                                    <div v-html="codeChallenge.des"></div>
-                                </div>
-                                <div class="flex gap-2 text-size-20px pt-2">
-                                    <template v-for="link in codeChallenge.links">
+                                    <div class="mb-2">{{ work.description }}</div>
+                                    <div class="flex gap-2 flex-wrap" :class="{ 'sm:justify-end': i % 2 != 0 }">
                                         <a
-                                            :href="link.link"
-                                            target="_blank"
-                                            :title="link.tooltip"
-                                            class="hover:text-[var(--primary)]"
+                                            v-if="work.article_link"
+                                            :href="work.article_link"
+                                            title="Check Article"
+                                            class="btn"
+                                            :class="{ 'order-1': i % 2 == 0 }"
                                         >
-                                            <Icon :name="link.icon" />
+                                            <Icon name="mdi:launch" />
+                                            Article
                                         </a>
-                                    </template>
+                                        <a
+                                            :href="work.external_link"
+                                            target="_blank"
+                                            title="Open App"
+                                            class="btn"
+                                            :class="{ 'order-1': i % 2 == 0 }"
+                                        >
+                                            <Icon name="mdi:launch" />
+                                            Open App
+                                        </a>
+                                        <a
+                                            v-if="work.github_link"
+                                            :href="work.github_link"
+                                            target="_blank"
+                                            title="Open Github"
+                                            class="btn"
+                                            :class="{ 'order-1': i % 2 == 0 }"
+                                        >
+                                            <Icon name="mdi:github" />
+                                            Github
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

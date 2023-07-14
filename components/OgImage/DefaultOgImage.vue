@@ -1,12 +1,10 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
     path: String,
     title: String,
     description: String,
-    // themeColor: String,
     appName: String,
 });
-// const theme = computed(() => props.themeColor || "#dbf4ff");
 
 const backgroundColor = "#0a192f";
 const white = "#e6f1ff";
