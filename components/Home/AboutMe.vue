@@ -10,7 +10,7 @@
                 I'm a Software Developer from Philippines, developing web apps, mobile apps and anything in between. I'm
                 passionate about coding, writing, and sharing what I know.
                 <NuxtLink
-                    href="/blog/Hi-I-am-Jenuel-Oras-Ganawed-BroJenuel-"
+                    href="/blog/Hi-I-am-Jenuel-Oras-Ganawed"
                     title="Read More"
                     class="text-[var(--primary)] hover:underline"
                     >Read More...</NuxtLink
