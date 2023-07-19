@@ -27,7 +27,7 @@ const ShortcutButtons = [
     {
         path: "/what-i-can-offer",
         label: "What I can Offer",
-        icon: "teenyicons:pdf-outline",
+        icon: "mdi:offer",
     },
 ];
 
