@@ -43,10 +43,11 @@ watch(
                 <div
                     class="rounded-3xl hover:rounded-2xl overflow-hidden opacity-70 relative hover:opacity-100 transition-all duration-300 border-5 border-opacity-0 border-light-50 hover:border-[var(--primary)] md:h-170px md:w-165px sm:order-2 order-1 w-300px h-300px"
                 >
-                    <img
+                    <nuxt-img
                         src="https://i.imgur.com/3iN1kQym.jpg"
                         class="absolute left-0 top-0 transform rotate-0 hover:rotate-25 transition-all duration-300 scale-100 hover:scale-150 hover:top-20px hover:left-[-20px] w-full"
                         alt="Bro Jenuel Profile"
+                        format="webp"
                     />
                 </div>
                 <div class="sm:text-right text-center sm:order-1 order-2">

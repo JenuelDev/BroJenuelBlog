@@ -34,12 +34,13 @@ defineProps({
             <div
                 class="border-1 border-[var(--gray-lightest)] flex justify-center items-center overflow-hidden rounded-lg relative"
             >
-                <img
+                <nuxt-img
                     :src="work.thumbnail.includes('http') ? work.thumbnail : `/img/work/${work.thumbnail}`"
                     class="w-full transform scale-110 group-hover:scale-transform-130 transition-all h-full w-full"
                     :alt="work.description"
                     width="500"
                     height="250"
+                    format="webp"
                 />
             </div>
         </div>

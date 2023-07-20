@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/image": "^1.0.0-rc.1",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/supabase": "^0.3.1",
     "@types/node": "^18.11.18",

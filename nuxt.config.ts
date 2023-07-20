@@ -8,6 +8,7 @@ export default defineNuxtConfig({
         "nuxt-windicss",
         "@nuxtjs/supabase",
         "nuxt-og-image",
+        '@nuxt/image',
     ],
     colorMode: {
         preference: "dark",
@@ -34,4 +35,7 @@ export default defineNuxtConfig({
             ],
         },
     },
+    image: {
+        domains: ['i.imgur.com']
+    }
 });
