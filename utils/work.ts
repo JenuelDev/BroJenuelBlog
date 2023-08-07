@@ -1,5 +1,19 @@
 const works = [
     {
+        on_going: true,
+        overline: "Web Application",
+        title: "Fams Tree",
+        description:
+            "Fams Tree is an application tool that you can use to create family tree. You can then save, or export it to different format like PDF, SVG, PNG, etc.",
+        techs: ["Vue3", "vite", "unocss", "TypeScript", "firebase"],
+        thumbnail: "https://i.imgur.com/Wz7ym2ih.png",
+        date: "2023-06-15",
+        article_link: null,
+        url_new_tab: true,
+        external_link: 'https://fam-tree.brojenuel.com/',
+        github_link: null
+    },
+    {
         on_going: false,
         overline: "Web Template",
         title: "FaceBook Clone",
