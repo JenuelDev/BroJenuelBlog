@@ -8,10 +8,10 @@ const works = [
         techs: ["Vue3", "vite", "unocss", "TypeScript", "firebase"],
         thumbnail: "https://i.imgur.com/Wz7ym2ih.png",
         date: "2023-06-15",
-        article_link: null,
+        article_link: "/blog/New-Personal-Simple-Project-Create-A-Family-Tree-With-This-Tool",
         url_new_tab: true,
-        external_link: 'https://fam-tree.brojenuel.com/',
-        github_link: null
+        external_link: "https://fam-tree.brojenuel.com/",
+        github_link: null,
     },
     {
         on_going: false,
@@ -24,8 +24,8 @@ const works = [
         date: "2023-06-15",
         article_link: "/blog/Facebook-Like-Clone-With-Source-Code",
         url_new_tab: false,
-        external_link: '/blog/Facebook-Like-Clone-With-Source-Code',
-        github_link: null
+        external_link: "/blog/Facebook-Like-Clone-With-Source-Code",
+        github_link: null,
     },
     {
         on_going: false,
@@ -39,7 +39,7 @@ const works = [
         article_link: null,
         url_new_tab: true,
         external_link: "https://brojenuel.github.io/random-name-select/dist/",
-        github_link: "https://brojenuel.github.io/random-name-select/"
+        github_link: "https://brojenuel.github.io/random-name-select/",
     },
     {
         on_going: true,
@@ -53,8 +53,8 @@ const works = [
         logo: "https://believers-sword.brojenuel.com/_nuxt/believers-sword.7fcefc1c.svg",
         article_link: "/blog/Believers-Sword",
         url_new_tab: false,
-        external_link: 'https://believers-sword.brojenuel.com/',
-        github_link: "https://github.com/BroJenuel/believers-sword-next"
+        external_link: "https://believers-sword.brojenuel.com/",
+        github_link: "https://github.com/BroJenuel/believers-sword-next",
     },
     {
         on_going: false,
@@ -69,7 +69,7 @@ const works = [
         article_link: null,
         url_new_tab: true,
         external_link: "https://laravel-mongodb.vercel.app",
-        github_link: "https://github.com/BroJenuel/laravel-mongodb/tree/master/docs"
+        github_link: "https://github.com/BroJenuel/laravel-mongodb/tree/master/docs",
     },
     {
         on_going: false,
@@ -84,13 +84,14 @@ const works = [
         article_link: null,
         url_new_tab: true,
         external_link: "https://kateawisan.netlify.app/",
-        github_link: "https://github.com/BroJenuel/kate-awisan-resume-web"
+        github_link: "https://github.com/BroJenuel/kate-awisan-resume-web",
     },
     {
         on_going: false,
         overline: "Search Engine Project",
         title: "Get GIF's",
-        description: "Search the wide internet to get GIFs that you can download/copy and send/post to someone or somebody.",
+        description:
+            "Search the wide internet to get GIFs that you can download/copy and send/post to someone or somebody.",
         techs: ["vue", "API", "javascript"],
         thumbnail: "gif-search.webp",
         date: "2022-03-19",
@@ -98,7 +99,7 @@ const works = [
         article_link: null,
         url_new_tab: true,
         external_link: "https://gif-find.netlify.app",
-        github_link: "https://github.com/BroJenuel-Box/get-gifs"
+        github_link: "https://github.com/BroJenuel-Box/get-gifs",
     },
     {
         on_going: false,
@@ -113,7 +114,7 @@ const works = [
         article_link: null,
         url_new_tab: false,
         external_link: "https://BroJenuel.com",
-        github_link: "https://github.com/BroJenuel/BroJenuelBlog"
+        github_link: "https://github.com/BroJenuel/BroJenuelBlog",
     },
     {
         on_going: false,
@@ -127,7 +128,7 @@ const works = [
         article_link: null,
         url_new_tab: true,
         external_link: "https://lets-chat-b6w7.onrender.com/",
-        github_link: "https://github.com/BroJenuel-Box/lets-chat"
+        github_link: "https://github.com/BroJenuel-Box/lets-chat",
     },
     {
         on_going: false,
@@ -142,7 +143,7 @@ const works = [
         article_link: null,
         url_new_tab: true,
         external_link: "https://drive.google.com/file/d/1kc7EE7naz9Rpvq8kyJhJ4F_eB96tnEi5/view",
-        github_link: "https://github.com/BroJenuel/MyPortFolio/tree/master/appDev/world_time"
+        github_link: "https://github.com/BroJenuel/MyPortFolio/tree/master/appDev/world_time",
     },
     {
         on_going: false,
@@ -156,7 +157,7 @@ const works = [
         article_link: null,
         url_new_tab: true,
         external_link: "https://calculator.brojenuel.com/",
-        github_link: "https://github.com/BroJenuel/portfolio/tree/master/calculator-vue"
+        github_link: "https://github.com/BroJenuel/portfolio/tree/master/calculator-vue",
     },
     {
         on_going: false,
@@ -170,11 +171,9 @@ const works = [
         article_link: null,
         url_new_tab: true,
         external_link: "https://jenuelganawed-v1.netlify.app/#/challenge",
-        github_link: "https://github.com/BroJenuel/jenuel-portfolio-v1"
+        github_link: "https://github.com/BroJenuel/jenuel-portfolio-v1",
     },
-
 ];
-
 
 export const useWorks = (limit: "all" | number = "all") => {
     if (limit == "all") return works;
@@ -182,5 +181,5 @@ export const useWorks = (limit: "all" | number = "all") => {
 };
 
 export const useGetOngoingWorks = () => {
-    return works.filter(item => item.on_going == true);
-}
+    return works.filter((item) => item.on_going == true);
+};
