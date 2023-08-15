@@ -2,6 +2,7 @@
 const show = ref(false);
 const dropdownRef = ref(null);
 const route = useRoute();
+
 const menus = [
     {
         path: "/",
@@ -22,6 +23,7 @@ const menus = [
         path: "/what-i-can-offer",
         icon: "mdi:offer",
         label: "What I Can Offer",
+        name: "what-i-can-offer",
     },
     {
         path: "/blog",
@@ -50,7 +52,9 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             @click="show = false"
             :href="menu.path"
             class="block px-1 py-1 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
-            :class="{ '!text-[var(--primary)] is-active': route.path == menu.path }"
+            :class="{
+                '!text-[var(--primary)] is-active': route.path == menu.path || route.name?.toString().includes(menu.name as string),
+            }"
         >
             <Icon class="text-size-20px" :name="menu.icon" />
             {{ menu.label }}
@@ -78,7 +82,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                     @click="show = false"
                     :href="menu.path"
                     class="block px-4 lg:py-2 py-4 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
-                    :class="{ '!text-[var(--primary)]': route.path == menu.path }"
+                    :class="{ '!text-[var(--primary)] is-active': route.path == menu.path }"
                 >
                     <Icon class="text-size-30px" :name="menu.icon" />
                     {{ menu.label }}
@@ -142,7 +146,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
         top: 0;
         width: 0;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.178);
+        background-color: rgba(0, 0, 0, 0.555);
     }
 
     &.active-menu {
