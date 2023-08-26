@@ -23,6 +23,9 @@ export default defineNuxtConfig({
         public: {
             siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://brojenuel.com",
             isDevelopment: process.env.IS_DEVELOPMENT == 'TRUE',
+            emailJsServiceId: process.env.EMAILJS_SERVICE_ID,
+            emailJsTemplateId: process.env.EMAILJS_TEMPLATE_ID,
+            emailJsUserId: process.env.EMAILJS_USER_ID,
         },
     },
     css: ["@/assets/style/main.scss"],

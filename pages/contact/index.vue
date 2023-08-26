@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { $Swal } = useNuxtApp();
 const isShowContent = ref(false);
 const emailJs = useEmailJs();
 const isLoading = ref(false);
@@ -24,7 +25,12 @@ async function submitMail() {
                 email: form.email,
                 message: form.message,
             });
-            alert("Message Successfully Send! 😁👍🤗");
+
+            $Swal.fire({
+                icon: "success",
+                title: "Message Sent! 📬",
+                text: "Thank you for your message! I will get back to you soon! 😇😍✋",
+            });
         }
 
         form.name = null;
@@ -32,7 +38,11 @@ async function submitMail() {
         form.subject = null;
         form.message = "";
     } catch (e) {
-        alert("sending email error!..");
+        $Swal.fire({
+            icon: "error",
+            title: "Oops... Cant Send Message",
+            text: "Something went wrong!",
+        });
     }
     isLoading.value = false;
 }
@@ -43,9 +53,19 @@ const { setMeta } = useMeta();
 useHead({
     ...setMeta({
         title: "Contact Jenuel Ganawed",
-        description: "Contact me through this contact page.",
+        description:
+            "Do you like to talk about something, or want to hire me or work with me or just want to say hi? Feel free to contact me.",
         path: route.path,
-        keywords: ["brojenuel", "Jenuel", "Jenuel Ganawed", "bro jenuel", "web developer", "software developer"],
+        keywords: [
+            "contact brojenuel",
+            "contact jenuel ganawed",
+            "brojenuel",
+            "Jenuel",
+            "Jenuel Ganawed",
+            "bro jenuel",
+            "web developer",
+            "software developer",
+        ],
         lang: "en",
     }),
 });

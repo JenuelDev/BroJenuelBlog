@@ -21,7 +21,7 @@ const { data } = await useAsyncData("blog", async () => {
 });
 
 const author: any = await useAsyncData("author", async () => {
-    const author = await client.from("user_profile").select("*").eq("user_id", data.value.author).single();
+    const author: any = await client.from("user_profile").select("*").eq("user_id", data.value.author).single();
     return author.data;
 });
 
@@ -169,13 +169,74 @@ onMounted(() => {
                                 </div>
                             </div>
                             <div class="text-lg opacity-70 mb-2">
-                                <span class="mr-10px">{{
-                                    $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A")
-                                }}</span>
-                                <div class="whitespace-nowrap">
-                                    <Icon name="fluent-emoji-flat:writing-hand-light" class="mr-2" />
-                                    <span>{{ author ? author.data.value.username : "" }}</span>
+                                <div v-if="author.data.value" class="mt-3 flex flex-wrap gap-2 items-center">
+                                    ✍️
+                                    <NuxtLink
+                                        :href="author.data.value.website ?? '#'"
+                                        target="_blank"
+                                        title="authors website"
+                                    >
+                                        <h3
+                                            v-if="author.data.value.first_name || author.data.value.last_name"
+                                            class="text-size-20px hover:text-[var(--primary)] underline"
+                                        >
+                                            {{ author.data.value.first_name }} {{ author.data.value.last_name }}
+                                        </h3>
+                                    </NuxtLink>
+                                    <div class="flex items-center gap-3 text-size-20px">
+                                        <NuxtLink
+                                            v-if="author.data.value.facebook_username"
+                                            :href="`https://facebook.com/${author.data.value.facebook_username}`"
+                                            target="_blank"
+                                            :title="`facebook ${author.data.value.facebook_username}`"
+                                        >
+                                            <Icon name="logos:facebook" />
+                                        </NuxtLink>
+                                        <NuxtLink
+                                            v-if="author.data.value.instagram_username"
+                                            :href="`https://instagram.com/${author.data.value.instagram_username}`"
+                                            target="_blank"
+                                            :title="`instagram ${author.data.value.instagram_username}`"
+                                        >
+                                            <Icon name="skill-icons:instagram" />
+                                        </NuxtLink>
+                                        <NuxtLink
+                                            v-if="author.data.value.tiktok_username"
+                                            :href="`https://tiktok.com/${author.data.value.tiktok_username}`"
+                                            target="_blank"
+                                            :title="`tiktok ${author.data.value.tiktok_username}`"
+                                        >
+                                            <Icon name="icon-park-solid:tiktok" />
+                                        </NuxtLink>
+                                        <NuxtLink
+                                            v-if="author.data.value.twitter_username"
+                                            :href="`https://twitter.com/${author.data.value.twitter_username}`"
+                                            target="_blank"
+                                            :title="`twitter ${author.data.value.twitter_username}`"
+                                        >
+                                            <Icon name="simple-icons:x" />
+                                        </NuxtLink>
+                                        <NuxtLink
+                                            v-if="author.data.value.threads_username"
+                                            :href="`https://threads.net/${author.data.value.threads_username}`"
+                                            target="_blank"
+                                            :title="`threads ${author.data.value.threads_username}`"
+                                        >
+                                            <Icon name="fa6-brands:square-threads" />
+                                        </NuxtLink>
+                                        <NuxtLink
+                                            v-if="author.data.value.youtube_username"
+                                            :href="`https://youtube.com/${author.data.value.youtube_username}`"
+                                            target="_blank"
+                                            :title="`youtube ${author.data.value.youtube_username}`"
+                                        >
+                                            <Icon name="logos:youtube-icon" />
+                                        </NuxtLink>
+                                    </div>
                                 </div>
+                                <span class="text-size-15px">
+                                    {{ $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A") }}
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -189,22 +250,86 @@ onMounted(() => {
                         v-html="data.content"
                     ></div>
                     <hr />
-                    <br />
                     <div
-                        class="sticky top-15 sm:top-20 bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex flex-col items-center"
+                        v-if="['BroJenuel', 'KateAwisan'].includes(author.data.value.username ?? 'none')"
+                        class="bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex sm:flex-row flex-col items-center gap-10px mt-3"
                     >
                         <img src="/img/blog/qrcode-donate.webp" alt="" srcset="" width="200" />
-                        <div class="mb-3">Hi! If you like this article and would like to give coffee.</div>
-                        <a class="mt-2" href="https://ko-fi.com/T6T5379QZ" target="_blank">
-                            <img
-                                height="36"
-                                style="border: 0px; height: 30px"
-                                src="/img/picture/kofi.webp"
-                                border="0"
-                                alt="Buy Me a Coffee at ko-fi.com"
-                            />
-                        </a>
+                        <div class="sm:text-left text-center">
+                            <div class="mb-3">Hi! If you like this article and would like to give coffee.</div>
+                            <a class="mt-2" href="https://ko-fi.com/T6T5379QZ" target="_blank">
+                                <img
+                                    height="36"
+                                    style="border: 0px; height: 30px"
+                                    src="/img/picture/kofi.webp"
+                                    border="0"
+                                    alt="Buy Me a Coffee at ko-fi.com"
+                                />
+                            </a>
+                        </div>
                     </div>
+                    <div v-if="author.data.value" class="mt-3 mb-4">
+                        <NuxtLink :href="author.data.value.website ?? '#'" target="_blank" title="authors website">
+                            Author:
+                            <h3
+                                v-if="author.data.value.first_name || author.data.value.last_name"
+                                class="text-size-25px hover:text-[var(--primary)]"
+                            >
+                                {{ author.data.value.first_name }} {{ author.data.value.last_name }}
+                            </h3>
+                        </NuxtLink>
+                        <div class="flex gap-3 text-size-30px mt-2">
+                            <NuxtLink
+                                v-if="author.data.value.facebook_username"
+                                :href="`https://facebook.com/${author.data.value.facebook_username}`"
+                                target="_blank"
+                                :title="`facebook ${author.data.value.facebook_username}`"
+                            >
+                                <Icon name="logos:facebook" />
+                            </NuxtLink>
+                            <NuxtLink
+                                v-if="author.data.value.instagram_username"
+                                :href="`https://instagram.com/${author.data.value.instagram_username}`"
+                                target="_blank"
+                                :title="`instagram ${author.data.value.instagram_username}`"
+                            >
+                                <Icon name="skill-icons:instagram" />
+                            </NuxtLink>
+                            <NuxtLink
+                                v-if="author.data.value.tiktok_username"
+                                :href="`https://tiktok.com/${author.data.value.tiktok_username}`"
+                                target="_blank"
+                                :title="`tiktok ${author.data.value.tiktok_username}`"
+                            >
+                                <Icon name="icon-park-solid:tiktok" />
+                            </NuxtLink>
+                            <NuxtLink
+                                v-if="author.data.value.twitter_username"
+                                :href="`https://twitter.com/${author.data.value.twitter_username}`"
+                                target="_blank"
+                                :title="`twitter ${author.data.value.twitter_username}`"
+                            >
+                                <Icon name="simple-icons:x" />
+                            </NuxtLink>
+                            <NuxtLink
+                                v-if="author.data.value.threads_username"
+                                :href="`https://threads.net/${author.data.value.threads_username}`"
+                                target="_blank"
+                                :title="`threads ${author.data.value.threads_username}`"
+                            >
+                                <Icon name="fa6-brands:square-threads" />
+                            </NuxtLink>
+                            <NuxtLink
+                                v-if="author.data.value.youtube_username"
+                                :href="`https://youtube.com/${author.data.value.youtube_username}`"
+                                target="_blank"
+                                :title="`youtube ${author.data.value.youtube_username}`"
+                            >
+                                <Icon name="logos:youtube-icon" />
+                            </NuxtLink>
+                        </div>
+                    </div>
+                    <hr />
                     <div
                         v-if="!runtimeConfig.public.isDevelopment"
                         class="max-w-600px mx-auto px-10px relative pb-5 mt-50px"
