@@ -93,6 +93,11 @@ const otherCategories = [
         icon: "bi:tools",
         label: "Productivity",
     },
+    {
+        key: "Programming",
+        icon: "solar:programming-bold",
+        label: "Programming"
+    }
 ];
 
 const ToolCategories = [
