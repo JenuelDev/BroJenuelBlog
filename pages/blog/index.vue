@@ -59,27 +59,37 @@ const frameworks = [
 
 const otherCategories = [
     {
-        key: "earn",
+        key: "Earn",
         icon: "streamline:money-cash-search-dollar-search-pay-product-currency-query-magnifying-cash-business-money-glass",
         label: "Earn/Earn Online",
     },
     {
-        key: "ai",
+        key: "AI",
         icon: "icon-park-outline:reverse-operation-in",
         label: "AI",
     },
     {
-        key: "health",
+        key: "Health",
         icon: "twemoji:red-heart",
         label: "Health",
     },
     {
-        key: "software",
+        key: "Finance",
+        icon: "mdi:finance",
+        label: "Finance",
+    },
+    {
+        key: "Business",
+        icon: "material-symbols:business-center",
+        label: "Business",
+    },
+    {
+        key: "Software",
         icon: "material-symbols:app-badging",
         label: "Software",
     },
     {
-        key: "productivity",
+        key: "Productivity",
         icon: "bi:tools",
         label: "Productivity",
     },
@@ -87,22 +97,22 @@ const otherCategories = [
 
 const ToolCategories = [
     {
-        key: "javascript",
+        key: "JavaScript",
         icon: "logos:javascript",
         label: "JavaScript",
     },
     {
-        key: "html",
+        key: "HTML",
         icon: "skill-icons:html",
         label: "HTML",
     },
     {
-        key: "css",
+        key: "CSS",
         icon: "skill-icons:css",
         label: "CSS",
     },
     {
-        key: "php",
+        key: "PHP",
         icon: "logos:php",
         label: "PHP",
     },
