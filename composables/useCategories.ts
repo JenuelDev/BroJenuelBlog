@@ -1,4 +1,4 @@
-const frameworks = [
+export const frameworks = [
     {
         key: "VueJs",
         icon: "logos:vue",
@@ -41,7 +41,7 @@ const frameworks = [
     },
 ];
 
-const otherCategories = [
+export const otherCategories = [
     {
         key: "Earn",
         icon: "streamline:money-cash-search-dollar-search-pay-product-currency-query-magnifying-cash-business-money-glass",
@@ -109,7 +109,7 @@ const otherCategories = [
     },
 ];
 
-const ToolCategories = [
+export const ToolCategories = [
     {
         key: "JavaScript",
         icon: "logos:javascript",
