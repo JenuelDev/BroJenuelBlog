@@ -7,7 +7,7 @@
                 height="400"
                 class="rounded-lg mx-auto"
             />
-            <div class="text-4xl text-center mt-3">You've Arrived Here on Error, boss</div>
+            <div class="text-4xl text-center mt-3">You've Arrived Here on Error, boss. Page Not Found</div>
             <button
                 class="btn btn-filled sm:w-auto w-full group md:text-size-18px text-size-20px mx-auto"
                 @click="goBack"
