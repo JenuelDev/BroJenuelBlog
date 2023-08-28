@@ -1,4 +1,4 @@
-export const frameworks = [
+export const framework_categories = [
     {
         key: "VueJs",
         icon: "logos:vue",
@@ -41,7 +41,7 @@ export const frameworks = [
     },
 ];
 
-export const otherCategories = [
+export const other_categories = [
     {
         key: "Earn",
         icon: "streamline:money-cash-search-dollar-search-pay-product-currency-query-magnifying-cash-business-money-glass",
@@ -109,7 +109,7 @@ export const otherCategories = [
     },
 ];
 
-export const ToolCategories = [
+export const tool_categories = [
     {
         key: "JavaScript",
         icon: "logos:javascript",
@@ -154,8 +154,8 @@ export const ToolCategories = [
 
 export default function () {
     return {
-        frameworks: frameworks.sort((a, b) => a.label.localeCompare(b.label)),
-        ToolCategories: ToolCategories.sort((a, b) => a.label.localeCompare(b.label)),
-        otherCategories: otherCategories.sort((a, b) => a.label.localeCompare(b.label)),
+        frameworks: framework_categories.sort((a, b) => a.label.localeCompare(b.label)),
+        ToolCategories: tool_categories.sort((a, b) => a.label.localeCompare(b.label)),
+        otherCategories: other_categories.sort((a, b) => a.label.localeCompare(b.label)),
     };
 }
