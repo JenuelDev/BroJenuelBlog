@@ -8,7 +8,7 @@ const works = [
         techs: ["Vue3", "vite", "unocss", "TypeScript", "firebase"],
         thumbnail: "https://i.imgur.com/Wz7ym2ih.png",
         date: "2023-06-15",
-        article_link: "/blog/New-Personal-Simple-Project-Create-A-Family-Tree-With-This-Tool",
+        article_link: "/blog/I-Created-a-Family-Tree-Editor-Check-it-Out-",
         url_new_tab: true,
         external_link: "https://fam-tree.brojenuel.com/",
         github_link: null,
