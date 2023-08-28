@@ -21,6 +21,18 @@ const pages = [
         url: domain + "/blog",
         lastmod: "2023-04-17",
     },
+    {
+        url: domain + "/what-i-can-offer",
+        lastmod: "2023-04-17",
+    },
+    {
+        url: domain + "/what-i-can-offer/mobile-app",
+        lastmod: "2023-04-17",
+    },
+    {
+        url: domain + "/what-i-can-offer/websites",
+        lastmod: "2023-04-17",
+    },
 ];
 
 export default defineEventHandler(async (event) => {
@@ -37,7 +49,7 @@ export default defineEventHandler(async (event) => {
         });
     }
 
-    const { data, error }: any = await client
+    const { data }: any = await client
         .from("blogs")
         .select()
         .order("id", { ascending: false })
