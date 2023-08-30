@@ -3,13 +3,13 @@ import { defineStore } from "pinia";
 export const useMainStore = defineStore("mainStore", () => {
     const isIntroSocialLinkShowing = ref(true);
     const mySocial = ref([
-        // {
-        //     title: "Facebook",
-        //     icon: "mdi:facebook-box",
-        //     url: "https://www.facebook.com/broJenuel/",
-        //     ariaLabel: "Check BroJenuel Facebook",
-        //     isNuxtLink: false,
-        // },
+        {
+            title: "Facebook",
+            icon: "mdi:facebook-box",
+            url: "https://www.facebook.com/broJenuel/",
+            ariaLabel: "Check BroJenuel Facebook",
+            isNuxtLink: false,
+        },
         {
             title: "Youtube",
             icon: "mdi:youtube",
@@ -45,6 +45,13 @@ export const useMainStore = defineStore("mainStore", () => {
             ariaLabel: "Check BroJenuel Instagram",
             isNuxtLink: true,
         },
+        {
+            title: "Resume",
+            url: "/resume",
+            icon: "academicons:cv-square",
+            ariaLabel: "Check BroJenuel Resume",
+            isNuxtLink: true
+        }
     ]);
 
     return {

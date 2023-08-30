@@ -72,7 +72,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             <Icon name="solar:list-linear" />
         </div>
         <div class="dropdown-menu-mobile" :class="{ 'active-menu': show }">
-            <div class="py-1 h-full z-999 relative bg-[var(--background)] pt-30px" role="none">
+            <div class="py-1 h-full z-999 relative bg-[var(--background)] pt-30px px-5" role="none">
                 <div class="absolute right-3 top-3" @click="show = false">
                     <Icon class="text-size-30px" name="mdi:close" />
                 </div>
@@ -133,9 +133,9 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
     top: 0;
     right: 0;
     width: 100%;
-    max-width: 350px;
+    max-width: 430px;
     height: 100vh;
-    margin-right: -370px;
+    margin-right: -470px;
     transition: 0.2s;
 
     .dropdown-menu-mobile-bd {
