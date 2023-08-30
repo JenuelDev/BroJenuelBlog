@@ -5,11 +5,11 @@ function aboutPersonalProject() {
 }
 </script>
 <template>
-    <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px">
-        <h2 class="mb-3 text-[var(--primary)] flex justify-between">
-            Ongoing Personal Project
-            <Icon @click="aboutPersonalProject" name="zondicons:information-solid" class="cursor-pointer" />
-        </h2>
+    <div class="w-full max-w-600px lg:max-w-700px mx-auto pt-50px px-20px mb-20px flex items-center gap-5 text-[var(--primary)]">
+        <div class="font-800 text-size-20px ">Ongoing Personal Projects</div>
+        <NuxtLink href="/my-work">
+            <Icon name="fa6-solid:arrow-right-long" class="cursor-pointer text-size-27px  animate-shake" />
+        </NuxtLink>
     </div>
     <div class="flex flex-col gap-20 lg:max-w-800px max-w-600px mx-auto px-10px">
         <WorkItem :works="WORKS" />

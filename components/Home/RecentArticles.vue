@@ -20,8 +20,10 @@ onMounted(() => {
 });
 </script>
 <template>
-    <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px">
-        <h2 class="mb-3 text-[var(--primary)] flex justify-between">Recent Articles</h2>
+    <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px mb-100px">
+        <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px mb-20px">
+            <div class="font-800 text-size-20px text-[var(--primary)]">Recent Articles</div>
+        </div>
         <div v-show="!loadingBlogs" class="grid sm:grid-cols-2 grid-cols-1 gap-3">
             <NuxtLink
                 v-for="(blog, i) in blogs"

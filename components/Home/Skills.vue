@@ -114,7 +114,7 @@ const skills = [
 ];
 </script>
 <template>
-    <div id="skills-container" class="my-work pt-30px">
+    <div id="skills-container" class="my-work pt-50px">
         <div>
             <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px">
                 <div class="font-800 text-size-20px text-[var(--primary)]">Technical Skills</div>

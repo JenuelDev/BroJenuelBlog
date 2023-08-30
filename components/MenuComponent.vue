@@ -8,16 +8,19 @@ const menus = [
         path: "/",
         icon: "ic:twotone-web",
         label: "Home",
+        name: "home"
     },
     {
         path: "/#skills-container",
         icon: "fluent:brain-circuit-20-filled",
         label: "Skills",
+        name: "skills"
     },
     {
         path: "/timeline",
         icon: "mdi:chart-timeline",
         label: "Experience",
+        name: "timeline"
     },
     {
         path: "/what-i-can-offer",
@@ -29,16 +32,19 @@ const menus = [
         path: "/blog",
         icon: "fluent-mdl2:blog",
         label: "Blog",
+        name: "blog"
     },
     {
         path: "/my-work",
         icon: "pajamas:project",
         label: "My Work",
+        name: "my-work"
     },
     {
         path: "/contact",
         icon: "mdi:gmail",
         label: "Contact Me",
+        name: "contact"
     },
 ];
 
@@ -53,7 +59,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             :href="menu.path"
             class="block px-1 py-1 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
             :class="{
-                '!text-[var(--primary)] is-active': route.path == menu.path || route.name?.toString().includes(menu.name as string),
+                '!text-[var(--primary)] is-active': route.path == menu.path || route.name?.toString().includes(menu.name),
             }"
         >
             <Icon class="text-size-20px" :name="menu.icon" />

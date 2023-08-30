@@ -6,14 +6,16 @@ const mainStore = useMainStore();
 <template>
     <div
         class="fixed sm:left-10 transition-all duration-300 left-0  sm:w-auto w-full sm:bg-opacity-0 z-999 filter backdrop-filter backdrop-blur-md bottom-0"
-        :class="mainStore.isIntroSocialLinkShowing && route.path == '/' ? 'sm:bottom-[-380px]' : 'sm:bottom-[100px] opacity-100'"
+        :class="mainStore.isIntroSocialLinkShowing && route.path == '/' ? 'bottom-[-380px]' : 'sm:bottom-[100px] opacity-100'"
     >
         <ul class="flex sm:flex-col flex-row gap-3 relative justify-center sm:p-0 p-2">
             <li
                 v-for="social in mainStore.mySocial"
                 class="text-size-40px sm:transform sm:translate-y-2 sm:hover:translate-y-0 sm:transition-all sm:cursor-pointer sm:hover:text-[var(--primary)]"
             >
-                <NuxtLink v-if="social.isNuxtLink" :href="social.url" aria-label="Go to Contact Page"> <Icon name="mdi:gmail" /> </NuxtLink>
+                <NuxtLink v-if="social.isNuxtLink" :href="social.url" aria-label="Go to Contact Page">
+                    <Icon :name="social.icon" />
+                </NuxtLink>
                 <a v-else :href="social.url" target="_blank" :aria-label="social.ariaLabel">
                     <Icon :name="social.icon" />
                 </a>
