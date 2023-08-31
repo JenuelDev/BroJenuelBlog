@@ -33,7 +33,7 @@ defineOgImage({
                     <div class="lg:max-w-800px max-w-600px mx-auto px-10px">
                         <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
                             <Icon name="pajamas:project" />
-                            My Works
+                            Projects
                         </div>
                         <div class="pt-5 mb-5">
                             <div class="indent-md">

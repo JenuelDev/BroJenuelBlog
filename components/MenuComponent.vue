@@ -37,7 +37,7 @@ const menus = [
     {
         path: "/my-work",
         icon: "pajamas:project",
-        label: "My Work",
+        label: "Projects",
         name: "my-work"
     },
     {
