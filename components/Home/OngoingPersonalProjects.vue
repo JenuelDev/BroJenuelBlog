@@ -2,7 +2,7 @@
 const WORKS = useGetShowInHome();
 </script>
 <template>
-    <div class="w-full max-w-600px lg:max-w-700px mx-auto pt-50px px-20px mb-50px">
+    <div class="w-full max-w-600px lg:max-w-700px mx-auto pt-50px px-20px">
         <div class="font-800 text-size-20px text-[var(--primary)]">Projects</div>
         <div class="pt-5">
             <div class="tracking-wide">
@@ -10,7 +10,7 @@ const WORKS = useGetShowInHome();
             </div>
         </div>
     </div>
-    <div class="flex flex-col gap-20 lg:max-w-800px max-w-600px mx-auto px-10px">
+    <div class="flex flex-col gap-20 lg:max-w-800px max-w-600px mx-auto px-10px mt-10">
         <WorkItem :works="WORKS" />
     </div>
     <div class="flex justify-center mt-30px">

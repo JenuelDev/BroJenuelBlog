@@ -11,22 +11,10 @@ const menus = [
         name: "home"
     },
     {
-        path: "/#skills-container",
-        icon: "fluent:brain-circuit-20-filled",
-        label: "Skills",
-        name: "skills"
-    },
-    {
         path: "/timeline",
         icon: "mdi:chart-timeline",
         label: "Experience",
         name: "timeline"
-    },
-    {
-        path: "/what-i-can-offer",
-        icon: "mdi:offer",
-        label: "What I Can Offer",
-        name: "what-i-can-offer",
     },
     {
         path: "/blog",

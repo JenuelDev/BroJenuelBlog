@@ -20,12 +20,13 @@ onMounted(() => {
 });
 </script>
 <template>
-    <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px mb-100px">
+    <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px">
         <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px mb-20px">
             <div class="font-800 text-size-20px text-[var(--primary)]">Recent Articles</div>
             <div class="pt-5">
                 <div class="tracking-wide">
-                    Creating an Article is one way of sharing your knowledge with the world. It's also a great way to learn new things.
+                    Creating an Article is one way of sharing your knowledge with the world. It's also a great way to
+                    learn new things.
                 </div>
             </div>
         </div>

@@ -26,7 +26,8 @@ useHead({
         <ClientOnly>
             <HomeRecentArticles />
         </ClientOnly>
-        <HomeOngoingPersonalProjects />
         <HomeSkills />
+        <HomeOngoingPersonalProjects />
+        
     </NuxtLayout>
 </template>
