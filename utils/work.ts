@@ -1,7 +1,8 @@
 const works = [
     {
+        show_at_home: true,
         on_going: true,
-        overline: "Web Application",
+        overline: "Web App",
         title: "Fams Tree",
         description:
             "Fams Tree is an application tool that you can use to create family tree. You can then save, or export it to different format like PDF, SVG, PNG, etc.",
@@ -14,8 +15,9 @@ const works = [
         github_link: null,
     },
     {
+        show_at_home: true,
         on_going: false,
-        overline: "Web Template",
+        overline: "Template",
         title: "FaceBook Clone",
         description:
             "This is a facebook like Clone. I created it using VueJs and WindiCSS. WindiCSS a tailwind like library but faster.",
@@ -23,17 +25,18 @@ const works = [
         thumbnail: "https://i.imgur.com/sCZY0BHm.png",
         date: "2023-06-15",
         article_link: "/blog/Facebook-Like-Clone-With-Source-Code",
-        url_new_tab: false,
-        external_link: "/blog/Facebook-Like-Clone-With-Source-Code",
+        url_new_tab: true,
+        external_link: "https://facebook-clone-nu-ecru.vercel.app/",
         github_link: null,
     },
     {
+        show_at_home: true,
         on_going: false,
         overline: "Web App",
         title: "Random Name Selector",
         description:
-            "This is a simple wheel of fortune like web app. You can add, edit, remove people, and an awesome simple congratulation if a user has been picked.",
-        techs: ["Vue3", "vite", "windiCSS", "TypeScript"],
+            "This is a simple wheel of fortune like. You can add, edit, remove people, and an awesome simple congratulation if a user has been picked.",
+        techs: ["Vue3", "Vite", "WindiCSS", "TypeScript"],
         thumbnail: "https://i.imgur.com/PILgM1ll.png",
         date: "2023-05-18",
         article_link: null,
@@ -42,12 +45,13 @@ const works = [
         github_link: "https://brojenuel.github.io/random-name-select/",
     },
     {
+        show_at_home: true,
         on_going: true,
         overline: "Software",
         title: "Believers Sword",
         description:
-            "This is a simple bible reading application that gives basic functionality. I am waiting for anyone who wants to own this project, and I am willing to work with you.",
-        techs: ["electron", "electron.builder", "Vue3", "windiCss", "naive-ui"],
+            "This is a simple desktop application to help in studying the bible. It has features like bookmark, highlights, prayer list, sermon page, etc.",
+        techs: ["electron", "electron.builder", "Vue3", "windiCss", "Naive-UI"],
         thumbnail: "https://i.imgur.com/HOGyZ7ql.png",
         date: "2023-04-17",
         logo: "https://believers-sword.brojenuel.com/_nuxt/believers-sword.7fcefc1c.svg",
@@ -57,8 +61,9 @@ const works = [
         github_link: "https://github.com/BroJenuel/believers-sword-next",
     },
     {
+        show_at_home: true,
         on_going: false,
-        overline: "Documentation Project",
+        overline: "Documentation Website",
         title: "Laravel MongoDB Docs",
         description:
             "A Documentation website for Laravel MongoDB, a package that you can use to easily connect your laravel project to mongodb.",
@@ -72,6 +77,7 @@ const works = [
         github_link: "https://github.com/BroJenuel/laravel-mongodb/tree/master/docs",
     },
     {
+        show_at_home: true,
         on_going: false,
         overline: "Portfolio Website",
         title: "Portfolio Website",
@@ -87,8 +93,9 @@ const works = [
         github_link: "https://github.com/BroJenuel/kate-awisan-resume-web",
     },
     {
+        show_at_home: true,
         on_going: false,
-        overline: "Search Engine Project",
+        overline: "Search Engine",
         title: "Get GIF's",
         description:
             "Search the wide internet to get GIFs that you can download/copy and send/post to someone or somebody.",
@@ -102,8 +109,9 @@ const works = [
         github_link: "https://github.com/BroJenuel-Box/get-gifs",
     },
     {
+        show_at_home: false,
         on_going: false,
-        overline: "Personal Website ",
+        overline: "Personal Website",
         title: "Portfolio Final Version",
         description:
             "I created a new portfolio website, and it is being served as an SSR for good SEO. I added blogs for publishing my articles.",
@@ -117,6 +125,7 @@ const works = [
         github_link: "https://github.com/BroJenuel/BroJenuelBlog",
     },
     {
+        show_at_home: true,
         on_going: false,
         overline: "Web App",
         title: "Lets Chat Up",
@@ -131,11 +140,12 @@ const works = [
         github_link: "https://github.com/BroJenuel-Box/lets-chat",
     },
     {
+        show_at_home: true,
         on_going: false,
         overline: "Android App",
         title: "Simple World Time App",
         description:
-            "World time is an app I created, wherein you can check the time around the world and also check if its night time or day time.",
+            "World time is an app wherein you can check the time around the world and also check if its night time or day time.",
         techs: ["ReactNative", "javascript"],
         thumbnail: "https://i.imgur.com/D2BH206l.png",
         date: "2019-05-02",
@@ -146,6 +156,7 @@ const works = [
         github_link: "https://github.com/BroJenuel/MyPortFolio/tree/master/appDev/world_time",
     },
     {
+        show_at_home: true,
         on_going: false,
         overline: "Web App",
         title: "Simple Web Calculator",
@@ -160,11 +171,12 @@ const works = [
         github_link: "https://github.com/BroJenuel/portfolio/tree/master/calculator-vue",
     },
     {
+        show_at_home: true,
         on_going: false,
         overline: "Personal Website",
-        title: "Portfolio Version 1.**",
+        title: "Portfolio Version v1",
         description:
-            "Created My Very First Portfolio Website. It looks cool but the performance is too much. I also used google blogSpot API to set my blogs. But my I removed my blogSpot so its not working anymore. But I was able to learn something from it.",
+            "This is my very first portfolio website created from scratch.",
         techs: ["vue", "javascript", "Vuetify"],
         thumbnail: "https://i.imgur.com/tVN4aOVl.png",
         date: "2017-12-01",
@@ -182,4 +194,8 @@ export const useWorks = (limit: "all" | number = "all") => {
 
 export const useGetOngoingWorks = () => {
     return works.filter((item) => item.on_going == true);
+};
+
+export const useGetShowInHome = () => {
+    return works.filter((item) => item.show_at_home == true);
 };

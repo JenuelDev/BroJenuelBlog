@@ -60,7 +60,7 @@ defineProps({
                 </ul>
                 <div class="mb-2">{{ work.description }}</div>
                 <div class="flex gap-2 flex-wrap" :class="{ 'sm:justify-end': i % 2 != 0 }">
-                    <a
+                    <NuxtLink
                         v-if="work.article_link"
                         :href="work.article_link"
                         title="Check Article"
@@ -69,7 +69,7 @@ defineProps({
                     >
                         <Icon name="mdi:launch" />
                         Article
-                    </a>
+                    </NuxtLink>
                     <a
                         v-if="work.external_link"
                         :href="work.external_link"
