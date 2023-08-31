@@ -6,7 +6,7 @@ export const useMainStore = defineStore("mainStore", () => {
         {
             title: "Facebook",
             icon: "mdi:facebook-box",
-            url: "https://www.facebook.com/broJenuel/",
+            url: "https://www.facebook.com/broJenuelofficial/",
             ariaLabel: "Check BroJenuel Facebook",
             isNuxtLink: false,
         },
