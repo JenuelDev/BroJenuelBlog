@@ -31,7 +31,9 @@ defineProps({
             class="flex overflow-hidden rounded-lg relative sm:w-[55%] w-full"
             :class="{ 'sm:order-2 justify-start': i % 2 != 0, 'justify-end': i % 2 == 0 }"
         >
-            <div
+            <NuxtLink
+                :href="work.external_link ?? work.article_link ?? '#'"
+                :target="work.external_link ? '_blank' : '_parent'"
                 class="border-1 border-[var(--gray-lightest)] flex justify-center items-center overflow-hidden rounded-lg relative"
             >
                 <nuxt-img
@@ -42,7 +44,7 @@ defineProps({
                     height="250"
                     format="webp"
                 />
-            </div>
+            </NuxtLink>
         </div>
         <div class="group sm:w-[45%] w-full" :class="{ 'sm:text-right': i % 2 != 0 }">
             <div>{{ work.overline }}</div>
