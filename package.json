@@ -17,7 +17,7 @@
     "@vueuse/head": "^1.1.23",
     "@vueuse/nuxt": "^9.13.0",
     "estree-walker": "^3.0.3",
-    "nuxt": "^3.6.5",
+    "nuxt": "^3.7.0",
     "nuxt-icon": "^0.2.7",
     "nuxt-og-image": "^2.0.18",
     "nuxt-windicss": "^2.6.0",
