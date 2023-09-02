@@ -2,6 +2,22 @@ const works = [
     {
         show_at_home: true,
         on_going: true,
+        overline: "Software",
+        title: "Believers Sword",
+        description:
+            "This is a simple desktop application to help in studying the bible. It has features like bookmark, highlights, prayer list, sermon page, etc.",
+        techs: ["electron", "electron.builder", "Vue3", "windiCss", "Naive-UI"],
+        thumbnail: "https://i.imgur.com/HOGyZ7ql.png",
+        date: "2023-04-17",
+        logo: "https://believers-sword.brojenuel.com/_nuxt/believers-sword.7fcefc1c.svg",
+        article_link: "/blog/Believers-Sword",
+        url_new_tab: false,
+        external_link: "https://believers-sword.brojenuel.com/",
+        github_link: "https://github.com/BroJenuel/believers-sword-next",
+    },
+    {
+        show_at_home: true,
+        on_going: true,
         overline: "Web App",
         title: "Fams Tree",
         description:
@@ -44,22 +60,7 @@ const works = [
         external_link: "https://brojenuel.github.io/random-name-select/dist/",
         github_link: "https://brojenuel.github.io/random-name-select/",
     },
-    {
-        show_at_home: true,
-        on_going: true,
-        overline: "Software",
-        title: "Believers Sword",
-        description:
-            "This is a simple desktop application to help in studying the bible. It has features like bookmark, highlights, prayer list, sermon page, etc.",
-        techs: ["electron", "electron.builder", "Vue3", "windiCss", "Naive-UI"],
-        thumbnail: "https://i.imgur.com/HOGyZ7ql.png",
-        date: "2023-04-17",
-        logo: "https://believers-sword.brojenuel.com/_nuxt/believers-sword.7fcefc1c.svg",
-        article_link: "/blog/Believers-Sword",
-        url_new_tab: false,
-        external_link: "https://believers-sword.brojenuel.com/",
-        github_link: "https://github.com/BroJenuel/believers-sword-next",
-    },
+
     {
         show_at_home: true,
         on_going: false,
@@ -175,8 +176,7 @@ const works = [
         on_going: false,
         overline: "Personal Website",
         title: "Portfolio Version v1",
-        description:
-            "This is my very first portfolio website created from scratch.",
+        description: "This is my very first portfolio website created from scratch.",
         techs: ["vue", "javascript", "Vuetify"],
         thumbnail: "https://i.imgur.com/tVN4aOVl.png",
         date: "2017-12-01",

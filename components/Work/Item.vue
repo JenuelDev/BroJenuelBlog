@@ -34,7 +34,7 @@ defineProps({
             <NuxtLink
                 :href="work.external_link ?? work.article_link ?? '#'"
                 :target="work.external_link ? '_blank' : '_parent'"
-                class="border-1 border-[var(--gray-lightest)] flex justify-center items-center overflow-hidden rounded-lg relative"
+                class="flex justify-center items-center overflow-hidden rounded-lg relative w-full"
             >
                 <nuxt-img
                     :src="work.thumbnail.includes('http') ? work.thumbnail : `/img/work/${work.thumbnail}`"
@@ -47,11 +47,8 @@ defineProps({
             </NuxtLink>
         </div>
         <div class="group sm:w-[45%] w-full" :class="{ 'sm:text-right': i % 2 != 0 }">
-            <div>{{ work.overline }}</div>
+            <div class="text-size-12px mb-1 text-[var(--primary)]">{{ work.overline }}</div>
             <div class="flex gap-10px items-center" :class="{ 'sm:justify-end': i % 2 != 0 }">
-                <div v-if="work.logo" class="w-30px h-30px overflow-hidden rounded-md bg-white">
-                    <img class="w-30px" height="30" width="30" :src="work.logo" :alt="work.title" />
-                </div>
                 <div class="font-700 group-hover:text-[var(--primary)] text-size-25px">
                     {{ work.title }}
                 </div>
@@ -81,7 +78,7 @@ defineProps({
                         :class="{ 'order-1': i % 2 == 0 }"
                     >
                         <Icon name="mdi:launch" />
-                        Open App
+                        Visit
                     </a>
                     <a
                         v-if="work.github_link"
