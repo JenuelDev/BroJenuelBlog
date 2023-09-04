@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const client = useSupabaseClient();
 const loadingBlogs = ref(true);
-const limit = ref(2);
+const limit = ref(4);
 const blogs = ref<Array<any>>([]);
 async function getBlogs() {
     loadingBlogs.value = true;
