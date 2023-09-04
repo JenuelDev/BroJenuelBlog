@@ -47,11 +47,11 @@ export const useMainStore = defineStore("mainStore", () => {
         },
         {
             title: "Resume",
-            url: "/resume",
+            url: "/cv",
             icon: "academicons:cv-square",
             ariaLabel: "Check BroJenuel Resume",
-            isNuxtLink: true
-        }
+            isNuxtLink: true,
+        },
     ]);
 
     return {

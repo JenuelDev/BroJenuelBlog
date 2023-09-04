@@ -5,7 +5,7 @@ const mainStore = useMainStore();
 </script>
 <template>
     <div
-        class="fixed sm:left-10 transition-all duration-300 left-0  sm:w-auto w-full sm:bg-opacity-0 z-999 filter backdrop-filter backdrop-blur-md bottom-0"
+        class="fixed sm:left-10 transition-all duration-300 left-0  sm:w-auto w-full sm:bg-opacity-0 z-999 filter backdrop-filter backdrop-blur-md bottom-0 no-print"
         :class="mainStore.isIntroSocialLinkShowing && route.path == '/' ? 'bottom-[-380px]' : 'sm:bottom-[100px] opacity-100'"
     >
         <ul class="flex sm:flex-col flex-row gap-3 relative justify-center sm:p-0 p-2">
@@ -25,7 +25,7 @@ const mainStore = useMainStore();
         </ul>
     </div>
     <div
-        class="fixed sm:right-10 transition-all duration-300 right-0 bottom-0 sm:w-auto w-full z-99 filter backdrop-filter backdrop-blur-md bottom-[-350px]"
+        class="fixed sm:right-10 transition-all duration-300 right-0 bottom-0 sm:w-auto w-full z-99 filter backdrop-filter backdrop-blur-md bottom-[-350px] no-print"
         :class="mainStore.isIntroSocialLinkShowing && route.path == '/' ? 'sm:bottom-[-350px]' : 'sm:bottom-[100px]'"
     >
         <NuxtLink href="/contact">

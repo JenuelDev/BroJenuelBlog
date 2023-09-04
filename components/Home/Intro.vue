@@ -34,24 +34,23 @@ onMounted(() => {
                 </div>
                 <div class="sm:text-right text-center sm:order-1 order-2 sm:w-[50%]">
                     <div class="lg:text-size-33px md:text-size-36px text-size-36px font-300">
-                        hi! <span class="animate-wave lg:text-size-54px md:text-size-46px text-size-60px">👋</span> I'm a
+                        hi! <span class="animate-wave lg:text-size-54px md:text-size-46px text-size-60px">👋</span> I'm
+                        a
                     </div>
                     <div
                         class="lg:text-size-40px md:text-size-29px text-size-55px font-600 mt-10px text-[var(--primary)]"
                     >
                         Full-Stack Developer
                     </div>
-                    <div
-                        class="lg:text-size-33px md:text-size-25px text-size-33px font-300 tracking-tight py-2"
-                    >
+                    <div class="lg:text-size-33px md:text-size-25px text-size-33px font-300 tracking-tight py-2">
                         i create apps and websites
                     </div>
                     <div class="opacity-80 py-3">
-                        My name is Jenuel Oras Ganawed and I am full-stack Developer from Philippines. I'm
-                        passionate about coding, writing, and sharing what I know.
+                        My name is Jenuel Oras Ganawed and I am full-stack Developer from Philippines. I'm passionate
+                        about coding, writing, and sharing what I know.
                         <NuxtLink
                             class="text-[var(--primary)] hover:underline whitespace-nowrap"
-                            href="/blog/Hi-I-am-Jenuel-Oras-Ganawed"
+                            href="/cv"
                             title="Read More"
                         >
                             More...
@@ -61,10 +60,7 @@ onMounted(() => {
             </div>
 
             <div class="w-full z-99 flex justify-center">
-                <div
-                    ref="socialRef"
-                    class="rounded-lg p-10px flex md:gap-20px gap-30px justify-center flex-wrap"
-                >
+                <div ref="socialRef" class="rounded-lg p-10px flex md:gap-20px gap-30px justify-center flex-wrap">
                     <template v-for="social in mainStore.mySocial" :key="social.title">
                         <a
                             v-if="!social.isNuxtLink"
