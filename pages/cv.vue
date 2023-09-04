@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const route = useRoute();
+const { setMeta } = useMeta();
 const education = useEducation();
 const skills = useSkills();
 const experiences = useExperiences();
@@ -28,6 +30,24 @@ const contacts = [
 function printButtonHandler() {
     window.print();
 }
+
+useHead({
+    ...setMeta({
+        title: "Resume - Brojenuel",
+        description: "Check Jenuel Oras Ganawed resume.",
+        path: route.path,
+        keywords: ["brojenuel", "Jenuel", "resume", "Jenuel Oras Ganawed", "jenuel ganawed"],
+        lang: "en",
+    }),
+});
+
+defineOgImage({
+    component: "DefaultOgImage",
+    path: route.path,
+    title: "Resume - BroJenuel",
+    description: "Check Jenuel Oras Ganawed resume.",
+    appName: "www.BroJenuel.com",
+});
 </script>
 <template>
     <NuxtLayout>
