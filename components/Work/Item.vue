@@ -43,6 +43,7 @@ defineProps({
                     width="500"
                     height="250"
                     format="webp"
+                    loading="lazy"
                 />
             </NuxtLink>
         </div>
