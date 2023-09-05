@@ -25,7 +25,7 @@ defineProps({
     <div
         v-for="(work, i) in (works as WORKS_TYPE)"
         :key="i"
-        class="relative group flex gap-15px sm:flex-row flex-col items-center sm:opacity-90 hover:opacity-100 sm:transform sm:scale-100 sm:hover:scale-105 transition-all"
+        class="relative group flex gap-15px sm:flex-row flex-col items-center transition-all"
     >
         <div
             class="flex overflow-hidden rounded-lg relative sm:w-[55%] w-full"

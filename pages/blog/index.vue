@@ -189,7 +189,14 @@ function searchRoute() {
                                 v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
                                 class="md:order-2 md:max-w-350px overflow-hidden md:w-[40%]"
                             >
-                                <img :src="blog.cover_img" class="float-right rounded-2xl" />
+                                <nuxt-img
+                                    :src="blog.cover_img"
+                                    class="float-right rounded-2xl"
+                                    :alt="blog.title"
+                                    width="500"
+                                    format="webp"
+                                    loading="lazy"
+                                />
                             </div>
                             <div
                                 class="relative group md:order-1"

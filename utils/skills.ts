@@ -1,10 +1,8 @@
 export const useSkills = () => [
     {
-        icon: "skill-icons:javascript",
-        tech: "JavaScript/TypeScript",
-        description:
-            "It's used to create interactive front-end web experiences. It's also used on the server-side through technologies such as Node.js.",
-        yearStarted: 2017,
+        icon: "carbon:screen-map",
+        tech: "FrontEnd Technologies",
+        description: `Frontend technologies refer to the technologies and tools used to develop the user interface and user experience (UI/UX) of a website or web application. Frontend development focuses on creating the visual elements and interactive features that users see and interact with in their web browsers.`,
         tools: [
             {
                 icon: "skill-icons:javascript",
@@ -36,15 +34,6 @@ export const useSkills = () => [
                 description: `Its actually like javascript but focuses more on types, this was created to be useful on IDEs like VS Code, and also help lower type errors in the future, specially as the project grows. <a href="https://www.typescriptlang.org/">To Know More Click Here</a>`,
                 link: "https://www.typescriptlang.org/",
             },
-        ],
-    },
-    {
-        icon: "skill-icons:html",
-        tech: "HTML/CSS/UX/UI",
-        description:
-            "For creating the structure, design and layout of web pages. It uses a system of tags and attributes to define the various elements on a web page.",
-        yearStarted: 2016,
-        tools: [
             {
                 icon: "logos:tailwindcss-icon",
                 text: "tailwindcss",
@@ -88,14 +77,18 @@ export const useSkills = () => [
                 description: `UnoCSS is the instant atomic CSS engine, that is designed to be flexible and extensible. The core is un-opinionated, and all the CSS utilities are provided via presets.`,
                 link: "https://unocss.dev/",
             },
+            {
+                icon: "skill-icons:electron",
+                text: "Electron",
+                description: `Electron is a JavaScript framework for building cross-platform desktop applications.`,
+                link: "https://www.electronjs.org/",
+            },
         ],
     },
     {
-        icon: "logos:php",
-        tech: "PHP",
-        description:
-            "Server-side scripting language primarily used for web development. Also commonly used with the MySQL database, and is supported by many web servers and operating systems.",
-        yearStarted: 2017,
+        icon: "lucide:server-cog",
+        tech: "Backend Technologies",
+        description: `Backend technologies refer to the technologies and tools used to build the server-side of web applications. The backend is responsible for managing data, processing requests from the frontend, and performing various operations behind the scenes.`,
         tools: [
             {
                 icon: "devicon:php",
@@ -119,15 +112,6 @@ export const useSkills = () => [
                     "<a href='https://laravel.com/' target='_blank' alt='Go to Laravel'>Laravel</a> is a free, open-source PHP web framework, created by Taylor Otwell and intended for the development of web applications following the model–view–controller architectural pattern and based on Symfony. Laravel <a href='https://lumen.laravel.com/' target='_blank' alt='Go to lumen'>Lumen</a> is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax.",
                 link: "https://laravel.com/",
             },
-        ],
-    },
-    {
-        icon: "teenyicons:database-solid",
-        tech: "Databases",
-        description:
-            "In web development, a database is a structured collection of data that is organized and stored in a way that allows efficient storage, retrieval, modification, and management of information",
-        yearStarted: 2021,
-        tools: [
             {
                 icon: "skill-icons:mysql-dark",
                 text: `MySQL`,
@@ -151,6 +135,56 @@ export const useSkills = () => [
                 text: `Firebase`,
                 description: `Firebase, Inc. is a set of backend cloud computing services and application development platforms provided by Google. It hosts databases, services, authentication, and integration for a variety of applications, including Android, iOS, JavaScript, Node.js, Java, Unity, PHP, and C++.`,
                 link: "https://firebase.google.com/",
+            },
+            {
+                icon: "skill-icons:supabase-light",
+                text: `SupaBase`,
+                description: `Supabase is an open source Firebase alternative.
+                Start your project with a Postgres database, Authentication, instant APIs, Edge Functions, Realtime subscriptions, Storage, and Vector embeddings.`,
+                link: "https://supabase.com/",
+            },
+            {
+                icon: 'skill-icons:vercel-dark',
+                text: `Vercel`,
+                description: `Vercel is a platform for building, deploying, and scaling next-generation applications.`,
+                link: "https://vercel.com/",
+            }
+        ],
+    },
+    {
+        icon: "tdesign:setting",
+        tech: "Other Technologies",
+        description: null,
+        tools: [
+            {
+                icon: "devicon:git",
+                text: "Git",
+                description: `Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.`,
+                link: "https://git-scm.com/",
+            },
+            {
+                icon: "devicon:vscode",
+                text: "VS Code",
+                description: `VS Code is a source-code editor that is built specifically for building and debugging modern web and cloud applications.`,
+                link: "https://code.visualstudio.com/",
+            },
+            {
+                icon: "simple-icons:laragon",
+                text: "Laragon",
+                description: `Laragon is a free and open-source cross-platform desktop application development environment for Windows, macOS, and Linux.`,
+                link: "https://www.laragon.org/",
+            },
+            {
+                icon: "logos:phpstorm",
+                text: "PhpStorm",
+                description: `PhpStorm is a free, open-source, cross-platform IDE for web and desktop applications developed by JetBrains.`,
+                link: "https://www.jetbrains.com/phpstorm/",
+            },
+            {
+                icon: "logos:webstorm",
+                text: "WebStorm",
+                description: `WebStorm is a free, open-source, cross-platform IDE for web and desktop applications developed by JetBrains.`,
+                link: "https://www.jetbrains.com/webstorm/",
             },
         ],
     },

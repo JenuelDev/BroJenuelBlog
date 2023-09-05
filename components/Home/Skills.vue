@@ -14,23 +14,21 @@ const skills = useSkills();
                 </div>
             </div>
             <div class="max-w-600px lg:max-w-650px mx-auto px-10px pt-30px">
-                <div class="grid sm:grid-cols-2 grid-cols-1 gap-3">
-                    <div
-                        v-for="skill in skills"
-                        :key="skill.tech"
-                        class="flex flex-col pb-5 transform scale-98 hover:scale-100 transition-all"
-                    >
+                <div class="grid sm:grid-cols-1 grid-cols-1 gap-3">
+                    <div v-for="skill in skills" :key="skill.tech" class="flex flex-col pb-5">
                         <div>
                             <div class="flex items-center gap-3 pb-3">
                                 <Icon class="text-size-25px" :name="skill.icon" />
                                 <div class="font-RobotoBold">{{ skill.tech }}</div>
                             </div>
-                            <div class="tracking-wide leading-relaxed font-RobotoLight">{{ skill.description }}</div>
+                            <div class="tracking-wide leading-relaxed font-RobotoLight" v-if="skill.description">
+                                {{ skill.description }}
+                            </div>
                         </div>
                         <div class="flex gap-2 pt-10px flex-wrap">
                             <NuxtLink :href="tool.link" target="_blank" v-for="tool in skill.tools" :key="tool.text">
                                 <div
-                                    class="whitespace-nowrap w-full overflow-hidden transition-all bg-[var(--background-secondary)] p-2 rounded-md transform hover:scale-110 cursor-pointer"
+                                    class="whitespace-nowrap w-full overflow-hidden transition-all duration-75 bg-[var(--background-secondary)] p-2 rounded-md transform hover:scale-110 cursor-pointer"
                                 >
                                     <Icon class="text-size-20px" :name="tool.icon" />
                                     <span class="ml-2 text-size-14px">{{ tool.text }}</span>

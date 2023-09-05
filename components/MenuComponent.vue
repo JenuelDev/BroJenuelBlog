@@ -6,13 +6,13 @@ const route = useRoute();
 const menus = [
     {
         path: "/",
-        icon: "ic:twotone-web",
+        icon: "teenyicons:home-solid",
         label: "Home",
         name: "home"
     },
     {
         path: "/timeline",
-        icon: "mdi:chart-timeline",
+        icon: "mdi:timeline-clock-outline",
         label: "Experience",
         name: "timeline"
     },
@@ -30,7 +30,7 @@ const menus = [
     },
     {
         path: "/contact",
-        icon: "mdi:gmail",
+        icon: "mdi:mail",
         label: "Contact Me",
         name: "contact"
     },
