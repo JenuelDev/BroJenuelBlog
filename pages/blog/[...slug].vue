@@ -181,6 +181,12 @@ onMounted(() => {
                                         >
                                             {{ author.data.value.first_name }} {{ author.data.value.last_name }}
                                         </h3>
+                                        <h3
+                                            v-else-if="author.data.value.username"
+                                            class="text-size-20px hover:text-[var(--primary)] underline"
+                                        >
+                                            {{ author.data.value.username }}
+                                        </h3>
                                     </NuxtLink>
                                     <div class="flex items-center gap-3 text-size-20px">
                                         <NuxtLink
@@ -275,6 +281,12 @@ onMounted(() => {
                                 class="text-size-25px hover:text-[var(--primary)]"
                             >
                                 {{ author.data.value.first_name }} {{ author.data.value.last_name }}
+                            </h3>
+                            <h3
+                                v-else-if="author.data.value.username"
+                                class="text-size-25px hover:text-[var(--primary)]"
+                            >
+                                {{ author.data.value.username }}
                             </h3>
                         </NuxtLink>
                         <div class="flex gap-3 text-size-30px mt-2">
