@@ -16,11 +16,11 @@ function changeColorMode() {
 }
 </script>
 <template>
-    <div class="relative flex items-center justify-center lg:order-2 order-1">
+    <div class="relative flex items-center justify-center lg:order-3 order-2">
         <button
             type="button"
             @click="changeColorMode()"
-            class="lg:w-25px lg:h-25px w-35px h-35px rounded-md flex items-center justify-center transition-all duration-500"
+            class="w-35px h-35px rounded-md flex items-center justify-center transition-all duration-500"
             :class="{
                 'bg-yellow-50 text-[var(--background)]': theme == 'dark',
                 'bg-[#0a192f] text-light-50': theme == 'light',

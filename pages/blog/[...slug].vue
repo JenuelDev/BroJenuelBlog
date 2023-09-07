@@ -120,16 +120,15 @@ onMounted(() => {
                                 </span>
                             </button>
                             <a
-                                class="h-40px w-40px p-3 bg-[#FF5D5D] rounded-full flex items-center justify-center relative group"
+                                class="h-40px w-40px p-3 bg-[#FFDD00] rounded-full flex items-center justify-center relative group text-dark-700"
                                 href="https://ko-fi.com/T6T5379QZ"
                                 target="_blank"
                             >
-                                <Icon name="cib:ko-fi" />
+                                <Icon name="simple-icons:buymeacoffee" />
                                 <span
-                                    class="absolute left-50px whitespace-nowrap bg-[#FF5D5D] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2 font-bold pointer-events-none"
+                                    class="absolute left-50px whitespace-nowrap bg-[#FFDD00] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2 font-bold pointer-events-none text-dark-700"
                                 >
-                                    Give Coffee
-                                    <Icon name="bxs:coffee" />
+                                    Buy Me A Coffee 😇
                                 </span>
                             </a>
                         </div>
@@ -254,14 +253,14 @@ onMounted(() => {
                         v-if="['BroJenuel', 'KateAwisan'].includes(author.data.value.username ?? 'none')"
                         class="bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex sm:flex-row flex-col items-center gap-10px mt-3"
                     >
-                        <img src="/img/blog/qrcode-donate.webp" alt="" srcset="" width="200" />
+                        <img src="~/assets/buymecoffee/bmc_qr.png" alt="" srcset="" width="200" />
                         <div class="sm:text-left text-center">
                             <div class="mb-3">Hi! If you like this article and would like to give coffee.</div>
-                            <a class="mt-2" href="https://ko-fi.com/T6T5379QZ" target="_blank">
+                            <a class="mt-2" href="https://www.buymeacoffee.com/BroJenuel" target="_blank">
                                 <img
-                                    height="36"
-                                    style="border: 0px; height: 30px"
-                                    src="/img/picture/kofi.webp"
+                                    height="50"
+                                    style="border: 0px; height: 50px"
+                                    src="~/assets/buymecoffee/bmc-button.svg"
                                     border="0"
                                     alt="Buy Me a Coffee at ko-fi.com"
                                 />

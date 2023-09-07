@@ -8,31 +8,37 @@ const menus = [
         path: "/",
         icon: "teenyicons:home-solid",
         label: "Home",
-        name: "home"
+        name: "home",
     },
     {
         path: "/timeline",
         icon: "mdi:timeline-clock-outline",
         label: "Experience",
-        name: "timeline"
+        name: "timeline",
     },
     {
         path: "/blog",
         icon: "fluent-mdl2:blog",
         label: "Blog",
-        name: "blog"
+        name: "blog",
     },
     {
         path: "/my-work",
         icon: "pajamas:project",
         label: "Projects",
-        name: "my-work"
+        name: "my-work",
     },
     {
         path: "/contact",
         icon: "mdi:mail",
         label: "Contact Me",
-        name: "contact"
+        name: "contact",
+    },
+    {
+        path: "https://www.buymeacoffee.com/BroJenuel/extras",
+        label: "Shop",
+        name: "shop",
+        icon: "solar:shop-bold",
     },
 ];
 
@@ -45,16 +51,18 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             :key="menu.path"
             @click="show = false"
             :href="menu.path"
+            :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
             class="block px-1 py-1 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
             :class="{
-                '!text-[var(--primary)] is-active': route.path == menu.path || route.name?.toString().includes(menu.name),
+                '!text-[var(--primary)] is-active':
+                    route.path == menu.path || route.name?.toString().includes(menu.name),
             }"
         >
             <Icon class="text-size-20px" :name="menu.icon" />
             {{ menu.label }}
         </NuxtLink>
     </div>
-    <div ref="dropdownRef" class="relative inline-block text-left lg:hidden order-2 no-print">
+    <div ref="dropdownRef" class="relative inline-block text-left lg:hidden order-3 no-print">
         <div
             @click="show = !show"
             type="button"
@@ -77,6 +85,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                     :href="menu.path"
                     class="block px-4 lg:py-2 py-4 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
                     :class="{ '!text-[var(--primary)] is-active': route.path == menu.path }"
+                    :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
                 >
                     <Icon class="text-size-30px" :name="menu.icon" />
                     {{ menu.label }}
