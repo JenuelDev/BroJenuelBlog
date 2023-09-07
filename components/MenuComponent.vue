@@ -19,7 +19,7 @@ const menus = [
     {
         path: "/blog",
         icon: "fluent-mdl2:blog",
-        label: "Blog",
+        label: "Articles",
         name: "blog",
     },
     {
