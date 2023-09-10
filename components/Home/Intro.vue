@@ -40,7 +40,7 @@ onMounted(() => {
                     <div
                         class="lg:text-size-40px md:text-size-29px text-size-55px font-600 mt-10px text-[var(--primary)]"
                     >
-                        Full-Stack Developer
+                        Software Developer
                     </div>
                     <div class="lg:text-size-33px md:text-size-25px text-size-33px font-300 tracking-tight py-2">
                         i create apps and websites

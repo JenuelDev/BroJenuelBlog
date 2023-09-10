@@ -56,7 +56,7 @@ defineOgImage({
             <div class="flex gap-10px pb-8">
                 <div>
                     <h1 class="text-size-30px font-900 text-[var(--primary)]">Jenuel Oras Ganawed</h1>
-                    <div class="text-size-20px font-100 pt-2 opacity-80">Full-Stack Web Developer</div>
+                    <div class="text-size-20px font-100 pt-2 opacity-80">Software Developer</div>
                 </div>
                 <div class="no-print">
                     <button class="btn" @click="printButtonHandler()">
