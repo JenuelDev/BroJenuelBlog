@@ -46,18 +46,19 @@ onMounted(() => {
                 </div>
                 <div>
                     <h3
-                        class="group-hover:underline decoration-[var(--primary)] text-size-25px font-800 mb-2 font-kumbhsans"
+                        class="group-hover:underline decoration-[var(--primary)] text-lg font-800 mb-2 font-kumbhsans"
                         :title="blog.title"
                     >
                         {{ blog.title }}
                     </h3>
                     <div>
-                        <div class="opacity-90 content-summary font-RobotoLight">
+                        <div class="opacity-90 content-summary font-RobotoLight text-sm">
                             {{ blog.summary }}
                         </div>
-                        <span class="font-700 text-[var(--primary)]">{{
-                            $dayjs(blog.updated_at).format("DD MMM, YYYY")
-                        }}</span>
+                        <span class="opacity-70 text-xs">
+                            <Icon name="mdi:calendar" />
+                            {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
+                        </span>
                     </div>
                 </div>
             </NuxtLink>

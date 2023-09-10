@@ -17,11 +17,14 @@ const skills = useSkills();
                 <div class="grid sm:grid-cols-1 grid-cols-1 gap-3">
                     <div v-for="skill in skills" :key="skill.tech" class="flex flex-col pb-5">
                         <div>
-                            <div class="flex items-center gap-3 pb-3">
-                                <Icon class="text-size-25px" :name="skill.icon" />
+                            <div class="flex items-center gap-3 pb-3 text-lg">
+                                <Icon :name="skill.icon" />
                                 <div class="font-RobotoBold">{{ skill.tech }}</div>
                             </div>
-                            <div class="tracking-wide leading-relaxed font-RobotoLight" v-if="skill.description">
+                            <div
+                                class="tracking-wide leading-relaxed font-RobotoLight text-sm"
+                                v-if="skill.description"
+                            >
                                 {{ skill.description }}
                             </div>
                         </div>

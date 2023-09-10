@@ -48,18 +48,18 @@ defineProps({
             </NuxtLink>
         </div>
         <div class="group sm:w-[45%] w-full" :class="{ 'sm:text-right': i % 2 != 0 }">
-            <div class="text-size-12px mb-1 text-[var(--primary)]">{{ work.overline }}</div>
+            <div class="text-xs mb-1 text-[var(--primary)] -mb-1">{{ work.overline }}</div>
             <div class="flex gap-10px items-center" :class="{ 'sm:justify-end': i % 2 != 0 }">
-                <div class="font-700 group-hover:text-[var(--primary)] text-size-25px">
+                <div class="font-700 group-hover:text-[var(--primary)] text-xl">
                     {{ work.title }}
                 </div>
             </div>
             <div>
-                <ul class="flex gap-1 flex-wrap py-10px text-size-13px" :class="{ 'sm:justify-end': i % 2 != 0 }">
+                <ul class="flex gap-1 flex-wrap py-10px text-xs" :class="{ 'sm:justify-end': i % 2 != 0 }">
                     <li v-for="tags in work.techs" :key="tags" :class="`tag-${tags}`" class="tag">#{{ tags }}</li>
                 </ul>
-                <div class="mb-2">{{ work.description }}</div>
-                <div class="flex gap-2 flex-wrap" :class="{ 'sm:justify-end': i % 2 != 0 }">
+                <div class="mb-2 text-sm">{{ work.description }}</div>
+                <div class="flex gap-2 flex-wrap !text-sm" :class="{ 'sm:justify-end': i % 2 != 0 }">
                     <NuxtLink
                         v-if="work.article_link"
                         :href="work.article_link"
