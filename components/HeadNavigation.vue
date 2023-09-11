@@ -4,7 +4,7 @@
     >
         <div class="w-full mx-auto flex justify-between items-center">
             <NuxtLink href="/" class="flex items-center">
-                <IconLaptop class="mr-7px" />
+                <span class="mr-7px">💻</span>
                 <div>
                     <span>Bro</span>
                     <span class="text-[var(--primary)] font-800">Jenuel</span>

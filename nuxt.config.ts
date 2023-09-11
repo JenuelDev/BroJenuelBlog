@@ -2,13 +2,13 @@ export default defineNuxtConfig({
     ssr: true,
     modules: [
         "@pinia/nuxt",
-        "nuxt-icon",
         "@nuxtjs/color-mode",
         "@vueuse/nuxt",
         "nuxt-windicss",
         "@nuxtjs/supabase",
         "nuxt-og-image",
-        '@nuxt/image',
+        "@nuxt/image",
+        "nuxt-icon",
     ],
     colorMode: {
         preference: "dark",
@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://brojenuel.com",
-            isDevelopment: process.env.IS_DEVELOPMENT == 'TRUE',
+            isDevelopment: process.env.IS_DEVELOPMENT == "TRUE",
             emailJsServiceId: process.env.EMAILJS_SERVICE_ID,
             emailJsTemplateId: process.env.EMAILJS_TEMPLATE_ID,
             emailJsUserId: process.env.EMAILJS_USER_ID,
@@ -39,6 +39,6 @@ export default defineNuxtConfig({
         },
     },
     image: {
-        domains: ['i.imgur.com']
-    }
+        domains: ["i.imgur.com"],
+    },
 });

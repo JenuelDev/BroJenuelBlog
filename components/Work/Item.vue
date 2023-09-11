@@ -67,7 +67,7 @@ defineProps({
                         class="btn"
                         :class="{ 'order-1': i % 2 == 0 }"
                     >
-                        <Icon name="mdi:launch" />
+                        <span class="icon--solar icon--solar--documents-line-duotone text-xl"></span>
                         Article
                     </NuxtLink>
                     <a
@@ -78,7 +78,7 @@ defineProps({
                         class="btn"
                         :class="{ 'order-1': i % 2 == 0 }"
                     >
-                        <Icon name="mdi:launch" />
+                        <span class="icon--solar icon--solar--square-top-down-broken text-xl" />
                         Visit
                     </a>
                     <a
@@ -89,7 +89,7 @@ defineProps({
                         class="btn"
                         :class="{ 'order-1': i % 2 == 0 }"
                     >
-                        <Icon name="mdi:github" />
+                        <span class="icon--mdi icon--mdi--github text-xl" />
                         Github
                     </a>
                 </div>

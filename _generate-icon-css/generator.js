@@ -16,7 +16,9 @@ for (const prefix in icons) {
     const iconSet = JSON.parse(await readFile(filename, "utf8"));
 
     // Get CSS
-    const css = getIconsCSS(iconSet, icons[prefix]);
+    const css = getIconsCSS(iconSet, icons[prefix], {
+        pseudoSelector: true,
+    });
 
     // Add it to code
     code += css;

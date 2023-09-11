@@ -67,7 +67,10 @@ onClickOutside(dropdownRef, () => (showMenu.value = showMenu.value == true ? fal
             :class="{ 'text-[var(--primary)]': showMenu }"
         >
             <span :class="{ 'text-[var(--primary)]': LABEL }">{{ valueKey ? LABEL ?? label : label ?? "Label" }}</span>
-            <Icon class="transition-all" :class="{ 'transform rotate-90': showMenu }" name="ic:outline-play-arrow" />
+            <span
+                class="icon--ic icon--ic--outline-play-arrow transition-all"
+                :class="{ 'transform rotate-90': showMenu }"
+            />
         </div>
 
         <Transition name="drop-menu">
@@ -88,9 +91,9 @@ onClickOutside(dropdownRef, () => (showMenu.value = showMenu.value == true ? fal
                         :class="{ '!text-[var(--primary)]': valueKey == menu.key }"
                     >
                         <span class="flex items-center gap-6px">
-                            <Icon class="text-size-20px" :name="menu.icon" /> {{ menu.label }}
+                            <span class="text-size-20px" :class="menu.icon" /> {{ menu.label }}
                         </span>
-                        <Icon v-if="valueKey == menu.key" name="material-symbols:cancel" />
+                        <span v-if="valueKey == menu.key" class="icon--solar icon--solar--close-square-bold" />
                     </div>
                 </div>
             </div>

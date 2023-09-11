@@ -6,31 +6,31 @@ const route = useRoute();
 const menus = [
     {
         path: "/",
-        icon: "icon--iconamoon icon--iconamoon--home-duotone",
+        icon: "icon--solar icon--solar--home-smile-angle-broken",
         label: "Home",
         name: "home",
     },
     {
         path: "/timeline",
-        icon: "mdi:timeline-clock-outline",
+        icon: "icon--solar icon--solar--suitcase-broken",
         label: "Experience",
         name: "timeline",
     },
     {
         path: "/blog",
-        icon: "fluent-mdl2:blog",
+        icon: "icon--solar icon--solar--documents-broken",
         label: "Articles",
         name: "blog",
     },
     {
         path: "/my-work",
-        icon: "pajamas:project",
+        icon: "icon--solar icon--solar--programming-broken",
         label: "Projects",
         name: "my-work",
     },
     {
         path: "/contact",
-        icon: "mdi:mail",
+        icon: "icon--solar icon--solar--mailbox-broken",
         label: "Contact Me",
         name: "contact",
     },
@@ -38,7 +38,7 @@ const menus = [
         path: "https://www.buymeacoffee.com/BroJenuel/extras",
         label: "Shop",
         name: "shop",
-        icon: "solar:shop-bold",
+        icon: "icon--solar icon--solar--shop-broken",
     },
 ];
 
@@ -71,12 +71,12 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             title="Menu Button"
             id="menu-button"
         >
-            <Icon name="solar:list-linear" />
+            <span class="icon--solar icon--solar--list-linear" />
         </div>
         <div class="dropdown-menu-mobile" :class="{ 'active-menu': show }">
             <div class="py-1 h-full z-999 relative bg-[var(--background)] pt-30px px-5" role="none">
                 <div class="absolute right-3 top-3" @click="show = false">
-                    <Icon class="text-size-30px" name="mdi:close" />
+                    <span class="icon--mdi icon--mdi--close text-size-30px" />
                 </div>
                 <NuxtLink
                     v-for="menu in menus"
@@ -87,7 +87,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                     :class="{ '!text-[var(--primary)] is-active': route.path == menu.path }"
                     :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
                 >
-                    <Icon class="text-size-30px" :name="menu.icon" />
+                    <span class="text-size-20px" :class="menu.icon" />
                     {{ menu.label }}
                 </NuxtLink>
             </div>

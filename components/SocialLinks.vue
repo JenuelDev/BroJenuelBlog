@@ -5,8 +5,12 @@ const mainStore = useMainStore();
 </script>
 <template>
     <div
-        class="fixed sm:left-10 transition-all duration-300 left-0  sm:w-auto w-full sm:bg-opacity-0 z-999 filter backdrop-filter backdrop-blur-md bottom-0 no-print"
-        :class="mainStore.isIntroSocialLinkShowing && route.path == '/' ? 'bottom-[-380px]' : 'sm:bottom-[100px] opacity-100'"
+        class="fixed sm:left-10 transition-all duration-300 left-0 sm:w-auto w-full sm:bg-opacity-0 z-999 filter backdrop-filter backdrop-blur-md bottom-0 no-print"
+        :class="
+            mainStore.isIntroSocialLinkShowing && route.path == '/'
+                ? 'bottom-[-380px]'
+                : 'sm:bottom-[100px] opacity-100'
+        "
     >
         <ul class="flex sm:flex-col flex-row gap-3 relative justify-center sm:p-0 p-2">
             <li
@@ -14,14 +18,16 @@ const mainStore = useMainStore();
                 class="text-size-40px sm:transform sm:translate-y-2 sm:hover:translate-y-0 sm:transition-all sm:cursor-pointer sm:hover:text-[var(--primary)]"
             >
                 <NuxtLink v-if="social.isNuxtLink" :href="social.url" aria-label="Go to Contact Page">
-                    <Icon :name="social.icon" />
+                    <span :class="social.icon" />
                 </NuxtLink>
-                <a v-else :href="social.url" target="_blank" :aria-label="social.ariaLabel">
-                    <Icon :name="social.icon" />
-                </a>
+                <NuxtLink v-else :href="social.url" target="_blank" :aria-label="social.ariaLabel">
+                    <span :class="social.icon" />
+                </NuxtLink>
             </li>
 
-            <li class="absolute sm:block hidden h-70px w-2px dark:bg-light-50 bg-[var(--color)] bottom-[-100px] left-[calc(50%-2px)]"></li>
+            <li
+                class="absolute sm:block hidden h-70px w-2px dark:bg-light-50 bg-[var(--color)] bottom-[-100px] left-[calc(50%-2px)]"
+            ></li>
         </ul>
     </div>
     <div
@@ -34,7 +40,9 @@ const mainStore = useMainStore();
             >
                 jenuelganawed936@gmail.com
             </div>
-            <div class="absolute sm:block hidden h-70px w-2px dark:bg-light-50 bg-[var(--color)] bottom-[-100px] left-[calc(50%-2px)]"></div>
+            <div
+                class="absolute sm:block hidden h-70px w-2px dark:bg-light-50 bg-[var(--color)] bottom-[-100px] left-[calc(50%-2px)]"
+            ></div>
         </NuxtLink>
     </div>
 </template>
