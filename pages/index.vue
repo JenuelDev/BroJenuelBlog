@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 const route = useRoute();
 const { setMeta } = useMeta();
-const isShowContent = ref(false);
 
-onMounted(() => (isShowContent.value = true));
 useHead({
     ...setMeta({
         title: "BroJenuel - My Home In the Internet!",
@@ -24,15 +22,11 @@ useHead({
         component="DefaultOgImage"
     />
     <NuxtLayout>
-        <Transition>
-            <div v-show="isShowContent">
-                <HomeIntro />
-                <ClientOnly>
-                    <HomeRecentArticles />
-                </ClientOnly>
-                <HomeSkills />
-                <HomeOngoingPersonalProjects />
-            </div>
-        </Transition>
+        <HomeIntro />
+        <ClientOnly>
+            <HomeRecentArticles />
+        </ClientOnly>
+        <HomeSkills />
+        <HomeOngoingPersonalProjects />
     </NuxtLayout>
 </template>
