@@ -6,7 +6,7 @@ const route = useRoute();
 const menus = [
     {
         path: "/",
-        icon: "teenyicons:home-solid",
+        icon: "icon--iconamoon icon--iconamoon--home-duotone",
         label: "Home",
         name: "home",
     },
@@ -58,7 +58,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                     route.path == menu.path || route.name?.toString().includes(menu.name),
             }"
         >
-            <Icon class="text-size-20px" :name="menu.icon" />
+            <span class="text-size-20px" :class="menu.icon" />
             {{ menu.label }}
         </NuxtLink>
     </div>

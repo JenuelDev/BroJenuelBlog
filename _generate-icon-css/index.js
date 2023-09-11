@@ -1,34 +1,32 @@
-import { readFile, writeFile } from "node:fs/promises";
-import { getIconsCSS } from "@iconify/utils";
-import { locate } from "@iconify/json";
+import fs from "fs";
+import { spawn } from "node:child_process";
 
-/**
- * List of icons. Key is icon set prefix, value is array of icons
- *
- * @type {Record<string, string[]>}
- */
-const icons = {
-    mdi: ["home", "menu"],
-    "mdi-light": ["alert-circle", "circle", "help-circle"],
-};
+const watchFile = "icons.js";
+const filePath = "generator.js";
 
-// Parse each icon set
-let code = "";
-for (const prefix in icons) {
-    // Find location of .json file
-    const filename = locate(prefix);
+// Function to run the script
+function runScript() {
+    console.log("Changes detected. Running generator.js...");
+    const child = spawn("node", [filePath]);
 
-    // Load file and parse it
-    /** @type {import("@iconify/types").IconifyJSON} */
-    const iconSet = JSON.parse(await readFile(filename, "utf8"));
+    child.stdout.on("data", (data) => {
+        console.log(`Script output:\n${data}`);
+    });
 
-    // Get CSS
-    const css = getIconsCSS(iconSet, icons[prefix]);
+    child.stderr.on("data", (data) => {
+        console.error(`Script error:\n${data}`);
+    });
 
-    // Add it to code
-    code += css;
+    child.on("close", (code) => {
+        console.log(`Script exited with code ${code}`);
+    });
 }
 
-// Save CSS file
-await writeFile("./../assets/style/icon/icon.scss", code, "utf8");
-console.log(`Saved CSS (${code.length} bytes)`);
+// Watch the file for changes
+fs.watch(watchFile, (event, filename) => {
+    if (event === "change" && filename === watchFile) {
+        runScript();
+    }
+});
+
+console.log(`Watching ${watchFile} for changes...`);
