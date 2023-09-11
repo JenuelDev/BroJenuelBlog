@@ -33,16 +33,16 @@ onMounted(() => {
                     />
                 </div>
                 <div class="sm:text-right text-center sm:order-1 order-2 sm:w-[50%]">
-                    <div class="lg:text-size-33px md:text-size-36px text-size-36px font-300">
+                    <div class="lg:text-size-30px text-size-25px font-300">
                         hi! <span class="animate-wave lg:text-size-54px md:text-size-46px text-size-60px">👋</span> I'm
                         a
                     </div>
                     <div
-                        class="lg:text-size-40px md:text-size-29px text-size-55px font-600 mt-10px text-[var(--primary)]"
+                        class="lg:text-size-40px md:text-size-29px text-size-25px font-600 mt-10px text-[var(--primary)]"
                     >
                         Software Developer
                     </div>
-                    <div class="lg:text-size-33px md:text-size-25px text-size-33px font-300 tracking-tight py-2">
+                    <div class="lg:text-size-33px md:text-size-25px text-size-23px font-300 tracking-tight py-2">
                         i create apps and websites
                     </div>
                     <div class="opacity-80 py-3">

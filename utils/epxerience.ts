@@ -14,7 +14,7 @@ export const useExperiences = () => [
         optimized.`,
         url: "https://www.vocphone.com/",
         year: "2021",
-        to: "present",
+        to: "now",
         timeline: [
             {
                 date: "Feb. 2023",

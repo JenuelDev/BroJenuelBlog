@@ -22,12 +22,10 @@ onMounted(() => {
 <template>
     <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px">
         <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px mb-20px">
-            <div class="font-800 text-size-20px text-[var(--primary)]">Recent Articles</div>
-            <div class="pt-5">
-                <div class="tracking-wide">
-                    Creating an Article is one way of sharing your knowledge with the world. It's also a great way to
-                    learn new things.
-                </div>
+            <div class="text-lg text-[var(--primary)] font-bold">Recent Articles</div>
+            <div class="mt-2">
+                Creating an Article is one way of sharing your knowledge with the world. It's also a great way to learn
+                new things.
             </div>
         </div>
         <div v-show="!loadingBlogs" class="grid sm:grid-cols-2 grid-cols-1 gap-3">
@@ -35,20 +33,17 @@ onMounted(() => {
                 v-for="(blog, i) in blogs"
                 :key="blog.id"
                 :href="`/blog/${blog.slug}`"
-                class="group p-2 rounded-md gap-20px cursor-pointer flex gap-1"
+                class="group p-2 rounded-md gap-20px cursor-pointer flex gap-1 items-center"
             >
                 <div>
                     <div
-                        class="bg-[var(--background-secondary)] h-25px w-25px rounded-full flex items-center justify-center text-[var(--primary)]"
+                        class="bg-[var(--background-secondary)] h-25px w-25px rounded-full flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] !group-hover:text-[var(--background)]"
                     >
                         {{ i + 1 }}
                     </div>
                 </div>
                 <div>
-                    <h3
-                        class="group-hover:underline decoration-[var(--primary)] text-lg font-800 mb-2 font-kumbhsans"
-                        :title="blog.title"
-                    >
+                    <h3 class="group-hover:underline decoration-[var(--primary)] font-bold" :title="blog.title">
                         {{ blog.title }}
                     </h3>
                     <div>

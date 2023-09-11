@@ -29,17 +29,14 @@ defineOgImage({
         <Transition>
             <div v-show="isShowContent" class="pt-90px min-h-90vh">
                 <div class="max-w-550px mx-auto px-10px">
-                    <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
+                    <div class="font-bold text-lg text-[var(--primary)] flex items-center gap-7px">
                         <Icon name="mdi:chart-timeline" />
                         Timeline/Job Experience
                     </div>
-                    <div class="pt-5">
-                        <div class="indent-md">
-                            I am a software engineer based in Luzon, Philippines. My passion lies in continuous
-                            learning, coding, writing, and sharing knowledge. My primary focus is about solving problems and creating solutions to address clients'/companies' specific needs and challenges. With a client-centric
-                            approach, I strive to deliver efficient solutions that meet their requirements and
-                            contribute to their success.
-                        </div>
+                    <div class="mt-2">
+                        My primary focus is about solving problems and creating solutions to address clients'/companies'
+                        specific needs and challenges. With a client-centric approach, I strive to deliver efficient
+                        solutions that meet their requirements and contribute to their success.
                     </div>
                 </div>
                 <div class="w-full max-w-600px lg:max-w-650px mx-auto px-10px">
@@ -48,29 +45,29 @@ defineOgImage({
                             <template v-for="(experience, i) in experiences" :key="experience.url">
                                 <div class="timeline-box">
                                     <div
-                                        class="absolute top-[50%] transform translate-y-[-50%] bg-[var(--primary)] rounded-md text-[var(--background)] p-1 flex flex-col items-center text-size-12px"
+                                        class="absolute top-[50%] transform translate-y-[-50%] bg-[var(--primary)] rounded-md text-[var(--background)] p-1 flex flex-col items-center text-xs"
                                         :class="
                                             i % 2 == 0
                                                 ? 'sm:right-[-20px] right-[-15px]'
-                                                : 'sm:left-[-25px] left-[-15px]'
+                                                : 'sm:left-[-20px] left-[-15px]'
                                         "
                                     >
                                         {{ experience.year }}
                                         <span>to</span>
                                         {{ experience.to }}
                                     </div>
-                                    <div v-if="experience.position || experience.company" class="text-size-18px pb-2">
-                                        <span v-if="experience.position" class="text-[var(--primary)] italic">{{
+                                    <div v-if="experience.position || experience.company" class="text-lg">
+                                        <span v-if="experience.position" class="text-[var(--primary)]">{{
                                             experience.position
                                         }}</span>
-                                        <a
+                                        <NuxtLink
                                             v-if="experience.company"
                                             :href="experience.url"
                                             target="_blank"
                                             class="hover:text-[var(--primary)]"
                                         >
-                                            @ {{ experience.company }}</a
-                                        >
+                                            @ {{ experience.company }}
+                                        </NuxtLink>
                                     </div>
                                     <div v-if="experience.certificate" class="inline-block">
                                         <NuxtLink class="btn" :to="experience.certificate.link" target="_blank">
@@ -78,15 +75,11 @@ defineOgImage({
                                             {{ experience.certificate.label }}
                                         </NuxtLink>
                                     </div>
-                                    <div v-if="experience.workStart">
+                                    <div v-if="experience.workStart" class="text-xs">
                                         {{ experience.workStart }} -
                                         <span v-html="experience.workUntil"></span>
                                     </div>
-                                    <div
-                                        v-if="experience.des"
-                                        class="text-sm leading-5 mt-2"
-                                        v-html="experience.des"
-                                    ></div>
+                                    <div v-if="experience.des" class="text-sm mt-2" v-html="experience.des"></div>
                                     <div
                                         v-if="experience.timeline && experience.timeline.length"
                                         class="pl-30px pt-20px"
