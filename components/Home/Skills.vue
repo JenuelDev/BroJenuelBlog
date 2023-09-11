@@ -18,7 +18,7 @@ const skills = useSkills();
                     <div v-for="skill in skills" :key="skill.tech" class="flex flex-col pb-5">
                         <div>
                             <div class="flex items-center gap-3 pb-3 text-lg">
-                                <Icon :name="skill.icon" />
+                                <span class="text-size-30px" :class="skill.icon" />
                                 <div class="font-RobotoBold">{{ skill.tech }}</div>
                             </div>
                             <div
@@ -31,9 +31,9 @@ const skills = useSkills();
                         <div class="flex gap-2 pt-10px flex-wrap">
                             <NuxtLink :href="tool.link" target="_blank" v-for="tool in skill.tools" :key="tool.text">
                                 <div
-                                    class="whitespace-nowrap w-full overflow-hidden transition-all duration-75 bg-[var(--background-secondary)] p-2 rounded-md transform hover:scale-110 cursor-pointer"
+                                    class="whitespace-nowrap w-full overflow-hidden transition-all duration-75 bg-[var(--background-secondary)] p-2 rounded-md transform hover:scale-110 cursor-pointer flex items-center"
                                 >
-                                    <Icon class="text-size-20px" :name="tool.icon" />
+                                    <span class="text-size-20px" :class="tool.icon" />
                                     <span class="ml-2 text-size-14px">{{ tool.text }}</span>
                                 </div>
                             </NuxtLink>

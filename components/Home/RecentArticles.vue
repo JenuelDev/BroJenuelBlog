@@ -56,7 +56,7 @@ onMounted(() => {
                             {{ blog.summary }}
                         </div>
                         <span class="opacity-70 text-xs">
-                            <Icon name="mdi:calendar" />
+                            <span class="icon--solar icon--solar--calendar-bold-duotone" />
                             {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
                         </span>
                     </div>

@@ -1,42 +1,42 @@
 export const framework_categories = [
     {
         key: "VueJs",
-        icon: "logos:vue",
+        icon: "icon--logos icon--logos--vue",
         label: "Vue JS",
     },
     {
         key: "ReactJs",
-        icon: "ri:reactjs-line",
+        icon: "icon--ri icon--ri--reactjs-line",
         label: "React JS",
     },
     {
         key: "Angular",
-        icon: "ph:angular-logo-fill",
+        icon: "icon--devicon icon--devicon--angular",
         label: "Angular",
     },
     {
         key: "Laravel",
-        icon: "devicon:laravel",
+        icon: "icon--devicon icon--devicon--laravel",
         label: "Laravel",
     },
     {
         key: "Electron",
-        icon: "skill-icons:electron",
+        icon: "icon--skill-icons icon--skill-icons--electron",
         label: "Electron",
     },
     {
         key: "DJango",
-        icon: "skill-icons:django",
+        icon: "icon--skill-icons icon--skill-icons--django",
         label: "DJango",
     },
     {
         key: "NextJs",
-        icon: "skill-icons:nextjs-dark",
+        icon: "icon--skill-icons icon--skill-icons--nextjs-dark",
         label: "Next JS",
     },
     {
         key: "NuxtJs",
-        icon: "skill-icons:nuxtjs-dark",
+        icon: "icon--skill-icons icon--skill-icons--nuxtjs-dark",
         label: "Nuxt JS",
     },
 ];
@@ -44,67 +44,67 @@ export const framework_categories = [
 export const other_categories = [
     {
         key: "Earn",
-        icon: "streamline:money-cash-search-dollar-search-pay-product-currency-query-magnifying-cash-business-money-glass",
+        icon: "icon--solar icon--solar--money-bag-bold",
         label: "Earn/Earn Online",
     },
     {
         key: "AI",
-        icon: "icon-park-outline:reverse-operation-in",
+        icon: "icon--solar icon--solar--cpu-bolt-broken",
         label: "AI",
     },
     {
         key: "Health",
-        icon: "twemoji:red-heart",
+        icon: "icon--solar icon--solar--adhesive-plaster-bold",
         label: "Health",
     },
     {
         key: "Finance",
-        icon: "mdi:finance",
+        icon: "icon--solar icon--solar--dollar-bold",
         label: "Finance",
     },
     {
         key: "Business",
-        icon: "material-symbols:business-center",
+        icon: "icon--solar icon--solar--chart-square-bold",
         label: "Business",
     },
     {
         key: "Software",
-        icon: "material-symbols:app-badging",
+        icon: "icon--solar icon--solar--screencast-2-bold",
         label: "Software",
     },
     {
         key: "Productivity",
-        icon: "bi:tools",
+        icon: "icon--solar icon--solar--ranking-bold-duotone",
         label: "Productivity",
     },
     {
         key: "Programming",
-        icon: "solar:programming-bold",
+        icon: "icon--solar icon--solar--code-square-bold",
         label: "Programming",
     },
     {
         key: "Parenting",
-        icon: "raphael:parent",
+        icon: "icon--raphael icon--raphael--parent",
         label: "Parenting",
     },
     {
         key: "Website",
-        icon: "el:website",
+        icon: "icon--solar icon--solar--window-frame-bold-duotone",
         label: "Website",
     },
     {
         key: "Motivation",
-        icon: "academicons:inspire-square",
+        icon: "icon--solar icon--solar--meditation-round-bold",
         label: "Motivation",
     },
     {
         key: "Story",
-        icon: "ic:sharp-history-edu",
+        icon: "icon--solar icon--solar--chat-round-like-bold",
         label: "Story",
     },
     {
         key: "Inspiration",
-        icon: "academicons:inspire",
+        icon: "icon--solar icon--solar--ranking-bold-duotone",
         label: "Inspiration",
     },
 ];
@@ -112,42 +112,42 @@ export const other_categories = [
 export const tool_categories = [
     {
         key: "JavaScript",
-        icon: "logos:javascript",
+        icon: "icon--skill-icons icon--skill-icons--javascript",
         label: "JavaScript",
     },
     {
         key: "HTML",
-        icon: "skill-icons:html",
+        icon: "icon--skill-icons icon--skill-icons--html",
         label: "HTML",
     },
     {
         key: "CSS",
-        icon: "skill-icons:css",
+        icon: "icon--skill-icons icon--skill-icons--css",
         label: "CSS",
     },
     {
         key: "PHP",
-        icon: "logos:php",
+        icon: "icon--skill-icons icon--skill-icons--php-dark",
         label: "PHP",
     },
     {
         key: "Python",
-        icon: "logos:python",
+        icon: "icon--skill-icons icon--skill-icons--python-dark",
         label: "Python",
     },
     {
         key: "Ruby",
-        icon: "logos:ruby",
+        icon: "icon--skill-icons icon--skill-icons--ruby",
         label: "Ruby",
     },
     {
         key: "Java",
-        icon: "logos:java",
+        icon: "icon--skill-icons icon--skill-icons--java-dark",
         label: "Java",
     },
     {
         key: "Go",
-        icon: "logos:go",
+        icon: "icon--skill-icons icon--skill-icons--golang",
         label: "Go",
     },
 ];

@@ -30,9 +30,9 @@ function changeColorMode() {
             title="Go to BroJenuel Home"
             id="change-theme-button"
         >
-            <Icon v-show="theme == 'dark'" name="bx:coffee" />
-            <Icon v-show="theme == 'sepia'" name="mdi:white-balance-sunny" />
-            <Icon v-show="theme == 'light'" name="mdi:moon-waning-crescent" />
+            <span v-show="theme == 'dark'" class="icon--mdi icon--mdi--coffee" />
+            <span v-show="theme == 'sepia'" class="icon--mdi icon--mdi--white-balance-sunny" />
+            <span v-show="theme == 'light'" class="icon--mdi icon--mdi--moon-waning-crescent" />
         </button>
     </div>
 </template>

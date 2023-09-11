@@ -6,23 +6,28 @@ const skills = useSkills();
 const experiences = useExperiences();
 const contacts = [
     {
-        icon: "logos:google-gmail",
+        icon: "icon--logos icon--logos--google-gmail",
+        icon_svg: "logos:google-gmail",
         title: "Jenuel.Ganawed.Business@gmail.com",
     },
     {
-        icon: "fluent:call-16-filled",
+        icon: "icon--solar icon--solar--iphone-broken",
+        icon_svg: "solar:iphone-broken",
         title: "+63-950-325-5547",
     },
     {
-        icon: "fluent-mdl2:website",
+        icon: "icon--solar icon--solar--global-broken",
+        icon_svg: "solar:global-broken",
         title: "www.BroJenuel.com",
     },
     {
-        icon: "skill-icons:linkedin",
+        icon: "icon--skill-icons icon--skill-icons--linkedin",
+        icon_svg: "skill-icons:linkedin",
         title: "www.linkedin.com/in/JenuelGanawed",
     },
     {
-        icon: "akar-icons:github-fill",
+        icon: "icon--mdi icon--mdi--github",
+        icon_svg: "mdi:github",
         title: "www.github.com/BroJenuel",
     },
 ];
@@ -52,7 +57,9 @@ defineOgImage({
 <template>
     <NuxtLayout>
         <section class="pt-80px max-w-800px mx-auto">
-            <div class="no-print italic"><Icon name="tabler:file-cv" />my cv or resume</div>
+            <div class="no-print italic">
+                <span class="icon--solar icon--solar--documents-broken" /> my cv or resume
+            </div>
             <div class="flex gap-10px pb-8">
                 <div>
                     <h1 class="text-size-30px font-900 text-[var(--primary)]">Jenuel Oras Ganawed</h1>
@@ -60,14 +67,14 @@ defineOgImage({
                 </div>
                 <div class="no-print">
                     <button class="btn" @click="printButtonHandler()">
-                        <Icon name="material-symbols:print" />
+                        <span class="icon--solar icon--solar--printer-2-broken" />
                         Print
                     </button>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-5px pb-8">
                 <div v-for="(contact, i) in contacts" :key="i" class="whitespace-nowrap">
-                    <Icon :name="contact.icon" />
+                    <Icon :name="contact.icon_svg" />
                     {{ contact.title }}
                 </div>
             </div>
@@ -91,9 +98,9 @@ defineOgImage({
                     >
                         <NuxtLink :href="tool.link" target="_blank" v-for="tool in skill.tools" :key="tool.text">
                             <div
-                                class="whitespace-nowrap w-full overflow-hidden transition-all bg-[var(--background-secondary)] p-2 rounded-md transform hover:scale-110 cursor-pointer"
+                                class="whitespace-nowrap w-full overflow-hidden transition-all bg-[var(--background-secondary)] p-2 rounded-md transform hover:scale-110 cursor-pointer flex items-center"
                             >
-                                <Icon class="text-size-20px" :name="tool.icon" />
+                                <Icon class="text-size-20px" :name="tool.icon_svg" />
                                 <span class="ml-2 text-size-14px">{{ tool.text }}</span>
                             </div>
                         </NuxtLink>
@@ -130,8 +137,10 @@ defineOgImage({
         </section>
     </NuxtLayout>
 </template>
-<style scoped>
+<style scoped lang="scss">
 @media print {
+    @import "~/assets/style/icon/icon.scss";
+
     * {
         color: rgb(27, 27, 27);
         font-family: Arial, Helvetica, sans-serif;

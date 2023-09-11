@@ -70,7 +70,7 @@ onMounted(() => {
                             class="whitespace-nowrap hover:text-[var(--primary)] flex items-center"
                             target="_blank"
                         >
-                            <Icon :name="social.icon" class="text-size-38px" />
+                            <span :class="social.icon" class="text-size-38px" />
                         </a>
                         <NuxtLink
                             v-else
@@ -78,7 +78,7 @@ onMounted(() => {
                             :title="social.title"
                             class="whitespace-nowrap hover:text-[var(--primary)] flex items-center"
                         >
-                            <Icon :name="social.icon" class="text-size-38px" />
+                            <span :class="social.icon" class="text-size-38px" />
                         </NuxtLink>
                     </template>
                 </div>
