@@ -5,14 +5,14 @@ export default defineConfig({
     extract: {
         include: ["**/*.{vue,html,jsx,tsx,md}"],
     },
-    theme: {
-        extend: {
-            fontFamily: {
-                Roboto: ["Roboto"],
-                RobotoBold: ["Roboto-Bold"],
-                RobotoThin: ["Roboto-Thin"],
-                RobotoLight: ["Roboto-Light"]
-            },
-        },
-    },
+    // theme: {
+    //     extend: {
+    //         fontFamily: {
+    //             Roboto: ["Roboto"],
+    //             RobotoBold: ["Roboto-Bold"],
+    //             RobotoThin: ["Roboto-Thin"],
+    //             RobotoLight: ["Roboto-Light"]
+    //         },
+    //     },
+    // },
 });
