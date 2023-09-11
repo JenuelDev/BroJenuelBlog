@@ -45,6 +45,13 @@ export const useMainStore = defineStore("mainStore", () => {
             ariaLabel: "Check BroJenuel Instagram",
             isNuxtLink: true,
         },
+        {
+            title: "Resume",
+            url: "/cv",
+            icon: "icon--solar icon--solar--documents-line-duotone",
+            ariaLabel: "Check BroJenuel Resume",
+            isNuxtLink: true,
+        },
     ]);
 
     return {

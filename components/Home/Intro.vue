@@ -48,13 +48,6 @@ onMounted(() => {
                     <div class="opacity-80 py-3">
                         My name is Jenuel Oras Ganawed and I am full-stack Developer from Philippines. I'm passionate
                         about coding, writing, and sharing what I know.
-                        <NuxtLink
-                            class="text-[var(--primary)] hover:underline whitespace-nowrap"
-                            href="/cv"
-                            title="Read More"
-                        >
-                            More...
-                        </NuxtLink>
                     </div>
                 </div>
             </div>
