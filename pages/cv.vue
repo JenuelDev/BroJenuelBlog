@@ -7,22 +7,27 @@ const experiences = useExperiences();
 const contacts = [
     {
         icon: "icon--logos icon--logos--google-gmail",
+        icon_svg: "logos:google-gmail",
         title: "Jenuel.Ganawed.Business@gmail.com",
     },
     {
         icon: "icon--solar icon--solar--iphone-broken",
+        icon_svg: "solar:iphone-broken",
         title: "+63-950-325-5547",
     },
     {
         icon: "icon--solar icon--solar--global-broken",
+        icon_svg: "solar:global-broken",
         title: "www.BroJenuel.com",
     },
     {
         icon: "icon--skill-icons icon--skill-icons--linkedin",
+        icon_svg: "skill-icons:linkedin",
         title: "www.linkedin.com/in/JenuelGanawed",
     },
     {
         icon: "icon--mdi icon--mdi--github",
+        icon_svg: "mdi:github",
         title: "www.github.com/BroJenuel",
     },
 ];
@@ -69,7 +74,7 @@ defineOgImage({
             </div>
             <div class="grid grid-cols-2 gap-5px pb-8">
                 <div v-for="(contact, i) in contacts" :key="i" class="whitespace-nowrap">
-                    <span :class="contact.icon" />
+                    <Icon :name="contact.icon_svg" />
                     {{ contact.title }}
                 </div>
             </div>
@@ -95,7 +100,7 @@ defineOgImage({
                             <div
                                 class="whitespace-nowrap w-full overflow-hidden transition-all bg-[var(--background-secondary)] p-2 rounded-md transform hover:scale-110 cursor-pointer flex items-center"
                             >
-                                <span class="text-size-20px" :class="tool.icon" />
+                                <Icon class="text-size-20px" :name="tool.icon_svg" />
                                 <span class="ml-2 text-size-14px">{{ tool.text }}</span>
                             </div>
                         </NuxtLink>
