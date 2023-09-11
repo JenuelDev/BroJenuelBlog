@@ -4,22 +4,14 @@ import { useMainStore } from "~/store/mainStore";
 const mainStore = useMainStore();
 const socialRef = ref(null);
 const isTargetVisible = useElementVisibility(socialRef);
-const showContent = ref(false);
 
 watch(
     () => isTargetVisible.value,
     (val) => (mainStore.isIntroSocialLinkShowing = val)
 );
-
-onMounted(() => {
-    showContent.value = true;
-});
 </script>
 <template>
-    <section
-        v-show="showContent"
-        class="flex items-center justify-center px-20px pt-20px relative sm:mt-100px mt-50px mb-100px"
-    >
+    <section class="flex items-center justify-center px-20px pt-20px relative sm:mt-100px mt-50px mb-100px">
         <div class="relative flex flex-col items-center gap-20px relative w-full max-w-750px mx-auto">
             <div class="flex sm:gap-8 gap-5 sm:flex-row flex-col items-center z-99 mb-3">
                 <div

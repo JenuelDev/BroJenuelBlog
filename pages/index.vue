@@ -23,9 +23,7 @@ useHead({
     />
     <NuxtLayout>
         <HomeIntro />
-        <ClientOnly>
-            <HomeRecentArticles />
-        </ClientOnly>
+        <HomeRecentArticles />
         <HomeSkills />
         <HomeOngoingPersonalProjects />
     </NuxtLayout>
