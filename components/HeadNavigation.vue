@@ -13,13 +13,13 @@
 
             <div class="flex gap-3 items-center">
                 <MenuComponent />
-                <a href="https://www.buymeacoffee.com/BroJenuel" class="lg:order-2 order-1" target="_blank">
-                    <img
-                        src="~/assets/buymecoffee/bmc-button.svg"
+                <NuxtLink href="https://www.buymeacoffee.com/BroJenuel" class="lg:order-2 order-1" target="_blank">
+                    <NuxtImg
+                        src="/img/buymecoffee/bmc-button.svg"
                         alt="Buy Me A Coffee"
                         style="width: 130px !important"
-                        width="130"
-                /></a>
+                    />
+                </NuxtLink>
                 <ThemeChangerButton />
             </div>
         </div>

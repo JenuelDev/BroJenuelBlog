@@ -6,6 +6,7 @@ const setMeta = (data: {
     image?: string | undefined;
     path: string;
     lang: "en";
+    author?: string | undefined;
 }) => {
     let metaData = {
         title: data.title,
@@ -35,7 +36,7 @@ const setMeta = (data: {
             },
             {
                 name: "author",
-                content: "BroJenuel, jenuelganawed936@gmail.com",
+                content: data.author ?? "BroJenuel, jenuelganawed936@gmail.com",
             },
             {
                 name: "url",
@@ -55,12 +56,12 @@ const setMeta = (data: {
             },
             ...(data.image
                 ? [
-                    {
-                        name: "image",
-                        property: "og:image",
-                        content: data.image,
-                    },
-                ]
+                      {
+                          name: "image",
+                          property: "og:image",
+                          content: data.image,
+                      },
+                  ]
                 : []),
             {
                 property: "og:type",
@@ -99,11 +100,11 @@ const setMeta = (data: {
             },
             ...(data.image
                 ? [
-                    {
-                        name: "twitter:image",
-                        content: data.image,
-                    },
-                ]
+                      {
+                          name: "twitter:image",
+                          content: data.image,
+                      },
+                  ]
                 : []),
         ],
     };

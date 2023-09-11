@@ -54,19 +54,13 @@ useHead({
                   image: coverImageLink.value,
               }
             : {}),
+        ...(["BroJenuel", "KateAwisan"].includes(author.data.value.username)
+            ? {}
+            : {
+                  author: author.data.value.username,
+              }),
     }),
 });
-
-function commafy(num: number) {
-    const str = num.toString().split(".");
-    if (str[0].length >= 5) {
-        str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1,");
-    }
-    if (str[1] && str[1].length >= 5) {
-        str[1] = str[1].replace(/(\d{3})/g, "$1 ");
-    }
-    return str.join(".");
-}
 
 onMounted(() => {
     showContent.value = true;
@@ -134,7 +128,7 @@ onMounted(() => {
                         </div>
                     </div>
                 </div>
-                <div class="w-full max-w-800px mx-auto px-10px lg:pt-0 pt-70px">
+                <article class="w-full max-w-800px mx-auto px-10px lg:pt-0 pt-70px">
                     <div class="mb-25px px-10px">
                         <template
                             v-if="
@@ -254,6 +248,8 @@ onMounted(() => {
                         class="content-render mx-auto relative md:text-lg pt-5 lg:px-10 px-1"
                         v-html="data.content"
                     ></div>
+                </article>
+                <div class="w-full max-w-800px mx-auto px-10px lg:pt-0 pt-70px">
                     <hr />
                     <div
                         v-if="['BroJenuel', 'KateAwisan'].includes(author.data.value.username ?? 'none')"

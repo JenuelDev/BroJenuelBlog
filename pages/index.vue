@@ -22,12 +22,11 @@ useHead({
         component="DefaultOgImage"
     />
     <NuxtLayout>
-        <HomeIntro />
-        <ClientOnly>
-            <HomeRecentArticles />
-        </ClientOnly>
-        <HomeSkills />
-        <HomeOngoingPersonalProjects />
-        
+        <LazyHomeIntro />
+        <LazyClientOnly>
+            <LazyHomeRecentArticles />
+        </LazyClientOnly>
+        <LazyHomeSkills />
+        <LazyHomeOngoingPersonalProjects />
     </NuxtLayout>
 </template>
