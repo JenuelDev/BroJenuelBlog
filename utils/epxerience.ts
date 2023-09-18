@@ -18,11 +18,11 @@ export const useExperiences = () => [
         timeline: [
             {
                 date: "Feb. 2023",
-                details: "I became a Project Manager (PM)",
+                details: "PM For Vityl Projects",
             },
             {
                 date: "Nov. 2021",
-                details: "Started to work as a Senior Software dev.",
+                details: "Senior Software Dev.",
             },
         ],
     },
