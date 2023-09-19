@@ -18,7 +18,7 @@ export const useExperiences = () => [
         timeline: [
             {
                 date: "Feb. 2023",
-                details: "PM For Vityl Projects",
+                details: "PM For Some Projects",
             },
             {
                 date: "Nov. 2021",
