@@ -255,12 +255,13 @@ onMounted(() => {
                         v-if="['BroJenuel', 'KateAwisan'].includes(author.data.value.username ?? 'none')"
                         class="bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex sm:flex-row flex-col items-center gap-10px mt-3"
                     >
-                        <NuxtImg src="/img/buymecoffee/bmc_qr.png" alt="" srcset="" width="200" />
+                        <NuxtImg src="/img/buymecoffee/bmc_qr.png" alt="" srcset="" width="150" height="150" />
                         <div class="sm:text-left text-center">
                             <div class="mb-3">Hi! If you like this article and would like to give coffee.</div>
                             <a class="mt-2" href="https://www.buymeacoffee.com/BroJenuel" target="_blank">
                                 <NuxtImg
                                     height="50"
+                                    width="180"
                                     style="border: 0px; height: 50px"
                                     src="/img/buymecoffee/bmc-button.svg"
                                     border="0"
