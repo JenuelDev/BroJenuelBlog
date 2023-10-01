@@ -4,7 +4,6 @@
     >
         <div class="w-full mx-auto flex justify-between items-center">
             <NuxtLink href="/" class="flex items-center">
-                <span class="mr-7px">💻</span>
                 <div>
                     <span>Bro</span>
                     <span class="text-[var(--primary)] font-800">Jenuel</span>
@@ -13,14 +12,6 @@
 
             <div class="flex gap-3 items-center">
                 <MenuComponent />
-                <NuxtLink href="https://www.buymeacoffee.com/BroJenuel" class="lg:order-2 order-1" target="_blank">
-                    <NuxtImg
-                        src="/img/buymecoffee/bmc-button.svg"
-                        alt="Buy Me A Coffee"
-                        width="130"
-                        height="50"
-                    />
-                </NuxtLink>
                 <ThemeChangerButton />
             </div>
         </div>

@@ -10,12 +10,12 @@ const menus = [
         label: "Home",
         name: "home",
     },
-    {
-        path: "/timeline",
-        icon: "icon--solar icon--solar--suitcase-broken",
-        label: "Experience",
-        name: "timeline",
-    },
+    // {
+    //     path: "/timeline",
+    //     icon: "icon--solar icon--solar--suitcase-broken",
+    //     label: "Experience",
+    //     name: "timeline",
+    // },
     {
         path: "/blog",
         icon: "icon--solar icon--solar--documents-broken",
@@ -34,12 +34,12 @@ const menus = [
         label: "Contact Me",
         name: "contact",
     },
-    {
-        path: "https://www.buymeacoffee.com/BroJenuel/extras",
-        label: "Shop",
-        name: "shop",
-        icon: "icon--solar icon--solar--shop-broken",
-    },
+    // {
+    //     path: "https://www.buymeacoffee.com/BroJenuel/extras",
+    //     label: "Shop",
+    //     name: "shop",
+    //     icon: "icon--solar icon--solar--shop-broken",
+    // },
 ];
 
 onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : false));

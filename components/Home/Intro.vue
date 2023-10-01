@@ -1,17 +1,5 @@
-<script lang="ts" setup>
-import { useMainStore } from "~/store/mainStore";
-
-const mainStore = useMainStore();
-const socialRef = ref(null);
-const isTargetVisible = useElementVisibility(socialRef);
-
-watch(
-    () => isTargetVisible.value,
-    (val) => (mainStore.isIntroSocialLinkShowing = val)
-);
-</script>
 <template>
-    <section class="flex items-center justify-center px-20px pt-20px relative sm:mt-100px mt-50px mb-100px">
+    <section class="flex items-center justify-center sm:px-50px px-10px pt-20px relative sm:mt-100px mt-50px mb-100px">
         <div class="relative flex flex-col items-center gap-20px relative w-full max-w-750px mx-auto">
             <div class="flex sm:gap-8 gap-5 sm:flex-row flex-col items-center z-99 mb-3">
                 <div
@@ -41,31 +29,6 @@ watch(
                         My name is Jenuel Oras Ganawed and I am full-stack Developer from Philippines. I'm passionate
                         about coding, writing, and sharing what I know.
                     </div>
-                </div>
-            </div>
-
-            <div class="w-full z-99 flex justify-center">
-                <div ref="socialRef" class="rounded-lg p-10px flex md:gap-20px gap-30px justify-center flex-wrap">
-                    <template v-for="social in mainStore.mySocial" :key="social.title">
-                        <a
-                            v-if="!social.isNuxtLink"
-                            :aria-label="social.ariaLabel"
-                            :href="social.url"
-                            :title="social.title"
-                            class="whitespace-nowrap hover:text-[var(--primary)] flex items-center"
-                            target="_blank"
-                        >
-                            <span :class="social.icon" class="text-size-38px" />
-                        </a>
-                        <NuxtLink
-                            v-else
-                            :href="social.url"
-                            :title="social.title"
-                            class="whitespace-nowrap hover:text-[var(--primary)] flex items-center"
-                        >
-                            <span :class="social.icon" class="text-size-38px" />
-                        </NuxtLink>
-                    </template>
                 </div>
             </div>
             <SvgDotSquare
