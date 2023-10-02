@@ -32,6 +32,9 @@ const icons = {
         "global-broken",
         "printer-2-broken",
         "backspace-broken",
+        "document-broken",
+        "square-top-down-linear",
+        "close-circle-broken"
     ],
     mdi: [
         "timeline-clock-outline",

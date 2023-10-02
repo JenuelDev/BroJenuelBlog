@@ -2,7 +2,7 @@
 const skills = useSkills();
 </script>
 <template>
-    <section id="skills-container" class="my-work max-w-1200px mx-auto">
+    <section id="skills-container" class="my-work max-w-1200px mx-auto pb-100px">
         <div class="mx-auto sm:px-80px px-10px pt-30px">
             <div class="grid lg:grid-cols-3 grid-cols-1 text-center">
                 <div

@@ -2,11 +2,11 @@
 const experiences = useExperiences();
 </script>
 <template>
-    <div class="md:px-80px sm:px-40px px-15px py-150px">
+    <div class="px-15px py-150px">
         <div class="lg:text-size-32px md:text-size-24px text-size-20px font-bold mb-5 max-w-600px mx-auto text-center">
             I'm proud to have worked and collaborated with this companies:
         </div>
-        <div class="w-full max-w-700px lg:max-w-650px mx-auto px-10px">
+        <div class="w-full max-w-1000px mx-auto px-10px">
             <div class="timeline-div p-10px">
                 <div class="w-full m-auto">
                     <template v-for="(experience, i) in experiences" :key="experience.url">

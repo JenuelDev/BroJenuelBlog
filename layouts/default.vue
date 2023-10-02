@@ -1,7 +1,4 @@
 <template>
-    <div>
-        <HeadNavigation />
-        <slot />
-        <Footer />
-    </div>
+    <HeadNavigation />
+    <slot />
 </template>
