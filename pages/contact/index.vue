@@ -70,6 +70,10 @@ useHead({
     }),
 });
 
+function goBack() {
+    window.history.back();
+}
+
 defineOgImage({
     component: "DefaultOgImage",
     path: route.path,
@@ -79,64 +83,75 @@ defineOgImage({
 });
 </script>
 <template>
-    <NuxtLayout>
-        <Transition>
-            <div v-show="isShowContent" class="pt-90px min-h-90vh">
-                <div class="max-w-550px mx-auto px-10px">
-                    <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
-                        <Icon name="mdi:gmail" />
-                        Contact
-                    </div>
-                    <div class="pt-5">
-                        <div class="indent-md">
-                            I am currently looking for Job. If you have other request or offer, don't hesitate to
-                            contact me using the form bellow.
-                        </div>
-                    </div>
-                    <form class="pt-5" @submit.prevent="submitMail()">
+    <div class="pb-100px">
+        <div class="max-w-650px mx-auto px-10px relative">
+            <div class="absolute right-0 top-4">
+                <span
+                    class="icon--solar icon--solar--close-circle-broken text-3xl cursor-pointer hover:text-[var(--primary)]"
+                    @click="goBack()"
+                ></span>
+            </div>
+            <div class="pt-5 text-center text-7xl font-100">😁</div>
+            <div class="pt-5 text-center text-4xl font-100 pb-80px">
+                Thanks for taking the time to reach out.<br />
+                How can I help you today?
+            </div>
+            <form class="pt-5" @submit.prevent="submitMail()">
+                <div class="flex gap-3">
+                    <div class="w-full">
+                        <div class="pb-2">Name</div>
                         <input
                             v-model="form.name"
                             type="text"
-                            class="form-control block w-full px-3 py-1.5 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
-                            placeholder="Enter Your Name"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
+                            placeholder="ex. john"
                             required
                         />
+                    </div>
+                    <div class="w-full">
+                        <div class="pb-2">Email</div>
                         <input
                             v-model="form.email"
                             type="email"
-                            class="form-control block w-full px-3 py-1.5 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
-                            placeholder="Enter Your Email Address"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
+                            placeholder="ex. example@gmail.com"
                             required
                         />
-                        <input
-                            v-model="form.subject"
-                            type="text"
-                            class="form-control block w-full px-3 py-1.5 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
-                            placeholder="Subject"
-                            required
-                        />
-                        <textarea
-                            v-model="form.message"
-                            class="form-control block w-full px-3 py-1.5 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
-                            id="exampleFormControlTextarea1"
-                            rows="4"
-                            placeholder="Write Your message"
-                            required
-                        ></textarea>
-                        <button
-                            type="submit"
-                            :disabled="isLoading"
-                            class="btn btn-lg disabled:cursor-not-allowed btn-filled"
-                            role="button"
-                            title="Submit Message"
-                            id="submit-message-button"
-                        >
-                            <Icon v-show="isLoading" name="eos-icons:bubble-loading" />
-                            {{ isLoading ? "Sending" : "Send Message" }}
-                        </button>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </Transition>
-    </NuxtLayout>
+                <div>
+                    <div class="pb-2">Email</div>
+                    <input
+                        v-model="form.subject"
+                        type="text"
+                        class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
+                        placeholder="Subject"
+                        required
+                    />
+                </div>
+                <div>
+                    <div class="pb-2">Message</div>
+                    <textarea
+                        v-model="form.message"
+                        class="form-control block w-full px-3 py-1.5 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
+                        id="exampleFormControlTextarea1"
+                        rows="7"
+                        placeholder="Write Your message"
+                        required
+                    ></textarea>
+                </div>
+                <button
+                    type="submit"
+                    :disabled="isLoading"
+                    class="border px-7 py-10px rounded-full font-bold flex items-center gap-2 hover:text-[var(--primary)] hover:border-[var(--primary)] hover:underline mx-auto"
+                    role="button"
+                    title="Submit Message"
+                    id="submit-message-button"
+                >
+                    <span class="icon--solar icon--solar--mailbox-broken text-25px"></span>
+                    {{ isLoading ? "Sending" : "Send Message" }}
+                </button>
+            </form>
+        </div>
+    </div>
 </template>

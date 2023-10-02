@@ -122,7 +122,7 @@ function searchRoute() {
             <div class="mb-5">
                 <div class="flex justify-between">
                     <div>
-                        <span class="text-[var(--primary)] font-800">Blogs</span>
+                        <span class="text-[var(--primary)] text-2xl font-800">Articles</span>
                     </div>
                     <form @submit.prevent="searchRoute" class="flex items-center mb-1">
                         <div class="relative">

@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "generate": "node ."
+    "generate": "node .",
+    "generate:icons": "node generator.js"
   },
   "author": "",
   "license": "ISC",

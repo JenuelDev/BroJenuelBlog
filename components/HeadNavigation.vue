@@ -1,26 +1,24 @@
+<script setup lang="ts">
+const isTop = ref(false);
+onMounted(() => {
+    window.addEventListener("scroll", () => {
+        isTop.value = window.scrollY < 50;
+    });
+});
+</script>
 <template>
     <div
-        class="fixed top-0 left-0 flex justify-between md:px-20px px-10px items-center transition-all dark:bg-[var(--opacity-background)] z-999 duration-300 w-full h-50px dark:shadow-md shadow-lg backdrop-filter backdrop-blur-sm bg-[var(--background)] no-print"
+        class="fixed top-0 left-0 flex justify-between md:px-20px px-10px items-center transition-all z-999 duration-300 w-full h-50px backdrop-filter backdrop-blur-sm no-print"
+        :class="{ 'shadow-lg bg-[var(--opacity-background)] ': !isTop }"
     >
-        <div class="w-full mx-auto flex justify-between items-center">
-            <NuxtLink href="/" class="flex items-center">
-                <span class="mr-7px">💻</span>
-                <div>
-                    <span>Bro</span>
-                    <span class="text-[var(--primary)] font-800">Jenuel</span>
-                </div>
+        <div class="w-full max-w-1200px mx-auto flex justify-between items-center">
+            <NuxtLink href="/" class="flex items-center text-30px font-800">
+                <span> Bro</span>
+                <span class="text-[var(--primary)]">Jenuel</span>
             </NuxtLink>
 
             <div class="flex gap-3 items-center">
                 <MenuComponent />
-                <NuxtLink href="https://www.buymeacoffee.com/BroJenuel" class="lg:order-2 order-1" target="_blank">
-                    <NuxtImg
-                        src="/img/buymecoffee/bmc-button.svg"
-                        alt="Buy Me A Coffee"
-                        width="130"
-                        height="50"
-                    />
-                </NuxtLink>
                 <ThemeChangerButton />
             </div>
         </div>

@@ -31,7 +31,10 @@ const icons = {
         "iphone-broken",
         "global-broken",
         "printer-2-broken",
-        "backspace-broken"
+        "backspace-broken",
+        "document-broken",
+        "square-top-down-linear",
+        "close-circle-broken"
     ],
     mdi: [
         "timeline-clock-outline",
@@ -70,7 +73,7 @@ const icons = {
         "firebase",
         "phpstorm",
         "webstorm",
-        "google-gmail"
+        "google-gmail",
     ],
     ri: ["reactjs-line"],
     devicon: ["angular", "laravel", "git", "vscode"],
@@ -91,10 +94,17 @@ const icons = {
         "mongodb",
         "supabase-light",
         "vercel-dark",
-        "linkedin"
+        "linkedin",
     ],
     raphael: ["parent"],
     "simple-icons": ["laragon"],
+    la: ["facebook", "youtube", "linkedin", "dev", "instagram"],
+    fluent: [
+        "mail-16-regular"
+    ],
+    ph: [
+        "code-fill"
+    ]
 };
 
 // to avoid duplications

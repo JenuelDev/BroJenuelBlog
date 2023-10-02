@@ -1,8 +1,4 @@
 <template>
-    <div>
-        <HeadNavigation />
-        <SocialLinks />
-        <slot />
-        <Footer />
-    </div>
+    <HeadNavigation />
+    <slot />
 </template>
