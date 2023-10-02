@@ -37,7 +37,7 @@ const projects: Array<{ logo: string; description: string; url: string; name: st
                 class="shadow-lg px-60px py-35px border rounded-lg border-2px border-[var(--primary)] border-dashed flex flex-col gap-5 text-center justify-between"
             >
                 <div class="flex items-center justify-center gap-2">
-                    <NuxtImg :src="project.logo" height="30" width="30" />
+                    <NuxtImg :src="project.logo" height="30" width="30" :alt="project.name + ' Logo'" loading="lazy" />
                     <span class="text-2xl">{{ project.name }}</span>
                 </div>
                 <p>{{ project.description }}</p>

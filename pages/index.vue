@@ -38,7 +38,13 @@ useHead({
                         i code to develop apps and websites, I create articles, and I love what I do.
                     </div>
                 </div>
-                <img class="mx-auto" src="~/assets/images/programming.svg" width="800" height="600" />
+                <img
+                    class="mx-auto"
+                    src="~/assets/images/programming.svg"
+                    width="800"
+                    height="600"
+                    alt="im a programmer by brojenuel"
+                />
             </div>
             <div class="opacity-80 w-full px-5 py-3 rounded- text-center">
                 <div class="md:text-size-32px text-size-24px font-bold mb-5">
@@ -58,6 +64,7 @@ useHead({
                         class="flex items-center hover:text-[var(--primary)]"
                         target="_blank"
                         alt="Jenuel Oras Ganawed Linkedin"
+                        aria-label="Jenuel Oras Ganawed Linkedin"
                     >
                         <span class="icon--mdi icon--mdi--linkedin text-45px"></span>
                     </a>
