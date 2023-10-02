@@ -52,7 +52,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             @click="show = false"
             :href="menu.path"
             :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
-            class="block px-1 py-1 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
+            class="block px-1 py-1 hover:bg-[var(--background-secondary)] flex items-center gap-6px"
             :class="{
                 '!text-[var(--primary)] is-active':
                     route.path == menu.path || route.name?.toString().includes(menu.name),
@@ -83,7 +83,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                     :key="menu.path"
                     @click="show = false"
                     :href="menu.path"
-                    class="block px-4 lg:py-2 py-4 text-sm hover:bg-[var(--background-secondary)] flex items-center gap-6px"
+                    class="block px-4 lg:py-2 py-4 hover:bg-[var(--background-secondary)] flex items-center gap-6px"
                     :class="{ '!text-[var(--primary)] is-active': route.path == menu.path }"
                     :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
                 >

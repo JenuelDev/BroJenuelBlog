@@ -1,8 +1,8 @@
 export const useSkills = () => [
     {
         icon: "icon--solar icon--solar--window-frame-bold-duotone",
-        tech: "FrontEnd Technologies",
-        description: `Frontend technologies refer to the technologies and tools used to develop the user interface and user experience (UI/UX) of a website or web application. Frontend development focuses on creating the visual elements and interactive features that users see and interact with in their web browsers.`,
+        tech: "Front-End Developer",
+        description: `I create visual and interactive elements of websites and web applications that users see and interact with.`,
         tools: [
             {
                 icon: "icon--skill-icons icon--skill-icons--javascript",
@@ -100,8 +100,8 @@ export const useSkills = () => [
     },
     {
         icon: "icon--solar icon--solar--server-path-line-duotone",
-        tech: "Backend Technologies",
-        description: `Backend technologies refer to the technologies and tools used to build the server-side of web applications. The backend is responsible for managing data, processing requests from the frontend, and performing various operations behind the scenes.`,
+        tech: "Back-End Developer",
+        description: `I develop and maintain the server-side of websites and web applications, managing databases, and ensuring the functionality and data handling of the software`,
         tools: [
             {
                 icon: "icon--skill-icons icon--skill-icons--php-dark",
@@ -175,8 +175,8 @@ export const useSkills = () => [
     },
     {
         icon: "icon--solar icon--solar--settings-minimalistic-bold",
-        tech: "Other Technologies",
-        description: null,
+        tech: "Technologies",
+        description: "I am also familiar with the following tools for development.",
         tools: [
             {
                 icon: "icon--devicon icon--devicon--git",

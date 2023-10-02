@@ -98,6 +98,9 @@ const icons = {
     la: ["facebook", "youtube", "linkedin", "dev", "instagram"],
     fluent: [
         "mail-16-regular"
+    ],
+    ph: [
+        "code-fill"
     ]
 };
 

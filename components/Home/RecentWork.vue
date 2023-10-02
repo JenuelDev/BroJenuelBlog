@@ -1,4 +1,5 @@
-export const useExperiences = () => [
+<script setup lang="ts">
+const recentWork = [
     {
         position: "Senior Software Developer",
         company: "Vocphone",
@@ -103,7 +104,7 @@ export const useExperiences = () => [
         company: "KCP",
         workStart: "Aug. 2016",
         workUntil: "April 2019",
-        des: `I am a former full-time student at King's College of the Philippines, a mission school founded by Rev. Kwon Young-Soo, a Korean missionary, in 1991 to address the lack of trained clergy and the growing number of unschooled youth in the Cordilleras, including provinces like Mt. Province, Kalinga, Apayao, Ifugao, Benguet, Isabela, Cagayan, and Baguio City, where I began my web development and programming journey.`,
+        des: `I have been a Full-time student at <a href='https://kcp.edu.ph' target='_blank'>Kings College of the Philippines</a>. It is the school where I started learning and experienced programming in Web Development.<br><br>King’s College of the Philippines is a mission school under the auspices of the Northern Luzon Presbyterian Church. Its beginnings can be traced to the arrival of a Korean Missionary, Rev. Kwon Young-Soo in the Philippines in 1991.<br><br>For more than a decade, Missionary Kwon laboriously ministered to a great number of people in the various Cordillera provinces namely: Mt. Province, Kalinga, Apayao, Ifugao, Benguet, Isabela, Cagayan, and also Baguio City. Noting the lack of trained clergy, Rev. Kwon established a Bible School named Zoe Logos Temple Ministry in Sabangan, Mt. Province. Eventually, to address the concern of the growing number of unschooled youth in the Cordilleras, and with assistance from a church and individual sponsors – local and overseas, he established Eastern Luzon Colleges in Bambang, Nueva Vizcaya in 2003 and Eastern Luzon Colleges in 2004 in La Trinidad, Benguet.`,
         url: "https://kcp.edu.ph/",
         certificate: {
             link: "https://drive.google.com/file/d/1p7I8t2maRU5vXJYjdE2-Cw1SiJJOVyYd/view?usp=sharing",
@@ -113,3 +114,7 @@ export const useExperiences = () => [
         to: 2019,
     },
 ];
+</script>
+<template>
+    <div></div>
+</template>

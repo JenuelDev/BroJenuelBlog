@@ -7,7 +7,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "g:icons": "cd ./_generate-icon-css && node .",
-    "start": "concurrently \"yarn dev\" \"yarn g:icons\""
+    "start": "concurrently \"yarn dev\" \"yarn g:icons\"",
+    "generate:icons": "cd ./_generate-icon-css && yarn generate:icons"
   },
   "devDependencies": {
     "@nuxt/image": "^1.0.0-rc.1",
@@ -20,7 +21,7 @@
     "@vueuse/nuxt": "^9.13.0",
     "concurrently": "^8.2.1",
     "estree-walker": "^3.0.3",
-    "nuxt": "^3.7.0",
+    "nuxt": "^3.7.4",
     "nuxt-icon": "^0.5.0",
     "nuxt-og-image": "^2.0.18",
     "nuxt-windicss": "^2.6.0",
