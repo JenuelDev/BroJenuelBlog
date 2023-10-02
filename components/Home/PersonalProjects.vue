@@ -15,7 +15,7 @@ const projects: Array<{ logo: string; description: string; url: string; name: st
     {
         logo: "https://camo.githubusercontent.com/18c3fe50597afdc7a3eeafc92ee4ddffa88ff679be10a977f171a13736e183b2/68747470733a2f2f66616365626f6f6b6272616e642e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30342f665f6c6f676f5f5247422d4865782d426c75655f3531322e706e67",
         name: "Facebook Clone",
-        description: "A Bible Reading App for Believers who likes to study the Bible.",
+        description: "Its A Facebook clone built with vuejs and unocss",
         url: "https://facebook-clone-nu-ecru.vercel.app/",
     },
 ];
