@@ -1,7 +1,5 @@
-import { defineStore } from "pinia";
-
-export const useMainStore = defineStore("mainStore", () => {
-    const mySocial = ref([
+export default function () {
+    return [
         {
             title: "Facebook",
             icon: "icon--la icon--la--facebook",
@@ -51,9 +49,5 @@ export const useMainStore = defineStore("mainStore", () => {
         //     ariaLabel: "Check BroJenuel Resume",
         //     isNuxtLink: true,
         // },
-    ]);
-
-    return {
-        mySocial,
-    };
-});
+    ];
+}

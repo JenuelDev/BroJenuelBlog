@@ -85,25 +85,24 @@ defineOgImage({
 <template>
     <div class="pb-100px">
         <div class="max-w-650px mx-auto px-10px relative">
-            <div class="absolute right-0 top-4">
+            <div class="absolute right-4 top-4">
                 <span
                     class="icon--solar icon--solar--close-circle-broken text-3xl cursor-pointer hover:text-[var(--primary)]"
                     @click="goBack()"
                 ></span>
             </div>
-            <div class="pt-5 text-center text-7xl font-100">😁</div>
-            <div class="pt-5 text-center text-4xl font-100 pb-80px">
-                Thanks for taking the time to reach out.<br />
-                How can I help you today?
+            <div class="pt-5 text-center text-7xl font-100 pt-20">😁</div>
+            <div class="pt-5 text-center text-4xl font-100 pb-50px">
+                Thanks for taking the time to reach out. How can I help you today?
             </div>
             <form class="pt-5" @submit.prevent="submitMail()">
-                <div class="flex gap-3">
+                <div class="flex sm:flex-row flex-col sm:gap-3 gap-1">
                     <div class="w-full">
                         <div class="pb-2">Name</div>
                         <input
                             v-model="form.name"
                             type="text"
-                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
                             placeholder="ex. john"
                             required
                         />
@@ -113,19 +112,19 @@ defineOgImage({
                         <input
                             v-model="form.email"
                             type="email"
-                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
                             placeholder="ex. example@gmail.com"
                             required
                         />
                     </div>
                 </div>
                 <div>
-                    <div class="pb-2">Email</div>
+                    <div class="pb-2">Subject</div>
                     <input
                         v-model="form.subject"
                         type="text"
-                        class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
-                        placeholder="Subject"
+                        class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
+                        placeholder="ex. Project Collaboration"
                         required
                     />
                 </div>
@@ -133,7 +132,7 @@ defineOgImage({
                     <div class="pb-2">Message</div>
                     <textarea
                         v-model="form.message"
-                        class="form-control block w-full px-3 py-1.5 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-blue-600 focus:outline-none mb-3"
+                        class="form-control block w-full px-3 py-1.5 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-10"
                         id="exampleFormControlTextarea1"
                         rows="7"
                         placeholder="Write Your message"
@@ -143,15 +142,18 @@ defineOgImage({
                 <button
                     type="submit"
                     :disabled="isLoading"
-                    class="border px-7 py-10px rounded-full font-bold flex items-center gap-2 hover:text-[var(--primary)] hover:border-[var(--primary)] hover:underline mx-auto"
+                    class="border px-10 py-20px rounded-full font-bold flex hover:text-[var(--background)] hover:border-[var(--primary)] mx-auto hover:bg-[var(--primary)] transition-all group"
                     role="button"
                     title="Submit Message"
                     id="submit-message-button"
                 >
-                    <span class="icon--solar icon--solar--mailbox-broken text-25px"></span>
-                    {{ isLoading ? "Sending" : "Send Message" }}
+                    <span class="flex items-center gap-2 transform scale-100 group-hover:scale-110 transition-all">
+                        <span class="icon--solar icon--solar--mailbox-broken text-25px"></span>
+                        {{ isLoading ? "Sending" : "Send Message" }}
+                    </span>
                 </button>
             </form>
         </div>
     </div>
+    <Footer />
 </template>

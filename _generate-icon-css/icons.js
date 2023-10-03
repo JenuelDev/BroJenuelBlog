@@ -34,7 +34,8 @@ const icons = {
         "backspace-broken",
         "document-broken",
         "square-top-down-linear",
-        "close-circle-broken"
+        "close-circle-broken",
+        "double-alt-arrow-up-bold"
     ],
     mdi: [
         "timeline-clock-outline",

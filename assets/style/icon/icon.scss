@@ -151,6 +151,10 @@
 .icon--solar--close-circle-broken {
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-width='1.5' d='m14.5 9.5l-5 5m0-5l5 5M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5'/%3E%3C/svg%3E");
 }
+
+.icon--solar--double-alt-arrow-up-bold {
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cg fill='black'%3E%3Cpath fill-rule='evenodd' d='M4.43 13.488a.75.75 0 0 0 1.058.081L12 7.988l6.512 5.581a.75.75 0 1 0 .976-1.138l-7-6a.75.75 0 0 0-.976 0l-7 6a.75.75 0 0 0-.081 1.057Z' clip-rule='evenodd'/%3E%3Cpath d='M5 17.75a.75.75 0 0 1-.488-1.32l7-6a.75.75 0 0 1 .976 0l7 6A.75.75 0 0 1 19 17.75H5Z'/%3E%3C/g%3E%3C/svg%3E");
+}
 .icon--mdi {
   display: inline-block;
   width: 1em;

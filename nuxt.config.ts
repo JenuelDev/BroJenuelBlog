@@ -1,7 +1,6 @@
 export default defineNuxtConfig({
     ssr: true,
     modules: [
-        "@pinia/nuxt",
         "@nuxtjs/color-mode",
         "@vueuse/nuxt",
         "nuxt-windicss",

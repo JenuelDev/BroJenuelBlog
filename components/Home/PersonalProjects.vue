@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const projects: Array<{ logo: string; description: string; url: string; name: string }> = [
+const projects: Array<{
+    logo: string;
+    description: string;
+    url: string;
+    name: string;
+    github?: string;
+    shop?: string;
+}> = [
     {
         logo: "https://www.believersword.com/_nuxt/believers-sword.7fcefc1c.svg",
         name: "Believers Sword",
@@ -15,8 +22,9 @@ const projects: Array<{ logo: string; description: string; url: string; name: st
     {
         logo: "https://camo.githubusercontent.com/18c3fe50597afdc7a3eeafc92ee4ddffa88ff679be10a977f171a13736e183b2/68747470733a2f2f66616365626f6f6b6272616e642e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30342f665f6c6f676f5f5247422d4865782d426c75655f3531322e706e67",
         name: "Facebook Clone",
-        description: "Its A Facebook clone built with vuejs and unocss",
+        description: "Facebook clone template for your next social media project.",
         url: "https://facebook-clone-nu-ecru.vercel.app/",
+        shop: "https://www.buymeacoffee.com/brojenuel/e/165281",
     },
 ];
 </script>
@@ -41,15 +49,31 @@ const projects: Array<{ logo: string; description: string; url: string; name: st
                     <span class="text-2xl">{{ project.name }}</span>
                 </div>
                 <p>{{ project.description }}</p>
-                <div class="flex justify-center">
-                    <NuxtLink
-                        :href="project.url"
-                        target="_blank"
-                        class="py-1 px-2 flex items-center gap-2 text-xs bg-[var(--primary-light)] rounded-sm dark:text-[var(--background)]"
-                    >
-                        <span class="icon--solar icon--solar--square-top-down-linear text-lg"></span>
-                        {{ project.url.replace("https://", "").replace("www.", "").replace("/", "") }}
-                    </NuxtLink>
+                <div class="flex items-center justify-center">
+                    <div>
+                        <NuxtLink
+                            :href="project.url"
+                            target="_blank"
+                            class="py-1 px-2 flex items-center gap-2 text-xs bg-[var(--primary-light)] rounded-sm dark:text-[var(--background)] max-w-120px whitespace-nowrap"
+                            title="Visit Link"
+                        >
+                            <span class="icon--solar icon--solar--square-top-down-linear text-lg"></span>
+                            <span class="truncate">
+                                {{ project.url.replace("https://", "").replace("www.", "").replace("/", "") }}
+                            </span>
+                        </NuxtLink>
+                    </div>
+                    <div v-if="project.shop">
+                        <NuxtLink
+                            :href="project.url"
+                            target="_blank"
+                            class="py-1 px-2 flex items-center gap-2 text-xs rounded-sm hover:text-[var(--primary)]"
+                            :aria-label="`${project.name} - shop`"
+                            title="Get it On Shop"
+                        >
+                            <span class="icon--solar icon--solar--shop-broken text-2xl"></span>
+                        </NuxtLink>
+                    </div>
                 </div>
             </div>
         </div>

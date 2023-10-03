@@ -118,7 +118,7 @@ function searchRoute() {
 </script>
 <template>
     <NuxtLayout name="bloglayout">
-        <div class="mt-70px min-h-100vh max-w-850px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20">
+        <div class="mt-70px min-h-100vh max-w-900px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20">
             <div class="mb-5">
                 <div class="flex justify-between">
                     <div>
@@ -216,17 +216,13 @@ function searchRoute() {
                                         {{ blog.title }}.
                                     </span>
                                     <span class="opacity-80 font-RobotoLight">{{ blog.summary }}</span>
+                                    <span class="text-xs font-bold">
+                                        - {{ $dayjs(blog.created_at).format("MMM. DD, YYYY") }}</span
+                                    >
                                 </div>
-                                <div class="flex gap-2 my-1">
-                                    <ul class="flex gap-1 flex-wrap text-size-13px">
-                                        <li v-for="tags in blog.tags" :key="tags" :class="`tag-${tags}`" class="tag">
-                                            #{{ tags }}
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <span class="italic font-500 opacity-50 whitespace-nowrap flex gap-20px">
-                                        {{ $dayjs(blog.created_at).format("MMM. DD, YYYY") }}
+                                <div class="flex gap-2 my-1 text-xs">
+                                    <span v-for="tags in blog.tags" :key="tags" :class="`tag-${tags}`" class="tag">
+                                        #{{ tags }}
                                     </span>
                                 </div>
                             </div>

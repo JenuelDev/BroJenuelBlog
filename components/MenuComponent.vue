@@ -16,6 +16,12 @@ const menus = [
         label: "Articles",
         name: "blog",
     },
+    {
+        path: "/contact",
+        icon: "icon--solar icon--solar--mailbox-broken text-25px",
+        label: "Contact Me",
+        name: "contact",
+    },
 ];
 
 onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : false));
