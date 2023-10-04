@@ -16,7 +16,7 @@ onMounted(() => {
 <template>
     <div
         v-if="showScrollTopButton"
-        class="fixed sm:right-10 right-3 sm:bottom-10 bottom-3 rounded-md bg-[var(--background)] text-[var(--primary)] cursor-pointer z-9999 border border-2px border-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--background)] transition-all flex items-center justify-center"
+        class="no-print fixed sm:right-10 right-3 sm:bottom-10 bottom-3 rounded-md bg-[var(--background)] text-[var(--primary)] cursor-pointer z-9999 border border-2px border-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--background)] transition-all flex items-center justify-center"
         @click="scrollTop()"
     >
         <span class="icon--solar icon--solar--double-alt-arrow-up-bold text-5xl"></span>

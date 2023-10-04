@@ -2,7 +2,7 @@
 const socials = useSocialMedias();
 </script>
 <template>
-    <div class="pt-100px pb-10 bg-[var(--primary)] text-center flex flex-col gap-9">
+    <div class="no-print pt-100px pb-10 bg-[var(--primary)] text-center flex flex-col gap-9">
         <NuxtLink href="/" class="text-30px font-800">
             <span class="dark:text-[var(--background)] text-white"> Bro</span>
             <span class="dark:text-[var(--background)] text-white">Jenuel</span>
