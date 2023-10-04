@@ -10,6 +10,7 @@ useHead({
         path: route.path,
         keywords: ["brojenuel", "Jenuel", "Jenuel Ganawed", "bro jenuel", "web developer", "software developer"],
         lang: "en",
+        image: "https://i.imgur.com/F9M3b73h.png",
     }),
 });
 </script>
