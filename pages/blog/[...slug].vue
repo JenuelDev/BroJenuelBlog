@@ -115,7 +115,8 @@ onMounted(() => {
                             </button>
                             <a
                                 class="h-40px w-40px p-3 bg-[#FFDD00] rounded-full flex items-center justify-center relative group text-dark-700"
-                                href="https://ko-fi.com/T6T5379QZ"
+                                href="https://www.buymeacoffee.com/brojenuel"
+                                alt="Jenuel Ganawed Buy me Coffee"
                                 target="_blank"
                             >
                                 <Icon name="simple-icons:buymeacoffee" />
