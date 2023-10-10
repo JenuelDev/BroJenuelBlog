@@ -79,7 +79,7 @@ const projects: Array<{
         </div>
         <div class="flex justify-center mt-30px pb-100px">
             <NuxtLink
-                to="/blog"
+                to="/my-work"
                 class="border px-3 py-5px rounded-full font-bold flex items-center gap-2 hover:text-[var(--primary)] hover:border-[var(--primary)] hover:underline dark:border-white border-gray-900"
             >
                 <span class="icon--solar icon--solar--programming-broken text-25px"></span>
