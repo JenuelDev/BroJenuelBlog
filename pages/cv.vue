@@ -56,7 +56,7 @@ defineOgImage({
 </script>
 <template>
     <NuxtLayout>
-        <section class="pt-80px max-w-800px mx-auto mb-100px">
+        <section class="pt-80px max-w-800px mx-auto mb-100px px-10px">
             <div class="no-print italic">
                 <span class="icon--solar icon--solar--documents-broken" /> my cv or resume
             </div>
