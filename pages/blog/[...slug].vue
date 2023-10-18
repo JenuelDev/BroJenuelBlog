@@ -3,7 +3,6 @@ const route = useRoute();
 const { setMeta } = useMeta();
 const client = useSupabaseClient();
 const slug = route.params.slug[0];
-const showContent = ref(false);
 const runtimeConfig = useRuntimeConfig();
 const coverImageLink = ref<null | string>(null);
 const { share } = useShareFunction();
@@ -26,9 +25,10 @@ const author: any = await useAsyncData("author", async () => {
 });
 
 const oldCountViews: number =
-    data.value.blog_meta && data.value.blog_meta.view_count ? data.value.blog_meta.view_count : 0;
+    data.value && data.value.blog_meta && data.value.blog_meta.view_count ? data.value.blog_meta.view_count : 0;
 
 async function addViewCount() {
+    if (!data.value) return;
     const queryUpdate: any = {
         blogs_id: data?.value.id,
         view_count: oldCountViews + 1,
@@ -44,41 +44,45 @@ useHead({
         },
     ],
     ...setMeta({
-        title: data.value.title,
-        description: data.value.summary,
-        path: `/blog/${data.value.slug}`,
-        keywords: data.value.keywords,
+        title: data.value ? data.value.title : "Page Not Found",
+        description: data.value ? data.value.summary : "Page Not Found",
+        path: data.value && data.value.slug ? `/blog/${data.value.slug}` : route.path,
+        keywords: data.value ? data.value.keywords : ["no found"],
         lang: "en",
         ...(coverImageLink.value
             ? {
                   image: coverImageLink.value,
               }
             : {}),
-        ...(["BroJenuel", "KateAwisan"].includes(author.data.value.username)
+        ...(["BroJenuel", "KateAwisan"].includes(
+            author && author.data.value && author.data.value.username ? author.data.value.username : "BroJenuel"
+        )
             ? {}
             : {
-                  author: author.data.value.username,
+                  author:
+                      author && author.data.value && author.data.value.username
+                          ? author.data.value.username
+                          : "BroJenuel",
               }),
     }),
 });
 
 onMounted(() => {
-    showContent.value = true;
     addViewCount();
 });
 </script>
 <template>
     <OgImageStatic
         v-if="!coverImageLink"
-        :description="data.summary"
+        :description="data ? data.summary : 'Page Not Found'"
         :path="route.path"
-        :title="data.title"
+        :title="data ? data.title : 'Page Not Found'"
         appName="www.BroJenuel.com"
         component="DefaultOgImage"
     />
     <NuxtLayout name="bloglayout">
         <Transition>
-            <main v-show="showContent" class="pt-70px w-full pb-5 relative">
+            <main v-if="data" class="pt-70px w-full pb-5 relative">
                 <div class="fixed w-full z-99">
                     <div class="w-full max-w-800px mx-auto relative">
                         <div
@@ -354,6 +358,21 @@ onMounted(() => {
                 </div>
                 <div class="md:block hidden"></div>
             </main>
+            <div v-else class="py-30 max-w-550px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20 text-center">
+                <div class="text-6xl">😓</div>
+                <div class="text-lg text-center mt-3">
+                    The Content Your Trying to View is Not Available or has been removed
+                </div>
+                <div class="inline-block pt-5 pb-50">
+                    <button
+                        class="border px-5 py-5px rounded-full font-bold flex items-center gap-2 hover:text-[var(--primary)] hover:border-[var(--primary)] hover:underline dark:border-white border-gray-900"
+                        @click="$router.back()"
+                    >
+                        <Icon name="material-symbols:arrow-back"></Icon>
+                        Back
+                    </button>
+                </div>
+            </div>
         </Transition>
     </NuxtLayout>
 </template>
