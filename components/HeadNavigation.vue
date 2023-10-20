@@ -27,18 +27,18 @@ onMounted(() => {
     >
         <span class="icon--solar icon--solar--double-alt-arrow-up-bold text-5xl"></span>
     </div>
-    <div
-        class="fixed top-0 left-0 flex justify-between md:px-20px px-10px items-center transition-all z-999 duration-300 w-full md:h-80px h-70px backdrop-filter backdrop-blur-sm no-print"
-        :class="{ 'shadow-lg bg-[var(--opacity-background)] !h-50px': !isTop }"
-    >
-        <div class="w-full max-w-1200px mx-auto flex justify-between items-center">
-            <NuxtLink href="/" class="flex items-center text-30px font-700">
+    <div class="fixed top-0 left-0 flex justify-between items-center z-999 w-full no-print">
+        <div
+            class="w-full max-w-1200px mx-auto flex justify-between items-center backdrop-filter backdrop-blur-md md:h-80px h-70px transition-all duration-300 px-10px"
+            :class="{ 'shadow-lg rounded-lg !h-50px': !isTop }"
+        >
+            <NuxtLink href="/" class="flex items-center text-xl font-400">
                 <span> Bro</span>
                 <span class="text-[var(--primary)]">Jenuel</span>
                 <span>{{ subtitle }}</span>
             </NuxtLink>
 
-            <div class="flex gap-3 items-center">
+            <div class="flex gap-2 items-center">
                 <MenuComponent />
                 <ThemeChangerButton />
             </div>

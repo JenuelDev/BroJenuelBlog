@@ -20,7 +20,7 @@ function changeColorMode() {
         <button
             type="button"
             @click="changeColorMode()"
-            class="h-30px w-30px px-1 rounded-md flex items-center justify-center transition-all duration-500 bg-[var(--primary)]"
+            class="h-25px w-25px rounded-full flex items-center justify-center transition-all bg-[var(--primary)]"
             role="button"
             title="Go to BroJenuel Home"
             id="change-theme-button"

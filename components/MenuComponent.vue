@@ -34,7 +34,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             @click="show = false"
             :href="menu.path"
             :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
-            class="block px-1 py-1 hover:bg-[var(--background-secondary)] flex items-center gap-6px font-bold"
+            class="block px-2 py-1 flex items-center gap-6px dark:hover:bg-dark-50 hover:bg-light-50 dark:hover:bg-opacity-20 hover:bg-opacity-50 rounded-full"
             :class="{
                 '!text-[var(--primary)] is-active':
                     route.path == menu.path || route.name?.toString().includes(menu.name),
@@ -86,7 +86,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
 
         &:before {
             content: "";
-            height: 2px;
+            height: 1px;
             position: absolute;
             bottom: 0;
             width: 0;
@@ -99,16 +99,16 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             color: var(--primary);
 
             &::before {
-                left: 0;
-                width: 100%;
+                width: 40px;
+                left: calc(50% - 20px);
             }
         }
     }
 
     .is-active {
         &:before {
-            width: 100%;
-            left: 0;
+            width: 30px;
+            left: calc(50% - 15px);
         }
     }
 }
