@@ -75,7 +75,7 @@ onMounted(() => {
         <div class="flex justify-center mt-30px">
             <NuxtLink
                 to="/blog"
-                class="border px-5 py-5px rounded-full font-bold flex items-center gap-2 hover:text-[var(--primary)] hover:border-[var(--primary)] hover:underline dark:border-white border-gray-900"
+                class="border border-2px px-5 py-5px rounded-full font-bold flex items-center gap-2 hover:text-[var(--primary)] !hover:border-[var(--primary)] hover:underline dark:border-white border-gray-900"
             >
                 <span class="icon--solar icon--solar--documents-broken text-25px"></span>
                 Read More Articles

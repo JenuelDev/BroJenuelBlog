@@ -60,14 +60,14 @@ useHead({
                     </a>
                     <NuxtLink
                         to="/cv"
-                        class="border px-5 py-5px rounded-full font-bold flex items-center gap-2 hover:text-[var(--primary)] hover:border-[var(--primary)] hover:underline dark:border-white border-gray-900"
+                        class="border border-2px px-5 py-5px rounded-full font-bold flex items-center gap-2 hover:text-[var(--primary)] !hover:border-[var(--primary)] hover:underline dark:border-white border-gray-900"
                     >
                         <span class="icon--solar icon--solar--document-broken text-25px"></span>
                         Resume
                     </NuxtLink>
                     <NuxtLink
                         to="/contact"
-                        class="border px-5 py-5px bg-[var(--primary)] border-none text-[var(--background)] rounded-full font-bold flex items-center gap-2 hover:underline"
+                        class="border border-2px px-5 py-5px bg-[var(--primary)] border-none text-[var(--background)] rounded-full font-bold flex items-center gap-2 hover:underline"
                     >
                         <span class="icon--solar icon--solar--mailbox-broken text-25px"></span>
                         Email Me
@@ -87,7 +87,7 @@ useHead({
             <div class="flex items-center justify-center gap-3 text-xl flex-wrap">
                 <NuxtLink
                     to="/contact"
-                    class="border border-2px px-10 dark:border-white border-gray-900 py-5 rounded-full font-bold flex items-center gap-2 hover:border-[var(--primary)] hover:bg-[var(--primary)] transition-all hover:text-[var(--background)]"
+                    class="border border-2px px-10 dark:border-white border-gray-900 py-5 rounded-full font-bold flex items-center gap-2 !hover:border-[var(--primary)] hover:bg-[var(--primary)] transition-all hover:text-[var(--background)]"
                 >
                     <span class="icon--solar icon--solar--mailbox-broken text-25px"></span>
                     Start The Conversation

@@ -23,6 +23,8 @@ const socials = useSocialMedias();
                 </li>
             </ul>
         </div>
-        <div class="text-lg text-[var(--background)] font-600 opacity-75">Hand Crafted by Me @ twentytwentythree</div>
+        <div class="text-lg text-[var(--background)] font-600 opacity-75">
+            Hand Crafted by Me @ {{ new Date().getFullYear() }}
+        </div>
     </div>
 </template>

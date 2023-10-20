@@ -1,6 +1,12 @@
 <script setup lang="ts">
 const isTop = ref(true);
 const showScrollTopButton = ref(false);
+const props = defineProps({
+    subtitle: {
+        type: String,
+        default: "",
+    },
+});
 
 function scrollTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -26,9 +32,10 @@ onMounted(() => {
         :class="{ 'shadow-lg bg-[var(--opacity-background)] !h-50px': !isTop }"
     >
         <div class="w-full max-w-1200px mx-auto flex justify-between items-center">
-            <NuxtLink href="/" class="flex items-center text-30px font-800">
+            <NuxtLink href="/" class="flex items-center text-30px font-700">
                 <span> Bro</span>
                 <span class="text-[var(--primary)]">Jenuel</span>
+                <span>{{ subtitle }}</span>
             </NuxtLink>
 
             <div class="flex gap-3 items-center">
