@@ -65,7 +65,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                     :key="menu.path"
                     @click="show = false"
                     :href="menu.path"
-                    class="block px-4 lg:py-2 py-4 hover:bg-[var(--background-secondary)] flex items-center gap-6px font-bold"
+                    class="block px-4 lg:py-2 py-2 hover:bg-[var(--background-secondary)] flex items-center justify-center gap-6px mb-5"
                     :class="{ '!text-[var(--primary)] is-active': route.path == menu.path }"
                     :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
                 >
@@ -83,6 +83,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
     a {
         position: relative;
         color: var(--color);
+        text-align: center;
 
         &:before {
             content: "";
