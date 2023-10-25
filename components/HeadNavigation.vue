@@ -29,7 +29,7 @@ onMounted(() => {
     </div>
     <div class="fixed top-0 left-0 flex justify-between items-center z-999 w-full no-print">
         <div
-            class="w-full max-w-1200px mx-auto flex justify-between items-center backdrop-filter backdrop-blur-md md:h-80px h-70px transition-all duration-300 px-10px"
+            class="w-full max-w-1200px mx-auto flex justify-between items-center backdrop-filter backdrop-blur-md md:h-80px h-70px transition-all duration-300 px-20px"
             :class="{ 'shadow-lg rounded-lg !h-50px': !isTop }"
         >
             <NuxtLink href="/" class="flex items-center text-xl font-400">

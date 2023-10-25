@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const client = useSupabaseClient();
 const loadingBlogs = ref(true);
-const limit = ref(4);
+const limit = ref(6);
 const blogs = ref<Array<any>>([]);
 async function getBlogs() {
     loadingBlogs.value = true;
@@ -20,28 +20,27 @@ onMounted(() => {
 });
 </script>
 <template>
-    <div class="w-full max-w-1000px mx-auto mt-100px pb-100px">
-        <div class="w-full max-w-600px lg:max-w-700px mx-auto mt-50px px-20px mb-20px text-center">
-            <div class="md:text-size-32px text-size-24px font-bold mb-5">Recent Articles</div>
-            <div class="mt-2 text-lg">
-                Creating an Article is one way of sharing your knowledge with the world. It's also a great way to learn
-                new things.
+    <!-- grid sm:grid-cols-2 grid-cols-1 gap-3 -->
+    <div class="w-full max-w-1100px mx-auto pb-100px md:px-15px px-10px pt-15">
+        <div v-show="!loadingBlogs" class="flex flex-wrap md:flex-row flex-col">
+            <div
+                class="w-full max-w-600px lg:max-w-700px mx-auto mb-20px basis-1/2 flex items-center md:order-1 order-0"
+            >
+                <div class="px-20px text-8xl">📰</div>
+                <div class="text-left">
+                    <h2 class="lg:text-5xl text-4xl w-auto whitespace-nowrap">My Recent</h2>
+                    <h2 class="lg:text-6xl font-900 text-4xl whitespace-nowrap flex">
+                        <span>Articles</span>
+                    </h2>
+                </div>
             </div>
-        </div>
-        <div v-show="!loadingBlogs" class="grid sm:grid-cols-2 grid-cols-1 gap-3">
             <NuxtLink
                 v-for="(blog, i) in blogs"
                 :key="blog.id"
                 :href="`/blog/${blog.slug}`"
-                class="group p-2 rounded-md gap-20px cursor-pointer flex gap-1 items-center"
+                class="group p-2 rounded-md gap-20px cursor-pointer flex gap-1 items-center basis-1/2"
+                :style="`order: ${i > 0 ? i + 1 : i}`"
             >
-                <div>
-                    <div
-                        class="bg-[var(--background-secondary)] h-25px w-25px rounded-full flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--primary)] !group-hover:text-[var(--background)]"
-                    >
-                        {{ i + 1 }}
-                    </div>
-                </div>
                 <div>
                     <h3
                         class="group-hover:underline decoration-[var(--primary)] font-bold group-hover:text-[var(--primary)]"
@@ -60,6 +59,18 @@ onMounted(() => {
                     </div>
                 </div>
             </NuxtLink>
+            <NuxtLink
+                to="/blog"
+                class="border rounded-md shadow-md basis-1/2 order-9 flex gap-2 items-center justify-center hover:bg-gray-900 hover:text-gray-50 dark:hover:bg-[var(--gray-lightest)] dark:hover:text-[var(--background)] transition-all duration-75 py-2"
+            >
+                <div class="md:text-left text-center">
+                    <h2 class="lg:text-5xl text-4xl w-auto whitespace-nowrap">Read More</h2>
+                    <h2 class="lg:text-5xl text-4xl whitespace-nowrap flex">
+                        <span>Articles</span>
+                        <span class="icon--solar icon--solar--documents-broken"></span>
+                    </h2>
+                </div>
+            </NuxtLink>
         </div>
         <div v-show="loadingBlogs" class="grid sm:grid-cols-2 grid-cols-1 gap-4">
             <div v-for="count in limit" :key="count" role="status" class="max-w-sm animate-pulse">
@@ -71,15 +82,6 @@ onMounted(() => {
                 <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
                 <span class="sr-only">Loading...</span>
             </div>
-        </div>
-        <div class="flex justify-center mt-30px">
-            <NuxtLink
-                to="/blog"
-                class="border border-2px px-5 py-5px rounded-full font-bold flex items-center gap-2 hover:text-[var(--primary)] !hover:border-[var(--primary)] hover:underline dark:border-white border-gray-900"
-            >
-                <span class="icon--solar icon--solar--documents-broken text-25px"></span>
-                Read More Articles
-            </NuxtLink>
         </div>
     </div>
 </template>

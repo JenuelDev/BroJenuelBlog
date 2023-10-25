@@ -2,13 +2,13 @@
 const skills = useSkills();
 </script>
 <template>
-    <section id="skills-container" class="my-work max-w-1200px mx-auto pb-100px">
+    <section id="skills-container" class="my-work max-w-1200px mx-auto">
         <div class="mx-auto sm:px-80px px-10px pt-30px">
-            <div class="grid lg:grid-cols-3 grid-cols-1 text-center">
+            <div class="grid gap-5 lg:grid-cols-3 grid-cols-1 text-center">
                 <div
                     v-for="(skill, index) in skills"
                     :key="skill.tech"
-                    class="flex flex-col p-5 border border-2px border-dashed border-[var(--primary)]"
+                    class="flex flex-col p-5 shadow-md hover:shadow-lg transition-all border border-gray-100"
                     :class="{
                         'rounded-tl-lg lg:rounded-bl-lg lg:rounded-tr-none rounded-tr-lg lg:-mr-1px lg:mb-0 -mb-1px':
                             index == 0,

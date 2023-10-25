@@ -100,6 +100,9 @@ const icons = {
     ],
     ph: [
         "code-fill"
+    ],
+    "emojione-v1": [
+        'laptop-computer'
     ]
 };
 
