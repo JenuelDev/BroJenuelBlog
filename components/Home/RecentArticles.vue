@@ -21,14 +21,14 @@ onMounted(() => {
 </script>
 <template>
     <!-- grid sm:grid-cols-2 grid-cols-1 gap-3 -->
-    <div class="w-full max-w-1100px mx-auto pb-100px md:px-15px px-10px pt-15">
+    <div id="recent-articles-area" class="w-full max-w-1100px mx-auto md:px-15px px-10px pt-15">
         <div v-show="!loadingBlogs" class="flex flex-wrap md:flex-row flex-col">
             <div
                 class="w-full max-w-600px lg:max-w-700px mx-auto mb-20px basis-1/2 flex items-center md:order-1 order-0"
             >
                 <div class="px-20px text-8xl">📰</div>
                 <div class="text-left">
-                    <h2 class="lg:text-5xl text-4xl w-auto whitespace-nowrap">My Recent</h2>
+                    <h2 class="lg:text-5xl sm:text-4xl text-3xl w-auto whitespace-nowrap">My Recent</h2>
                     <h2 class="lg:text-6xl font-900 text-4xl whitespace-nowrap flex">
                         <span>Articles</span>
                     </h2>

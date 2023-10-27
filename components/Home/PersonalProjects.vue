@@ -33,13 +33,15 @@ const projects: Array<{
 ];
 </script>
 <template>
-    <div class="w-full max-w-1200px mx-auto px-10px">
+    <div id="personal-projects-area" class="w-full max-w-1200px mx-auto px-10px pt-15">
         <div class="flex md:flex-row flex-col items-center pb-3">
             <div class="flex items-center">
                 <div class="w-full max-w-600px lg:max-w-700px mx-auto mb-20px basis-1/2 flex items-center">
-                    <div class="px-20px text-8xl">💪</div>
+                    <div class="px-20px lg:text-8xl md:text-7xl text-6xl">💪</div>
                     <div class="text-left">
-                        <h2 class="lg:text-5xl text-4xl w-auto whitespace-nowrap">My Personal</h2>
+                        <h2 class="lg:text-5xl lg:text-4xl sm:text-3xl text-2xl w-auto whitespace-nowrap">
+                            My Personal
+                        </h2>
                         <h2 class="lg:text-6xl font-900 text-4xl whitespace-nowrap flex">
                             <span>Projects</span>
                         </h2>
@@ -117,11 +119,7 @@ const projects: Array<{
                     class="w-full h-full absolute opacity-0 group-hover:opacity-100 transition-all duration-400 z-4"
                     style="
                         background: rgb(36, 0, 0);
-                        background: linear-gradient(
-                            180deg,
-                            rgba(36, 0, 0, 0) 0%,
-                            rgba(0, 0, 0, 0.8) 100%
-                        );
+                        background: linear-gradient(180deg, rgba(36, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
                     "
                 ></div>
             </div>

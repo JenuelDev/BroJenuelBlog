@@ -27,11 +27,6 @@
                     I'm a Software
                 </h2>
                 <h2
-                    class="lg:text-6xl font-900 text-4xl whitespace-nowrap flex !bg-[var(--background)] lg:w-310px md:w-200px w-full rounded-br-1xl"
-                >
-                    <span>Developer</span>
-                </h2>
-                <h2
                     class="lg:text-6xl font-900 text-4xl whitespace-nowrap flex !bg-[var(--background)] lg:w-270px md:w-170px w-full rounded-br-1xl"
                 >
                     <span>Engineer</span>
@@ -67,13 +62,42 @@
                 </NuxtLink>
             </div>
         </div>
-        <div class="bg-[#dee2e3] lg:w-450px md:w-400px sm:w-350px w-300px rounded-2xl z-8 h-350px self-center"></div>
+        <div>
+            <div
+                class="bg-[#dee2e3] lg:w-450px md:w-360px sm:w-350px w-300px rounded-2xl z-8 lg:h-450px md:h-360px sm:h-350px h-300px self-center overflow-hidden group relative mx-auto"
+            >
+                <div class="absolute right-5 top-5 h-4 w-4 bg-gray-50 rounded-full"></div>
+                <div class="absolute right-5 top-11 h-4 w-4 bg-gray-100 rounded-full"></div>
+                <div class="absolute right-11 top-5 h-4 w-4 bg-gray-100 rounded-full"></div>
+                <NuxtImg
+                    src="/my-image/normal face.png"
+                    format="webp"
+                    width="500"
+                    height="500"
+                    class="block group-hover:hidden w-full absolute"
+                />
+                <NuxtImg
+                    src="/my-image/smile face.png"
+                    format="webp"
+                    width="500"
+                    height="500"
+                    class="hidden group-hover:block w-full absolute"
+                />
+                <div class="absolute left-5 bottom-5 h-4 w-4 bg-gray-50 rounded-full"></div>
+                <div class="absolute left-5 bottom-11 h-4 w-4 bg-gray-100 rounded-full"></div>
+                <div class="absolute left-11 bottom-5 h-4 w-4 bg-gray-100 rounded-full"></div>
+            </div>
+        </div>
         <div class="md:w-[35%] flex flex-col gap-10px md:self-auto self-center">
             <div class="flex gap-2 h-50px flex-1 md:self-auto self-center md:order-1 order-2">
-                <div class="bg-[#dee2e3] md:w-1/2 w-80px md:h-auto h-80px rounded-1xl"></div>
-                <div class="bg-[#dee2e3] md:w-1/2 w-80px md:h-auto h-80px rounded-1xl"></div>
+                <a href="#recent-articles-area" class="bg-[#dee2e3] md:w-1/2 w-80px md:h-auto h-80px rounded-1xl">
+                    Recent Articles
+                </a>
+                <a href="#personal-projects-area" class="bg-[#dee2e3] md:w-1/2 w-80px md:h-auto h-80px rounded-1xl">
+                    Personal Projects
+                </a>
             </div>
-            <div class="lg:text-lg md:text-left text-center md:order-2 order-1">
+            <div class="lg:text-lg text-sm md:text-left text-center md:order-2 order-1">
                 Hi! 👋 Im <b>Jenuel</b>. Since the beginning of my journey as a software developer
                 {{ new Date().getFullYear() - 2017 }} years ago, I've done office and remote work for companies, and
                 collaborated with teams of developers to build and maintain awesome products. I'm quietly confident,

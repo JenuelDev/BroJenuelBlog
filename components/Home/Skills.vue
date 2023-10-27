@@ -8,13 +8,7 @@ const skills = useSkills();
                 <div
                     v-for="(skill, index) in skills"
                     :key="skill.tech"
-                    class="flex flex-col p-5 shadow-md hover:shadow-lg transition-all border border-gray-100"
-                    :class="{
-                        'rounded-tl-lg lg:rounded-bl-lg lg:rounded-tr-none rounded-tr-lg lg:-mr-1px lg:mb-0 -mb-1px':
-                            index == 0,
-                        'rounded-br-lg lg:rounded-tr-lg lg:rounded-bl-none rounded-bl-lg lg:-ml-1px lg:mt-0 -mt-1px':
-                            index == 2,
-                    }"
+                    class="flex flex-col p-5 shadow-md hover:shadow-lg transition-all border border-gray-100 dark:border-opacity-30 rounded-lg"
                 >
                     <div>
                         <div><span class="text-size-50px" :class="skill.icon" /></div>
