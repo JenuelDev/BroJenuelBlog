@@ -26,6 +26,7 @@ const blogsList = ref<
         tags: Array<any>;
         created_at: string | number | null | undefined;
         blog_meta: any;
+        updated_at: string | number | null | undefined;
     }>
 >([]);
 const noMoreData = ref(false);
@@ -118,7 +119,7 @@ function searchRoute() {
 </script>
 <template>
     <NuxtLayout name="bloglayout">
-        <div class="mt-70px min-h-100vh max-w-900px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20">
+        <div class="mt-70px min-h-100vh max-w-1100px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20">
             <div class="mb-5">
                 <div class="flex justify-between">
                     <div>
@@ -178,52 +179,44 @@ function searchRoute() {
             </div>
             <div class="sm:col-span-9 col-span-11">
                 <div class="min-h-[100vh]">
-                    <div class="grid grid-cols-1 gap-3 sm:pl-0 pl-20px" v-if="blogsList.length">
+                    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
                         <NuxtLink
-                            v-for="blog in blogsList"
+                            v-for="(blog, i) in blogsList"
                             :key="blog.id"
-                            :href="`blog/${blog.slug}`"
-                            class="p-10px rounded-md transform translate-y-1 hover:translate-y-0 transition-transform cursor-pointer group hover:bg-[var(--background-secondary)] flex md:flex-row flex-col gap-3"
+                            :href="`/blog/${blog.slug}`"
+                            class="group rounded-md cursor-pointer flex flex-col gap-1"
+                            :style="`order: ${i > 0 ? i + 1 : i}`"
                         >
-                            <div
-                                v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
-                                class="md:order-2 md:max-w-350px overflow-hidden md:w-[40%]"
-                            >
-                                <nuxt-img
+                            <div class="h-200px flex items-center overflow-hidden rounded-lg">
+                                <NuxtImg
+                                    v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
                                     :src="blog.cover_img"
-                                    class="float-right rounded-2xl"
-                                    :alt="blog.title"
-                                    width="500"
+                                    class="rounded-lg h-[90%]"
+                                    width="500px"
+                                    height="250px"
                                     format="webp"
                                     loading="lazy"
                                 />
-                            </div>
-                            <div
-                                class="relative group md:order-1"
-                                :class="{ 'md:w-[60%]': blog.cover_img, 'w-full': !blog.cover_img }"
-                            >
                                 <div
-                                    class="absolute h-10px w-10px bg-gray-600 -left-5 group-hover:bg-[var(--primary)] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-lg delay top-[50%] transform translate-y-[-50%] translate-x-[-50%]"
-                                ></div>
-                                <div
-                                    class="absolute h-1px w-1px group-hover:h-50px bg-[var(--primary)] transition-all duration-500 -left-5 top-[50%] opacity-0 group-hover:opacity-100 transform translate-y-[-50%] translate-x-[-50%]"
-                                ></div>
-                                <div class="absolute top-40%"></div>
-                                <div>
-                                    <span
-                                        class="group-hover:text-[var(--primary)] text-size-20px font-kumbhsans font-800"
-                                    >
-                                        {{ blog.title }}.
-                                    </span>
-                                    <span class="opacity-80 font-RobotoLight">{{ blog.summary }}</span>
-                                    <span class="text-xs font-bold">
-                                        - {{ $dayjs(blog.created_at).format("MMM. DD, YYYY") }}</span
-                                    >
+                                    v-else
+                                    class="flex items-center justify-center bg-gray-900 w-full h-[90%] text-gray-50 rounded-lg p-5 text-center"
+                                >
+                                    {{ blog.title }}
                                 </div>
-                                <div class="flex gap-2 my-1 text-xs">
-                                    <span v-for="tags in blog.tags" :key="tags" :class="`tag-${tags}`" class="tag">
-                                        #{{ tags }}
-                                    </span>
+                            </div>
+                            <span class="opacity-70 text-xs">
+                                <span class="icon--solar icon--solar--calendar-bold-duotone" />
+                                {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
+                            </span>
+                            <h3
+                                class="group-hover:underline decoration-[var(--primary)] group-hover:text-[var(--primary)] text-2xl"
+                                :title="blog.title"
+                            >
+                                {{ blog.title }}
+                            </h3>
+                            <div>
+                                <div class="opacity-90 content-summary text-sm">
+                                    {{ blog.summary }}
                                 </div>
                             </div>
                         </NuxtLink>

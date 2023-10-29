@@ -3,7 +3,7 @@
         class="flex gap-2 w-full max-w-1100px mx-auto md:px-20px px-10px justify-center md:flex-row flex-col"
         style="margin-top: 90px"
     >
-        <div class="md:w-[25%] self-auto w-full z-9 flex flex-col justify-between md:items-start items-center">
+        <div class="md:w-[25%] self-auto w-full z-9 flex flex-col gap-5 md:items-start items-center justify-center">
             <div class="flex gap-1">
                 <div
                     class="inline-block flex items-center gap-1 border rounded-lg"
@@ -36,7 +36,45 @@
             <div class="lg:text-lg md:text-left text-center">
                 i programme to develop apps and websites, I create articles, and I love what I do.
             </div>
-            <div class="flex items-center gap-1 flex-wrap">
+        </div>
+        <div>
+            <div
+                class="light:bg-[#dee2e3] bg-[var(--primary)] lg:w-400px md:w-360px sm:w-350px w-300px rounded-2xl z-8 lg:h-400px md:h-360px sm:h-350px h-300px self-center overflow-hidden group relative mx-auto"
+            >
+                <div class="absolute right-5 top-5 h-4 w-4 bg-gray-50 opacity-50 rounded-full"></div>
+                <div class="absolute right-5 top-11 h-4 w-4 bg-gray-50 opacity-60 rounded-full"></div>
+                <div class="absolute right-11 top-5 h-4 w-4 bg-gray-50 opacity-60 rounded-full"></div>
+                <NuxtImg
+                    src="/my-image/normal face.png"
+                    format="webp"
+                    width="500"
+                    height="500"
+                    class="block group-hover:hidden w-full absolute"
+                />
+                <NuxtImg
+                    src="/my-image/smile face.png"
+                    format="webp"
+                    width="500"
+                    height="500"
+                    class="hidden group-hover:block w-full absolute"
+                />
+                <div class="absolute left-5 bottom-5 h-4 w-4 bg-gray-50 opacity-50 rounded-full"></div>
+                <div class="absolute left-5 bottom-11 h-4 w-4 bg-gray-50 opacity-60 rounded-full"></div>
+                <div class="absolute left-11 bottom-5 h-4 w-4 bg-gray-50 opacity-60 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+    <div class="flex gap-2 w-full max-w-1100px mx-auto md:px-20px px-10px justify-center md:flex-row flex-col py-5">
+        <div class="w-full px-5 py-3 text-center">
+            <div class="md:text-size-32px text-size-24px font-bold mb-5">
+                Hi! <span class="animate-wave lg:text-size-54px md:text-size-46px text-size-60px">👋</span> Im Jenuel.
+            </div>
+            <div class="sm:text-xl text-lg max-w-700px mx-auto leading-8 mb-5">
+                Since the beginning of my journey as a software developer 6 years ago, I've done office and remote work
+                for companies, and collaborated with teams of developers to build and maintain awesome products. I'm
+                quietly confident, naturally curious, and perpetually working on improving my craft.
+            </div>
+            <div class="flex items-center gap-1 flex-wrap justify-center">
                 <a
                     href="https://www.linkedin.com/in/jenuelganawed/"
                     class="flex items-center hover:text-[var(--primary)]"
@@ -60,48 +98,6 @@
                     <span class="icon--solar icon--solar--mailbox-broken"></span>
                     Email Me
                 </NuxtLink>
-            </div>
-        </div>
-        <div>
-            <div
-                class="bg-[#dee2e3] lg:w-450px md:w-360px sm:w-350px w-300px rounded-2xl z-8 lg:h-450px md:h-360px sm:h-350px h-300px self-center overflow-hidden group relative mx-auto"
-            >
-                <div class="absolute right-5 top-5 h-4 w-4 bg-gray-50 rounded-full"></div>
-                <div class="absolute right-5 top-11 h-4 w-4 bg-gray-100 rounded-full"></div>
-                <div class="absolute right-11 top-5 h-4 w-4 bg-gray-100 rounded-full"></div>
-                <NuxtImg
-                    src="/my-image/normal face.png"
-                    format="webp"
-                    width="500"
-                    height="500"
-                    class="block group-hover:hidden w-full absolute"
-                />
-                <NuxtImg
-                    src="/my-image/smile face.png"
-                    format="webp"
-                    width="500"
-                    height="500"
-                    class="hidden group-hover:block w-full absolute"
-                />
-                <div class="absolute left-5 bottom-5 h-4 w-4 bg-gray-50 rounded-full"></div>
-                <div class="absolute left-5 bottom-11 h-4 w-4 bg-gray-100 rounded-full"></div>
-                <div class="absolute left-11 bottom-5 h-4 w-4 bg-gray-100 rounded-full"></div>
-            </div>
-        </div>
-        <div class="md:w-[35%] flex flex-col gap-10px md:self-auto self-center">
-            <div class="flex gap-2 h-50px flex-1 md:self-auto self-center md:order-1 order-2">
-                <a href="#recent-articles-area" class="bg-[#dee2e3] md:w-1/2 w-80px md:h-auto h-80px rounded-1xl">
-                    Recent Articles
-                </a>
-                <a href="#personal-projects-area" class="bg-[#dee2e3] md:w-1/2 w-80px md:h-auto h-80px rounded-1xl">
-                    Personal Projects
-                </a>
-            </div>
-            <div class="lg:text-lg text-sm md:text-left text-center md:order-2 order-1">
-                Hi! 👋 Im <b>Jenuel</b>. Since the beginning of my journey as a software developer
-                {{ new Date().getFullYear() - 2017 }} years ago, I've done office and remote work for companies, and
-                collaborated with teams of developers to build and maintain awesome products. I'm quietly confident,
-                naturally curious, and perpetually working on improving my craft.
             </div>
         </div>
     </div>

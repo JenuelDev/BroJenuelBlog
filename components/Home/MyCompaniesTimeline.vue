@@ -11,8 +11,8 @@ const experiences = useExperiences();
                 <div class="w-full m-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
                     <template v-for="(experience, i) in experiences" :key="experience.url">
                         <div class="text-center">
-                            <div v-if="experience.position || experience.company" class="text-2xl font-bold">
-                                <span v-if="experience.position" class="text-[var(--primary)]">{{
+                            <div v-if="experience.position || experience.company" class="text-2xl">
+                                <span v-if="experience.position" class="text-[var(--primary)] font-bold">{{
                                     experience.position
                                 }}</span>
                                 <span class="whitespace-nowrap">
@@ -37,10 +37,10 @@ const experiences = useExperiences();
                                     <Icon name="teenyicons:certificate-solid" />
                                     {{ experience.certificate.label }}
                                 </NuxtLink>
-                                <span v-if="experience.workStart" class="text-xs">
+                                <div v-if="experience.workStart" class="text-xs">
                                     {{ experience.workStart }} -
                                     <span v-html="experience.workUntil"></span>
-                                </span>
+                                </div>
                             </div>
                             <!-- <div v-if="experience.des" class="text-md mt-2" v-html="experience.des"></div> -->
                         </div>

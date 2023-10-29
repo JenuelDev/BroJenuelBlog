@@ -34,7 +34,7 @@ onMounted(() => {
         >
             <NuxtLink href="/" class="flex items-center text-xl font-400">
                 <span> Bro</span>
-                <span class="text-[var(--primary)]">Jenuel</span>
+                <span class="text-[var(--primary)] font-bold">Jenuel</span>
                 <span>{{ subtitle }}</span>
             </NuxtLink>
 
