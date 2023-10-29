@@ -7,31 +7,25 @@ const experiences = useExperiences();
             I'm proud to have worked and collaborated with this companies:
         </div>
         <div class="w-full max-w-1000px mx-auto px-10px">
-            <div class="timeline-div p-10px">
-                <div class="w-full m-auto">
+            <div class="p-10px">
+                <div class="w-full m-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
                     <template v-for="(experience, i) in experiences" :key="experience.url">
-                        <div class="timeline-box">
-                            <div
-                                class="absolute top-[50%] transform translate-y-[-50%] bg-[var(--primary)] rounded-md text-[var(--background)] p-1 flex flex-col items-center text-xs"
-                                :class="i % 2 == 0 ? 'sm:right-[-20px] right-[-15px]' : 'sm:left-[-20px] left-[-15px]'"
-                            >
-                                {{ experience.year }}
-                                <span>to</span>
-                                {{ experience.to }}
-                            </div>
-                            <div v-if="experience.position || experience.company" class="text-2xl font-bold">
-                                <span v-if="experience.position" class="text-[var(--primary)]">{{
+                        <div class="text-center">
+                            <div v-if="experience.position || experience.company" class="text-2xl">
+                                <span v-if="experience.position" class="text-[var(--primary)] font-bold">{{
                                     experience.position
                                 }}</span>
-                                @
-                                <NuxtLink
-                                    v-if="experience.company"
-                                    :href="experience.url"
-                                    target="_blank"
-                                    class="hover:text-[var(--primary)] border-b-2px border-dashed hover:border-[var(--primary)] hover:text-[var(--primary)]"
-                                >
-                                    {{ experience.company }}
-                                </NuxtLink>
+                                <span class="whitespace-nowrap">
+                                    @
+                                    <NuxtLink
+                                        v-if="experience.company"
+                                        :href="experience.url"
+                                        target="_blank"
+                                        class="hover:text-[var(--primary)] border-b-2px border-dashed hover:border-[var(--primary)] hover:text-[var(--primary)] white"
+                                    >
+                                        {{ experience.company }}
+                                    </NuxtLink>
+                                </span>
                             </div>
                             <div>
                                 <NuxtLink
@@ -43,12 +37,12 @@ const experiences = useExperiences();
                                     <Icon name="teenyicons:certificate-solid" />
                                     {{ experience.certificate.label }}
                                 </NuxtLink>
-                                <span v-if="experience.workStart" class="text-xs">
+                                <div v-if="experience.workStart" class="text-xs">
                                     {{ experience.workStart }} -
                                     <span v-html="experience.workUntil"></span>
-                                </span>
+                                </div>
                             </div>
-                            <div v-if="experience.des" class="text-md mt-2" v-html="experience.des"></div>
+                            <!-- <div v-if="experience.des" class="text-md mt-2" v-html="experience.des"></div> -->
                         </div>
                     </template>
                 </div>

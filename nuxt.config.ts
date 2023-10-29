@@ -10,9 +10,9 @@ export default defineNuxtConfig({
         "nuxt-icon",
     ],
     colorMode: {
-        preference: "dark",
+        preference: "light",
         classSuffix: "",
-        fallback: "dark",
+        fallback: "light",
         storageKey: "brojenuel-color-mode",
     },
     routeRules: {
