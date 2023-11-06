@@ -4,6 +4,7 @@
 }
 
 body {
+    --orange: #FFDD00;
     --color: #0a192f;
     --primary: #64ffdb;
     --primary-light: rgba(106, 255, 220, 0.822);
@@ -45,7 +46,7 @@ body {
 
 .light body {
     --color: #0a192f;
-    --primary: #0A192F;
+    --primary: #0a192f;
     --primary-light: #d9bbff;
     --primary-darker: #246b6a;
     --background: rgb(255, 255, 255);
@@ -55,32 +56,6 @@ body {
     --light-background: rgb(219, 219, 219);
     background-color: var(--background);
     color: var(--color);
-}
-
-p {
-    a {
-        position: relative;
-        font-style: italic;
-        color: var(--primary);
-
-        &:before {
-            content: "";
-            height: 2px;
-            position: absolute;
-            bottom: -5px;
-            width: 0;
-            background-color: var(--primary);
-            transition: all 0.2s;
-        }
-
-        &:hover {
-            color: var(--primary);
-
-            &::before {
-                width: 100%;
-            }
-        }
-    }
 }
 
 @import "./common/animate.scss";

@@ -45,32 +45,17 @@
     h3,
     h4,
     h5 {
-        font-family: Roboto-Bold;
         margin-bottom: 15px;
         margin-top: 30px;
         position: relative;
-        font-weight: 700;
+        font-weight: bold;
 
         a {
             position: relative;
             color: var(--primary);
 
-            &:before {
-                content: "";
-                height: 2px;
-                position: absolute;
-                bottom: -5px;
-                width: 0;
-                background-color: var(--primary);
-                transition: all 0.2s;
-            }
-
             &:hover {
-                color: var(--primary);
-
-                &::before {
-                    width: 100%;
-                }
+                text-decoration: underline;
             }
         }
     }
@@ -113,26 +98,15 @@
 
         a {
             position: relative;
-            font-style: italic;
-            // font-weight: 700;
+            font-weight: bold;
             color: var(--primary);
-
-            &:before {
-                content: "";
-                height: 2px;
-                position: absolute;
-                bottom: -5px;
-                width: 0;
-                background-color: var(--primary);
-                transition: all 0.2s;
-            }
+            transform: scale();
+            border-bottom: 0.28em solid var(--orange);
+            padding: 0 5px;
 
             &:hover {
-                color: var(--primary);
-
-                &::before {
-                    width: 100%;
-                }
+                background-color: var(--orange);
+                color: black;
             }
         }
 
