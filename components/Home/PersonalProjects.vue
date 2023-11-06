@@ -72,8 +72,8 @@ const projects: Array<{
                 <NuxtImg
                     class="transform scale-100 group-hover:scale-105 transition-all"
                     :src="project.img"
-                    width="700"
-                    height="700"
+                    width="400"
+                    height="400"
                     format="webp"
                     loading="lazy"
                 />
