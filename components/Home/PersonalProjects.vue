@@ -58,12 +58,13 @@ const projects: Array<{
                 class="rounded-lg flex flex-col gap-5 justify-center relative overflow-hidden group"
             >
                 <NuxtImg
-                    class="transform scale-100 group-hover:scale-105 transition-all"
+                    class="transform scale-100 group-hover:scale-105 transition-all w-full"
                     :src="project.img"
-                    width="400"
-                    height="400"
+                    width="250"
+                    height="250"
                     format="webp"
                     loading="lazy"
+                    :alt="`BroJenuel - ${project.name}`"
                 />
                 <div
                     class="absolute -bottom-300px group-hover:bottom-0 transition-all m-3 p-2 rounded-md overflow-hidden text-[var(--light)] z-5"

@@ -36,11 +36,13 @@ onMounted(() => {
                     <NuxtImg
                         v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
                         :src="blog.cover_img"
-                        class="rounded-lg"
-                        width="500px"
-                        height="250px"
+                        class="rounded-lg w-full"
+                        width="300"
+                        height="150"
                         format="webp"
                         loading="lazy"
+                        quality="80"
+                        :alt="blog.title"
                     />
                 </div>
                 <span class="opacity-70 text-xs">
