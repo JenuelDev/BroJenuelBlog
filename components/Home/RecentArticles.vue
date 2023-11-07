@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const client = useSupabaseClient();
 const loadingBlogs = ref(true);
-const limit = ref(5);
+const limit = ref(6);
 const blogs = ref<Array<any>>([]);
 async function getBlogs() {
     loadingBlogs.value = true;
@@ -20,15 +20,9 @@ onMounted(() => {
 });
 </script>
 <template>
-    <div id="recent-articles-area" class="w-full max-w-1100px mx-auto md:px-15px px-10px pt-15">
-        <div class="mx-auto mb-20px basis-1/2 flex items-center lg:order-3 sm:order-2 order-0">
-            <div class="text-8xl">📰</div>
-            <div class="text-left">
-                <h2 class="lg:text-5xl sm:text-4xl text-3xl w-auto whitespace-nowrap">My Recent</h2>
-                <h2 class="lg:text-6xl font-900 text-4xl whitespace-nowrap flex">
-                    <span>Articles</span>
-                </h2>
-            </div>
+    <div id="recent-articles-area" class="w-full max-w-1100px mx-auto md:px-15px px-10px pt-20">
+        <div class="py-3">
+            <span class="lg:text-size-24px text-size-20px font-bold"> Recent Articles </span>
         </div>
         <div v-show="!loadingBlogs" class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             <NuxtLink
@@ -53,27 +47,10 @@ onMounted(() => {
                     <span class="icon--solar icon--solar--calendar-bold-duotone" />
                     {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
                 </span>
-                <h3
-                    class="group-hover:underline decoration-[var(--primary)] group-hover:text-[var(--primary)] text-2xl"
-                    :title="blog.title"
-                >
-                    {{ blog.title }}
-                </h3>
                 <div>
-                    <div class="opacity-90 content-summary text-sm">
-                        {{ blog.summary }}
+                    <div class="opacity-90 content-summary">
+                        <b> {{ blog.title }} </b>. {{ blog.summary }}
                     </div>
-                </div>
-            </NuxtLink>
-            <NuxtLink
-                to="/blog"
-                class="border rounded-md shadow-md basis-1/2 order-9 flex gap-2 items-center justify-center hover:bg-gray-900 hover:text-gray-50 dark:hover:bg-[var(--gray-lightest)] dark:hover:text-[var(--background)] transition-all duration-75 py-2"
-            >
-                <div class="md:text-left text-center">
-                    <h2 class="lg:text-4xl text-3xl w-auto whitespace-nowrap">Read More</h2>
-                    <h2 class="lg:text-4xl text-3xl whitespace-nowrap flex">
-                        <span>Articles</span>
-                    </h2>
                 </div>
             </NuxtLink>
         </div>

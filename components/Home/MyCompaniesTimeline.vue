@@ -3,12 +3,12 @@ const experiences = useExperiences();
 </script>
 <template>
     <div class="px-15px py-150px">
-        <div class="lg:text-size-32px md:text-size-24px text-size-20px font-bold mb-5 max-w-600px mx-auto text-center">
+        <div class="lg:text-2xl md:text-size-24px text-size-20px mb-8 max-w-500px mx-auto text-center">
             I'm proud to have worked and collaborated with this companies:
         </div>
         <div class="w-full max-w-1000px mx-auto px-10px">
             <div class="p-10px">
-                <div class="w-full m-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
+                <div class="w-full m-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-10">
                     <template v-for="(experience, i) in experiences" :key="experience.url">
                         <div class="text-center">
                             <div v-if="experience.position || experience.company" class="text-2xl">
@@ -37,7 +37,7 @@ const experiences = useExperiences();
                                     <Icon name="teenyicons:certificate-solid" />
                                     {{ experience.certificate.label }}
                                 </NuxtLink>
-                                <div v-if="experience.workStart" class="text-xs">
+                                <div v-if="experience.workStart" class="text-sm">
                                     {{ experience.workStart }} -
                                     <span v-html="experience.workUntil"></span>
                                 </div>

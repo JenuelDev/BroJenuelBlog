@@ -33,22 +33,10 @@ const projects: Array<{
 ];
 </script>
 <template>
-    <div id="personal-projects-area" class="w-full max-w-1200px mx-auto px-10px pt-15">
-        <div class="flex md:flex-row flex-col items-center pb-3">
-            <div class="flex items-center">
-                <div class="w-full max-w-600px lg:max-w-700px mx-auto mb-20px basis-1/2 flex items-center">
-                    <div class="px-20px lg:text-8xl md:text-7xl text-6xl">💪</div>
-                    <div class="text-left">
-                        <h2 class="lg:text-5xl lg:text-4xl sm:text-3xl text-2xl w-auto whitespace-nowrap">
-                            My Personal
-                        </h2>
-                        <h2 class="lg:text-6xl font-900 text-4xl whitespace-nowrap flex">
-                            <span>Projects</span>
-                        </h2>
-                    </div>
-                </div>
-            </div>
-            <div class="px-3">
+    <div id="personal-projects-area" class="w-full max-w-1100px mx-auto px-10px pt-25">
+        <div class="px-3 pb-5">
+            <span class="lg:text-size-24px text-size-20px font-bold">My Personal Projects</span>
+            <div>
                 I'm a bit of a digital product junky. Over the years, I've used hundreds of web and mobile apps in
                 different industries and verticals. Eventually, I decided that it would be a fun challenge to try
                 designing and building my own.
