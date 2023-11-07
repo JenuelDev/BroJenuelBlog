@@ -2,7 +2,9 @@
 const socials = useSocialMedias();
 </script>
 <template>
-    <div class="no-print pt-10 pb-20 !light:bg-gray-900 bg-[var(--primary)] text-[var(--light)]">
+    <div
+        class="no-print pt-10 pb-20 !light:bg-gray-900 bg-[var(--primary)] text-[var(--light)] dark:text-[var(--background)]"
+    >
         <div class="w-full max-w-1100px mx-auto grid sm:grid-cols-4 grid-cols-1 mb-15 px-5 gap-10">
             <div class="sm:col-span-3 col-span-2">
                 <NuxtLink href="/" class="text-3xl mb-5">

@@ -1,5 +1,6 @@
 * {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -19,7 +20,7 @@ body {
     --gray-lighter: #ccd6f6;
     --gray-lightest: #e6f1ff;
     --light: white;
-    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+
     color: var(--light);
     transition: 0.3s;
 }

@@ -208,15 +208,9 @@ function searchRoute() {
                                 <span class="icon--solar icon--solar--calendar-bold-duotone" />
                                 {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
                             </span>
-                            <h3
-                                class="group-hover:underline decoration-[var(--primary)] group-hover:text-[var(--primary)] text-2xl"
-                                :title="blog.title"
-                            >
-                                {{ blog.title }}
-                            </h3>
                             <div>
-                                <div class="opacity-90 content-summary text-sm">
-                                    {{ blog.summary }}
+                                <div class="opacity-90 content-summary">
+                                    <b> {{ blog.title }} </b>. {{ blog.summary }}
                                 </div>
                             </div>
                         </NuxtLink>
