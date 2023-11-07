@@ -33,9 +33,11 @@
                 <NuxtImg
                     src="/my-image/smile face.png"
                     format="webp"
-                    width="400"
-                    height="400"
+                    width="300"
+                    height="300"
+                    quality="80"
                     class="group-hover:block w-full absolute"
+                    alt="brojenuel profile"
                 />
                 <div class="absolute left-5 bottom-5 h-4 w-4 bg-gray-50 opacity-50 rounded-full"></div>
                 <div class="absolute left-5 bottom-11 h-4 w-4 bg-gray-50 opacity-60 rounded-full"></div>
