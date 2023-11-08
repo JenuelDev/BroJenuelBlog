@@ -24,18 +24,6 @@ const author: any = await useAsyncData("author", async () => {
     return author.data;
 });
 
-const oldCountViews: number =
-    data.value && data.value.blog_meta && data.value.blog_meta.view_count ? data.value.blog_meta.view_count : 0;
-
-async function addViewCount() {
-    if (!data.value) return;
-    const queryUpdate: any = {
-        blogs_id: data?.value.id,
-        view_count: oldCountViews + 1,
-    };
-    await client.from("blog_meta").upsert(queryUpdate).select();
-}
-
 useHead({
     link: [
         {
@@ -66,10 +54,6 @@ useHead({
               }),
     }),
 });
-
-onMounted(() => {
-    addViewCount();
-});
 </script>
 <template>
     <OgImageStatic
@@ -82,7 +66,7 @@ onMounted(() => {
     />
     <NuxtLayout name="bloglayout">
         <Transition>
-            <main v-if="data" class="pt-70px w-full pb-5 relative">
+            <main v-if="data" class="pt-70px w-full pb-10 relative">
                 <div class="fixed w-full z-99">
                     <div class="w-full max-w-800px mx-auto relative">
                         <div
@@ -148,15 +132,13 @@ onMounted(() => {
                             </iframe>
                         </template>
                         <div>
-                            <h1 class="text-2xl lg:text-5xl md:text-4xl md:text-3xl pb-10px font-RobotoBold">
+                            <h1 class="lg:text-5xl md:text-4xl md:text-3xl pb-10px font-RobotoBold">
                                 {{ data.title }}
                             </h1>
-                            <div>
-                                <p class="text-xl lg:text-3xl md:text-2xl sm:text-xl md font-RobotoThin font-100 mb-5">
-                                    <span class="text-[var(--primary)]">/</span>
-                                    {{ data.summary }}
-                                </p>
-                            </div>
+                            <p class="md:text-2xl sm:text-xl md font-RobotoThin font-100 mb-5">
+                                <span class="text-[var(--primary)]">/</span>
+                                {{ data.summary }}
+                            </p>
                             <div class="flex flex-wrap gap-3 mb-3">
                                 <div
                                     v-for="tags in data.tags"
@@ -166,7 +148,7 @@ onMounted(() => {
                                     #{{ tags }}
                                 </div>
                             </div>
-                            <div class="text-lg opacity-70 mb-2">
+                            <div class="text-lg mb-2">
                                 <div v-if="author.data.value" class="mt-3 flex flex-wrap gap-2 items-center">
                                     ✍️
                                     <NuxtLink
@@ -249,11 +231,8 @@ onMounted(() => {
                             <GoogleAdsHorizontal />
                         </ClientOnly>
                     </div>
-                    <div
-                        class="content-render mx-auto relative md:text-lg pt-5 lg:px-10 px-1"
-                        v-html="data.content"
-                    ></div>
-                    <div class="mt-2 px-10 content-render mx-auto relative md:text-lg lg:px-10">
+                    <div class="content-render mx-auto relative md:text-lg pt-5 px-1" v-html="data.content"></div>
+                    <div class="mt-2 content-render mx-auto relative md:text-lg">
                         <div class="pb-5">
                             <hr />
                         </div>
@@ -271,10 +250,6 @@ onMounted(() => {
                                 alt="Buy Me a Coffee at ko-fi.com"
                             />
                         </a>
-
-                        <div class="pb-5 pt-3">
-                            <hr />
-                        </div>
                     </div>
                 </article>
                 <div class="md:block hidden"></div>
