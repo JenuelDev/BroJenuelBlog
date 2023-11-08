@@ -70,7 +70,7 @@ useHead({
                 <div class="fixed w-full z-99">
                     <div class="w-full max-w-800px mx-auto relative">
                         <div
-                            class="absolute lg:-left-50px left-10px flex lg:flex-col flex-row gap-2 lg:bg-none lg:p-0 p-2 lg:w-auto w-[90%] rounded-lg backdrop-filter backdrop-blur-md"
+                            class="absolute lg:-left-50px left-10px flex lg:top-0 -top-40px lg:flex-col flex-row gap-2 lg:bg-none lg:p-0 p-2 lg:w-auto w-[90%] rounded-lg backdrop-filter backdrop-blur-md"
                         >
                             <button
                                 title="Go back"
