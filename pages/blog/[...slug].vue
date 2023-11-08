@@ -70,7 +70,7 @@ useHead({
                 <div class="fixed w-full z-99">
                     <div class="w-full max-w-800px mx-auto relative">
                         <div
-                            class="absolute lg:-left-50px left-10px flex lg:flex-col flex-row gap-2 lg:bg-none lg:p-0 p-2 lg:w-auto w-[90%] rounded-lg backdrop-filter backdrop-blur-md"
+                            class="absolute lg:-left-50px left-10px flex lg:top-0 -top-40px lg:flex-col flex-row gap-2 lg:bg-none lg:p-0 p-2 lg:w-auto w-[90%] rounded-lg backdrop-filter backdrop-blur-md"
                         >
                             <button
                                 title="Go back"
@@ -125,7 +125,14 @@ useHead({
                                 (/\.(jpg|gif|png)$/.test(data.cover_img) || !(data.cover_img.indexOf('youtube') > -1))
                             "
                         >
-                            <img :src="data.cover_img" alt="" class="w-full rounded-2xl mb-5" srcset="" />
+                            <NuxtImg
+                                :src="data.cover_img"
+                                format="webp"
+                                width="350"
+                                height="250"
+                                :alt="`Cover Image ${data.title}`"
+                                class="w-full rounded-2xl mb-5"
+                            />
                         </template>
                         <template v-else-if="data.cover_img && data.cover_img.indexOf('youtube') > -1">
                             <iframe :src="data.cover_img" class="sm:w-450px sm:h-250px w-full h-300px pr-20px pt-10px">
@@ -156,18 +163,18 @@ useHead({
                                         target="_blank"
                                         title="authors website"
                                     >
-                                        <h3
+                                        <span
                                             v-if="author.data.value.first_name || author.data.value.last_name"
                                             class="text-size-20px hover:text-[var(--primary)] underline"
                                         >
                                             {{ author.data.value.first_name }} {{ author.data.value.last_name }}
-                                        </h3>
-                                        <h3
+                                        </span>
+                                        <span
                                             v-else-if="author.data.value.username"
                                             class="text-size-20px hover:text-[var(--primary)] underline"
                                         >
                                             {{ author.data.value.username }}
-                                        </h3>
+                                        </span>
                                     </NuxtLink>
                                     <div class="flex items-center gap-3 text-size-20px">
                                         <NuxtLink
