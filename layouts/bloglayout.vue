@@ -3,4 +3,5 @@
         <HeadNavigation subtitle="Articles" />
         <slot />
     </div>
+    <Footer />
 </template>

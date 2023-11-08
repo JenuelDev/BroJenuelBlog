@@ -30,7 +30,7 @@ const icons = {
         "document-broken",
         "square-top-down-linear",
         "close-circle-broken",
-        "double-alt-arrow-up-bold"
+        "double-alt-arrow-up-bold",
     ],
     mdi: [
         "timeline-clock-outline",
@@ -93,17 +93,11 @@ const icons = {
         "linkedin",
     ],
     raphael: ["parent"],
-    "simple-icons": ["laragon"],
+    "simple-icons": ["laragon", "kofi"],
     la: ["facebook", "youtube", "linkedin", "dev", "instagram"],
-    fluent: [
-        "mail-16-regular"
-    ],
-    ph: [
-        "code-fill"
-    ],
-    "emojione-v1": [
-        'laptop-computer'
-    ]
+    fluent: ["mail-16-regular"],
+    ph: ["code-fill"],
+    "emojione-v1": ["laptop-computer"],
 };
 
 // to avoid duplications
