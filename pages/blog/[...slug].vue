@@ -118,12 +118,12 @@ onMounted(() => {
                                 </span>
                             </button>
                             <a
-                                class="h-40px w-40px p-3 bg-[#FFDD00] rounded-full flex items-center justify-center relative group text-dark-700"
-                                href="https://www.buymeacoffee.com/brojenuel"
+                                class="h-40px w-40px bg-[#FFDD00] rounded-full flex items-center justify-center relative group text-dark-700"
+                                href="https://bit.ly/brojenuel-KOFI"
                                 alt="Jenuel Ganawed Buy me Coffee"
                                 target="_blank"
                             >
-                                <Icon name="simple-icons:buymeacoffee" />
+                                <Icon name="cib:ko-fi" size="23" class="ml-3px" />
                                 <span
                                     class="absolute left-50px whitespace-nowrap bg-[#FFDD00] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2 font-bold pointer-events-none text-dark-700"
                                 >
@@ -253,109 +253,30 @@ onMounted(() => {
                         class="content-render mx-auto relative md:text-lg pt-5 lg:px-10 px-1"
                         v-html="data.content"
                     ></div>
-                </article>
-                <div class="w-full max-w-800px mx-auto px-10px lg:pt-0 pt-70px">
-                    <hr />
-                    <div
-                        v-if="['BroJenuel', 'KateAwisan'].includes(author.data.value.username ?? 'none')"
-                        class="bg-[var(--background-secondary)] p-2 rounded-lg leading-5 mx-auto flex sm:flex-row flex-col items-center gap-10px mt-3"
-                    >
-                        <NuxtImg src="/img/buymecoffee/bmc_qr.png" alt="" srcset="" width="150" height="150" />
-                        <div class="sm:text-left text-center">
-                            <div class="mb-3">Hi! If you like this article and would like to give coffee.</div>
-                            <a class="mt-2" href="https://www.buymeacoffee.com/BroJenuel" target="_blank">
-                                <NuxtImg
-                                    height="50"
-                                    width="180"
-                                    style="border: 0px; height: 50px"
-                                    src="/img/buymecoffee/bmc-button.svg"
-                                    border="0"
-                                    alt="Buy Me a Coffee at ko-fi.com"
-                                />
-                            </a>
+                    <div class="mt-2 px-10 content-render mx-auto relative md:text-lg lg:px-10">
+                        <div class="pb-5">
+                            <hr />
                         </div>
-                    </div>
-                    <div v-if="author.data.value" class="mt-3 mb-4">
-                        <NuxtLink :href="author.data.value.website ?? '#'" target="_blank" title="authors website">
-                            Author:
-                            <h3
-                                v-if="author.data.value.first_name || author.data.value.last_name"
-                                class="text-size-25px hover:text-[var(--primary)]"
-                            >
-                                {{ author.data.value.first_name }} {{ author.data.value.last_name }}
-                            </h3>
-                            <h3
-                                v-else-if="author.data.value.username"
-                                class="text-size-25px hover:text-[var(--primary)]"
-                            >
-                                {{ author.data.value.username }}
-                            </h3>
-                        </NuxtLink>
-                        <div class="flex gap-3 text-size-30px mt-2">
-                            <NuxtLink
-                                v-if="author.data.value.facebook_username"
-                                :href="`https://facebook.com/${author.data.value.facebook_username}`"
-                                target="_blank"
-                                :title="`facebook ${author.data.value.facebook_username}`"
-                            >
-                                <Icon name="logos:facebook" />
-                            </NuxtLink>
-                            <NuxtLink
-                                v-if="author.data.value.instagram_username"
-                                :href="`https://instagram.com/${author.data.value.instagram_username}`"
-                                target="_blank"
-                                :title="`instagram ${author.data.value.instagram_username}`"
-                            >
-                                <Icon name="skill-icons:instagram" />
-                            </NuxtLink>
-                            <NuxtLink
-                                v-if="author.data.value.tiktok_username"
-                                :href="`https://tiktok.com/${author.data.value.tiktok_username}`"
-                                target="_blank"
-                                :title="`tiktok ${author.data.value.tiktok_username}`"
-                            >
-                                <Icon name="icon-park-solid:tiktok" />
-                            </NuxtLink>
-                            <NuxtLink
-                                v-if="author.data.value.twitter_username"
-                                :href="`https://twitter.com/${author.data.value.twitter_username}`"
-                                target="_blank"
-                                :title="`twitter ${author.data.value.twitter_username}`"
-                            >
-                                <Icon name="simple-icons:x" />
-                            </NuxtLink>
-                            <NuxtLink
-                                v-if="author.data.value.threads_username"
-                                :href="`https://threads.net/${author.data.value.threads_username}`"
-                                target="_blank"
-                                :title="`threads ${author.data.value.threads_username}`"
-                            >
-                                <Icon name="fa6-brands:square-threads" />
-                            </NuxtLink>
-                            <NuxtLink
-                                v-if="author.data.value.youtube_username"
-                                :href="`https://youtube.com/${author.data.value.youtube_username}`"
-                                target="_blank"
-                                :title="`youtube ${author.data.value.youtube_username}`"
-                            >
-                                <Icon name="logos:youtube-icon" />
-                            </NuxtLink>
-                        </div>
-                    </div>
-                    <hr />
-                    <div
-                        v-if="!runtimeConfig.public.isDevelopment"
-                        class="max-w-600px mx-auto px-10px relative pb-5 mt-50px"
-                    >
-                        <ClientOnly>
-                            <Disqus
-                                :identifier="`BroJenuel-${data.slug}`"
-                                :title="data.title"
-                                url="https://brojenuel.disqus.com"
+                        <p>
+                            If you enjoy this article and would like to show your support, you can easily do so by
+                            making a donation through Ko-fi. Your contribution is greatly appreciated!
+                        </p>
+                        <a href="https://bit.ly/brojenuel-KOFI" target="_blank">
+                            <NuxtImg
+                                height="50"
+                                width="260"
+                                style="border: 0px; height: 50px; width: auto"
+                                src="https://storage.ko-fi.com/cdn/brandasset/kofi_button_red.png"
+                                border="0"
+                                alt="Buy Me a Coffee at ko-fi.com"
                             />
-                        </ClientOnly>
+                        </a>
+
+                        <div class="pb-5 pt-3">
+                            <hr />
+                        </div>
                     </div>
-                </div>
+                </article>
                 <div class="md:block hidden"></div>
             </main>
             <div v-else class="py-30 max-w-550px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20 text-center">
