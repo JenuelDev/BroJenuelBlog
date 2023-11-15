@@ -67,6 +67,14 @@ onMounted(() => {
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
+        <div class="pt-5 flex justify-end">
+            <NuxtLink
+                to="/blog"
+                class="border px-2 py-1px rounded-full flex items-center gap-1 hover:text-[var(--primary)] !hover:border-[var(--primary)] hover:underline dark:border-white inline-block"
+            >
+                Read more articles
+            </NuxtLink>
+        </div>
     </div>
 </template>
 <style lang="scss">

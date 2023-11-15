@@ -48,6 +48,14 @@ const experiences = useExperiences();
                 </div>
             </div>
         </div>
+        <div class="pt-10 flex justify-center">
+            <NuxtLink
+                to="/timeline"
+                class="border px-2 py-1px rounded-full flex items-center gap-1 hover:text-[var(--primary)] !hover:border-[var(--primary)] hover:underline dark:border-white inline-block"
+            >
+                Check my Time Line
+            </NuxtLink>
+        </div>
     </div>
 </template>
 <style lang="scss">
