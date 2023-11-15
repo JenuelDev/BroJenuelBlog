@@ -138,7 +138,7 @@ defineOgImage({
         }
 
         &:first-child {
-            border-top: 0;
+            border-top: 2px dashed;
             border-top-right-radius: 0;
             border-top-left-radius: 0;
         }
