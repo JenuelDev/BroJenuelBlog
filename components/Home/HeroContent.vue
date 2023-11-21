@@ -54,7 +54,7 @@
                 for companies, and collaborated with teams of developers to build and maintain awesome products. I'm
                 quietly confident, naturally curious, and perpetually working on improving my craft.
             </div>
-            <div class="flex items-center gap-1 flex-wrap justify-center">
+            <div class="flex items-center gap-10px flex-wrap justify-center">
                 <a
                     href="https://www.linkedin.com/in/jenuelganawed/"
                     class="flex items-center hover:text-[var(--primary)]"
@@ -62,18 +62,18 @@
                     alt="Jenuel Oras Ganawed Linkedin"
                     aria-label="Jenuel Oras Ganawed Linkedin"
                 >
-                    <span class="icon--mdi icon--mdi--linkedin text-34px"></span>
+                    <span class="icon--mdi icon--mdi--linkedin text-50px"></span>
                 </a>
                 <NuxtLink
                     to="/cv"
-                    class="border px-2 py-1px rounded-full flex items-center gap-1 hover:text-[var(--primary)] !hover:border-[var(--primary)] hover:underline dark:border-white"
+                    class="border px-5 py-2 rounded-full flex items-center gap-1 hover:text-[var(--primary)] !hover:border-[var(--primary)] hover:underline dark:border-white"
                 >
                     <span class="icon--solar icon--solar--document-broken"></span>
                     Resume
                 </NuxtLink>
                 <NuxtLink
                     to="/contact"
-                    class="border border-gray-900 px-2 py-1px bg-gray-900 text-[var(--background)] rounded-full flex items-center gap-2 hover:underline dark:bg-gray-50"
+                    class="border border-gray-900 px-5 py-2 bg-gray-900 text-[var(--background)] rounded-full flex items-center gap-2 hover:underline dark:bg-gray-50"
                 >
                     <span class="icon--solar icon--solar--mailbox-broken"></span>
                     Email Me

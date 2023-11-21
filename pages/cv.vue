@@ -89,7 +89,7 @@ defineOgImage({
                 </div>
             </div>
             <div class="pb-8">
-                <h2 class="text-size-20px text-[var(--primary)] pb-2">Technologies</h2>
+                <h2 class="text-size-20px text-[var(--primary)] pb-1">Technologies</h2>
                 <div class="flex gap-2 pt-10px flex-wrap">
                     <template
                         v-for="skill in skills"
@@ -98,34 +98,33 @@ defineOgImage({
                     >
                         <NuxtLink :href="tool.link" target="_blank" v-for="tool in skill.tools" :key="tool.text">
                             <div
-                                class="whitespace-nowrap w-full overflow-hidden transition-all bg-[var(--background-secondary)] p-2 rounded-md transform hover:scale-110 cursor-pointer flex items-center"
+                                class="whitespace-nowrap w-full overflow-hidden transition-all bg-[var(--background-secondary)] p-1 rounded-md transform hover:scale-110 cursor-pointer flex items-center"
                             >
-                                <Icon class="text-size-20px" :name="tool.icon_svg" />
-                                <span class="ml-2 text-size-14px">{{ tool.text }}</span>
+                                <Icon :name="tool.icon_svg" />
+                                <span class="ml-2 text-sm">{{ tool.text }}</span>
                             </div>
                         </NuxtLink>
                     </template>
                 </div>
             </div>
             <div class="pb-8">
-                <h2 class="text-size-20px text-[var(--primary)] pb-2">Experience</h2>
-                <div class="pl-5 grid grid-cols-1 gap-3">
-                    <div v-for="(experience, i) in experiences" :key="i">
-                        <div>
-                            <span class="font-700">{{ experience.position }}</span>
-                            @ {{ experience.company }}
-                        </div>
-                        <div class="opacity-70">
-                            {{ experience.workStart }} - <span v-html="experience.workUntil"></span>
+                <h2 class="text-size-20px text-[var(--primary)] pb-3">Experience</h2>
+                <div class="pl-5">
+                    <div v-for="(experience, i) in experiences" :key="i" class="mb-5">
+                        <div class="flex gap-3 items-center">
+                            <span class="font-700">{{ experience.position }}</span> @ {{ experience.company }}
+                            <div class="opacity-70 text-sm">
+                                {{ experience.workStart }} - <span v-html="experience.workUntil"></span>
+                            </div>
                         </div>
                         <div v-html="experience.des"></div>
                     </div>
                 </div>
             </div>
             <div>
-                <h2 class="text-size-20px text-[var(--primary)] pb-2">Education</h2>
-                <div class="pl-5 grid grid-cols-1 gap-3">
-                    <div v-for="(edu, i) in education" :key="i">
+                <h2 class="text-size-20px text-[var(--primary)] pb-3">Education</h2>
+                <div class="pl-5">
+                    <div v-for="(edu, i) in education" :key="i" class="mb-5">
                         <div>
                             <span class="font-700">{{ edu.school }}</span>
                         </div>
