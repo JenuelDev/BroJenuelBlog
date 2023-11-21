@@ -40,4 +40,7 @@ export default defineNuxtConfig({
     image: {
         domains: ["i.imgur.com"],
     },
+    devtools: {
+        enabled: false,
+    },
 });
