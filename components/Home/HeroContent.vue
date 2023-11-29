@@ -6,14 +6,16 @@
         <div class="md:w-[30%] self-auto w-full z-9 flex flex-col gap-2 md:items-start items-center justify-center">
             <div class="lg:text-lg md:text-left text-center">
                 <div>
-                    Hi! <span class="animate-wave lg:text-size-44px md:text-size-36px text-size-30px">👋</span> Im
-                    <b>Jenuel</b> & I am a
+                    Hi! <span class="animate-wave lg:text-size-44px md:text-size-36px text-size-30px">👋</span> <br />
+                    Im <b>Jenuel</b> & I am a
                 </div>
             </div>
             <div class="md:text-left text-center">
                 <h2 class="lg:text-5xl text-4xl w-auto rounded-1xl">Software</h2>
-                <h2 class="font-900 text-4xl whitespace-nowrap flex lg:w-270px w-full rounded-br-1xl">
-                    <div class="animation">
+                <h2
+                    class="font-900 text-4xl whitespace-nowrap lg:w-270px w-full rounded-br-1xl relative h-50px md:-ml-0px -ml-65px"
+                >
+                    <div class="animation absolute">
                         <div class="first"><div>Engineer</div></div>
                         <div class="second"><div>Programmer</div></div>
                         <div class="third"><div>Developer</div></div>
