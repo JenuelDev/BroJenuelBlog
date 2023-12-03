@@ -30,6 +30,29 @@ const projects: Array<{
         shop: "https://www.buymeacoffee.com/brojenuel/e/165281",
         img: "https://i.imgur.com/Yx7DRz0.png",
     },
+    {
+        logo: "https://www.believersword.com/_nuxt/believers-sword.7fcefc1c.svg",
+        name: "Laravel MongoDB Docs",
+        description:
+            "This package adds functionalities to the Eloquent model and Query builder for MongoDB, using the original Laravel API. This library extends the original Laravel classes, so it uses exactly the same methods.",
+        url: "https://laravel-mongodb.vercel.app",
+        img: "https://i.imgur.com/yTfGGt7.png",
+    },
+    {
+        logo: "https://fam-tree.brojenuel.com/assets/Logo-d128d310.svg",
+        name: "Portfolio Website",
+        description:
+            "A Portfolio website for Kate Awisan as a Data Entry Freelance, Customer Service Associate, Social Media Assistant, And Data Entry Role.",
+        url: "https://fam-tree.brojenuel.com/",
+        img: "https://i.imgur.com/rvzWC15.png",
+    },
+    {
+        logo: "https://camo.githubusercontent.com/18c3fe50597afdc7a3eeafc92ee4ddffa88ff679be10a977f171a13736e183b2/68747470733a2f2f66616365626f6f6b6272616e642e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30342f665f6c6f676f5f5247422d4865782d426c75655f3531322e706e67",
+        name: "GIF Search Engine",
+        description: "Search The GIF in the internet using GIF search.",
+        url: "https://gif-find.netlify.app/",
+        img: "https://i.imgur.com/djtk7ZP.png",
+    },
 ];
 </script>
 <template>
