@@ -29,7 +29,7 @@ onMounted(() => {
 <template>
     <div id="recent-articles-area" class="w-full max-w-1100px mx-auto md:px-15px px-10px pt-20">
         <div class="py-3">
-            <span class="lg:text-size-24px text-size-20px font-bold"> Recent Articles </span>
+            <span class="lg:text-size-24px text-size-20px font-bold"> Recent Blogs </span>
         </div>
         <div v-show="!loadingBlogs" class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             <NuxtLink

@@ -36,7 +36,7 @@ const projects: Array<{
         description:
             "This package adds functionalities to the Eloquent model and Query builder for MongoDB, using the original Laravel API. This library extends the original Laravel classes, so it uses exactly the same methods.",
         url: "https://laravel-mongodb.vercel.app",
-        img: "https://i.imgur.com/yTfGGt7.png",
+        img: "/img/work/laravel mongodb.png",
     },
     {
         logo: "https://fam-tree.brojenuel.com/assets/Logo-d128d310.svg",
@@ -44,14 +44,14 @@ const projects: Array<{
         description:
             "A Portfolio website for Kate Awisan as a Data Entry Freelance, Customer Service Associate, Social Media Assistant, And Data Entry Role.",
         url: "https://fam-tree.brojenuel.com/",
-        img: "https://i.imgur.com/rvzWC15.png",
+        img: "/img/work/kate portfolio.png",
     },
     {
         logo: "https://camo.githubusercontent.com/18c3fe50597afdc7a3eeafc92ee4ddffa88ff679be10a977f171a13736e183b2/68747470733a2f2f66616365626f6f6b6272616e642e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30342f665f6c6f676f5f5247422d4865782d426c75655f3531322e706e67",
         name: "GIF Search Engine",
         description: "Search The GIF in the internet using GIF search.",
         url: "https://gif-find.netlify.app/",
-        img: "https://i.imgur.com/djtk7ZP.png",
+        img: "/img/work/gif search.png",
     },
 ];
 </script>
@@ -75,16 +75,19 @@ const projects: Array<{
             </div>
         </div>
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
-            <div
+            <NuxtLink
                 v-for="project in projects"
+                :href="project.url"
+                target="_blank"
                 :key="project.url"
+                :title="'Visit '+project.name"
                 class="rounded-lg flex flex-col gap-5 justify-center relative overflow-hidden group"
             >
                 <NuxtImg
-                    class="transform scale-100 group-hover:scale-105 transition-all w-full"
+                    class="transform scale-100 group-hover:scale-105 transition-all w-full h-full"
                     :src="project.img"
-                    width="250"
-                    height="250"
+                    width="300"
+                    height="300"
                     format="webp"
                     loading="lazy"
                     :alt="`BroJenuel - ${project.name}`"
@@ -96,18 +99,10 @@ const projects: Array<{
                         <h3 class="text-lg font-bold">{{ project.name }}</h3>
                         <div class="flex items-center">
                             <NuxtLink
-                                :href="project.url"
-                                target="_blank"
-                                class="hover:bg-gray-900 rounded-md flex items-center p-1"
-                                title="Visit Link"
-                            >
-                                <span class="icon--solar icon--solar--square-top-down-linear text-2xl"></span>
-                            </NuxtLink>
-                            <NuxtLink
                                 v-if="project.shop"
                                 :href="project.url"
                                 target="_blank"
-                                class="hover:bg-gray-900 rounded-md flex items-center p-1"
+                                class="hover:bg-gray-50 hover:text-gray-900 rounded-md flex items-center p-1"
                                 :aria-label="`${project.name} - shop`"
                                 title="Get it On Shop"
                             >
@@ -117,7 +112,7 @@ const projects: Array<{
                                 v-if="project.github"
                                 :href="project.github"
                                 target="_blank"
-                                class="hover:bg-gray-900 rounded-md flex items-center p-1"
+                                class="hover:bg-gray-50 hover:text-gray-900 rounded-md flex items-center p-1"
                                 :aria-label="`${project.name} - shop`"
                                 title="See Source Code"
                             >
@@ -131,10 +126,10 @@ const projects: Array<{
                     class="w-full h-full absolute opacity-0 group-hover:opacity-100 transition-all duration-400 z-4"
                     style="
                         background: rgb(36, 0, 0);
-                        background: linear-gradient(180deg, rgba(36, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+                        background: linear-gradient(180deg, rgba(36, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
                     "
                 ></div>
-            </div>
+            </NuxtLink>
         </div>
     </div>
 </template>

@@ -31,6 +31,7 @@ const icons = {
         "square-top-down-linear",
         "close-circle-broken",
         "double-alt-arrow-up-bold",
+        "sledgehammer-broken"
     ],
     mdi: [
         "timeline-clock-outline",
