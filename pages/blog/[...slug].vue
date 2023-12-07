@@ -54,6 +54,24 @@ useHead({
               }),
     }),
 });
+
+const oldCountViews: number =
+    data.value && data.value.blog_meta && data.value.blog_meta.view_count
+        ? parseInt(data.value.blog_meta.view_count)
+        : 0;
+
+async function addViewCount() {
+    if (!data.value) return;
+    const queryUpdate: any = {
+        blogs_id: data?.value.id,
+        view_count: oldCountViews + 1,
+    };
+    await client.from("blog_meta").upsert(queryUpdate).select();
+}
+
+onMounted(() => {
+    addViewCount();
+});
 </script>
 <template>
     <OgImageStatic
