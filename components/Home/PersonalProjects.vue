@@ -43,14 +43,14 @@ const projects: Array<{
         name: "Portfolio Website",
         description:
             "A Portfolio website for Kate Awisan as a Data Entry Freelance, Customer Service Associate, Social Media Assistant, And Data Entry Role.",
-        url: "https://fam-tree.brojenuel.com/",
+        url: "https://kateawisan.netlify.app",
         img: "/img/work/kate portfolio.png",
     },
     {
         logo: "https://camo.githubusercontent.com/18c3fe50597afdc7a3eeafc92ee4ddffa88ff679be10a977f171a13736e183b2/68747470733a2f2f66616365626f6f6b6272616e642e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30342f665f6c6f676f5f5247422d4865782d426c75655f3531322e706e67",
         name: "GIF Search Engine",
         description: "Search The GIF in the internet using GIF search.",
-        url: "https://gif-find.netlify.app/",
+        url: "https://gif-find.netlify.app",
         img: "/img/work/gif search.png",
     },
 ];
