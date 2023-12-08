@@ -23,7 +23,7 @@
     "estree-walker": "^3.0.3",
     "nuxt": "^3.8.2",
     "nuxt-icon": "^0.5.0",
-    "nuxt-og-image": "^2.0.18",
+    "nuxt-og-image": "^2.2.4",
     "nuxt-windicss": "^2.6.0",
     "sass": "^1.57.1",
     "sitemap": "^7.1.1",
