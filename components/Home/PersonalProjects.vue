@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const projects: Array<{
-    logo: string;
+    logo?: string;
     description: string;
     url: string;
     name: string;
@@ -9,21 +9,18 @@ const projects: Array<{
     img?: string;
 }> = [
     {
-        logo: "https://www.believersword.com/_nuxt/believers-sword.7fcefc1c.svg",
         name: "Believers Sword",
         description: "A Bible Reading App for Believers who likes to study the Bible.",
         url: "https://www.believersword.com/",
         img: "https://i.imgur.com/p1JAvW2.png",
     },
     {
-        logo: "https://fam-tree.brojenuel.com/assets/Logo-d128d310.svg",
         name: "Fams Tree",
         description: "Create Family tree for preserving heritage, and connecting family.",
         url: "https://fam-tree.brojenuel.com/",
         img: "https://i.imgur.com/M5lBO6E.png",
     },
     {
-        logo: "https://camo.githubusercontent.com/18c3fe50597afdc7a3eeafc92ee4ddffa88ff679be10a977f171a13736e183b2/68747470733a2f2f66616365626f6f6b6272616e642e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30342f665f6c6f676f5f5247422d4865782d426c75655f3531322e706e67",
         name: "Facebook Clone",
         description: "Facebook clone template for your next social media project.",
         url: "https://facebook-clone-nu-ecru.vercel.app/",
@@ -31,7 +28,6 @@ const projects: Array<{
         img: "https://i.imgur.com/Yx7DRz0.png",
     },
     {
-        logo: "https://www.believersword.com/_nuxt/believers-sword.7fcefc1c.svg",
         name: "Laravel MongoDB Docs",
         description:
             "This package adds functionalities to the Eloquent model and Query builder for MongoDB, using the original Laravel API. This library extends the original Laravel classes, so it uses exactly the same methods.",
@@ -39,7 +35,6 @@ const projects: Array<{
         img: "/img/work/laravel mongodb.png",
     },
     {
-        logo: "https://fam-tree.brojenuel.com/assets/Logo-d128d310.svg",
         name: "Portfolio Website",
         description:
             "A Portfolio website for Kate Awisan as a Data Entry Freelance, Customer Service Associate, Social Media Assistant, And Data Entry Role.",
@@ -47,13 +42,16 @@ const projects: Array<{
         img: "/img/work/kate portfolio.png",
     },
     {
-        logo: "https://camo.githubusercontent.com/18c3fe50597afdc7a3eeafc92ee4ddffa88ff679be10a977f171a13736e183b2/68747470733a2f2f66616365626f6f6b6272616e642e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30342f665f6c6f676f5f5247422d4865782d426c75655f3531322e706e67",
         name: "GIF Search Engine",
         description: "Search The GIF in the internet using GIF search.",
         url: "https://gif-find.netlify.app",
         img: "/img/work/gif search.png",
     },
 ];
+
+function clickLink(link: string) {
+    window.open(link, "_blank");
+}
 </script>
 <template>
     <div id="personal-projects-area" class="w-full max-w-1100px mx-auto px-10px pt-25">
@@ -75,13 +73,14 @@ const projects: Array<{
             </div>
         </div>
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
-            <NuxtLink
+            <div
                 v-for="project in projects"
                 :href="project.url"
                 target="_blank"
                 :key="project.url"
-                :title="'Visit '+project.name"
-                class="rounded-lg flex flex-col gap-5 justify-center relative overflow-hidden group"
+                :title="'Visit ' + project.name"
+                class="rounded-lg flex flex-col gap-5 justify-center relative overflow-hidden group hover:cursor-pointer"
+                @click="clickLink(project.url)"
             >
                 <NuxtImg
                     class="transform scale-100 group-hover:scale-105 transition-all w-full h-full"
@@ -129,7 +128,7 @@ const projects: Array<{
                         background: linear-gradient(180deg, rgba(36, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
                     "
                 ></div>
-            </NuxtLink>
+            </div>
         </div>
     </div>
 </template>
