@@ -119,7 +119,7 @@ function searchRoute() {
 </script>
 <template>
     <NuxtLayout name="bloglayout">
-        <div class="mt-70px min-h-100vh max-w-1100px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20">
+        <div class="mt-70px min-h-100vh max-w-700px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20">
             <div class="mb-5">
                 <div class="flex justify-between">
                     <div>
@@ -179,19 +179,19 @@ function searchRoute() {
             </div>
             <div class="sm:col-span-9 col-span-11">
                 <div class="min-h-[100vh]">
-                    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
+                    <div class="grid grid-cols-2 gap-10">
                         <NuxtLink
                             v-for="(blog, i) in blogsList"
                             :key="blog.id"
                             :href="`/blog/${blog.slug}`"
-                            class="group rounded-md cursor-pointer flex flex-col gap-1"
+                            class="group rounded-md cursor-pointer gap-1 decoration-none text-[var(--color)]"
                             :style="`order: ${i > 0 ? i + 1 : i}`"
                         >
                             <div class="h-200px flex items-center overflow-hidden rounded-lg">
                                 <NuxtImg
                                     v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
                                     :src="blog.cover_img"
-                                    class="rounded-lg w-full"
+                                    class="rounded-lg w-full h-full"
                                     width="300"
                                     height="150"
                                     format="webp"
