@@ -54,7 +54,7 @@ function clickLink(link: string) {
 }
 </script>
 <template>
-    <div id="personal-projects-area" class="w-full max-w-700px mx-auto px-10px pt-25">
+    <div id="personal-projects-area" class="w-full max-w-700px mx-auto px-10px pt-25 pb-20">
         <div class="py-3">
             <span class="lg:text-lg font-bold"> Personal Projects </span>
         </div>
@@ -96,7 +96,7 @@ function clickLink(link: string) {
                     class="absolute -bottom-300px group-hover:bottom-0 transition-all m-3 p-1 rounded-md overflow-hidden text-[var(--light)] z-5"
                 >
                     <div class="flex items-center gap-2">
-                        <h3 class="text-lg font-bold m-0">{{ project.name }}</h3>
+                        <div class="text-lg font-bold m-0">{{ project.name }}</div>
                         <div class="flex items-center">
                             <NuxtLink
                                 v-if="project.shop"
@@ -120,7 +120,7 @@ function clickLink(link: string) {
                             </NuxtLink>
                         </div>
                     </div>
-                    <p class="m-0">{{ project.description }}</p>
+                    <p class="m-0 text-sm">{{ project.description }}</p>
                 </div>
                 <div
                     class="w-full h-full absolute opacity-0 group-hover:opacity-100 transition-all duration-400 z-4 bg-black bg-opacity-80"

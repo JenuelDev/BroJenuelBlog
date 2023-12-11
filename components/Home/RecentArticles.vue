@@ -29,9 +29,9 @@ onMounted(() => {
 });
 </script>
 <template>
-    <div id="recent-articles-area" class="w-full max-w-700px mx-auto md:px-15px px-10px pt-20">
+    <div id="recent-articles-area" class="w-full max-w-700px mx-auto md:px-15px px-10px pt-5">
         <div class="py-3">
-            <span class="lg:text-lg font-bold"> Recent Posts </span>
+            <span class="lg:text-lg font-bold"> Recent Blog Posts </span>
         </div>
         <div v-show="!loadingBlogs" class="grid grid-cols-1 gap-5">
             <NuxtLink
@@ -46,7 +46,8 @@ onMounted(() => {
                     {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
                 </span>
                 <div class="opacity-90 content-summary">
-                    <b class="text-lg group-hover:text-blue-400"> {{ blog.title }} </b>. <span class="opacity-80">{{ blog.summary }}</span>
+                    <b class="text-lg group-hover:text-blue-400"> {{ blog.title }} </b>.
+                    <span class="opacity-80">{{ blog.summary }}</span>
                 </div>
             </NuxtLink>
         </div>

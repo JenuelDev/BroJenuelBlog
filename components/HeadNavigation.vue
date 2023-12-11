@@ -32,7 +32,7 @@ onMounted(() => {
             class="w-full max-w-700px mx-auto flex justify-between items-center backdrop-filter backdrop-blur-md md:h-80px h-70px transition-all duration-300 px-20px"
             :class="{ 'shadow-lg rounded-lg !h-50px': !isTop }"
         >
-            <NuxtLink href="/" class="flex items-center text-xl font-400 dark:text-[var(--color)] decoration-none">
+            <NuxtLink href="/" class="flex items-center text-xl font-400 text-[var(--color)] decoration-none">
                 <span>Bro</span>
                 <span class="font-bold">Jenuel</span>
                 <span>{{ subtitle }}</span>

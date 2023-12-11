@@ -11,10 +11,10 @@ const menus = [
         name: "home",
     },
     {
-        path: "/#personal-projects-area",
+        path: "/about",
         icon: "icon--solar icon--solar--sledgehammer-broken",
-        label: "Projects",
-        name: "projects",
+        label: "About",
+        name: "about",
     },
     {
         path: "/blog",

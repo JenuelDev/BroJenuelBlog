@@ -4,7 +4,7 @@
     >
         <div class="m-3 rounded-full bg-gradient-to-r from-green-400 via-blue-400 to-purple-700 p-1 text-white">
             <div
-                class="rounded-full dark:bg-gray-50 bg-gray-900 p-4 overflow-hidden h-100px w-100px flex items-center justify-center border border-3px border-light-50"
+                class="rounded-full bg-[var(--background)] p-4 overflow-hidden h-100px w-100px flex items-center justify-center border border-3px border-light-50"
             >
                 <NuxtImg
                     src="/my-image/smile face.png"
@@ -17,11 +17,11 @@
             </div>
         </div>
         <div>
-            <p class="text-3xl m-1 font-bold dark:text-gray-400 text-gray-500">
+            <p class="text-3xl m-1 font-bold dark:text-gray-400 text-gray-500 sm:text-left text-center">
                 <NuxtLink to="/" class="text-[var(--color)] decoration-none hover:underline"> Hey, Im Jenuel </NuxtLink>
                 . I'm a software developer and a project lead.
             </p>
-            <div class="flex items-center gap-5 flex-wrap">
+            <div class="flex items-center gap-5 flex-wrap sm:justify-start justify-center">
                 <NuxtLink
                     href="https://dev.to/brojenuel"
                     class="flex items-center text-[var(--color)] decoration-none text-lg gap-1 hover:text-gray-500"
