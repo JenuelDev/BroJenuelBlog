@@ -18,7 +18,6 @@ useHead({
     <NuxtLayout>
         <div>
             <HomeHeroContent />
-            <HomeSkills />
             <HomeRecentArticles />
             <HomePersonalProjects />
             <HomeMyCompaniesTimeline />
