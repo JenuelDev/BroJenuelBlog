@@ -30,7 +30,7 @@ const projects: Array<{
     {
         name: "Laravel MongoDB Docs",
         description:
-            "This package adds functionalities to the Eloquent model and Query builder for MongoDB, using the original Laravel API. This library extends the original Laravel classes, so it uses exactly the same methods.",
+            "This package adds functionalities to the Eloquent model and Query builder for MongoDB, using the original Laravel API.",
         url: "https://laravel-mongodb.vercel.app",
         img: "/img/work/laravel mongodb.png",
     },
@@ -54,25 +54,26 @@ function clickLink(link: string) {
 }
 </script>
 <template>
-    <div id="personal-projects-area" class="w-full max-w-1100px mx-auto px-10px pt-25">
-        <div class="px-3 pb-5">
-            <span class="lg:text-size-24px text-size-20px font-bold">My Personal Projects</span>
-            <div>
-                I'm a bit of a digital product junky. Over the years, I've used hundreds of web and mobile apps in
-                different industries and verticals. Eventually, I decided that it would be a fun challenge to try
-                designing and building my own.
-                <div class="inline-block">
-                    <NuxtLink
-                        to="/my-work"
-                        class="border px-2 py-1px rounded-full flex items-center gap-1 hover:text-[var(--primary)] !hover:border-[var(--primary)] hover:underline dark:border-white"
-                    >
-                        <span class="icon--solar icon--solar--programming-broken"></span>
-                        Check More Projects
-                    </NuxtLink>
-                </div>
-            </div>
+    <div id="personal-projects-area" class="w-full max-w-700px mx-auto px-10px pt-25">
+        <div class="py-3">
+            <span class="lg:text-lg font-bold"> Personal Projects </span>
         </div>
-        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
+        <div class="pb-5">
+            <p class="leading-6 m-0">
+                <span class="opacity-80">
+                    I'm a bit of a digital product junky. I've created a bunch of web and mobile apps in different
+                    industries and verticals. Eventually, I decided that it would be a fun challenge to try designing
+                    and building my own.
+                </span>
+                <NuxtLink
+                    to="/my-work"
+                    class="inline-block decoration-none px-2 text-blue-400 hover:bg-blue-500 hover:bg-opacity-20"
+                >
+                    More <Icon name="material-symbols:arrow-right-alt" />
+                </NuxtLink>
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 grid-cols-2 gap-3">
             <div
                 v-for="project in projects"
                 :href="project.url"
@@ -92,10 +93,10 @@ function clickLink(link: string) {
                     :alt="`BroJenuel - ${project.name}`"
                 />
                 <div
-                    class="absolute -bottom-300px group-hover:bottom-0 transition-all m-3 p-2 rounded-md overflow-hidden text-[var(--light)] z-5"
+                    class="absolute -bottom-300px group-hover:bottom-0 transition-all m-3 p-1 rounded-md overflow-hidden text-[var(--light)] z-5"
                 >
                     <div class="flex items-center gap-2">
-                        <h3 class="text-lg font-bold">{{ project.name }}</h3>
+                        <h3 class="text-lg font-bold m-0">{{ project.name }}</h3>
                         <div class="flex items-center">
                             <NuxtLink
                                 v-if="project.shop"
@@ -119,14 +120,10 @@ function clickLink(link: string) {
                             </NuxtLink>
                         </div>
                     </div>
-                    <p>{{ project.description }}</p>
+                    <p class="m-0">{{ project.description }}</p>
                 </div>
                 <div
-                    class="w-full h-full absolute opacity-0 group-hover:opacity-100 transition-all duration-400 z-4"
-                    style="
-                        background: rgb(36, 0, 0);
-                        background: linear-gradient(180deg, rgba(36, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-                    "
+                    class="w-full h-full absolute opacity-0 group-hover:opacity-100 transition-all duration-400 z-4 bg-black bg-opacity-80"
                 ></div>
             </div>
         </div>
