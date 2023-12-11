@@ -40,13 +40,11 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             @click="show = false"
             :href="menu.path"
             :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
-            class="block px-2 py-1 flex items-center gap-6px dark:hover:bg-dark-50 hover:bg-light-50 dark:hover:bg-opacity-20 hover:bg-opacity-50 rounded-full"
+            class="block px-2 py-1 flex items-center gap-6px dark:hover:bg-dark-50 hover:bg-gray-300 dark:hover:bg-opacity-30 hover:bg-opacity-30 rounded-full decoration-none"
             :class="{
-                '!text-[var(--primary)] is-active':
-                    route.path == menu.path || route.name?.toString().includes(menu.name),
+                'dark:bg-dark-50 bg-gray-300 dark:bg-opacity-50 bg-opacity-50': route.path == menu.path || route.name?.toString().includes(menu.name),
             }"
         >
-            <span class="text-size-20px" :class="menu.icon" />
             {{ menu.label }}
         </NuxtLink>
     </div>
@@ -91,20 +89,18 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
         color: var(--color);
         text-align: center;
 
-        &:before {
-            content: "";
-            height: 1px;
-            position: absolute;
-            bottom: 0;
-            width: 0;
-            left: 50%;
-            background-color: var(--primary);
-            transition: all 0.3s;
-        }
+        // &:before {
+        //     content: "";
+        //     height: 1px;
+        //     position: absolute;
+        //     bottom: 0;
+        //     width: 0;
+        //     left: 50%;
+        //     background-color: var(--color);
+        //     transition: all 0.3s;
+        // }
 
         &:hover {
-            color: var(--primary);
-
             &::before {
                 width: 40px;
                 left: calc(50% - 20px);
@@ -112,12 +108,12 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
         }
     }
 
-    .is-active {
-        &:before {
-            width: 30px;
-            left: calc(50% - 15px);
-        }
-    }
+    // .is-active {
+    //     &:before {
+    //         width: 30px;
+    //         left: calc(50% - 15px);
+    //     }
+    // }
 }
 .dropdown-menu-mobile {
     position: fixed;

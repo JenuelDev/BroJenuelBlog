@@ -3,16 +3,16 @@ export default defineNuxtConfig({
     modules: [
         "@nuxtjs/color-mode",
         "@vueuse/nuxt",
-        "nuxt-windicss",
+        "@unocss/nuxt",
         "@nuxtjs/supabase",
         "nuxt-og-image",
         "@nuxt/image",
         "nuxt-icon",
     ],
     colorMode: {
-        preference: "light",
+        preference: "dark",
         classSuffix: "",
-        fallback: "light",
+        fallback: "dark",
         storageKey: "brojenuel-color-mode",
     },
     routeRules: {

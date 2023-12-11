@@ -10,8 +10,7 @@ watch(
 );
 
 function changeColorMode() {
-    if (theme.value === "dark") colorMode.preference = "sepia";
-    if (theme.value === "sepia") colorMode.preference = "light";
+    if (theme.value === "dark") colorMode.preference = "light";
     if (theme.value === "light") colorMode.preference = "dark";
 }
 </script>
@@ -20,7 +19,7 @@ function changeColorMode() {
         <button
             type="button"
             @click="changeColorMode()"
-            class="h-25px w-25px rounded-full flex items-center justify-center transition-all bg-[var(--primary)]"
+            class="h-25px w-25px rounded-full flex items-center justify-center transition-all bg-[var(--primary)] border-none cursor-pointer"
             role="button"
             title="Go to BroJenuel Home"
             id="change-theme-button"
