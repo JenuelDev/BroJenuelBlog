@@ -86,13 +86,13 @@ onMounted(() => {
         <Transition>
             <main v-if="data" class="pt-70px w-full pb-10 relative">
                 <div class="fixed w-full z-99">
-                    <div class="w-full max-w-800px mx-auto relative">
+                    <div class="w-full max-w-750px mx-auto relative">
                         <div
                             class="absolute lg:-left-50px left-10px flex lg:top-0 -top-40px lg:flex-col flex-row gap-2 lg:bg-none lg:p-0 p-2 lg:w-auto w-[90%] rounded-lg backdrop-filter backdrop-blur-md"
                         >
                             <button
                                 title="Go back"
-                                class="h-40px w-40px bg-[var(--background-secondary)] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3 relative group"
+                                class="h-40px w-40px bg-[var(--background-secondary)] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3 relative group border-none text-[var(--color)] cursor-pointer"
                                 @click="$router.back()"
                             >
                                 <Icon name="material-symbols:arrow-back"></Icon>
@@ -106,7 +106,7 @@ onMounted(() => {
                                 v-for="social in ['facebook', 'twitter', 'linkedin', 'copy']"
                                 :key="social"
                                 :title="social != 'Copy' ? `Share To ${social.toUpperCase()}` : 'Copy to Clipboard'"
-                                class="h-40px w-40px p-3 bg-[var(--background-secondary)] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] relative group"
+                                class="h-40px w-40px p-3 bg-[var(--background-secondary)] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] relative group border-none text-[var(--color)] cursor-pointer"
                                 @click="share(social)"
                             >
                                 <Icon v-if="social == 'facebook'" name="ri:facebook-fill"></Icon>
@@ -121,7 +121,7 @@ onMounted(() => {
                             </button>
                             <a
                                 class="h-40px w-40px bg-[#FFDD00] rounded-full flex items-center justify-center relative group text-dark-700"
-                                href="https://bit.ly/brojenuel-KOFI"
+                                href="https://bit.ly/brojenuel-KOFI border-none text-[var(--color)] cursor-pointer"
                                 alt="Jenuel Ganawed Buy me Coffee"
                                 target="_blank"
                             >
@@ -135,7 +135,7 @@ onMounted(() => {
                         </div>
                     </div>
                 </div>
-                <article class="w-full max-w-800px mx-auto px-10px lg:pt-0 pt-70px">
+                <article class="w-full max-w-700px mx-auto px-10px lg:pt-0 pt-70px">
                     <div class="mb-25px px-10px">
                         <template
                             v-if="
@@ -157,10 +157,10 @@ onMounted(() => {
                             </iframe>
                         </template>
                         <div>
-                            <h1 class="lg:text-5xl md:text-4xl md:text-3xl pb-10px font-RobotoBold">
+                            <h1 class="sm:text-3xl text-2xl pb-10px font-RobotoBold m-0">
                                 {{ data.title }}
                             </h1>
-                            <p class="md:text-2xl sm:text-xl md font-RobotoThin font-100 mb-5">
+                            <p class="font-100 m-0 mb-5 leading-6 sm:text-lg">
                                 <span class="text-[var(--primary)]">/</span>
                                 {{ data.summary }}
                             </p>
@@ -180,18 +180,19 @@ onMounted(() => {
                                         :href="author.data.value.website ?? '#'"
                                         target="_blank"
                                         title="authors website"
+                                        class="decoration-none text-[var(--color)]"
                                     >
                                         <span
-                                            v-if="author.data.value.first_name || author.data.value.last_name"
-                                            class="text-size-20px hover:text-[var(--primary)] underline"
-                                        >
-                                            {{ author.data.value.first_name }} {{ author.data.value.last_name }}
-                                        </span>
-                                        <span
-                                            v-else-if="author.data.value.username"
-                                            class="text-size-20px hover:text-[var(--primary)] underline"
+                                            v-if="author.data.value.username"
+                                            class="text-size-20px hover:text-[var(--primary)]"
                                         >
                                             {{ author.data.value.username }}
+                                        </span>
+                                        <span
+                                            v-else-if="author.data.value.first_name || author.data.value.last_name"
+                                            class="text-size-20px hover:text-[var(--primary)]"
+                                        >
+                                            {{ author.data.value.first_name }} {{ author.data.value.last_name }}
                                         </span>
                                     </NuxtLink>
                                     <div class="flex items-center gap-3 text-size-20px">
@@ -216,6 +217,7 @@ onMounted(() => {
                                             :href="`https://tiktok.com/${author.data.value.tiktok_username}`"
                                             target="_blank"
                                             :title="`tiktok ${author.data.value.tiktok_username}`"
+                                            class="text-[var(--color)]"
                                         >
                                             <Icon name="icon-park-solid:tiktok" />
                                         </NuxtLink>
@@ -224,6 +226,7 @@ onMounted(() => {
                                             :href="`https://twitter.com/${author.data.value.twitter_username}`"
                                             target="_blank"
                                             :title="`twitter ${author.data.value.twitter_username}`"
+                                            class="text-[var(--color)]"
                                         >
                                             <Icon name="simple-icons:x" />
                                         </NuxtLink>
@@ -232,6 +235,7 @@ onMounted(() => {
                                             :href="`https://threads.net/${author.data.value.threads_username}`"
                                             target="_blank"
                                             :title="`threads ${author.data.value.threads_username}`"
+                                            class="text-[var(--color)]"
                                         >
                                             <Icon name="fa6-brands:square-threads" />
                                         </NuxtLink>
@@ -241,7 +245,7 @@ onMounted(() => {
                                             target="_blank"
                                             :title="`youtube ${author.data.value.youtube_username}`"
                                         >
-                                            <Icon name="logos:youtube-icon" />
+                                            <Icon name="logos:youtube-icon" size="30" />
                                         </NuxtLink>
                                     </div>
                                 </div>

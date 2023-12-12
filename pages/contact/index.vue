@@ -102,7 +102,7 @@ defineOgImage({
                         <input
                             v-model="form.name"
                             type="text"
-                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)]  border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
                             placeholder="ex. john"
                             required
                         />
@@ -112,7 +112,7 @@ defineOgImage({
                         <input
                             v-model="form.email"
                             type="email"
-                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)]  border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
                             placeholder="ex. example@gmail.com"
                             required
                         />
@@ -142,7 +142,7 @@ defineOgImage({
                 <button
                     type="submit"
                     :disabled="isLoading"
-                    class="border px-10 py-20px rounded-full font-bold flex hover:text-[var(--background)] hover:border-[var(--primary)] mx-auto hover:bg-[var(--primary)] transition-all group"
+                    class="border px-10 py-20px rounded-full font-bold flex hover:text-[var(--background)] hover:border-[var(--primary)] mx-auto hover:bg-[var(--primary)] transition-all group cursor-pointer"
                     role="button"
                     title="Submit Message"
                     id="submit-message-button"

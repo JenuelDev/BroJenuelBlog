@@ -119,7 +119,7 @@ function searchRoute() {
 </script>
 <template>
     <NuxtLayout name="bloglayout">
-        <div class="mt-70px min-h-100vh max-w-700px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20">
+        <div class="mt-70px min-h-100vh max-w-700px mx-auto lg:px-10px px-10px pb-5 gap-20">
             <div class="mb-5">
                 <div class="flex justify-between">
                     <div>
@@ -128,29 +128,12 @@ function searchRoute() {
                     <form @submit.prevent="searchRoute" class="flex items-center mb-1">
                         <div class="relative">
                             <input
-                                class="w-full shadow appearance-none border border-[var(--background)] rounded w-full dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:px-3 h-40px px-2"
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 border-none block h-30px"
                                 type="text"
                                 placeholder="Search..."
                                 v-model="filter.search"
                             />
-                            <Icon
-                                v-if="filter.search"
-                                class="absolute right-5px top-6px cursor-pointer"
-                                name="material-symbols:cancel"
-                                @click="
-                                    filter.search = null;
-                                    searchRoute();
-                                "
-                            />
                         </div>
-                        <button
-                            type="submit"
-                            class="w-full shadow appearance-none border border-[var(--background)] rounded dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:w-50px w-40px h-40px flex items-center justify-center"
-                            name="search article"
-                            title="search articles"
-                        >
-                            <Icon name="ri:search-fill" />
-                        </button>
                     </form>
                 </div>
                 <div class="flex gap-10px">
@@ -177,9 +160,9 @@ function searchRoute() {
                     />
                 </div>
             </div>
-            <div class="sm:col-span-9 col-span-11">
+            <div class="">
                 <div class="min-h-[100vh]">
-                    <div class="grid grid-cols-2 gap-10">
+                    <div class="grid sm:grid-cols-2 grid-cols-1 gap-10">
                         <NuxtLink
                             v-for="(blog, i) in blogsList"
                             :key="blog.id"
@@ -187,7 +170,7 @@ function searchRoute() {
                             class="group rounded-md cursor-pointer gap-1 decoration-none text-[var(--color)]"
                             :style="`order: ${i > 0 ? i + 1 : i}`"
                         >
-                            <div class="h-200px flex items-center overflow-hidden rounded-lg">
+                            <div class="flex items-center justify-center overflow-hidden rounded-lg mb-3">
                                 <NuxtImg
                                     v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
                                     :src="blog.cover_img"
@@ -201,7 +184,7 @@ function searchRoute() {
                                 />
                                 <div
                                     v-else
-                                    class="flex items-center justify-center bg-gray-900 w-full h-[90%] text-gray-50 rounded-lg p-5 text-center"
+                                    class="flex items-center justify-center bg-gray-900 w-full h-[90%] text-gray-50 rounded-lg p-5 text-center h-160px"
                                 >
                                     {{ blog.title }}
                                 </div>
@@ -210,10 +193,8 @@ function searchRoute() {
                                 <span class="icon--solar icon--solar--calendar-bold-duotone" />
                                 {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
                             </span>
-                            <div>
-                                <div class="opacity-90 content-summary">
-                                    <b> {{ blog.title }} </b>. {{ blog.summary }}
-                                </div>
+                            <div class="opacity-90 content-summary leading-5">
+                                <b> {{ blog.title }} </b>. <span class="opacity-70">{{ blog.summary }}</span>
                             </div>
                         </NuxtLink>
                     </div>

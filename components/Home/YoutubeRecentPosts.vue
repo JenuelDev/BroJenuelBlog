@@ -15,7 +15,7 @@ const youtubePosts = [
 ];
 </script>
 <template>
-    <div class="w-full max-w-700px mx-auto">
+    <div class="w-full max-w-700px mx-auto px-10px">
         <div class="py-3">
             <span class="lg:text-lg font-bold"> Youtube Recent Posts </span>
             <NuxtLink
