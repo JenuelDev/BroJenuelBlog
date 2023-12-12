@@ -17,9 +17,11 @@
             </div>
         </div>
         <div>
-            <p class="text-3xl m-1 font-bold dark:text-gray-400 text-gray-500 sm:text-left text-center">
-                <NuxtLink to="/about" class="text-[var(--color)] decoration-none hover:underline"> Hey, Im Jenuel </NuxtLink>
-                . I'm a software developer and a project lead.
+            <p class="text-3xl m-1 font-bold sm:text-left text-center">
+                <NuxtLink to="/about" class="dark:text-yellow-200 text-orange-600 decoration-none hover:underline">
+                    Hey, Im Jenuel.
+                </NuxtLink>
+                I'm a software developer and a project lead.
             </p>
             <div class="flex items-center gap-5 flex-wrap sm:justify-start justify-center">
                 <NuxtLink
@@ -27,7 +29,9 @@
                     class="flex items-center text-[var(--color)] decoration-none text-lg gap-1 hover:text-gray-500"
                     target="_blank"
                     alt="Jenuel Oras Ganawed Dev"
-                    aria-label="Jenuel Oras Ganawed Dev"
+                    aria-label="Jenuel Ganawed Dev.to"
+                    role="link"
+                    title="Jenuel Oras Ganawed Dev.to"
                 >
                     <span class="icon--mdi icon--mdi--dev-to text-40px"></span>
                     Dev.to
