@@ -69,7 +69,7 @@ function clickLink(link: string) {
                     to="/my-work"
                     class="inline-block decoration-none px-2 text-blue-400 hover:bg-blue-500 hover:bg-opacity-20"
                 >
-                    More <Icon name="material-symbols:arrow-right-alt" />
+                    Show More <Icon name="material-symbols:arrow-right-alt" />
                 </NuxtLink>
             </p>
         </div>
