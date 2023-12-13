@@ -90,7 +90,7 @@ function clickLink(link: string) {
                     height="300"
                     format="webp"
                     loading="lazy"
-                    quality="80"
+                    quality="50"
                     :alt="`BroJenuel - ${project.name}`"
                 />
                 <div

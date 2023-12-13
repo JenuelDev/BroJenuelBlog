@@ -11,14 +11,14 @@
                     format="webp"
                     width="190"
                     height="190"
-                    quality="100"
+                    quality="60"
                     alt="brojenuel profile"
                 />
             </div>
         </div>
         <div>
-            <p class="text-3xl m-1 font-bold sm:text-left text-center">
-                <NuxtLink to="/about" class="dark:text-yellow-200 text-orange-600 decoration-none hover:underline">
+            <p class="text-3xl m-1 font-bold sm:text-left text-center dark:text-white">
+                <NuxtLink to="/about" class="dark:text-yellow-100 text-orange-600 decoration-none hover:underline">
                     Hey, Im Jenuel.
                 </NuxtLink>
                 I'm a software developer and a project lead.
