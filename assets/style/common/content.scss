@@ -3,6 +3,7 @@
         width: 100%;
         margin-bottom: 20px;
     }
+    
 
     ul {
         padding-left: 10px;
@@ -101,7 +102,7 @@
             font-weight: bold;
             color: var(--primary);
             transform: scale();
-            border-bottom: 0.28em solid var(--orange);
+            border-bottom: 2px solid var(--orange);
             padding: 0 5px;
 
             &:hover {
@@ -129,6 +130,8 @@
 
     a {
         word-wrap: break-word;
+        text-decoration: none;
+        color: var(--orange) !important;
     }
 }
 

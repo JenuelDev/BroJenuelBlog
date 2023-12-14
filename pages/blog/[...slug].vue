@@ -136,7 +136,7 @@ onMounted(() => {
                     </div>
                 </div>
                 <article class="w-full max-w-700px mx-auto px-10px lg:pt-0 pt-70px">
-                    <div class="mb-25px px-10px">
+                    <div class="mb-25px px-10px w-full">
                         <template
                             v-if="
                                 data.cover_img &&
@@ -146,10 +146,11 @@ onMounted(() => {
                             <NuxtImg
                                 :src="data.cover_img"
                                 format="webp"
-                                width="350"
-                                height="250"
                                 :alt="`Cover Image ${data.title}`"
-                                class="w-full rounded-2xl mb-5"
+                                width="528"
+                                height="303"
+                                quality="80"
+                                class="rounded-2xl mb-5"
                             />
                         </template>
                         <template v-else-if="data.cover_img && data.cover_img.indexOf('youtube') > -1">
