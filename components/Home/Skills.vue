@@ -2,15 +2,15 @@
 const skills = useSkills();
 </script>
 <template>
-    <section id="skills-container" class="my-work max-w-1100px mx-auto px-10px pt-15">
+    <section id="skills-container" class="my-work max-w-1100px mx-auto pt-15">
         <div class="grid grid-cols-1 gap-5">
             <div
-                v-for="(skill, index) in skills"
+                v-for="skill in skills"
                 :key="skill.tech"
                 class="flex flex-col transition-all dark:border-opacity-30 rounded-lg"
             >
                 <div>
-                    <div class="flex items-center gap-2 pb-3">
+                    <div class="flex items-center gap-2 pb-1">
                         <span class="text-size-30px" :class="skill.icon"></span>
                         <span class="text-size-20px font-bold">
                             {{ skill.tech }}
@@ -20,7 +20,7 @@ const skills = useSkills();
                         {{ skill.description }}
                     </div>
                 </div>
-                <div class="flex gap-5 pt-10px flex-wrap">
+                <div class="flex gap-1 pt-10px flex-wrap">
                     <NuxtLink
                         :href="tool.link"
                         target="_blank"

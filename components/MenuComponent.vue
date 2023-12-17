@@ -33,7 +33,7 @@ const menus = [
 onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : false));
 </script>
 <template>
-    <div class="dropdown-menu lg:flex gap-1 hidden order-1 no-print">
+    <div class="dropdown-menu md:flex gap-1 hidden order-1 no-print">
         <NuxtLink
             v-for="menu in menus"
             :key="menu.path"
@@ -48,7 +48,7 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             {{ menu.label }}
         </NuxtLink>
     </div>
-    <div ref="dropdownRef" class="relative inline-block text-left lg:hidden order-3 no-print">
+    <div ref="dropdownRef" class="relative inline-block text-left md:hidden order-3 no-print">
         <div
             @click="show = !show"
             type="button"
@@ -69,8 +69,8 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                     :key="menu.path"
                     @click="show = false"
                     :href="menu.path"
-                    class="block px-4 lg:py-2 py-2 hover:bg-[var(--background-secondary)] flex items-center justify-center gap-6px mb-5"
-                    :class="{ '!text-[var(--primary)] is-active': route.path == menu.path }"
+                    class="block px-4 lg:py-2 py-2 hover:bg-[var(--background-secondary)] flex items-center justify-center gap-6px mb-5 decoration-none"
+                    :class="{ '!text-[var(--primary)] is-active dark:bg-dark-50 bg-gray-300 dark:bg-opacity-50 bg-opacity-50': route.path == menu.path }"
                     :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
                 >
                     <span class="text-size-20px" :class="menu.icon" />

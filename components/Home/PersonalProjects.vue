@@ -54,7 +54,7 @@ function clickLink(link: string) {
 }
 </script>
 <template>
-    <div id="personal-projects-area" class="w-full max-w-700px mx-auto px-10px pt-25 pb-20">
+    <div id="personal-projects-area" class="w-full max-w-700px mx-auto pt-5 pb-20">
         <div class="py-3">
             <span class="lg:text-lg font-bold"> Personal Projects </span>
         </div>

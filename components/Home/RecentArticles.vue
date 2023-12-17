@@ -29,7 +29,7 @@ onMounted(() => {
 });
 </script>
 <template>
-    <div id="recent-articles-area" class="w-full max-w-700px mx-auto md:px-15px px-10px pt-5">
+    <div id="recent-articles-area" class="w-full max-w-700px mx-auto pt-5">
         <div class="py-3">
             <span class="lg:text-lg font-bold"> Recent Blog Posts </span>
         </div>
