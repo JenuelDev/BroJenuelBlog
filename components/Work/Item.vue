@@ -65,7 +65,7 @@ defineProps({
                         v-if="work.article_link"
                         :href="work.article_link"
                         title="Check Article"
-                        class="btn"
+                        class="btn decoration-none text-[var(--color)] flex items-center gap-1 dark:hover:text-blue-300 hover:text-blue-500 p-1 rounded-md dark:hover:bg-gray-50 dark:hover:bg-opacity-5 hover:bg-gray-800 hover:bg-opacity-5"
                         :class="{ 'order-1': i % 2 == 0 }"
                     >
                         <span class="icon--solar icon--solar--documents-line-duotone text-xl"></span>
@@ -76,7 +76,7 @@ defineProps({
                         :href="work.external_link"
                         target="_blank"
                         title="Open App"
-                        class="btn"
+                        class="btn decoration-none text-[var(--color)] flex items-center gap-1 dark:hover:text-blue-300 hover:text-blue-500 p-1 rounded-md dark:hover:bg-gray-50 dark:hover:bg-opacity-5 hover:bg-gray-800 hover:bg-opacity-5"
                         :class="{ 'order-1': i % 2 == 0 }"
                     >
                         <span class="icon--solar icon--solar--square-top-down-broken text-xl" />
@@ -87,7 +87,7 @@ defineProps({
                         :href="work.github_link"
                         target="_blank"
                         title="Open Github"
-                        class="btn"
+                        class="btn decoration-none text-[var(--color)] flex items-center gap-1 dark:hover:text-blue-300 hover:text-blue-500 p-1 rounded-md dark:hover:bg-gray-50 dark:hover:bg-opacity-5 hover:bg-gray-800 hover:bg-opacity-5"
                         :class="{ 'order-1': i % 2 == 0 }"
                     >
                         <span class="icon--mdi icon--mdi--github text-xl" />

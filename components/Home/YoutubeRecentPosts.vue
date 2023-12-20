@@ -19,7 +19,8 @@ const youtubePosts = [
         <div class="py-3">
             <span class="lg:text-lg font-bold"> Youtube Recent Posts </span>
             <NuxtLink
-                to="/blog"
+                href="https://youtube.com/@brojenuel"
+                target="_blank"
                 class="decoration-none text-blue-400 hover:bg-blue-500 hover:bg-opacity-20 rounded-md px-2 py-1"
             >
                 Watch More
@@ -29,7 +30,8 @@ const youtubePosts = [
         <div class="grid sm:grid-cols-3 grid-cols-2 gap-2">
             <NuxtLink
                 v-for="(post, i) in youtubePosts"
-                :to="post.link"
+                :href="post.link"
+                target="_blank"
                 class="rounded-lg bg-gradient-to-r p-3px dark:text-white decoration-none text-[var(--color)]"
                 :class="{
                     'from-green-100 via-blue-400 to-purple-200': i == 1,

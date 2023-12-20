@@ -6,8 +6,8 @@ const domain = "https://brojenuel.com";
 
 const pages = [
     {
-        url: domain + "/timeline",
-        lastmod: "2023-04-17",
+        url: domain + "/about",
+        lastmod: "2023-12-20",
     },
     {
         url: domain + "/contact",
@@ -19,18 +19,6 @@ const pages = [
     },
     {
         url: domain + "/blog",
-        lastmod: "2023-04-17",
-    },
-    {
-        url: domain + "/what-i-can-offer",
-        lastmod: "2023-04-17",
-    },
-    {
-        url: domain + "/what-i-can-offer/mobile-app",
-        lastmod: "2023-04-17",
-    },
-    {
-        url: domain + "/what-i-can-offer/websites",
         lastmod: "2023-04-17",
     },
 ];

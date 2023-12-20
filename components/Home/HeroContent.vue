@@ -47,7 +47,8 @@
                     LinkedIn
                 </NuxtLink>
                 <NuxtLink
-                    to="/cv"
+                    href="https://youtube.com/@brojenuel"
+                    target="_blank"
                     class="flex items-center text-[var(--color)] decoration-none text-lg gap-1 hover:text-[#EF2527]"
                 >
                     <span class="icon--mdi icon--mdi--youtube text-30px text-[#EF2527]"></span>
