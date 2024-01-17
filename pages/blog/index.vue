@@ -174,7 +174,7 @@ function searchRoute() {
                                 <NuxtImg
                                     v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
                                     :src="blog.cover_img"
-                                    class="rounded-lg w-full h-full"
+                                    class="rounded-lg w-full h-150px"
                                     width="300"
                                     height="150"
                                     format="webp"
