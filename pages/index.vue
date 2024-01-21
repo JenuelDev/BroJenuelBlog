@@ -13,14 +13,14 @@ useHead({
         image: "https://i.imgur.com/F9M3b73h.png",
     }),
 });
+
+definePageMeta({
+    layout: "default",
+});
 </script>
 <template>
-    <NuxtLayout>
-        <div>
-            <HomeHeroContent />
-            <HomeYoutubeRecentPosts />
-            <HomeRecentArticles />
-            <HomePersonalProjects />
-        </div>
-    </NuxtLayout>
+    <HomeHeroContent />
+    <HomeYoutubeRecentPosts />
+    <HomeRecentArticles />
+    <HomePersonalProjects />
 </template>

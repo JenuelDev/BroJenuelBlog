@@ -55,86 +55,82 @@ defineOgImage({
 });
 </script>
 <template>
-    <NuxtLayout>
-        <section class="pt-80px max-w-800px mx-auto mb-100px px-10px">
-            <div class="no-print italic">
-                <span class="icon--solar icon--solar--documents-broken" /> my cv or resume
-            </div>
-            <div class="flex gap-10px pb-8">
-                <div>
-                    <h1 class="text-size-30px font-900 text-[var(--primary)]">Jenuel Oras Ganawed</h1>
-                    <div class="text-size-20px font-100 pt-2 opacity-80">Software Developer</div>
-                </div>
-                <div class="no-print">
-                    <button class="btn" @click="printButtonHandler()">
-                        <span class="icon--solar icon--solar--printer-2-broken" />
-                        Print
-                    </button>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-5px pb-8">
-                <div v-for="(contact, i) in contacts" :key="i" class="whitespace-nowrap">
-                    <Icon :name="contact.icon_svg" />
-                    {{ contact.title }}
-                </div>
-            </div>
-
-            <div class="pb-8">
-                <h2 class="text-size-20px text-[var(--primary)] pb-2">Summary</h2>
-                <div>
-                    I am a software engineer based in Luzon, Philippines. My passion lies in continuous learning,
-                    coding, writing, and sharing knowledge. My primary focus is on problem-solving to address clients'
-                    and companies' specific needs and challenges. With a client-centric approach, I strive to deliver
-                    efficient solutions that meet their requirements and contribute to their success.
-                </div>
-            </div>
-            <div class="pb-8">
-                <h2 class="text-size-20px text-[var(--primary)] pb-1">Technologies</h2>
-                <div class="flex gap-2 pt-10px flex-wrap">
-                    <template
-                        v-for="skill in skills"
-                        :key="skill.tech"
-                        class="flex flex-col pb-5 transform scale-98 hover:scale-100 transition-all"
-                    >
-                        <NuxtLink :href="tool.link" target="_blank" v-for="tool in skill.tools" :key="tool.text">
-                            <div
-                                class="whitespace-nowrap w-full overflow-hidden transition-all bg-[var(--background-secondary)] p-1 rounded-md transform hover:scale-110 cursor-pointer flex items-center"
-                            >
-                                <Icon :name="tool.icon_svg" />
-                                <span class="ml-2 text-sm">{{ tool.text }}</span>
-                            </div>
-                        </NuxtLink>
-                    </template>
-                </div>
-            </div>
-            <div class="pb-8">
-                <h2 class="text-size-20px text-[var(--primary)] pb-3">Experience</h2>
-                <div class="pl-5">
-                    <div v-for="(experience, i) in experiences" :key="i" class="mb-5">
-                        <div class="flex gap-3 items-center">
-                            <span class="font-700">{{ experience.position }}</span> @ {{ experience.company }}
-                            <div class="opacity-70 text-sm">
-                                {{ experience.workStart }} - <span v-html="experience.workUntil"></span>
-                            </div>
-                        </div>
-                        <div v-html="experience.des"></div>
-                    </div>
-                </div>
-            </div>
+    <section class="pt-80px max-w-800px mx-auto mb-100px px-10px">
+        <div class="no-print italic"><span class="icon--solar icon--solar--documents-broken" /> my cv or resume</div>
+        <div class="flex gap-10px pb-8">
             <div>
-                <h2 class="text-size-20px text-[var(--primary)] pb-3">Education</h2>
-                <div class="pl-5">
-                    <div v-for="(edu, i) in education" :key="i" class="mb-5">
-                        <div>
-                            <span class="font-700">{{ edu.school }}</span>
+                <h1 class="text-size-30px font-900 text-[var(--primary)]">Jenuel Oras Ganawed</h1>
+                <div class="text-size-20px font-100 pt-2 opacity-80">Software Developer</div>
+            </div>
+            <div class="no-print">
+                <button class="btn" @click="printButtonHandler()">
+                    <span class="icon--solar icon--solar--printer-2-broken" />
+                    Print
+                </button>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-5px pb-8">
+            <div v-for="(contact, i) in contacts" :key="i" class="whitespace-nowrap">
+                <Icon :name="contact.icon_svg" />
+                {{ contact.title }}
+            </div>
+        </div>
+
+        <div class="pb-8">
+            <h2 class="text-size-20px text-[var(--primary)] pb-2">Summary</h2>
+            <div>
+                I am a software engineer based in Luzon, Philippines. My passion lies in continuous learning, coding,
+                writing, and sharing knowledge. My primary focus is on problem-solving to address clients' and
+                companies' specific needs and challenges. With a client-centric approach, I strive to deliver efficient
+                solutions that meet their requirements and contribute to their success.
+            </div>
+        </div>
+        <div class="pb-8">
+            <h2 class="text-size-20px text-[var(--primary)] pb-1">Technologies</h2>
+            <div class="flex gap-2 pt-10px flex-wrap">
+                <template
+                    v-for="skill in skills"
+                    :key="skill.tech"
+                    class="flex flex-col pb-5 transform scale-98 hover:scale-100 transition-all"
+                >
+                    <NuxtLink :href="tool.link" target="_blank" v-for="tool in skill.tools" :key="tool.text">
+                        <div
+                            class="whitespace-nowrap w-full overflow-hidden transition-all bg-[var(--background-secondary)] p-1 rounded-md transform hover:scale-110 cursor-pointer flex items-center"
+                        >
+                            <Icon :name="tool.icon_svg" />
+                            <span class="ml-2 text-sm">{{ tool.text }}</span>
                         </div>
-                        <div class="opacity-70">{{ edu.start_at }} - <span v-html="edu.end_at"></span></div>
-                        <div v-html="edu.description"></div>
+                    </NuxtLink>
+                </template>
+            </div>
+        </div>
+        <div class="pb-8">
+            <h2 class="text-size-20px text-[var(--primary)] pb-3">Experience</h2>
+            <div class="pl-5">
+                <div v-for="(experience, i) in experiences" :key="i" class="mb-5">
+                    <div class="flex gap-3 items-center">
+                        <span class="font-700">{{ experience.position }}</span> @ {{ experience.company }}
+                        <div class="opacity-70 text-sm">
+                            {{ experience.workStart }} - <span v-html="experience.workUntil"></span>
+                        </div>
                     </div>
+                    <div v-html="experience.des"></div>
                 </div>
             </div>
-        </section>
-    </NuxtLayout>
+        </div>
+        <div>
+            <h2 class="text-size-20px text-[var(--primary)] pb-3">Education</h2>
+            <div class="pl-5">
+                <div v-for="(edu, i) in education" :key="i" class="mb-5">
+                    <div>
+                        <span class="font-700">{{ edu.school }}</span>
+                    </div>
+                    <div class="opacity-70">{{ edu.start_at }} - <span v-html="edu.end_at"></span></div>
+                    <div v-html="edu.description"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 <style scoped lang="scss">
 @media print {

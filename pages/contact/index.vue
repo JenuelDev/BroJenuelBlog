@@ -83,7 +83,7 @@ defineOgImage({
 });
 </script>
 <template>
-    <div class="pb-100px">
+    <div class="pb-100px pt-20">
         <div class="max-w-650px mx-auto px-10px relative">
             <div class="absolute right-4 top-4">
                 <span

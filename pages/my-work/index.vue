@@ -26,27 +26,25 @@ defineOgImage({
 });
 </script>
 <template>
-    <NuxtLayout>
-        <Transition>
-            <div v-show="isShowContent" class="sm:mt-90px mt-60px sm:p-0 p-5">
-                <div>
-                    <div class="lg:max-w-800px max-w-600px mx-auto px-10px">
-                        <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
-                            <Icon name="pajamas:project" />
-                            Projects
-                        </div>
-                        <div class="pt-5 mb-5">
-                            <div class="indent-md">
-                                Showing are personal projects that I made during my spare/free time. I don't add
-                                projects from my Jobs, only if allowed.
-                            </div>
-                        </div>
+    <Transition>
+        <div v-show="isShowContent" class="sm:mt-90px mt-60px sm:p-0 p-5">
+            <div>
+                <div class="lg:max-w-800px max-w-600px mx-auto px-10px">
+                    <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
+                        <Icon name="pajamas:project" />
+                        Projects
                     </div>
-                    <div class="flex flex-col gap-20 lg:max-w-800px max-w-600px mx-auto px-10px mt-50px">
-                        <WorkItem :works="WORKS" />
+                    <div class="pt-5 mb-5">
+                        <div class="indent-md">
+                            Showing are personal projects that I made during my spare/free time. I don't add projects
+                            from my Jobs, only if allowed.
+                        </div>
                     </div>
                 </div>
+                <div class="flex flex-col gap-20 lg:max-w-800px max-w-600px mx-auto px-10px mt-50px">
+                    <WorkItem :works="WORKS" />
+                </div>
             </div>
-        </Transition>
-    </NuxtLayout>
+        </div>
+    </Transition>
 </template>

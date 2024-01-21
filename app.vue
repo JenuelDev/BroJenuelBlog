@@ -9,7 +9,9 @@ onMounted(() => {
 </script>
 <template>
     <NuxtLoadingIndicator />
-    <NuxtPage />
+    <NuxtLayout>
+        <NuxtPage />
+    </NuxtLayout>
 </template>
 <style lang="scss">
 .btn {
