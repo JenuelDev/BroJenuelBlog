@@ -71,23 +71,19 @@ definePageMeta({
             </NuxtLink>
         </div>
         <p class="leading-7">
-            Hey there! I'm soaking up the good vibes in Benguet, Philippines, where the air is as fresh as my playlist,
-            and the surroundings are so green they make the Hulk jealous. Just your average human here, just like you,
-            juggling life and tech like a digital acrobat. I may not have the voice of an angel, but I strum my guitar
-            with the enthusiasm of a rockstar 🎸 – much to the dismay of my neighbors.
+            Hey there! 🌟 I'm a software developer/engineer based in the beautiful Benguet, Philippines. The air here is wonderfully clean, and the surroundings are so green and refreshing. Just your everyday human, navigating the balance between life and tech, just like you! 🌿💻 Let's connect and share our experiences!
         </p>
         <p class="leading-7">
             I'm all about trying new things, whether it's coding a masterpiece or attempting a daring culinary
             experiment. Life's too short not to spice it up, right? 😁
         </p>
         <p class="leading-7">
-            Embarking on this wild ride as a software wizard five {{ new Date().getFullYear() - 2018 }} ago, I've danced
+            Embarking on this wild ride as a software wizard {{ new Date().getFullYear() - 2018 }} ago, I've danced
             the office shuffle and mastered the art of remote work, all while teaming up with fellow code enthusiasts to
             create and nurture some seriously cool products. I may exude a quiet confidence, but trust me, my curiosity
-            is as loud as my keyboard clacks. Always on a mission to enhance my coding mojo, I'm like a perpetual
-            student of the digital realm – quietly tinkering and endlessly perfecting my craft.
+            is as loud as my keyboard clacks. Always on a mission to enhance my skill.
         </p>
-        <NuxtLink to="/contact" class="text-3xl dark:text-yellow-200 text-orange-600 decoration-none hover:underline">
+        <NuxtLink to="/contact" class="text-3xl dark:text-yellow-200 text-orange-600 decoration-none hover:underline dark:bg-gray-400 p-2 rounded-lg dark:bg-opacity-30 bg-dark-50 bg-opacity-20">
             Collaborate with Me 🤝
         </NuxtLink>
         <HomeSkills class="mb-10" />
