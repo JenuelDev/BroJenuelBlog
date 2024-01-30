@@ -16,17 +16,10 @@ useHead({
     }),
 });
 
-defineOgImage({
-    component: "DefaultOgImage",
-    path: route.path,
-    title: "BroJenuel Timeline",
-    description: "Check Jenuel Ganawed's Timeline. Check my journey on how I got here.",
-    appName: "www.BroJenuel.com",
-});
-
-definePageMeta({
-    layout: "default",
-});
+defineOgImageComponent('DefaultOgImage', {
+    title: "📝 Hey! I am Jenuel",
+    description: "Hey there! I'm a software developer/engineer based in the beautiful Benguet, Philippines. The air here is wonderfully clean, and the surroundings are so green and refreshing. Just your everyday human, navigating the balance between life and tech, just like you! Let's connect and share our experiences!",
+})
 </script>
 
 <template>

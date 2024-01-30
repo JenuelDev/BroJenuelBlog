@@ -17,20 +17,18 @@ useHead({
     }),
 });
 
-defineOgImage({
-    component: "DefaultOgImage",
-    path: route.path,
+defineOgImageComponent("DefaultOgImage", {
     title: "My Works",
-    description: "Check out my works I created. Created some ",
-    appName: "www.BroJenuel.com",
+    description:
+        "Showing are personal projects that I made during my spare/free time. I don't add projects from my Jobs, only if allowed.",
 });
 </script>
 <template>
     <Transition>
-        <div v-show="isShowContent" class="sm:mt-90px mt-60px sm:p-0 p-5">
+        <div v-show="isShowContent" class="sm:mt-90px mt-60px sm:p-0 p-5 !pb-20">
             <div>
-                <div class="lg:max-w-800px max-w-600px mx-auto px-10px">
-                    <div class="font-800 text-size-20px text-[var(--primary)] flex items-center gap-7px">
+                <div class="max-w-700px mx-auto md:px-20px px-10px">
+                    <div class="font-800 text-size-20px flex items-center gap-7px">
                         <Icon name="pajamas:project" />
                         Projects
                     </div>
@@ -41,7 +39,7 @@ defineOgImage({
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col gap-20 lg:max-w-800px max-w-600px mx-auto px-10px mt-50px">
+                <div class="flex flex-col gap-20 max-w-700px mx-auto px-10px mt-50px">
                     <WorkItem :works="WORKS" />
                 </div>
             </div>

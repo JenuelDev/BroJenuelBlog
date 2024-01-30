@@ -46,12 +46,12 @@ useHead({
     }),
 });
 
-defineOgImage({
-    component: "DefaultOgImage",
-    path: route.path,
-    title: "Resume - BroJenuel",
-    description: "Check Jenuel Oras Ganawed resume.",
-    appName: "www.BroJenuel.com",
+defineOgImageComponent("DefaultOgImage", {
+    title: "BroJenuel Resume",
+    description: `I am a software engineer based in Luzon, Philippines. My passion lies in continuous learning, coding,
+                writing, and sharing knowledge. My primary focus is on problem-solving to address clients' and
+                companies' specific needs and challenges. With a client-centric approach, I strive to deliver efficient
+                solutions that meet their requirements and contribute to their success.`,
 });
 </script>
 <template>

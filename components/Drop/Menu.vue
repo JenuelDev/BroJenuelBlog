@@ -64,9 +64,9 @@ onClickOutside(dropdownRef, () => (showMenu.value = showMenu.value == true ? fal
             type="button"
             class="flex items-center gap-5px cursor-pointer hover:underline select-none"
             @click="showMenu = !showMenu"
-            :class="{ 'text-[var(--primary)]': showMenu }"
+            :class="{ 'text-blue-400': showMenu }"
         >
-            <span :class="{ 'text-[var(--primary)]': LABEL }">{{ valueKey ? LABEL ?? label : label ?? "Label" }}</span>
+            <span :class="{ 'text-blue-400': LABEL }">{{ valueKey ? LABEL ?? label : label ?? "Label" }}</span>
             <span
                 class="icon--ic icon--ic--outline-play-arrow transition-all"
                 :class="{ 'transform rotate-90': showMenu }"
@@ -76,7 +76,7 @@ onClickOutside(dropdownRef, () => (showMenu.value = showMenu.value == true ? fal
         <Transition name="drop-menu">
             <div
                 v-show="showMenu"
-                class="dropdown-menu absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-[var(--background-secondary-opacity-100)] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-99 select-none"
+                class="dropdown-menu absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-dark-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-99 select-none"
                 :class="{ 'right-0': props.position == 'left', 'left-0': props.position == 'right' }"
             >
                 <div class="py-1" role="none">
@@ -88,7 +88,7 @@ onClickOutside(dropdownRef, () => (showMenu.value = showMenu.value == true ? fal
                         :key="menu.key"
                         @click="selectKey(menu)"
                         class="block px-4 lg:py-2 py-5 text-sm hover:bg-[var(--background-secondary)] flex items-center justify-between cursor-pointer"
-                        :class="{ '!text-[var(--primary)]': valueKey == menu.key }"
+                        :class="{ '!text-blue-400': valueKey == menu.key }"
                     >
                         <span class="flex items-center gap-6px">
                             <span class="text-size-20px" :class="menu.icon" /> {{ menu.label }}

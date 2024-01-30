@@ -74,23 +74,14 @@ function goBack() {
     window.history.back();
 }
 
-defineOgImage({
-    component: "DefaultOgImage",
-    path: route.path,
-    title: "Contact - BroJenuel",
-    description: "Contact us, and I will definitely going to reply back.",
-    appName: "www.BroJenuel.com",
+defineOgImageComponent("DefaultOgImage", {
+    title: "Contact Me",
+    description: "Thanks for taking the time to reach out. How can I help you today?",
 });
 </script>
 <template>
     <div class="pb-100px pt-20">
         <div class="max-w-650px mx-auto px-10px relative">
-            <div class="absolute right-4 top-4">
-                <span
-                    class="icon--solar icon--solar--close-circle-broken text-3xl cursor-pointer hover:text-[var(--primary)]"
-                    @click="goBack()"
-                ></span>
-            </div>
             <div class="pt-5 text-center text-7xl font-100 pt-20">😁</div>
             <div class="pt-5 text-center text-4xl font-100 pb-50px">
                 Thanks for taking the time to reach out. How can I help you today?
@@ -102,7 +93,7 @@ defineOgImage({
                         <input
                             v-model="form.name"
                             type="text"
-                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)]  border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
                             placeholder="ex. john"
                             required
                         />
@@ -112,7 +103,7 @@ defineOgImage({
                         <input
                             v-model="form.email"
                             type="email"
-                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)]  border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
                             placeholder="ex. example@gmail.com"
                             required
                         />
@@ -142,7 +133,7 @@ defineOgImage({
                 <button
                     type="submit"
                     :disabled="isLoading"
-                    class="border px-10 py-20px rounded-full font-bold flex hover:text-[var(--background)] hover:border-[var(--primary)] mx-auto hover:bg-[var(--primary)] transition-all group cursor-pointer"
+                    class="border border-0 px-10 py-20px rounded-full font-bold flex  hover:border-[var(--orange)] mx-auto hover:bg-[var(--orange)] transition-all group cursor-pointer"
                     role="button"
                     title="Submit Message"
                     id="submit-message-button"
@@ -155,5 +146,4 @@ defineOgImage({
             </form>
         </div>
     </div>
-    <Footer />
 </template>

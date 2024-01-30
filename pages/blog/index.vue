@@ -104,10 +104,7 @@ useHead({
     }),
 });
 
-defineOgImage({
-    appName: "www.BroJenuel.com",
-    component: "DefaultOgImage",
-    path: route.path,
+defineOgImageComponent("DefaultOgImage", {
     title: "BroJenuel - Blog",
     description:
         "Learn programming tips, tricks, best practices to make programming and other information that will benefit you.",
@@ -122,11 +119,11 @@ definePageMeta({
 });
 </script>
 <template>
-    <div class="mt-70px min-h-100vh max-w-700px mx-auto lg:px-10px px-10px pb-5 gap-20">
+    <div class="mt-50px min-h-100vh max-w-700px mx-auto md:px-20px px-10px pb-5 gap-20">
         <div class="mb-5">
             <div class="flex justify-between">
                 <div>
-                    <span class="text-[var(--primary)] text-2xl font-800">Blogs</span>
+                    <span class="text-2xl font-800">Blogs</span>
                 </div>
                 <form @submit.prevent="searchRoute" class="flex items-center mb-1">
                     <div class="relative">

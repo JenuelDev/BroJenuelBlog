@@ -79,12 +79,10 @@ definePageMeta({
 </script>
 
 <template>
-    <OgImageStatic
+    <OgImage
         v-if="!coverImageLink"
         :description="data ? data.summary : 'Page Not Found'"
-        :path="route.path"
         :title="data ? data.title : 'Page Not Found'"
-        appName="www.BroJenuel.com"
         component="DefaultOgImage"
     />
     <Transition>

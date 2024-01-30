@@ -14,9 +14,11 @@ useHead({
     }),
 });
 
-definePageMeta({
-    layout: "default",
-});
+
+defineOgImageComponent('DefaultOgImage', {
+    title: "BroJenuel",
+    about: "Jenuel Ganawed's Portfolio - My Home In the Internet!",
+})
 </script>
 <template>
     <HomeHeroContent />

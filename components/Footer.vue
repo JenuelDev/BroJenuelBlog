@@ -13,7 +13,7 @@ const socials = useSocialMedias();
                 :href="social.url"
                 target="_blank"
                 :aria-label="social.ariaLabel"
-                class="text-[var(--color)] hover:bg-blue-400 h-25px w-25px rounded-md"
+                class="text-[var(--color)] hover:bg-[var(--orange)] hover:text-dark-900 h-25px w-25px rounded-md"
             >
                 <span :class="social.icon" />
             </NuxtLink>
