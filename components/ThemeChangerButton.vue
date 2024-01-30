@@ -23,6 +23,11 @@ function changeColorMode() {
             role="button"
             title="Go to BroJenuel Home"
             id="change-theme-button"
-        ></button>
+        >
+        <!-- sun icon -->
+        <Icon size="20" v-show="theme === 'light'" class="text-white" name="mdi:weather-sunny" />
+        <!-- moon icon -->
+        <Icon size="20" v-show="theme === 'dark'"  name="mdi:weather-night" />
+    </button>
     </div>
 </template>

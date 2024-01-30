@@ -21,7 +21,7 @@
                 <NuxtLink to="/about" class="dark:text-yellow-200 text-orange-600 decoration-none hover:underline">
                     Hey, Im Jenuel.
                 </NuxtLink>
-                I'm a software developer and a project lead.
+                I'm a software developer/engineer.
             </p>
             <div class="flex items-center gap-5 flex-wrap sm:justify-start justify-center">
                 <NuxtLink
