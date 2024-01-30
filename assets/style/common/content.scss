@@ -132,6 +132,11 @@
         word-wrap: break-word;
         text-decoration: none;
         color: var(--orange) !important;
+
+        &:hover {
+            background-color: var(--orange);
+            color: black !important;
+        }
     }
 }
 
