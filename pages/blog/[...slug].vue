@@ -123,7 +123,7 @@ definePageMeta({
                         </button>
                         <a
                             class="h-40px w-40px bg-[#FFDD00] rounded-full flex items-center justify-center relative group text-dark-700"
-                            href="https://bit.ly/brojenuel-KOFI border-none text-[var(--color)] cursor-pointer"
+                            href="https://bit.ly/brojenuel-KOFI"
                             alt="Jenuel Ganawed Buy me Coffee"
                             target="_blank"
                         >
