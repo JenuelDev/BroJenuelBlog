@@ -10,19 +10,19 @@ const { share } = useShareFunction();
 const { data } = await useAsyncData("blog", async () => {
     const { data }: any = await client
         .from("blogs")
-        .select(`*, blog_meta(*)`)
+        .select(`*, user_profile(*)`)
         .eq("slug", slug)
         .eq("is_active", 1)
         .single();
+
+    if (!data) return;
+    await client.rpc("increment_blob_view_count", { blog_id: data.id } as any);
 
     coverImageLink.value = data.cover_img ?? null;
     return data;
 });
 
-const author: any = await useAsyncData("author", async () => {
-    const author: any = await client.from("user_profile").select("*").eq("user_id", data.value.author).single();
-    return author.data;
-});
+const author = data.value.user_profile;
 
 useHead({
     link: [
@@ -43,34 +43,16 @@ useHead({
               }
             : {}),
         ...(["BroJenuel", "KateAwisan"].includes(
-            author && author.data.value && author.data.value.username ? author.data.value.username : "BroJenuel"
+            author && author.username ? author.username : "BroJenuel"
         )
             ? {}
             : {
                   author:
-                      author && author.data.value && author.data.value.username
-                          ? author.data.value.username
+                      author && author.username
+                          ? author.username
                           : "BroJenuel",
               }),
     }),
-});
-
-const oldCountViews: number =
-    data.value && data.value.blog_meta && data.value.blog_meta.view_count
-        ? parseInt(data.value.blog_meta.view_count)
-        : 0;
-
-async function addViewCount() {
-    if (!data.value) return;
-    const queryUpdate: any = {
-        blogs_id: data?.value.id,
-        view_count: oldCountViews + 1,
-    };
-    await client.from("blog_meta").upsert(queryUpdate).select();
-}
-
-onMounted(() => {
-    addViewCount();
 });
 
 definePageMeta({
@@ -173,76 +155,76 @@ definePageMeta({
                             </div>
                         </div>
                         <div class="text-lg mb-2">
-                            <div v-if="author.data.value" class="mt-3 flex flex-wrap gap-2 items-center">
+                            <div v-if="author" class="mt-3 flex flex-wrap gap-2 items-center">
                                 ✍️
                                 <NuxtLink
-                                    :href="author.data.value.website ?? '#'"
+                                    :href="author.website ?? '#'"
                                     target="_blank"
                                     title="authors website"
                                     class="decoration-none text-[var(--color)]"
                                 >
                                     <span
-                                        v-if="author.data.value.username"
+                                        v-if="author.username"
                                         class="text-size-20px hover:text-[var(--primary)]"
                                     >
-                                        {{ author.data.value.username }}
+                                        {{ author.username }}
                                     </span>
                                     <span
-                                        v-else-if="author.data.value.first_name || author.data.value.last_name"
+                                        v-else-if="author.first_name || author.last_name"
                                         class="text-size-20px hover:text-[var(--primary)]"
                                     >
-                                        {{ author.data.value.first_name }} {{ author.data.value.last_name }}
+                                        {{ author.first_name }} {{ author.last_name }}
                                     </span>
                                 </NuxtLink>
                                 <div class="flex items-center gap-3 text-size-20px">
                                     <NuxtLink
-                                        v-if="author.data.value.facebook_username"
-                                        :href="`https://facebook.com/${author.data.value.facebook_username}`"
+                                        v-if="author.facebook_username"
+                                        :href="`https://facebook.com/${author.facebook_username}`"
                                         target="_blank"
-                                        :title="`facebook ${author.data.value.facebook_username}`"
+                                        :title="`facebook ${author.facebook_username}`"
                                     >
                                         <Icon name="logos:facebook" />
                                     </NuxtLink>
                                     <NuxtLink
-                                        v-if="author.data.value.instagram_username"
-                                        :href="`https://instagram.com/${author.data.value.instagram_username}`"
+                                        v-if="author.instagram_username"
+                                        :href="`https://instagram.com/${author.instagram_username}`"
                                         target="_blank"
-                                        :title="`instagram ${author.data.value.instagram_username}`"
+                                        :title="`instagram ${author.instagram_username}`"
                                     >
                                         <Icon name="skill-icons:instagram" />
                                     </NuxtLink>
                                     <NuxtLink
-                                        v-if="author.data.value.tiktok_username"
-                                        :href="`https://tiktok.com/${author.data.value.tiktok_username}`"
+                                        v-if="author.tiktok_username"
+                                        :href="`https://tiktok.com/${author.tiktok_username}`"
                                         target="_blank"
-                                        :title="`tiktok ${author.data.value.tiktok_username}`"
+                                        :title="`tiktok ${author.tiktok_username}`"
                                         class="text-[var(--color)]"
                                     >
                                         <Icon name="icon-park-solid:tiktok" />
                                     </NuxtLink>
                                     <NuxtLink
-                                        v-if="author.data.value.twitter_username"
-                                        :href="`https://twitter.com/${author.data.value.twitter_username}`"
+                                        v-if="author.twitter_username"
+                                        :href="`https://twitter.com/${author.twitter_username}`"
                                         target="_blank"
-                                        :title="`twitter ${author.data.value.twitter_username}`"
+                                        :title="`twitter ${author.twitter_username}`"
                                         class="text-[var(--color)]"
                                     >
                                         <Icon name="simple-icons:x" />
                                     </NuxtLink>
                                     <NuxtLink
-                                        v-if="author.data.value.threads_username"
-                                        :href="`https://threads.net/${author.data.value.threads_username}`"
+                                        v-if="author.threads_username"
+                                        :href="`https://threads.net/${author.threads_username}`"
                                         target="_blank"
-                                        :title="`threads ${author.data.value.threads_username}`"
+                                        :title="`threads ${author.threads_username}`"
                                         class="text-[var(--color)]"
                                     >
                                         <Icon name="fa6-brands:square-threads" />
                                     </NuxtLink>
                                     <NuxtLink
-                                        v-if="author.data.value.youtube_username"
-                                        :href="`https://youtube.com/${author.data.value.youtube_username}`"
+                                        v-if="author.youtube_username"
+                                        :href="`https://youtube.com/${author.youtube_username}`"
                                         target="_blank"
-                                        :title="`youtube ${author.data.value.youtube_username}`"
+                                        :title="`youtube ${author.youtube_username}`"
                                     >
                                         <Icon name="logos:youtube-icon" size="30" />
                                     </NuxtLink>
