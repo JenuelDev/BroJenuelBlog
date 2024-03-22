@@ -18,7 +18,9 @@ const { data } = await useAsyncData("blog", async () => {
     if (!data) return;
 
     if (!runtimeConfig.public.isDevelopment) {
-        await client.rpc("increment_blob_view_count", { blog_id: data.id } as any);
+        await client.rpc("increment_blob_view_count", {
+            blog_id: data.id,
+        } as any);
     }
 
     coverImageLink.value = data.cover_img ?? null;
@@ -37,7 +39,10 @@ useHead({
     ...setMeta({
         title: data.value ? data.value.title : "Page Not Found",
         description: data.value ? data.value.summary : "Page Not Found",
-        path: data.value && data.value.slug ? `/blog/${data.value.slug}` : route.path,
+        path:
+            data.value && data.value.slug
+                ? `/blog/${data.value.slug}`
+                : route.path,
         keywords: data.value ? data.value.keywords : ["no found"],
         lang: "en",
         ...(coverImageLink.value
@@ -45,10 +50,13 @@ useHead({
                   image: coverImageLink.value,
               }
             : {}),
-        ...(["BroJenuel", "KateAwisan"].includes(author && author.username ? author.username : "BroJenuel")
+        ...(["BroJenuel", "KateAwisan"].includes(
+            author && author.username ? author.username : "BroJenuel"
+        )
             ? {}
             : {
-                  author: author && author.username ? author.username : "BroJenuel",
+                  author:
+                      author && author.username ? author.username : "BroJenuel",
               }),
     }),
 });
@@ -85,20 +93,45 @@ definePageMeta({
                             </span>
                         </button>
                         <button
-                            v-for="social in ['facebook', 'twitter', 'linkedin', 'copy']"
+                            v-for="social in [
+                                'facebook',
+                                'twitter',
+                                'linkedin',
+                                'copy',
+                            ]"
                             :key="social"
-                            :title="social != 'Copy' ? `Share To ${social.toUpperCase()}` : 'Copy to Clipboard'"
+                            :title="
+                                social != 'Copy'
+                                    ? `Share To ${social.toUpperCase()}`
+                                    : 'Copy to Clipboard'
+                            "
                             class="h-40px w-40px p-3 bg-[var(--background-secondary)] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] relative group border-none text-[var(--color)] cursor-pointer"
                             @click="share(social)"
                         >
-                            <Icon v-if="social == 'facebook'" name="ri:facebook-fill"></Icon>
-                            <Icon v-if="social == 'twitter'" name="mdi:twitter"></Icon>
-                            <Icon v-if="social == 'linkedin'" name="ri:linkedin-fill"></Icon>
-                            <Icon v-if="social == 'copy'" name="ph:link-simple-bold"></Icon>
+                            <Icon
+                                v-if="social == 'facebook'"
+                                name="ri:facebook-fill"
+                            ></Icon>
+                            <Icon
+                                v-if="social == 'twitter'"
+                                name="mdi:twitter"
+                            ></Icon>
+                            <Icon
+                                v-if="social == 'linkedin'"
+                                name="ri:linkedin-fill"
+                            ></Icon>
+                            <Icon
+                                v-if="social == 'copy'"
+                                name="ph:link-simple-bold"
+                            ></Icon>
                             <span
                                 class="absolute lg:left-50px left-0 lg:top-0 top-50px whitespace-nowrap bg-[var(--background)] opacity-0 group-hover:opacity-100 transition-all rounded-lg p-2 pointer-events-none"
                             >
-                                {{ social == "copy" ? "Copy Link" : `Share To ${social}` }}
+                                {{
+                                    social == "copy"
+                                        ? "Copy Link"
+                                        : `Share To ${social}`
+                                }}
                             </span>
                         </button>
                         <a
@@ -122,7 +155,8 @@ definePageMeta({
                     <template
                         v-if="
                             data.cover_img &&
-                            (/\.(jpg|gif|png)$/.test(data.cover_img) || !(data.cover_img.indexOf('youtube') > -1))
+                            (/\.(jpg|gif|png)$/.test(data.cover_img) ||
+                                !(data.cover_img.indexOf('youtube') > -1))
                         "
                     >
                         <NuxtImg
@@ -135,12 +169,22 @@ definePageMeta({
                             class="rounded-2xl mb-5"
                         />
                     </template>
-                    <template v-else-if="data.cover_img && data.cover_img.indexOf('youtube') > -1">
-                        <iframe :src="data.cover_img" class="sm:w-450px sm:h-250px w-full h-300px pr-20px pt-10px">
+                    <template
+                        v-else-if="
+                            data.cover_img &&
+                            data.cover_img.indexOf('youtube') > -1
+                        "
+                    >
+                        <iframe
+                            :src="data.cover_img"
+                            class="sm:w-450px sm:h-250px w-full h-300px pr-20px pt-10px"
+                        >
                         </iframe>
                     </template>
                     <div>
-                        <h1 class="sm:text-3xl text-2xl pb-10px font-RobotoBold m-0">
+                        <h1
+                            class="sm:text-3xl text-2xl pb-10px font-RobotoBold m-0"
+                        >
                             {{ data.title }}
                         </h1>
                         <p class="font-100 m-0 mb-5 leading-6 sm:text-lg">
@@ -148,12 +192,19 @@ definePageMeta({
                             {{ data.summary }}
                         </p>
                         <div class="flex flex-wrap gap-3 mb-3">
-                            <div v-for="tags in data.tags" :class="`tag-${tags}`" class="tag tag-sm !text-size-18px">
+                            <div
+                                v-for="tags in data.tags"
+                                :class="`tag-${tags}`"
+                                class="tag tag-sm !text-size-18px"
+                            >
                                 #{{ tags }}
                             </div>
                         </div>
                         <div class="text-lg mb-2">
-                            <div v-if="author" class="mt-3 flex flex-wrap gap-2 items-center">
+                            <div
+                                v-if="author"
+                                class="mt-3 flex flex-wrap gap-2 items-center"
+                            >
                                 ✍️
                                 <NuxtLink
                                     :href="author.website ?? '#'"
@@ -161,17 +212,26 @@ definePageMeta({
                                     title="authors website"
                                     class="decoration-none text-[var(--color)]"
                                 >
-                                    <span v-if="author.username" class="text-size-20px hover:text-[var(--primary)]">
+                                    <span
+                                        v-if="author.username"
+                                        class="text-size-20px hover:text-[var(--primary)]"
+                                    >
                                         {{ author.username }}
                                     </span>
                                     <span
-                                        v-else-if="author.first_name || author.last_name"
+                                        v-else-if="
+                                            author.first_name ||
+                                            author.last_name
+                                        "
                                         class="text-size-20px hover:text-[var(--primary)]"
                                     >
-                                        {{ author.first_name }} {{ author.last_name }}
+                                        {{ author.first_name }}
+                                        {{ author.last_name }}
                                     </span>
                                 </NuxtLink>
-                                <div class="flex items-center gap-3 text-size-20px">
+                                <div
+                                    class="flex items-center gap-3 text-size-20px"
+                                >
                                     <NuxtLink
                                         v-if="author.facebook_username"
                                         :href="`https://facebook.com/${author.facebook_username}`"
@@ -213,7 +273,9 @@ definePageMeta({
                                         :title="`threads ${author.threads_username}`"
                                         class="text-[var(--color)]"
                                     >
-                                        <Icon name="fa6-brands:square-threads" />
+                                        <Icon
+                                            name="fa6-brands:square-threads"
+                                        />
                                     </NuxtLink>
                                     <NuxtLink
                                         v-if="author.youtube_username"
@@ -221,12 +283,19 @@ definePageMeta({
                                         target="_blank"
                                         :title="`youtube ${author.youtube_username}`"
                                     >
-                                        <Icon name="logos:youtube-icon" size="30" />
+                                        <Icon
+                                            name="logos:youtube-icon"
+                                            size="30"
+                                        />
                                     </NuxtLink>
                                 </div>
                             </div>
                             <span class="text-size-15px">
-                                {{ $dayjs(data.created_at).format("MMM. DD, YYYY. h:mm A") }}
+                                {{
+                                    $dayjs(data.created_at).format(
+                                        "MMM. DD, YYYY. h:mm A"
+                                    )
+                                }}
                             </span>
                         </div>
                     </div>
@@ -236,16 +305,23 @@ definePageMeta({
                         <GoogleAdsHorizontal />
                     </ClientOnly>
                 </div>
-                <div class="content-render mx-auto relative md:text-lg pt-5 px-1" v-html="data.content"></div>
+                <div
+                    class="content-render mx-auto relative md:text-lg pt-5 px-1"
+                    v-html="data.content"
+                ></div>
                 <div class="mt-2 content-render mx-auto relative md:text-lg">
                     <div class="pb-5">
                         <hr />
                     </div>
                     <p>
-                        If you enjoy this article and would like to show your support, you can easily do so by making a
-                        donation through Ko-fi. Your contribution is greatly appreciated!
+                        If you enjoy this article and would like to show your
+                        support, you can easily do so by buying me a coffee.
+                        Your contribution is greatly appreciated!
                     </p>
-                    <a href="https://bit.ly/BroJenuel-BuyMeCoffee" target="_blank">
+                    <a
+                        href="https://bit.ly/BroJenuel-BuyMeCoffee"
+                        target="_blank"
+                    >
                         <NuxtImg
                             height="50"
                             width="260"
@@ -259,10 +335,14 @@ definePageMeta({
             </article>
             <div class="md:block hidden"></div>
         </main>
-        <div v-else class="py-30 max-w-550px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20 text-center">
+        <div
+            v-else
+            class="py-30 max-w-550px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20 text-center"
+        >
             <div class="text-6xl">😓</div>
             <div class="text-lg text-center mt-3">
-                The Content Your Trying to View is Not Available or has been removed
+                The Content Your Trying to View is Not Available or has been
+                removed
             </div>
             <div class="inline-block pt-5 pb-50">
                 <button
