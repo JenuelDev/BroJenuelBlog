@@ -7,25 +7,25 @@ const menus = [
     {
         path: "/",
         icon: "icon--solar icon--solar--home-smile-angle-broken",
-        label: "Home",
+        label: "🏠 Home",
         name: "home",
     },
     {
         path: "/about",
         icon: "icon--solar icon--solar--sledgehammer-broken",
-        label: "About",
+        label: "😎 About",
         name: "about",
     },
     {
         path: "/blog",
         icon: "icon--solar icon--solar--documents-broken",
-        label: "Blog",
+        label: "📑 Blog",
         name: "blog",
     },
     {
         path: "/contact",
         icon: "icon--solar icon--solar--mailbox-broken text-25px",
-        label: "Contact Me",
+        label: "📞 Contact Me",
         name: "contact",
     },
 ];
@@ -42,7 +42,8 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
             class="block px-2 py-1 flex items-center gap-6px dark:hover:bg-dark-50 hover:bg-gray-300 dark:hover:bg-opacity-30 hover:bg-opacity-30 rounded-full decoration-none"
             :class="{
-                'dark:bg-dark-50 bg-gray-300 dark:bg-opacity-50 bg-opacity-50': route.path == menu.path || route.name?.toString().includes(menu.name),
+                'dark:bg-dark-50 bg-gray-300 dark:bg-opacity-50 bg-opacity-50':
+                    route.path == menu.path || route.name?.toString().includes(menu.name),
             }"
         >
             {{ menu.label }}
@@ -70,10 +71,12 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                     @click="show = false"
                     :href="menu.path"
                     class="block px-4 lg:py-2 py-2 hover:bg-[var(--background-secondary)] flex items-center justify-center gap-6px mb-5 decoration-none"
-                    :class="{ '!text-[var(--primary)] is-active dark:bg-dark-50 bg-gray-300 dark:bg-opacity-50 bg-opacity-50': route.path == menu.path }"
+                    :class="{
+                        '!text-[var(--primary)] is-active dark:bg-dark-50 bg-gray-300 dark:bg-opacity-50 bg-opacity-50':
+                            route.path == menu.path,
+                    }"
                     :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
                 >
-                    <span class="text-size-20px" :class="menu.icon" />
                     {{ menu.label }}
                 </NuxtLink>
             </div>
@@ -89,17 +92,6 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
         color: var(--color);
         text-align: center;
 
-        // &:before {
-        //     content: "";
-        //     height: 1px;
-        //     position: absolute;
-        //     bottom: 0;
-        //     width: 0;
-        //     left: 50%;
-        //     background-color: var(--color);
-        //     transition: all 0.3s;
-        // }
-
         &:hover {
             &::before {
                 width: 40px;
@@ -107,13 +99,6 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             }
         }
     }
-
-    // .is-active {
-    //     &:before {
-    //         width: 30px;
-    //         left: calc(50% - 15px);
-    //     }
-    // }
 }
 .dropdown-menu-mobile {
     position: fixed;

@@ -3,7 +3,7 @@ const skills = useSkills();
 </script>
 <template>
     <section id="skills-container" class="my-work max-w-1100px mx-auto pt-15">
-        <div class="grid grid-cols-1 gap-5">
+        <div class="grid grid-cols-1 gap-10">
             <div
                 v-for="skill in skills"
                 :key="skill.tech"
@@ -16,11 +16,14 @@ const skills = useSkills();
                             {{ skill.tech }}
                         </span>
                     </div>
-                    <div class="tracking-wide leading-relaxed opacity-80" v-if="skill.description">
+                    <div
+                        class="tracking-wide leading-relaxed opacity-80"
+                        v-if="skill.description"
+                    >
                         {{ skill.description }}
                     </div>
                 </div>
-                <div class="flex gap-1 pt-10px flex-wrap">
+                <div class="flex gap-3 pt-10px flex-wrap">
                     <NuxtLink
                         :href="tool.link"
                         target="_blank"
@@ -29,7 +32,7 @@ const skills = useSkills();
                         class="decoration-none"
                     >
                         <div
-                            class="whitespace-nowrap w-full overflow-hidden transition-all duration-75 bg-[var(--background-secondary)] p-1 rounded-md transform hover:scale-110 cursor-pointer flex items-center text-[var(--color)]"
+                            class="whitespace-nowrap w-full overflow-hidden transition-all duration-75 bg-[var(--background-secondary)] px-3 py-2 rounded-md transform hover:scale-105 cursor-pointer flex items-center text-[var(--color)]"
                         >
                             <span :class="tool.icon" />
                             <span class="ml-2 text-sm">{{ tool.text }}</span>
