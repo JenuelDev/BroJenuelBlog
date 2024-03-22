@@ -16,7 +16,10 @@ const { data } = await useAsyncData("blog", async () => {
         .single();
 
     if (!data) return;
-    await client.rpc("increment_blob_view_count", { blog_id: data.id } as any);
+
+    if (!runtimeConfig.public.isDevelopment) {
+        await client.rpc("increment_blob_view_count", { blog_id: data.id } as any);
+    }
 
     coverImageLink.value = data.cover_img ?? null;
     return data;
@@ -42,15 +45,10 @@ useHead({
                   image: coverImageLink.value,
               }
             : {}),
-        ...(["BroJenuel", "KateAwisan"].includes(
-            author && author.username ? author.username : "BroJenuel"
-        )
+        ...(["BroJenuel", "KateAwisan"].includes(author && author.username ? author.username : "BroJenuel")
             ? {}
             : {
-                  author:
-                      author && author.username
-                          ? author.username
-                          : "BroJenuel",
+                  author: author && author.username ? author.username : "BroJenuel",
               }),
     }),
 });
@@ -105,7 +103,7 @@ definePageMeta({
                         </button>
                         <a
                             class="h-40px w-40px bg-[#FFDD00] rounded-full flex items-center justify-center relative group text-dark-700"
-                            href="https://bit.ly/brojenuel-KOFI"
+                            href="https://bit.ly/BroJenuel-BuyMeCoffee"
                             alt="Jenuel Ganawed Buy me Coffee"
                             target="_blank"
                         >
@@ -163,10 +161,7 @@ definePageMeta({
                                     title="authors website"
                                     class="decoration-none text-[var(--color)]"
                                 >
-                                    <span
-                                        v-if="author.username"
-                                        class="text-size-20px hover:text-[var(--primary)]"
-                                    >
+                                    <span v-if="author.username" class="text-size-20px hover:text-[var(--primary)]">
                                         {{ author.username }}
                                     </span>
                                     <span
@@ -250,14 +245,14 @@ definePageMeta({
                         If you enjoy this article and would like to show your support, you can easily do so by making a
                         donation through Ko-fi. Your contribution is greatly appreciated!
                     </p>
-                    <a href="https://bit.ly/brojenuel-KOFI" target="_blank">
+                    <a href="https://bit.ly/BroJenuel-BuyMeCoffee" target="_blank">
                         <NuxtImg
                             height="50"
                             width="260"
                             style="border: 0px; height: 50px; width: auto"
-                            src="https://storage.ko-fi.com/cdn/brandasset/kofi_button_red.png"
+                            src="/img/buymecoffee/bmc-button.png"
                             border="0"
-                            alt="Buy Me a Coffee at ko-fi.com"
+                            alt="Buy Me a Coffee at https://www.buymeacoffee.com"
                         />
                     </a>
                 </div>
