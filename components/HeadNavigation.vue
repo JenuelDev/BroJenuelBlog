@@ -25,14 +25,21 @@ onMounted(() => {
         class="no-print fixed sm:right-10 right-3 sm:bottom-10 bottom-3 rounded-md bg-[var(--background)] text-[var(--color)] cursor-pointer z-9999 border border-2px border-[var(--color)] hover:bg-[var(--color)] hover:text-[var(--background)] transition-all flex items-center justify-center"
         @click="scrollTop()"
     >
-        <span class="icon--solar icon--solar--double-alt-arrow-up-bold text-5xl"></span>
+        <span
+            class="icon--solar icon--solar--double-alt-arrow-up-bold text-5xl"
+        ></span>
     </div>
-    <div class="fixed top-0 left-0 flex justify-between items-center z-999 w-full no-print">
+    <div
+        class="fixed top-0 left-0 flex justify-between items-center z-999 w-full no-print"
+    >
         <div
-            class="w-full max-w-700px mx-auto flex justify-between items-center backdrop-filter backdrop-blur-md md:h-80px h-70px transition-all duration-300 px-20px"
+            class="w-full max-w-750px mx-auto flex justify-between items-center backdrop-filter backdrop-blur-md md:h-80px h-70px transition-all duration-300 px-20px"
             :class="{ 'shadow-lg rounded-lg !h-50px': !isTop }"
         >
-            <NuxtLink href="/" class="flex items-center text-xl font-400 text-[var(--color)] decoration-none">
+            <NuxtLink
+                href="/"
+                class="flex items-center text-xl font-400 text-[var(--color)] decoration-none"
+            >
                 <span>Bro</span>
                 <span class="font-bold">Jenuel</span>
                 <span>{{ subtitle }}</span>

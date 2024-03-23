@@ -56,7 +56,9 @@ async function getBlogs(isReset = false) {
     let rangeTo = filter.page * filter.limit;
     let query = client
         .from("blogs")
-        .select(`id, title, summary, slug, updated_at, cover_img, blog_meta(*), tags`)
+        .select(
+            `id, title, summary, slug, updated_at, cover_img, blog_meta(*), tags`
+        )
         .eq("is_active", 1)
         .order("id", { ascending: false });
 
@@ -99,7 +101,14 @@ useHead({
         description:
             "Learn about tips and tricks about programming. Read or watch tutorials that will help you on jour journey as a developer.",
         path: route.path,
-        keywords: ["brojenuel", "Jenuel", "Jenuel Ganawed", "bro jenuel", "web developer", "blog"],
+        keywords: [
+            "brojenuel",
+            "Jenuel",
+            "Jenuel Ganawed",
+            "bro jenuel",
+            "web developer",
+            "blog",
+        ],
         lang: "en",
     }),
 });
@@ -119,13 +128,18 @@ definePageMeta({
 });
 </script>
 <template>
-    <div class="mt-50px min-h-100vh max-w-700px mx-auto md:px-20px px-10px pb-5 gap-20">
+    <div
+        class="mt-50px min-h-100vh max-w-700px mx-auto md:px-20px px-10px pb-5 gap-20"
+    >
         <div class="mb-5">
             <div class="flex justify-between">
                 <div>
                     <span class="text-2xl font-800">Blogs</span>
                 </div>
-                <form @submit.prevent="searchRoute" class="flex items-center mb-1">
+                <form
+                    @submit.prevent="searchRoute"
+                    class="flex items-center mb-1"
+                >
                     <div class="relative">
                         <input
                             class="bg-gray-200 appearance-none border-2 border-gray-200 rounded px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 border-none block h-30px"
@@ -160,60 +174,65 @@ definePageMeta({
                 />
             </div>
         </div>
-        <div class="">
-            <div class="min-h-[100vh]">
-                <div class="grid sm:grid-cols-2 grid-cols-1 gap-10">
-                    <NuxtLink
-                        v-for="(blog, i) in blogsList"
-                        :key="blog.id"
-                        :href="`/blog/${blog.slug}`"
-                        class="group rounded-md cursor-pointer gap-1 decoration-none text-[var(--color)]"
-                        :style="`order: ${i > 0 ? i + 1 : i}`"
+        <div class="min-h-[100vh]">
+            <div class="grid sm:grid-cols-2 grid-cols-1 gap-10">
+                <NuxtLink
+                    v-for="(blog, i) in blogsList"
+                    :key="`${blog.id}-${i}`"
+                    :href="`/blog/${blog.slug}`"
+                    :style="`order: ${i > 0 ? i + 1 : i}`"
+                    class="group rounded-md cursor-pointer gap-1 decoration-none text-[var(--color)]"
+                >
+                    <div
+                        class="flex items-center justify-center overflow-hidden rounded-lg mb-3"
                     >
-                        <div class="flex items-center justify-center overflow-hidden rounded-lg mb-3">
-                            <NuxtImg
-                                v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
-                                :src="blog.cover_img"
-                                class="rounded-lg w-full h-150px"
-                                width="300"
-                                height="150"
-                                format="webp"
-                                loading="lazy"
-                                quality="80"
-                                :alt="blog.title"
-                            />
-                            <div
-                                v-else
-                                class="flex items-center justify-center bg-gray-900 w-full h-[90%] text-gray-50 rounded-lg p-5 text-center h-160px"
-                            >
-                                {{ blog.title }}
-                            </div>
-                        </div>
-                        <span class="opacity-70 text-xs">
-                            <span class="icon--solar icon--solar--calendar-bold-duotone" />
-                            {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
-                        </span>
-                        <div class="opacity-90 content-summary leading-5">
-                            <b> {{ blog.title }} </b>. <span class="opacity-70">{{ blog.summary }}</span>
-                        </div>
-                    </NuxtLink>
-                </div>
-                <div v-show="loading" class="text-center text-[var(--primary)] pt-20px">
-                    <div style="font-size: 50px">
-                        <Icon name="svg-spinners:bars-scale-middle" />
+                        <NuxtImg
+                            :src="
+                                blog.cover_img ??
+                                `https://brojenuel.com/__og-image__/image/blog/${blog.slug}/og.png`
+                            "
+                            class="rounded-lg w-full h-150px"
+                            width="300"
+                            height="150"
+                            format="webp"
+                            loading="lazy"
+                            quality="80"
+                            :alt="blog.title"
+                        />
                     </div>
-                    <div>loading</div>
-                </div>
-            </div>
-            <div ref="blogInfiniteScrollRef">
-                <div v-show="noMoreData" class="text-center text-[var(--primary)] pt-20px">
-                    <div style="font-size: 50px">
-                        <Icon name="wpf:empty-flag" />
+                    <span class="opacity-70 text-xs">
+                        <span
+                            class="icon--solar icon--solar--calendar-bold-duotone"
+                        />
+                        {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
+                    </span>
+                    <div class="opacity-90 content-summary leading-5 group-hover:underline">
+                        <b> {{ blog.title }} </b>.
+                        <span class="opacity-70">{{ blog.summary }}</span>
                     </div>
-                    <div>Oops! No More Data</div>
-                </div>
-                <div></div>
+                </NuxtLink>
             </div>
+            <div
+                v-show="loading"
+                class="text-center text-[var(--primary)] pt-20px"
+            >
+                <div style="font-size: 50px">
+                    <Icon name="svg-spinners:bars-scale-middle" />
+                </div>
+                <div>loading</div>
+            </div>
+        </div>
+        <div ref="blogInfiniteScrollRef">
+            <div
+                v-show="noMoreData"
+                class="text-center text-[var(--primary)] pt-20px"
+            >
+                <div style="font-size: 50px">
+                    <Icon name="wpf:empty-flag" />
+                </div>
+                <div>Oops! No More Data</div>
+            </div>
+            <div></div>
         </div>
     </div>
 </template>

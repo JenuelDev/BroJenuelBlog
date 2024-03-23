@@ -30,7 +30,10 @@ const menus = [
     },
 ];
 
-onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : false));
+onClickOutside(
+    dropdownRef,
+    () => (show.value = show.value == true ? false : false)
+);
 </script>
 <template>
     <div class="dropdown-menu md:flex gap-1 hidden order-1 no-print">
@@ -39,17 +42,23 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             :key="menu.path"
             @click="show = false"
             :href="menu.path"
-            :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
+            :target="
+                menu.name?.toString().includes('shop') ? '_blank' : '_self'
+            "
             class="block px-2 py-1 flex items-center gap-6px dark:hover:bg-dark-50 hover:bg-gray-300 dark:hover:bg-opacity-30 hover:bg-opacity-30 rounded-full decoration-none"
             :class="{
                 'dark:bg-dark-50 bg-gray-300 dark:bg-opacity-50 bg-opacity-50':
-                    route.path == menu.path || route.name?.toString().includes(menu.name),
+                    route.path == menu.path ||
+                    route.name?.toString().includes(menu.name),
             }"
         >
             {{ menu.label }}
         </NuxtLink>
     </div>
-    <div ref="dropdownRef" class="relative inline-block text-left md:hidden order-3 no-print">
+    <div
+        ref="dropdownRef"
+        class="relative inline-block text-left md:hidden order-3 no-print"
+    >
         <div
             @click="show = !show"
             type="button"
@@ -61,7 +70,10 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
             <span class="icon--solar icon--solar--list-linear" />
         </div>
         <div class="dropdown-menu-mobile" :class="{ 'active-menu': show }">
-            <div class="py-1 h-full z-999 relative bg-[var(--background)] pt-30px px-5" role="none">
+            <div
+                class="py-1 h-full z-999 relative bg-[var(--background)] pt-30px px-5"
+                role="none"
+            >
                 <div class="absolute right-3 top-3" @click="show = false">
                     <span class="icon--mdi icon--mdi--close text-size-30px" />
                 </div>
@@ -75,7 +87,11 @@ onClickOutside(dropdownRef, () => (show.value = show.value == true ? false : fal
                         '!text-[var(--primary)] is-active dark:bg-dark-50 bg-gray-300 dark:bg-opacity-50 bg-opacity-50':
                             route.path == menu.path,
                     }"
-                    :target="menu.name?.toString().includes('shop') ? '_blank' : '_self'"
+                    :target="
+                        menu.name?.toString().includes('shop')
+                            ? '_blank'
+                            : '_self'
+                    "
                 >
                     {{ menu.label }}
                 </NuxtLink>
