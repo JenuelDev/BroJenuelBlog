@@ -196,7 +196,7 @@ definePageMeta({
                             height="150"
                             format="webp"
                             loading="lazy"
-                            quality="80"
+                            quality="50"
                             :alt="blog.title"
                         />
                     </div>
@@ -206,7 +206,9 @@ definePageMeta({
                         />
                         {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
                     </span>
-                    <div class="opacity-90 content-summary leading-5 group-hover:underline">
+                    <div
+                        class="opacity-90 content-summary leading-5 group-hover:underline"
+                    >
                         <b> {{ blog.title }} </b>.
                         <span class="opacity-70">{{ blog.summary }}</span>
                     </div>

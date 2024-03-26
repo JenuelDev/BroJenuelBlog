@@ -15,7 +15,7 @@ const youtubePosts = [
 ];
 </script>
 <template>
-    <div class="w-full max-w-700px mx-auto ">
+    <div class="w-full max-w-700px mx-auto">
         <div class="py-3">
             <span class="lg:text-lg font-bold"> Youtube Recent Posts </span>
             <NuxtLink
@@ -32,17 +32,12 @@ const youtubePosts = [
                 v-for="(post, i) in youtubePosts"
                 :href="post.link"
                 target="_blank"
-                class="rounded-lg bg-gradient-to-r p-3px dark:text-white decoration-none text-[var(--color)]"
-                :class="{
-                    'from-green-100 via-blue-400 to-purple-200': i == 1,
-                    'from-pink-200 via-purple-300 to-blue-400': i == 0,
-                    'from-yellow-100 via-red-300 to-red-300': i == 2,
-                }"
+                class="rounded-lg p-3px dark:text-white decoration-none text-[var(--color)]"
             >
                 <div
-                    class="rounded-md bg-[var(--background)] p-4 overflow-hidden border border-3px flex flex-col justify-between h-100px"
+                    class="rounded-md p-4 overflow-hidden border border-3px flex flex-col justify-between h-100px dark:bg-gray-50 dark:text-dark-700 bg-dark-800 text-white"
                 >
-                    <div>
+                    <div class="font-bold">
                         <Icon name="logos:youtube-icon" size="25" />
                         {{ post.title }}
                     </div>
