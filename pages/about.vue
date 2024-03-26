@@ -73,26 +73,36 @@ defineOgImageComponent("DefaultOgImage", {
             </NuxtLink>
         </div>
         <p class="leading-7 indent-lg">
-            I'm a programmer based in the beautiful Benguet, Philippines. The
-            air here is wonderfully clean, and the surroundings are so green and
-            refreshing. Just your everyday human, navigating the balance between
-            life and tech, just like you! 🌿💻
+            I'm Jenuel Ganawed, hailing from the picturesque greenery of
+            Benguet, Luzon, Philippines. Just like everyone else, I'm on a
+            journey of balancing life and technology.
         </p>
         <p class="leading-7 indent-lg">
-            I'm all about trying new things, whether it's coding a masterpiece
-            or attempting a daring culinary experiment 😅. Life's too short not
-            to spice it up, right? 😁
+            I thrive on the excitement of trying new things, whether it's
+            crafting elegant code or experimenting with adventurous culinary
+            concoctions 😅. After all, life's too short to stick to the mundane,
+            isn't it? 😁
         </p>
         <p class="leading-7 indent-lg">
-            Embarking on this wild ride as a software wizard
+            Embarking on this wild ride as a software wizard For the past
             <b class="font-bold underline">{{
                 new Date().getFullYear() - 2018
             }}</b>
-            ago, I've danced the office shuffle and mastered the art of remote
-            work, all while teaming up with fellow code enthusiasts to create
-            and nurture some seriously cool products. I may exude a quiet
-            confidence, but trust me, my curiosity is as loud as my keyboard
-            clacks. Always on a mission to enhance my skill.
+            years, I've been immersed in the world of software development,
+            where I've honed my skills through both traditional office setups
+            and the dynamic realm of remote work. Collaborating with fellow
+            coding enthusiasts, I've had the opportunity to contribute to some
+            truly remarkable products. While I may come across as quietly
+            confident, rest assured, my curiosity roars as loudly as the clacks
+            of my keyboard. I'm always on a quest to sharpen my skills and push
+            the boundaries of what's possible.
+        </p>
+        <p class="leading-7 indent-lg">
+            Also, I take pride in my attention to detail, meticulously examining
+            even the smallest elements that could potentially snowball into
+            significant issues. Whether it's ensuring code efficiency or
+            perfecting a recipe, I believe that thoroughness in the details is
+            essential for overall success.
         </p>
         <HomeSkills class="mb-20" />
         <div class="flex items-center justify-center gap-2 pb-3">
