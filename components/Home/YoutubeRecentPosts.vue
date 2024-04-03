@@ -35,7 +35,7 @@ const youtubePosts = [
                 class="rounded-lg p-3px dark:text-white decoration-none text-[var(--color)]"
             >
                 <div
-                    class="rounded-md p-4 overflow-hidden border border-3px flex flex-col justify-between h-100px dark:bg-gray-50 dark:text-dark-700 bg-dark-800 text-white"
+                    class="rounded-md p-4 overflow-hidden border border-3px flex flex-col justify-between h-100px dark:bg-gray-50 dark:text-dark-700 bg-dark-800 bg-opacity-50 text-white hover:bg-opacity-70 transition-all"
                 >
                     <div class="font-bold">
                         <Icon name="logos:youtube-icon" size="25" />
