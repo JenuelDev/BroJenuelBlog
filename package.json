@@ -26,10 +26,8 @@
     "nuxt-icon": "^0.6.8",
     "nuxt-og-image": "^3.0.0-rc.30",
     "sass": "^1.57.1",
-    "sharp": "^0.33.2",
-    "sitemap": "^7.1.1",
-    "vite-plugin-windicss": "^1.8.10",
-    "windicss": "^3.5.6"
+    "sharp": "^0.33.3",
+    "sitemap": "^7.1.1"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

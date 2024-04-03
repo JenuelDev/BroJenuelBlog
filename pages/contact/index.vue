@@ -76,7 +76,8 @@ function goBack() {
 
 defineOgImageComponent("DefaultOgImage", {
     title: "Contact Me",
-    description: "Thanks for taking the time to reach out. How can I help you today?",
+    description:
+        "Thanks for taking the time to reach out. How can I help you today?",
 });
 </script>
 <template>
@@ -84,7 +85,8 @@ defineOgImageComponent("DefaultOgImage", {
         <div class="max-w-650px mx-auto px-10px relative">
             <div class="pt-5 text-center text-7xl font-100 pt-20">😁</div>
             <div class="pt-5 text-center text-4xl font-100 pb-50px">
-                Thanks for taking the time to reach out. How can I help you today?
+                Thanks for taking the time to reach out. How can I help you
+                today?
             </div>
             <form class="pt-5" @submit.prevent="submitMail()">
                 <div class="flex sm:flex-row flex-col sm:gap-3 gap-1">
@@ -93,7 +95,7 @@ defineOgImageComponent("DefaultOgImage", {
                         <input
                             v-model="form.name"
                             type="text"
-                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-gray-50 focus:outline-none mb-3 dark:text-light-50 outline-none"
                             placeholder="ex. john"
                             required
                         />
@@ -103,7 +105,7 @@ defineOgImageComponent("DefaultOgImage", {
                         <input
                             v-model="form.email"
                             type="email"
-                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
+                            class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-gray-50 focus:outline-none mb-3 dark:text-light-50 outline-none"
                             placeholder="ex. example@gmail.com"
                             required
                         />
@@ -114,7 +116,7 @@ defineOgImageComponent("DefaultOgImage", {
                     <input
                         v-model="form.subject"
                         type="text"
-                        class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-3"
+                        class="form-control block w-full px-3 py-3 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-gray-50 focus:outline-none mb-3 dark:text-light-50 outline-none"
                         placeholder="ex. Project Collaboration"
                         required
                     />
@@ -123,7 +125,7 @@ defineOgImageComponent("DefaultOgImage", {
                     <div class="pb-2">Message</div>
                     <textarea
                         v-model="form.message"
-                        class="form-control block w-full px-3 py-1.5 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-[var(--primary)] focus:outline-none mb-10"
+                        class="form-control block w-full px-3 py-1.5 text-base font-normal bg-[var(--background-secondary)] bg-clip-padding border border-solid border-[var(--background-secondary)] rounded transition ease-in-out m-0 focus:border-gray-50 focus:outline-none mb-10 dark:text-light-50 outline-none"
                         id="exampleFormControlTextarea1"
                         rows="7"
                         placeholder="Write Your message"
@@ -133,13 +135,17 @@ defineOgImageComponent("DefaultOgImage", {
                 <button
                     type="submit"
                     :disabled="isLoading"
-                    class="border border-0 px-10 py-20px rounded-full font-bold flex  hover:border-[var(--orange)] mx-auto hover:bg-[var(--orange)] transition-all group cursor-pointer"
+                    class="border border-0 px-10 py-20px rounded-full font-bold flex hover:border-[var(--orange)] mx-auto hover:bg-[var(--orange)] transition-all group cursor-pointer"
                     role="button"
                     title="Submit Message"
                     id="submit-message-button"
                 >
-                    <span class="flex items-center gap-2 transform scale-100 group-hover:scale-110 transition-all">
-                        <span class="icon--solar icon--solar--mailbox-broken text-25px"></span>
+                    <span
+                        class="flex items-center gap-2 transform scale-100 group-hover:scale-110 transition-all"
+                    >
+                        <span
+                            class="icon--solar icon--solar--mailbox-broken text-25px"
+                        ></span>
                         {{ isLoading ? "Sending" : "Send Message" }}
                     </span>
                 </button>
