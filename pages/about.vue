@@ -76,6 +76,10 @@ defineOgImageComponent("DefaultOgImage", {
             <NuxtImg
                 class="float-right m-5 rounded-md"
                 src="https://media.licdn.com/dms/image/D5603AQGdJRcKZt4UIw/profile-displayphoto-shrink_200_200/0/1712136099798?e=1717632000&v=beta&t=oMry6hflN3SkCUDHg6huwbCR9G0-wmfOEnjI43t2ZTA"
+                alt="Jenuel Ganawed"
+                width="200"
+                height="200"
+                format="webp"
             />
             I'm Jenuel Ganawed, hailing from the picturesque greenery of
             Benguet, Luzon, Philippines. Just like everyone else, I'm on a
@@ -109,118 +113,73 @@ defineOgImageComponent("DefaultOgImage", {
             essential for overall success.
         </p>
         <HomeSkills class="mb-20" />
-        <div class="flex items-center justify-center gap-2 pb-3">
-            <Icon size="30" name="mdi:timeline" />
-            <span class="text-size-20px font-bold">
-                Timeline/Job Experience
-            </span>
+        <div>
+            <div class="flex items-center gap-2">
+                <h1 class="font-bold">Work</h1>
+            </div>
+            <p class="leading-7 opacity-80">
+                Throughout my career as a software developer, I have had the
+                privilege of collaborating with various esteemed companies, each
+                experience contributing significantly to my professional growth.
+                I am sincerely grateful for the opportunities these companies
+                have afforded me, as they have played a pivotal role in shaping
+                my career trajectory.
+            </p>
         </div>
+
         <div class="max-w-700px mx-auto">
-            <div class="timeline-div">
-                <div class="w-full m-auto">
-                    <template
-                        v-for="(experience, i) in experiences"
-                        :key="experience.url"
-                    >
-                        <div
-                            class="timeline-box"
-                            :class="{ 'text-right': i % 2 === 0 }"
-                        >
-                            <div
-                                class="absolute top-[50%] transform translate-y-[-50%] bg-[var(--color)] rounded-md text-[var(--background)] p-1 flex flex-col items-center text-xs"
-                                :class="
-                                    i % 2 == 0
-                                        ? 'sm:right-[-20px] right-[-15px]'
-                                        : 'sm:left-[-20px] left-[-15px]'
-                                "
+            <div>
+                <template
+                    v-for="(experience, i) in experiences"
+                    :key="experience.url"
+                >
+                    <hr
+                        class="my-6 border-gray-50 border-opacity-40 !dark:border-opacity-10"
+                    />
+                    <div>
+                        <h3>
+                            <NuxtLink
+                                :href="experience.url"
+                                class="mr-2 text-[var(--color)]"
                             >
-                                {{ experience.year }}
-                                <span>to</span>
-                                {{ experience.to }}
-                            </div>
-                            <div
-                                v-if="experience.position || experience.company"
-                                class="text-lg font-bold mb-2"
+                                {{ experience.company }}
+                            </NuxtLink>
+                            <span
+                                class="text-sm font-thin opacity-70 dark:opacity-50"
                             >
-                                <span
-                                    v-if="experience.position"
-                                    class="text-[var(--color)]"
-                                >
-                                    {{ experience.position }}
-                                </span>
-                                <NuxtLink
-                                    v-if="experience.company"
-                                    :href="experience.url"
-                                    target="_blank"
-                                    class="text-blue-400 decoration-none hover:bg-blue-400 hover:bg-opacity-40"
-                                >
-                                    @ {{ experience.company }}
-                                </NuxtLink>
-                            </div>
-                            <div
-                                v-if="experience.certificate"
-                                class="inline-block mb-2"
-                            >
-                                <NuxtLink
-                                    class="decoration-none text-blue-300 hover:underline"
-                                    :to="experience.certificate.link"
-                                    target="_blank"
-                                >
-                                    <Icon name="teenyicons:certificate-solid" />
-                                    {{ experience.certificate.label }}
-                                    <Icon name="ic:twotone-launch" />
-                                </NuxtLink>
-                            </div>
-                            <div v-if="experience.workStart" class="text-sm">
                                 {{ experience.workStart }} -
                                 <span v-html="experience.workUntil"></span>
-                            </div>
-                            <div
-                                v-if="experience.des"
-                                class="mt-2"
-                                v-html="experience.des"
-                            ></div>
+                            </span>
+                        </h3>
+                        <p class="-mt-3 opacity-70 dark:opacity-50">
+                            {{ experience.position }}
+                        </p>
+                        <div
+                            v-if="experience.certificate"
+                            class="inline-block mb-2"
+                        >
+                            <NuxtLink
+                                class="inline-flex items-center rounded border border-neutral-200 bg-neutral-100 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+                                :to="experience.certificate.link"
+                                target="_blank"
+                            >
+                                <Icon
+                                    name="teenyicons:certificate-solid"
+                                    class="mr-2"
+                                />
+                                {{ experience.certificate.label }}
+                                <Icon name="ic:twotone-launch" />
+                            </NuxtLink>
                         </div>
-                    </template>
-                </div>
+
+                        <div
+                            v-if="experience.des"
+                            class="leading-7 opacity-80"
+                            v-html="experience.des"
+                        ></div>
+                    </div>
+                </template>
             </div>
         </div>
     </div>
 </template>
-<style lang="scss">
-.timeline-div {
-    .timeline-box {
-        border-top: 2px dashed;
-        border-color: var(--color) !important;
-        margin: 0;
-        padding: 30px;
-        counter-increment: section;
-        position: relative;
-
-        &:nth-child(even) {
-            border-left: 2px dashed;
-            padding-right: 0;
-        }
-
-        &:nth-child(odd) {
-            border-right: 2px dashed;
-            padding-left: 0;
-        }
-
-        &:first-child {
-            border-top: 2px dashed;
-            border-top-right-radius: 0;
-            border-top-left-radius: 0;
-        }
-
-        &:last-child {
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-    }
-
-    .present-work {
-        color: var(--color);
-    }
-}
-</style>
