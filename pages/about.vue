@@ -25,7 +25,7 @@ defineOgImageComponent("DefaultOgImage", {
 
 <template>
     <div class="w-full max-w-700px mx-auto md:px-20px px-10px mt-30 pb-20">
-        <h1>✋ Hi! I am Jenuel</h1>
+        <h1>✋ About</h1>
         <div
             class="flex items-center gap-5 flex-wrap sm:justify-start justify-center"
         >
@@ -72,26 +72,26 @@ defineOgImageComponent("DefaultOgImage", {
                 Email Me
             </NuxtLink>
         </div>
-        <p class="leading-7 indent-lg">
-            <NuxtImg
-                class="float-right m-5 rounded-md"
-                src="https://media.licdn.com/dms/image/D5603AQGdJRcKZt4UIw/profile-displayphoto-shrink_200_200/0/1712136099798?e=1717632000&v=beta&t=oMry6hflN3SkCUDHg6huwbCR9G0-wmfOEnjI43t2ZTA"
-                alt="Jenuel Ganawed"
-                width="200"
-                height="200"
-                format="webp"
-            />
+        <NuxtImg
+            class="float-none mx-auto rounded-md sm:float-right sm:m-5"
+            src="https://media.licdn.com/dms/image/D5603AQGdJRcKZt4UIw/profile-displayphoto-shrink_200_200/0/1712136099798?e=1717632000&v=beta&t=oMry6hflN3SkCUDHg6huwbCR9G0-wmfOEnjI43t2ZTA"
+            alt="Jenuel Ganawed"
+            width="200"
+            height="200"
+            format="webp"
+        />
+        <p class="leading-7 indent-lg opacity-80">
             I'm Jenuel Ganawed, hailing from the picturesque greenery of
             Benguet, Luzon, Philippines. Just like everyone else, I'm on a
             journey of balancing life and technology.
         </p>
-        <p class="leading-7 indent-lg">
+        <p class="leading-7 indent-lg opacity-80">
             I thrive on the excitement of trying new things, whether it's
             crafting elegant code or experimenting with adventurous culinary
             concoctions 😅. After all, life's too short to stick to the mundane,
             isn't it? 😁
         </p>
-        <p class="leading-7 indent-lg">
+        <p class="leading-7 indent-lg opacity-80">
             Embarking on this wild ride as a software wizard For the past
             <b class="font-bold underline">{{
                 new Date().getFullYear() - 2018
@@ -105,13 +105,24 @@ defineOgImageComponent("DefaultOgImage", {
             of my keyboard. I'm always on a quest to sharpen my skills and push
             the boundaries of what's possible.
         </p>
-        <p class="leading-7 indent-lg">
+        <p class="leading-7 indent-lg opacity-80">
             Also, I take pride in my attention to detail, meticulously examining
             even the smallest elements that could potentially snowball into
             significant issues. Whether it's ensuring code efficiency or
             perfecting a recipe, I believe that thoroughness in the details is
             essential for overall success.
         </p>
+
+        <div>
+            <div class="flex items-center gap-2">
+                <h1 class="font-bold">Tech</h1>
+            </div>
+            <p class="leading-7 opacity-80">
+                In the course of my journey as a developer, I have diligently
+                acquired proficiency in various tools and technologies, thereby
+                augmenting my capabilities as a software developer.
+            </p>
+        </div>
         <HomeSkills class="mb-20" />
         <div>
             <div class="flex items-center gap-2">

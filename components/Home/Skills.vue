@@ -2,20 +2,14 @@
 const skills = useSkills();
 </script>
 <template>
-    <section id="skills-container" class="my-work max-w-1100px mx-auto pt-15">
-        <div class="grid grid-cols-1 gap-10">
+    <section id="skills-container" class="my-work max-w-1100px mx-auto">
+        <div class="grid grid-cols-1 gap-5">
             <div
                 v-for="skill in skills"
                 :key="skill.tech"
                 class="flex flex-col transition-all dark:border-opacity-30 rounded-lg"
             >
                 <div>
-                    <div class="flex items-center gap-2 pb-1">
-                        <span class="text-size-30px" :class="skill.icon"></span>
-                        <span class="text-size-20px font-bold">
-                            {{ skill.tech }}
-                        </span>
-                    </div>
                     <div
                         class="tracking-wide leading-relaxed opacity-80"
                         v-if="skill.description"

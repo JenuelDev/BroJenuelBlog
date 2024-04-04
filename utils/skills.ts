@@ -2,7 +2,7 @@ export const useSkills = () => [
     {
         icon: "icon--solar icon--solar--window-frame-bold-duotone",
         tech: "Front-End Tech",
-        description: `I create visual and interactive elements of websites and web applications that users see and interact with.`,
+        description: `Tools to create visual and interactive elements of websites and web applications that users see and interact with.`,
         tools: [
             {
                 icon: "icon--skill-icons icon--skill-icons--javascript",
@@ -101,7 +101,7 @@ export const useSkills = () => [
     {
         icon: "icon--solar icon--solar--server-path-line-duotone",
         tech: "Back-End Tech",
-        description: `I develop and maintain the server-side of websites and web applications, managing databases, and ensuring the functionality and data handling of the software`,
+        description: `Tools to develop and maintain the server-side of websites and web applications, managing databases, and ensuring the functionality and data handling of the software`,
         tools: [
             {
                 icon: "icon--skill-icons icon--skill-icons--php-dark",
@@ -176,7 +176,8 @@ export const useSkills = () => [
     {
         icon: "icon--solar icon--solar--settings-minimalistic-bold",
         tech: "Other Familiar Tech",
-        description: "I am also familiar with the following tools for development.",
+        description:
+            "Other Tools that is essential for programming and enhancing coding experience.",
         tools: [
             {
                 icon: "icon--devicon icon--devicon--git",
