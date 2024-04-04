@@ -21,10 +21,10 @@ const youtubePosts = [
             <NuxtLink
                 href="https://youtube.com/@brojenuel"
                 target="_blank"
-                class="decoration-none text-blue-400 hover:bg-blue-500 hover:bg-opacity-20 rounded-md px-2 py-1"
+                class="group inline-flex items-center rounded border border-neutral-200 bg-neutral-200 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 px-3 py-2"
             >
                 Watch More
-                <Icon name="material-symbols:arrow-right-alt" />
+                <Icon name="material-symbols:arrow-right-alt" class="group-hover:animate-shake-x ml-3" />
             </NuxtLink>
         </div>
         <div class="grid grid-cols-1 gap-2">
@@ -32,7 +32,7 @@ const youtubePosts = [
                 v-for="post in youtubePosts"
                 :href="post.link"
                 target="_blank"
-                class="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-100 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800 text-dark-300 dark:text-gray-300 decoration-none"
+                class="group flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-100 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800 text-dark-300 dark:text-gray-300 decoration-none"
             >
                 <div>
                     <Icon
@@ -42,7 +42,7 @@ const youtubePosts = [
                     />
                     {{ post.title }}
                 </div>
-                <Icon name="material-symbols:arrow-right-alt" />
+                <Icon name="material-symbols:arrow-right-alt" class="group-hover:animate-shake-x" />
             </NuxtLink>
         </div>
     </div>

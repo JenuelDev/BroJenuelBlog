@@ -48,7 +48,7 @@ onMounted(() => {
                     {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
                 </span>
                 <div class="opacity-90 content-summary">
-                    <b class="text-lg group-hover:text-blue-400">
+                    <b class="text-lg group-hover:underline">
                         {{ blog.title }} </b
                     >.
                     <span class="opacity-80">{{ blog.summary }}</span>
@@ -86,10 +86,14 @@ onMounted(() => {
         <div class="pt-5">
             <NuxtLink
                 to="/blog"
-                class="inline-flex items-center rounded border border-neutral-200 bg-neutral-200 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+                class="group inline-flex items-center rounded border border-neutral-200 bg-neutral-200 p-4 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
             >
                 Read more articles
-                <Icon name="material-symbols:arrow-right-alt" />
+                <Icon
+                    size="20"
+                    name="material-symbols:arrow-right-alt"
+                    class="ml-3 group-hover:animate-shake-x"
+                />
             </NuxtLink>
         </div>
     </div>
