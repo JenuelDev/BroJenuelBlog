@@ -20,7 +20,8 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://brojenuel.com",
+            siteUrl:
+                process.env.NUXT_PUBLIC_SITE_URL || "https://brojenuel.com",
             isDevelopment: process.env.IS_DEVELOPMENT == "TRUE",
             emailJsServiceId: process.env.EMAILJS_SERVICE_ID,
             emailJsTemplateId: process.env.EMAILJS_TEMPLATE_ID,
@@ -31,9 +32,23 @@ export default defineNuxtConfig({
     app: {
         head: {
             link: [
-                { rel: "apple-touch-icon", sizes: "180x180", href: "/img/icons/apple-touch-icon-180x180.png" },
-                { rel: "icon", type: "image/png", sizes: "32x32", href: "/img/icons/favicon-32x32.png" },
-                { rel: "icon", type: "image/png", sizes: "16x16", href: "/img/icons/favicon-16x16.png" },
+                {
+                    rel: "apple-touch-icon",
+                    sizes: "180x180",
+                    href: "/img/icons/apple-touch-icon-180x180.png",
+                },
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    sizes: "32x32",
+                    href: "/img/icons/favicon-32x32.png",
+                },
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    sizes: "16x16",
+                    href: "/img/icons/favicon-16x16.png",
+                },
             ],
         },
     },

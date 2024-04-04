@@ -1,30 +1,14 @@
 <template>
     <div
-        class="flex gap-2 w-full max-w-700px mx-auto md:px-20px px-10px justify-center md:flex-row flex-col items-center mt-30 mb-10"
+        class="gap-2 w-full max-w-700px mx-auto md:flex-row flex-col items-center mt-30 mb-10"
     >
-        <div class="m-3 rounded-md p-1 text-white">
-            <div
-                class="rounded-md bg-[var(--background)] p-4 overflow-hidden h-190px w-190px flex items-center justify-center border border-2px border-light-50"
-            >
-                <NuxtImg
-                    src="/my-image/face Sketch.png"
-                    format="webp"
-                    width="210"
-                    height="210"
-                    quality="60"
-                    alt="brojenuel profile"
-                />
-            </div>
-        </div>
         <div>
-            <p
-                class="text-3xl m-1 font-bold sm:text-left text-center dark:text-white"
-            >
+            <p class="text-2xl m-1 sm:text-left text-center dark:text-white">
                 <NuxtLink
                     to="/about"
-                    class="dark:text-yellow-200 text-orange-600 decoration-none hover:underline"
+                    class="dark:text-yellow-200 text-orange-600 decoration-none hover:underline font-bold"
                 >
-                    Hey, Im Jenuel.
+                    hey, I'm Jenuel.
                 </NuxtLink>
                 I'm a software developer/engineer.
             </p>
@@ -33,44 +17,44 @@
             >
                 <NuxtLink
                     href="https://dev.to/brojenuel"
-                    class="flex items-center text-[var(--color)] decoration-none text-lg gap-1 hover:text-gray-500"
+                    class="flex items-center text-[var(--color)] decoration-none gap-1 hover:text-gray-500"
                     target="_blank"
                     alt="Jenuel Oras Ganawed Dev"
                     aria-label="Jenuel Ganawed Dev.to"
                     role="link"
                     title="Jenuel Oras Ganawed Dev.to"
                 >
-                    <span class="icon--mdi icon--mdi--dev-to text-40px"></span>
+                    <span class="icon--mdi icon--mdi--dev-to text-30px"></span>
                     Dev.to
                 </NuxtLink>
                 <NuxtLink
                     href="https://www.linkedin.com/in/jenuelganawed/"
-                    class="flex items-center text-[var(--color)] decoration-none text-lg gap-1 hover:text-[#337DAF]"
+                    class="flex items-center text-[var(--color)] decoration-none gap-1 hover:text-[#337DAF]"
                     target="_blank"
                     alt="Jenuel Oras Ganawed Linkedin"
                     aria-label="Jenuel Oras Ganawed Linkedin"
                 >
                     <span
-                        class="icon--mdi icon--mdi--linkedin text-30px text-[#337DAF]"
+                        class="icon--mdi icon--mdi--linkedin text-20px text-[#337DAF]"
                     ></span>
                     LinkedIn
                 </NuxtLink>
                 <NuxtLink
                     href="https://youtube.com/@brojenuel"
                     target="_blank"
-                    class="flex items-center text-[var(--color)] decoration-none text-lg gap-1 hover:text-[#EF2527]"
+                    class="flex items-center text-[var(--color)] decoration-none gap-1 hover:text-[#EF2527]"
                 >
                     <span
-                        class="icon--mdi icon--mdi--youtube text-30px text-[#EF2527]"
+                        class="icon--mdi icon--mdi--youtube text-20px text-[#EF2527]"
                     ></span>
                     Youtube
                 </NuxtLink>
                 <NuxtLink
                     to="/contact"
-                    class="flex items-center text-[var(--color)] decoration-none text-lg gap-1 hover:text-[#32aa56]"
+                    class="flex items-center text-[var(--color)] decoration-none gap-1 hover:text-[#32aa56]"
                 >
                     <span
-                        class="icon--solar icon--solar--mailbox-broken text-30px text-[#32aa56]"
+                        class="icon--solar icon--solar--mailbox-broken text-20px text-[#32aa56]"
                     ></span>
                     Email Me
                 </NuxtLink>

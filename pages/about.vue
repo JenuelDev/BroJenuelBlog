@@ -25,7 +25,7 @@ defineOgImageComponent("DefaultOgImage", {
 
 <template>
     <div class="w-full max-w-700px mx-auto md:px-20px px-10px mt-30 pb-20">
-        <h1>✋ Hey! I am Jenuel</h1>
+        <h1>✋ Hi! I am Jenuel</h1>
         <div
             class="flex items-center gap-5 flex-wrap sm:justify-start justify-center"
         >
@@ -73,6 +73,10 @@ defineOgImageComponent("DefaultOgImage", {
             </NuxtLink>
         </div>
         <p class="leading-7 indent-lg">
+            <NuxtImg
+                class="float-right m-5 rounded-md"
+                src="https://media.licdn.com/dms/image/D5603AQGdJRcKZt4UIw/profile-displayphoto-shrink_200_200/0/1712136099798?e=1717632000&v=beta&t=oMry6hflN3SkCUDHg6huwbCR9G0-wmfOEnjI43t2ZTA"
+            />
             I'm Jenuel Ganawed, hailing from the picturesque greenery of
             Benguet, Luzon, Philippines. Just like everyone else, I'm on a
             journey of balancing life and technology.

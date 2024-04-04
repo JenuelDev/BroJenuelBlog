@@ -42,30 +42,51 @@ onMounted(() => {
                 :style="`order: ${i > 0 ? i + 1 : i}`"
             >
                 <span class="opacity-70">
-                    <span class="icon--solar icon--solar--calendar-bold-duotone" />
+                    <span
+                        class="icon--solar icon--solar--calendar-bold-duotone"
+                    />
                     {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
                 </span>
                 <div class="opacity-90 content-summary">
-                    <b class="text-lg group-hover:text-blue-400"> {{ blog.title }} </b>.
+                    <b class="text-lg group-hover:text-blue-400">
+                        {{ blog.title }} </b
+                    >.
                     <span class="opacity-80">{{ blog.summary }}</span>
                 </div>
             </NuxtLink>
         </div>
         <div v-show="loadingBlogs" class="grid grid-cols-1 gap-4">
-            <div v-for="count in limit" :key="count" role="status" class="animate-pulse">
-                <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 mb-4 w-full"></div>
-                <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full mb-2.5"></div>
-                <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
-                <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full mb-2.5"></div>
-                <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full mb-2.5"></div>
-                <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+            <div
+                v-for="count in limit"
+                :key="count"
+                role="status"
+                class="animate-pulse"
+            >
+                <div
+                    class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 mb-4 w-full"
+                ></div>
+                <div
+                    class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full mb-2.5"
+                ></div>
+                <div
+                    class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"
+                ></div>
+                <div
+                    class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full mb-2.5"
+                ></div>
+                <div
+                    class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full mb-2.5"
+                ></div>
+                <div
+                    class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full"
+                ></div>
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
         <div class="pt-5">
             <NuxtLink
                 to="/blog"
-                class="decoration-none text-blue-400 text-lg hover:bg-blue-500 hover:bg-opacity-20 rounded-sm"
+                class="inline-flex items-center rounded border border-neutral-200 bg-neutral-200 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
             >
                 Read more articles
                 <Icon name="material-symbols:arrow-right-alt" />

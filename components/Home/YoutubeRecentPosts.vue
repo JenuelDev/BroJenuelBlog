@@ -27,22 +27,22 @@ const youtubePosts = [
                 <Icon name="material-symbols:arrow-right-alt" />
             </NuxtLink>
         </div>
-        <div class="grid sm:grid-cols-3 grid-cols-2 gap-2">
+        <div class="grid grid-cols-1 gap-2">
             <NuxtLink
-                v-for="(post, i) in youtubePosts"
+                v-for="post in youtubePosts"
                 :href="post.link"
                 target="_blank"
-                class="rounded-lg p-3px dark:text-white decoration-none text-[var(--color)]"
+                class="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-100 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800 text-dark-300 dark:text-gray-300 decoration-none"
             >
-                <div
-                    class="rounded-md p-4 overflow-hidden border border-3px flex flex-col justify-between h-100px dark:bg-gray-50 dark:text-dark-700 bg-dark-800 bg-opacity-50 text-white hover:bg-opacity-70 transition-all"
-                >
-                    <div class="font-bold">
-                        <Icon name="logos:youtube-icon" size="25" />
-                        {{ post.title }}
-                    </div>
-                    <div class="text-xs opacity-50">@BroJenuel</div>
+                <div>
+                    <Icon
+                        name="logos:youtube-icon"
+                        size="25"
+                        class="bg-white rounded-full p-1 mr-2"
+                    />
+                    {{ post.title }}
                 </div>
+                <Icon name="material-symbols:arrow-right-alt" />
             </NuxtLink>
         </div>
     </div>
