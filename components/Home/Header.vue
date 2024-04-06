@@ -8,25 +8,25 @@ const JumpLinks = [
         key: "about",
         name: "About",
         link: "#about",
-        isRoute: false
+        isRoute: false,
     },
     {
         key: "experience",
         name: "Experience",
         link: "#experience",
-        isRoute: false
+        isRoute: false,
     },
     {
         key: "projects",
         name: "Projects",
         link: "#projects",
-        isRoute: false
+        isRoute: false,
     },
     {
         key: "blog",
         name: "Blog",
         link: "/blog",
-        isRoute: true
+        isRoute: true,
     },
 ];
 </script>
@@ -46,8 +46,7 @@ const JumpLinks = [
                 Software Developer
             </h2>
             <p class="mt-4 max-w-xs leading-normal">
-                I build pixel-perfect, engaging, and accessible digital
-                experiences.
+                I build web apps that are engaging, accessible and scalable.
             </p>
             <nav class="nav hidden lg:block" aria-label="In-page jump links">
                 <ul class="mt-16 w-max">
@@ -101,58 +100,58 @@ const JumpLinks = [
                     title="GitHub"
                 >
                     <span class="sr-only">GitHub</span>
-                    <IconCSS name="mdi:github" size="28" />
+                    <Icon name="mdi:github" size="28" />
                 </a>
             </li>
             <li class="mr-5 text-xs shrink-0">
                 <a
                     class="block hover:text-slate-200"
-                    href="https://www.linkedin.com/in/bchiang7/"
+                    href="https://www.linkedin.com/in/jenuelganawed/"
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label="LinkedIn (opens in a new tab)"
                     title="LinkedIn"
                 >
                     <span class="sr-only">LinkedIn</span>
-                    <IconCSS name="mdi:linkedin" size="28" />
+                    <Icon name="mdi:linkedin" size="28" />
                 </a>
             </li>
             <li class="mr-5 text-xs shrink-0">
                 <a
                     class="block hover:text-slate-200"
-                    href="https://instagram.com/bchiang7"
+                    href="https://instagram.com/brojenuel"
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label="Instagram (opens in a new tab)"
                     title="Instagram"
                     ><span class="sr-only">Instagram</span>
-                    <IconCSS name="mdi:instagram" size="28" />
+                    <Icon name="mdi:instagram" size="28" />
                 </a>
             </li>
             <li class="mr-5 text-xs shrink-0">
                 <a
                     class="block hover:text-slate-200"
-                    href="https://twitter.com/bchiang7"
+                    href="https://twitter.com/brojenuel"
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label="Twitter (opens in a new tab)"
                     title="Twitter"
                 >
                     <span class="sr-only">Twitter</span>
-                    <IconCSS name="mdi:twitter" size="28" />
+                    <Icon name="mdi:twitter" size="28" />
                 </a>
             </li>
             <li class="mr-5 text-xs shrink-0">
                 <a
                     class="block hover:text-slate-200"
-                    href="https://twitter.com/bchiang7"
+                    href="https://dev.to/brojenuel"
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label="Twitter (opens in a new tab)"
                     title="Twitter"
                 >
                     <span class="sr-only">DevTo</span>
-                    <IconCSS name="mdi:dev-to" size="30" />
+                    <Icon name="mdi:dev-to" size="30" />
                 </a>
             </li>
         </ul>
