@@ -7,14 +7,26 @@ const JumpLinks = [
     {
         key: "about",
         name: "About",
+        link: "#about",
+        isRoute: false
     },
     {
         key: "experience",
         name: "Experience",
+        link: "#experience",
+        isRoute: false
     },
     {
         key: "projects",
         name: "Projects",
+        link: "#projects",
+        isRoute: false
+    },
+    {
+        key: "blog",
+        name: "Blog",
+        link: "/blog",
+        isRoute: true
     },
 ];
 </script>
@@ -41,10 +53,11 @@ const JumpLinks = [
                 <ul class="mt-16 w-max">
                     <li v-for="JumLink in JumpLinks">
                         <a
+                            v-if="!JumLink.isRoute"
                             id="about-selector"
                             class="jum-link-item group flex items-center py-3"
                             :class="{ active: visible === JumLink.key }"
-                            :href="`#${JumLink.key}`"
+                            :href="`${JumLink.link}`"
                         >
                             <span
                                 class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none active:bg-slate-200"
@@ -56,6 +69,23 @@ const JumpLinks = [
                                 {{ JumLink.name }}
                             </span>
                         </a>
+                        <NuxtLink
+                            v-else
+                            id="about-selector"
+                            class="jum-link-item group flex items-center py-3"
+                            :class="{ active: visible === JumLink.key }"
+                            :href="`${JumLink.key}`"
+                        >
+                            <span
+                                class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none active:bg-slate-200"
+                            >
+                            </span>
+                            <span
+                                class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200"
+                            >
+                                {{ JumLink.name }}
+                            </span>
+                        </NuxtLink>
                     </li>
                 </ul>
             </nav>
