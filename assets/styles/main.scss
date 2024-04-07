@@ -1,0 +1,30 @@
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: "ss03", "cv02", "cv11";
+    font-variation-settings: normal;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
+
+* {
+    scroll-behavior: smooth;
+    font-family: Inter, sans-serif;
+}
+
+body {
+    @apply bg-gray-950 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900;
+}
+
+.jum-link-item.active {
+    .nav-indicator {
+        @apply w-16 bg-slate-200;
+    }
+
+    .nav-text {
+        @apply text-slate-200;
+    }
+}
