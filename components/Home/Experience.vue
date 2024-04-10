@@ -257,9 +257,9 @@ experiences.`,
         </div>
         <div>
             <ol class="group/list">
-                <li v-for="experience in experiences" class="mb-12">
+                <li v-for="experience in experiences" class="mb-12 group">
                     <div
-                        class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
+                        class="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
                     >
                         <div
                             class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"
@@ -314,7 +314,7 @@ experiences.`,
                             >
                                 <li v-for="tech in experience.techs">
                                     <div
-                                        class="whitespace-nowrap w-full overflow-hidden transition-all duration-75 bg-gray-800 px-2 py-1 rounded-md transform hover:scale-105 cursor-pointer flex items-center text-[var(--color)]"
+                                        class="whitespace-nowrap w-full transition-all duration-75 bg-gray-800 px-2 py-1 rounded-md transform hover:scale-105 cursor-pointer flex items-center text-[var(--color)]"
                                     >
                                         <Icon :name="tech.icon" />
                                         <span class="ml-2 text-sm">
