@@ -26,7 +26,6 @@ const visibleItem = computed(() => {
                     <HomeAbout ref="HomeAboutRef" id="about" />
                     <HomeExperience ref="HomeExperienceRef" id="experience" />
                     <HomeProjects ref="HomeProjectsRef" id="projects" />
-                    <HomeWriting id="writing" />
                     <HomeFooter />
                 </main>
             </div>

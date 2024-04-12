@@ -1,27 +1,16 @@
 <script setup lang="ts">
-const projects = useProjects().value.slice(0, 6);
+const projects = useProjects();
 </script>
 <template>
     <section
-        class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+        class="w-full max-w-lg mx-auto py-16"
         aria-label="Selected projects"
     >
-        <div
-            class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-        >
-            <h2
-                class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only"
-            >
-                Projects
-            </h2>
-            <p>
-                I'm a bit of a digital product junky. I've created a bunch of
-                web and mobile apps in different industries and verticals.
-                Eventually, I decided that it would be a fun challenge to try
-                designing and building my own.
-            </p>
-        </div>
-        <div>
+        <NuxtLink to="/" class="hover:text-teal-300">
+            <Icon name="ic:baseline-arrow-back" class="w-6 h-6" />
+            BroJenuel
+        </NuxtLink>
+        <div class="mt-16">
             <ul class="group/list">
                 <li v-for="project in projects" class="mb-12">
                     <div
@@ -91,29 +80,6 @@ const projects = useProjects().value.slice(0, 6);
                     </div>
                 </li>
             </ul>
-            <div class="mt-12">
-                <NuxtLink
-                    class="inline-flex items-center font-medium leading-tight text-slate-200 font-semibold text-slate-200 group"
-                    aria-label="View Full Project Archive"
-                    to="/archive"
-                >
-                    <span>
-                        <span
-                            class="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none"
-                        >
-                            View Full Project
-                        </span>
-                        <span class="whitespace-nowrap">
-                            <span
-                                class="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none"
-                            >
-                                Archive
-                            </span>
-                            <Icon name="ic:baseline-arrow-outward" />
-                        </span>
-                    </span>
-                </NuxtLink>
-            </div>
         </div>
     </section>
 </template>

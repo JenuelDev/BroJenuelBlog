@@ -1,7 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ["@nuxtjs/tailwindcss", "@vueuse/nuxt", "nuxt-icon"],
+    modules: [
+        "@nuxtjs/tailwindcss",
+        "@vueuse/nuxt",
+        "nuxt-icon",
+        "@nuxt/image",
+        "@nuxtjs/supabase",
+        "nuxt-og-image",
+    ],
     app: {
         head: {
             link: [
@@ -11,4 +18,11 @@ export default defineNuxtConfig({
         },
     },
     css: ["@/assets/styles/main.scss"],
+    supabase: {
+        redirectOptions: {
+            login: "/login",
+            callback: "/confirm",
+            include: ["/admin(/*)?"],
+        },
+    },
 });
