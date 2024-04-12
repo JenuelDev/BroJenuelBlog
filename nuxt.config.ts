@@ -1,46 +1,52 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     ssr: true,
+    devtools: { enabled: true },
     modules: [
-        "@nuxtjs/color-mode",
+        "@nuxtjs/tailwindcss",
         "@vueuse/nuxt",
-        "nuxt-windicss",
+        "nuxt-icon",
+        "@nuxt/image",
         "@nuxtjs/supabase",
         "nuxt-og-image",
-        "@nuxt/image",
-        "nuxt-icon",
     ],
-    colorMode: {
-        preference: "light",
-        classSuffix: "",
-        fallback: "light",
-        storageKey: "brojenuel-color-mode",
+    app: {
+        head: {
+            link: [
+                { rel: "preconnect", href: "https://rsms.me/" },
+                { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
+            ],
+        },
     },
-    routeRules: {
-        "/*": { cors: true },
+    css: ["@/assets/styles/main.scss"],
+    supabase: {
+        redirectOptions: {
+            login: "/login",
+            callback: "/confirm",
+            include: ["/admin(/*)?"],
+        },
+    },
+    vue: {
+        compilerOptions: {
+            isCustomElement: (tag) => ["ins"].includes(tag),
+        },
     },
     runtimeConfig: {
         public: {
-            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://brojenuel.com",
+            siteUrl:
+                process.env.NUXT_PUBLIC_SITE_URL || "https://brojenuel.com",
             isDevelopment: process.env.IS_DEVELOPMENT == "TRUE",
             emailJsServiceId: process.env.EMAILJS_SERVICE_ID,
             emailJsTemplateId: process.env.EMAILJS_TEMPLATE_ID,
             emailJsUserId: process.env.EMAILJS_USER_ID,
         },
     },
-    css: ["@/assets/style/main.scss"],
-    app: {
-        head: {
-            link: [
-                { rel: "apple-touch-icon", sizes: "180x180", href: "/img/icons/apple-touch-icon-180x180.png" },
-                { rel: "icon", type: "image/png", sizes: "32x32", href: "/img/icons/favicon-32x32.png" },
-                { rel: "icon", type: "image/png", sizes: "16x16", href: "/img/icons/favicon-16x16.png" },
-            ],
+    tailwindcss: {
+        configPath: "tailwind.config",
+        exposeConfig: {
+            level: 2,
         },
-    },
-    image: {
-        domains: ["i.imgur.com"],
-    },
-    devtools: {
-        enabled: false,
+        config: {},
+        viewer: true,
     },
 });

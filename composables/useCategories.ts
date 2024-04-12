@@ -154,8 +154,14 @@ export const tool_categories = [
 
 export default function () {
     return {
-        frameworks: framework_categories.sort((a, b) => a.label.localeCompare(b.label)),
-        ToolCategories: tool_categories.sort((a, b) => a.label.localeCompare(b.label)),
-        otherCategories: other_categories.sort((a, b) => a.label.localeCompare(b.label)),
+        frameworks: framework_categories.sort((a, b) =>
+            a.label.localeCompare(b.label)
+        ),
+        ToolCategories: tool_categories.sort((a, b) =>
+            a.label.localeCompare(b.label)
+        ),
+        otherCategories: other_categories.sort((a, b) =>
+            a.label.localeCompare(b.label)
+        ),
     };
 }

@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 const client = useSupabaseClient();
-const route = useRoute();
 const { setMeta } = useMeta();
 const blogInfiniteScrollRef = ref(null);
 const targetIsVisible = useElementVisibility(blogInfiniteScrollRef);
+
+const route = useRoute();
+const isHasHistory = ref(false);
 const filter = reactive<{
     search: null | string | undefined;
     limit: number;
@@ -30,11 +32,11 @@ const blogsList = ref<
     }>
 >([]);
 const noMoreData = ref(false);
-const { ToolCategories, frameworks, otherCategories } = useCategories();
 
 watch(
     () => targetIsVisible.value,
     (val) => {
+        console.log(val);
         if (noMoreData.value) return;
         if (val) {
             filter.page += 1;
@@ -56,7 +58,9 @@ async function getBlogs(isReset = false) {
     let rangeTo = filter.page * filter.limit;
     let query = client
         .from("blogs")
-        .select(`id, title, summary, slug, updated_at, cover_img, blog_meta(*), tags`)
+        .select(
+            `id, title, summary, slug, updated_at, cover_img, blog_meta(*), tags`
+        )
         .eq("is_active", 1)
         .order("id", { ascending: false });
 
@@ -83,31 +87,17 @@ await useAsyncData("blogs", async () => {
     await getBlogs(true);
 });
 
-function commafy(num: number) {
-    var str = num.toString().split(".");
-    if (str[0].length >= 5) {
-        str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1,");
-    }
-    if (str[1] && str[1].length >= 5) {
-        str[1] = str[1].replace(/(\d{3})/g, "$1 ");
-    }
-    return str.join(".");
-}
 useHead({
     ...setMeta({
         title: "Blog - BroJenuel",
-        description:
-            "Learn about tips and tricks about programming. Read or watch tutorials that will help you on jour journey as a developer.",
+        description: "Learn about tips and tricks about tech and programming.",
         path: route.path,
-        keywords: ["brojenuel", "Jenuel", "Jenuel Ganawed", "bro jenuel", "web developer", "blog"],
+        keywords: ["brojenuel", "Jenuel", "Ganawed", "tech", "programming"],
         lang: "en",
     }),
 });
 
-defineOgImage({
-    appName: "www.BroJenuel.com",
-    component: "DefaultOgImage",
-    path: route.path,
+defineOgImageComponent("DefaultOgImage", {
     title: "BroJenuel - Blog",
     description:
         "Learn programming tips, tricks, best practices to make programming and other information that will benefit you.",
@@ -116,124 +106,94 @@ defineOgImage({
 function searchRoute() {
     getBlogs(true);
 }
+
+onMounted(() => {
+    isHasHistory.value = window.history.length > 0;
+});
 </script>
 <template>
-    <NuxtLayout name="bloglayout">
-        <div class="mt-70px min-h-100vh max-w-1100px mx-auto lg:px-10px sm:px-100px px-10px pb-5 gap-20">
-            <div class="mb-5">
-                <div class="flex justify-between">
-                    <div>
-                        <span class="text-[var(--primary)] text-2xl font-800">Blogs</span>
+    <div class="relative">
+        <HomePointer />
+        <div class="mx-auto max-w-2xl px-6 pt-5 sm:pt-0">
+            <div class="pt-0 sm:pt-10 pb-10">
+                <div class="flex justify-between flex-col sm:flex-row">
+                    <div
+                        v-if="isHasHistory"
+                        @click="$router.go(-1)"
+                        class="hover:text-teal-300 pb-3 sm:pb-0 cursor-pointer"
+                    >
+                        <Icon name="ic:baseline-arrow-back" class="w-6 h-6" />
+                        BroJenuel
                     </div>
-                    <form @submit.prevent="searchRoute" class="flex items-center mb-1">
+                    <NuxtLink v-else to="/" class="hover:text-teal-300 py-10">
+                        <Icon name="ic:baseline-arrow-back" class="w-6 h-6" />
+                        BroJenuel
+                    </NuxtLink>
+                    <form
+                        @submit.prevent="searchRoute"
+                        class="flex items-center mb-1"
+                    >
                         <div class="relative">
                             <input
-                                class="w-full shadow appearance-none border border-[var(--background)] rounded w-full dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:px-3 h-40px px-2"
+                                class="bg-slate-800 appearance-none border-2 border-gray-200 rounded px-4 text-gray-700 leading-tight focus:outline-none focus:text-slate-200 focus:border-purple-500 border-none block h-[30px]"
                                 type="text"
                                 placeholder="Search..."
                                 v-model="filter.search"
                             />
-                            <Icon
-                                v-if="filter.search"
-                                class="absolute right-5px top-6px cursor-pointer"
-                                name="material-symbols:cancel"
-                                @click="
-                                    filter.search = null;
-                                    searchRoute();
-                                "
-                            />
                         </div>
-                        <button
-                            type="submit"
-                            class="w-full shadow appearance-none border border-[var(--background)] rounded dark:text-white leading-tight focus:border-gray-400 focus:outline-none focus:shadow-outline bg-[var(--background-secondary)] lg:h-30px lg:w-50px w-40px h-40px flex items-center justify-center"
-                            name="search article"
-                            title="search articles"
-                        >
-                            <Icon name="ri:search-fill" />
-                        </button>
                     </form>
                 </div>
-                <div class="flex gap-10px">
-                    <DropMenu
-                        label="Framework"
-                        :menuOptions="frameworks"
-                        v-model="filter.cat"
-                        @change="searchRoute"
-                        position="right"
-                    />
-                    <DropMenu
-                        label="Tools"
-                        :menuOptions="ToolCategories"
-                        v-model="filter.cat"
-                        @change="searchRoute"
-                        position="right"
-                    />
-                    <DropMenu
-                        label="Others"
-                        :menuOptions="otherCategories"
-                        v-model="filter.cat"
-                        @change="searchRoute"
-                        position="right"
-                    />
-                </div>
             </div>
-            <div class="sm:col-span-9 col-span-11">
-                <div class="min-h-[100vh]">
-                    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-                        <NuxtLink
-                            v-for="(blog, i) in blogsList"
-                            :key="blog.id"
-                            :href="`/blog/${blog.slug}`"
-                            class="group rounded-md cursor-pointer flex flex-col gap-1"
-                            :style="`order: ${i > 0 ? i + 1 : i}`"
-                        >
-                            <div class="h-200px flex items-center overflow-hidden rounded-lg">
-                                <NuxtImg
-                                    v-if="blog.cover_img && !(blog.cover_img.indexOf('youtube') > -1)"
-                                    :src="blog.cover_img"
-                                    class="rounded-lg w-full"
-                                    width="300"
-                                    height="150"
-                                    format="webp"
-                                    loading="lazy"
-                                    quality="80"
-                                    :alt="blog.title"
-                                />
-                                <div
-                                    v-else
-                                    class="flex items-center justify-center bg-gray-900 w-full h-[90%] text-gray-50 rounded-lg p-5 text-center"
-                                >
-                                    {{ blog.title }}
-                                </div>
-                            </div>
-                            <span class="opacity-70 text-xs">
-                                <span class="icon--solar icon--solar--calendar-bold-duotone" />
-                                {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
-                            </span>
-                            <div>
-                                <div class="opacity-90 content-summary">
-                                    <b> {{ blog.title }} </b>. {{ blog.summary }}
-                                </div>
-                            </div>
-                        </NuxtLink>
-                    </div>
-                    <div v-show="loading" class="text-center text-[var(--primary)] pt-20px">
-                        <div style="font-size: 50px">
-                            <Icon name="svg-spinners:bars-scale-middle" />
+            <div class="grid min-h-[100vh] grid-cols-1 gap-10 group/list">
+                <NuxtLink
+                    v-for="(blog, i) in blogsList"
+                    :key="`${blog.id}-${i}`"
+                    :href="`/blog/${blog.slug}`"
+                    :style="`order: ${i > 0 ? i + 1 : i}`"
+                    class="rounded-md cursor-pointer gap-1 decoration-none relative pb-1 transition-all md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 grid grid-cols-1 sm:grid-cols-8 text-center sm:text-left"
+                >
+                    <NuxtImg
+                        :src="
+                            blog.cover_img ??
+                            `https://brojenuel.com/__og-image__/image/blog/${blog.slug}/og.png`
+                        "
+                        class="rounded-lg w-150px mx-auto col-span-2"
+                        width="300"
+                        height="150"
+                        format="webp"
+                        loading="lazy"
+                        quality="50"
+                        :alt="blog.title"
+                    />
+
+                    <div class="content-summary leading-5 col-span-6">
+                        <div class="opacity-70 text-xs">
+                            <span
+                                class="icon--solar icon--solar--calendar-bold-duotone"
+                            />
+                            {{ $dayjs(blog.updated_at).format("DD MMM, YYYY") }}
                         </div>
-                        <div>loading</div>
+                        <b> {{ blog.title }} </b>.
+                        <div class="h-70 overflow-hidden">
+                            <p class="truncate">{{ blog.summary }}</p>
+                        </div>
                     </div>
+                </NuxtLink>
+            </div>
+            <div v-show="loading" class="text-center pt-20px">
+                <div style="font-size: 50px">
+                    <Icon name="svg-spinners:bars-scale-middle" />
                 </div>
-                <div ref="blogInfiniteScrollRef">
-                    <div v-show="noMoreData" class="text-center text-[var(--primary)] pt-20px">
-                        <div style="font-size: 50px">
-                            <Icon name="wpf:empty-flag" />
-                        </div>
-                        <div>Oops! No More Data</div>
+                <div>loading</div>
+            </div>
+            <div ref="blogInfiniteScrollRef" class="mb-10">
+                <div v-show="noMoreData" class="text-center pt-20px">
+                    <div style="font-size: 50px">
+                        <Icon name="wpf:empty-flag" />
                     </div>
-                    <div></div>
+                    <div>Oops! No More Data</div>
                 </div>
             </div>
         </div>
-    </NuxtLayout>
+    </div>
 </template>

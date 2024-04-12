@@ -2,7 +2,8 @@ export const useShareFunction = () => ({
     share: (social: string) => {
         let url = "https://brojenuel.com" + window.location.pathname;
         if (social == "facebook") {
-            const navUrl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+            const navUrl =
+                "https://www.facebook.com/sharer/sharer.php?u=" + url;
             window.open(navUrl, "_blank");
             return;
         }
@@ -14,7 +15,8 @@ export const useShareFunction = () => ({
         }
 
         if (social == "linkedin") {
-            const navUrl = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
+            const navUrl =
+                "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
             window.open(navUrl, "_blank");
             return;
         }
@@ -25,5 +27,5 @@ export const useShareFunction = () => ({
             });
             return;
         }
-    }
-})
+    },
+});
