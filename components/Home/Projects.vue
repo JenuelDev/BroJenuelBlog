@@ -14,14 +14,14 @@ const projects = useProjects().value.slice(0, 6);
             >
                 Projects
             </h2>
-            <p>
+        </div>
+        <div>
+            <p class="mb-10">
                 I'm a bit of a digital product junky. I've created a bunch of
                 web and mobile apps in different industries and verticals.
                 Eventually, I decided that it would be a fun challenge to try
                 designing and building my own.
             </p>
-        </div>
-        <div>
             <ul class="group/list">
                 <li v-for="project in projects" class="mb-12">
                     <div
@@ -55,11 +55,7 @@ const projects = useProjects().value.slice(0, 6);
                                 </a>
                             </h3>
                             <p class="mt-2 text-sm leading-normal">
-                                Video course that teaches how to build a web app
-                                with the Spotify Web API. Topics covered include
-                                the principles of REST APIs, user auth flows,
-                                Node, Express, React, Styled Components, and
-                                more.
+                                {{ project.description }}
                             </p>
                             <ul
                                 class="mt-2 flex flex-wrap"
