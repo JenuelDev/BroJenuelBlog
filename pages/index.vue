@@ -13,6 +13,11 @@ const visibleItem = computed(() => {
     if (experienceVisible.value) return "experience";
     if (projectsVisible.value) return "projects";
 });
+
+defineOgImageComponent("BroJenuelOgImage", {
+    title: "BroJenuel",
+    about: "Jenuel Ganawed's Portfolio - My Home In the Internet!",
+});
 </script>
 <template>
     <div id="main-content" class="relative">
