@@ -13,7 +13,7 @@
             </a>
             using
             <a
-                href="https://nextjs.org/"
+                href="https://nuxt.com/"
                 class="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
                 target="_blank"
                 rel="noreferrer noopener"
