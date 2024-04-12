@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.10",
+    "rss": "^1.2.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
@@ -18,11 +19,13 @@
     "@nuxt/image": "^1.5.0",
     "@nuxtjs/supabase": "^1.2.0",
     "@nuxtjs/tailwindcss": "^6.11.4",
+    "@types/rss": "^0.0.32",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "nuxt": "^3.11.2",
     "nuxt-icon": "^0.6.10",
     "nuxt-og-image": "3.0.0-rc.52",
-    "sass": "^1.74.1"
+    "sass": "^1.74.1",
+    "sitemap": "^7.1.1"
   }
 }
