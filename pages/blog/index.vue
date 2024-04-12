@@ -153,10 +153,8 @@ onMounted(() => {
                     class="rounded-md cursor-pointer gap-1 decoration-none relative pb-1 transition-all md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 grid grid-cols-1 sm:grid-cols-8 text-center sm:text-left"
                 >
                     <NuxtImg
-                        :src="
-                            blog.cover_img ??
-                            `https://brojenuel.com/__og-image__/image/blog/${blog.slug}/og.png`
-                        "
+                        v-if="blog.cover_img"
+                        :src="blog.cover_img"
                         class="rounded-lg w-150px mx-auto col-span-2"
                         width="300"
                         height="150"
