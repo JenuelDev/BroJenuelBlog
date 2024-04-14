@@ -21,7 +21,7 @@ function toggleMobileMenu() {
         :class="{
             active: showMobileMenu,
         }"
-        style="z-index: 99999"
+        style="z-index: 50"
     >
         <a class="p-2" href="#about" @click="toggleMobileMenu"> About </a>
         <a class="p-2" href="#experience" @click="toggleMobileMenu">
@@ -41,19 +41,19 @@ function toggleMobileMenu() {
 </template>
 <style lang="scss" scoped>
 .mobile-menu-container {
-    @apply fixed opacity-0 transition-all h-0 w-0 top-5 right-5;
+    @apply fixed opacity-0 transition-all h-[0px] w-[0px] top-5 right-6 overflow-hidden flex flex-col justify-center items-center bg-slate-900 p-2 rounded-lg shadow-md;
 
     a,
     div {
-        @apply hidden;
+        @apply opacity-0 transition-all delay-200;
     }
 
     &.active {
-        @apply fixed top-28 bg-slate-900 p-2 rounded-lg shadow-md flex flex-col justify-center items-center opacity-100 w-[300px] h-[250px];
+        @apply top-28 opacity-100 w-[300px] h-[250px];
 
         a,
         div {
-            @apply block;
+            @apply opacity-100 delay-300;
         }
     }
 }
