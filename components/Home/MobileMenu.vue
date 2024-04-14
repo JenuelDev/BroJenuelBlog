@@ -10,7 +10,7 @@ function toggleMobileMenu() {
 </script>
 <template>
     <div
-        class="fixed right-5 top-5 bg-slate-900 p-5 rounded-full shadow-md cursor-pointer"
+        class="fixed right-5 top-5 bg-slate-900 p-5 rounded-full shadow-md cursor-pointer block lg:hidden"
         style="z-index: 60"
         @click="toggleMobileMenu"
     >
