@@ -20,6 +20,7 @@ defineOgImageComponent("BroJenuelOgImage", {
 });
 </script>
 <template>
+    <HomeMobileMenu />
     <div id="main-content" class="relative">
         <HomePointer />
         <div

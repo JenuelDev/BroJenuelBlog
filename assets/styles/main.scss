@@ -29,4 +29,24 @@ body {
     }
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
+*::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
+}
+*::-webkit-scrollbar {
+    width: 10px !important;
+    height: 2px !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color) !important;
+}
+* {
+    scrollbar-width: thin !important;
+}
+
 @import "./common/content.scss";
