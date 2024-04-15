@@ -34,19 +34,16 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 *::-webkit-scrollbar {
-    width: 10px !important;
-    height: 2px !important;
+    width: 8px;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--color) !important;
-}
-* {
-    scrollbar-width: thin !important;
+    background-color: #dedede4b;
+    border-radius: 4px;
 }
 
 @import "./common/content.scss";
