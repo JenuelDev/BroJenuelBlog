@@ -23,7 +23,7 @@
                 <span
                     class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
                 >
-                    {{ new Date().getFullYear() - 2017 }} years of professional
+                    {{ new Date().getFullYear() - 2019 }} years of professional
                     experience as a software developer,
                 </span>
                 I have consistently engaged in the dynamic and ever-evolving
