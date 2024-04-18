@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     ssr: true,
     devtools: { enabled: true },
@@ -10,6 +9,9 @@ export default defineNuxtConfig({
         "@nuxtjs/supabase",
         "nuxt-og-image",
     ],
+    routeRules: {
+        "/*": { cors: true },
+    },
     app: {
         head: {
             link: [
