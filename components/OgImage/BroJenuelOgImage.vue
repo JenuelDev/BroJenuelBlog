@@ -25,8 +25,12 @@ defineOptions({
                     fontSize: '25px',
                     fontWeight: 300,
                     marginBottom: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
                 }"
             >
+                <img width="32" src="~/assets/images/logo-32x32.png" />
                 {{ appName }}
             </div>
             <h1 class="text-7xl text-slate-900">
