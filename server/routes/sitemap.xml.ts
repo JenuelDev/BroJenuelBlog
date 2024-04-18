@@ -14,8 +14,8 @@ const pages = [
         lastmod: "2023-04-17",
     },
     {
-        url: domain + "/my-work",
-        lastmod: "2023-04-17",
+        url: domain + "/archive",
+        lastmod: "2024-04-18",
     },
     {
         url: domain + "/blog",

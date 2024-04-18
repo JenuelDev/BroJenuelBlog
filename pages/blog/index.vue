@@ -97,7 +97,7 @@ useHead({
     }),
 });
 
-defineOgImageComponent("DefaultOgImage", {
+defineOgImageComponent("BroJenuelOgImage", {
     title: "BroJenuel - Blog",
     description:
         "Learn programming tips, tricks, best practices to make programming and other information that will benefit you.",

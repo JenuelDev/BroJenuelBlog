@@ -76,7 +76,7 @@ onMounted(() => {
         v-if="!coverImageLink"
         :description="data ? data.summary : 'Page Not Found'"
         :title="data ? data.title : 'Page Not Found'"
-        component="DefaultOgImage"
+        component="BroJenuelOgImage"
     />
     <Transition>
         <main

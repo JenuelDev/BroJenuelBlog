@@ -15,8 +15,8 @@ const visibleItem = computed(() => {
 });
 
 defineOgImageComponent("BroJenuelOgImage", {
-    title: "BroJenuel",
-    about: "Jenuel Ganawed's Portfolio - My Home In the Internet!",
+    title: "Jenuel Ganawed",
+    about: "Experienced software developer with focus on building scalable, engaging, & accessible digital experience.",
 });
 </script>
 <template>
