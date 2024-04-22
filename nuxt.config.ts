@@ -18,6 +18,12 @@ export default defineNuxtConfig({
                 { rel: "preconnect", href: "https://rsms.me/" },
                 { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
             ],
+            meta: [
+                {
+                    name: "google-adsense-account",
+                    content: "ca-pub-2268807726840190",
+                },
+            ],
         },
     },
     css: ["@/assets/styles/main.scss"],
