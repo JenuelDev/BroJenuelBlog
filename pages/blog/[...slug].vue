@@ -84,11 +84,11 @@ onMounted(() => {
             class="pt-70px w-full max-w-screen-md mx-auto pb-10 relative px-[10px]"
         >
             <div class="sticky top-10 z-50">
-                <div class="absolute flex flex-col z-50">
+                <div class="absolute flex flex-col items-center z-50 gap-5">
                     <button
                         v-if="isHasHistory"
                         title="Go back"
-                        class="h-[40px] w-[40px] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3 relative group border-none cursor-pointer"
+                        class="h-[40px] w-[40px] hover:bg-slate-900 rounded-full flex items-center justify-center hover:text-slate-100 p-3 relative group border-none cursor-pointer"
                         @click="$router.back()"
                     >
                         <Icon name="material-symbols:arrow-back"></Icon>
@@ -102,7 +102,7 @@ onMounted(() => {
                         title="Go back"
                         v-else
                         to="/"
-                        class="h-[40px] w-[40px] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3 relative group border-none text-[var(--color)] cursor-pointer"
+                        class="h-[40px] w-[40px] hover:bg-slate-900 rounded-full flex items-center justify-center hover:text-[var(--primary)] p-3 relative group border-none hover:text-slate-100 cursor-pointer"
                         @click="$router.back()"
                     >
                         <Icon name="material-symbols:arrow-back"></Icon>
@@ -125,7 +125,7 @@ onMounted(() => {
                                 ? `Share To ${social.toUpperCase()}`
                                 : 'Copy to Clipboard'
                         "
-                        class="h-40px w-40px p-3 bg-[var(--background-secondary)] hover:bg-[var(--background)] rounded-full flex items-center justify-center hover:text-[var(--primary)] relative group border-none text-[var(--color)] cursor-pointer"
+                        class="h-40px w-40px p-3 hover:hover:bg-slate-900 rounded-full flex items-center justify-center hover:text-slate-100 relative group border-none text-[var(--color)] cursor-pointer"
                         @click="share(social)"
                     >
                         <Icon
@@ -173,7 +173,7 @@ onMounted(() => {
                     </a>
                 </div>
             </div>
-            <article class="px-10px lg:pt-0 pt-70px ml-[70px] relative z-0">
+            <article class="px-10px lg:pt-0 pt-70px ml-14 relative z-0">
                 <div class="mb-25px px-10px w-full pt-10">
                     <template
                         v-if="
@@ -206,11 +206,13 @@ onMounted(() => {
                     </template>
                     <div>
                         <h1
-                            class="sm:text-3xl text-2xl pb-10px font-RobotoBold m-0"
+                            class="sm:text-3xl text-2xl pb-10px font-RobotoBold m-0 font-bold text-slate-100"
                         >
                             {{ data.title }}
                         </h1>
-                        <p class="font-100 m-0 mb-5 leading-6 sm:text-lg">
+                        <p
+                            class="font-100 m-0 mb-5 leading-6 sm:text-lg text-slate-200"
+                        >
                             <span class="text-[var(--primary)]">/</span>
                             {{ data.summary }}
                         </p>
@@ -218,7 +220,7 @@ onMounted(() => {
                             <div
                                 v-for="tags in data.tags"
                                 :class="`tag-${tags}`"
-                                class="tag tag-sm !text-size-18px"
+                                class="tag tag-sm text-sm"
                             >
                                 #{{ tags }}
                             </div>
@@ -329,7 +331,7 @@ onMounted(() => {
                     </ClientOnly>
                 </div>
                 <div
-                    class="content-render mx-auto relative md:text-lg pt-5 px-1"
+                    class="content-render mx-auto relative md:text-lg pt-5 px-1 text-slate-300"
                     v-html="data.content"
                 ></div>
                 <div class="mt-2 content-render mx-auto relative md:text-lg">

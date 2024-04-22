@@ -12,55 +12,52 @@
                 About
             </h2>
         </div>
-        <div>
-            <p class="mb-4">
-                In 2016, I made a strategic shift from my studies in criminology
-                to pursue a career in Information Technology, where I discovered
-                the intricate and captivating field of software development.
-            </p>
-            <p class="mb-4">
-                Fast-forward to today, with over
-                <span
-                    class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
-                >
-                    {{ new Date().getFullYear() - 2019 }} years of professional
-                    experience as a software developer,
-                </span>
-                I have consistently engaged in the dynamic and ever-evolving
-                landscape of software development, collaborating with fellow
-                coding enthusiasts and contributing to some truly remarkable
-                products.
-            </p>
-            <p class="mb-4">
-                I take
-                <span
-                    class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
-                >
-                    pride
-                </span>
-                in my
-                <span
-                    class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
-                >
-                    attention to details,
-                </span>
-                meticulously examining even the smallest elements that could
-                potentially snowball into significant issues. Whether it's
-                ensuring code efficiency or perfecting a recipe, I believe that
-                <span
-                    class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
-                >
-                    thoroughness in the details
-                </span>
-                is essential for overall success for building scalable,
-                engaging, & accessible digital experience.
-            </p>
-            <p>
-                When I’m not at the computer, I’m usually playing a guitar even
-                though I'm not a pro in it, trying to read books, walking
-                outside, having a home work out, eating a meal or playing a PUBG
-                Mobile with friends.
-            </p>
-        </div>
+        <p class="mb-4">
+            In 2016, I made a strategic shift from my studies in criminology to
+            pursue a career in Information Technology, where I discovered the
+            intricate and captivating field of software development.
+        </p>
+        <p class="mb-4">
+            Fast-forward to today, with over
+            <span
+                class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+            >
+                {{ new Date().getFullYear() - 2019 }} years of professional
+                experience as a software developer,
+            </span>
+            I have consistently engaged in the dynamic and ever-evolving
+            landscape of software development, collaborating with fellow coding
+            enthusiasts and contributing to some truly remarkable products.
+        </p>
+        <p class="mb-4">
+            I take
+            <span
+                class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+            >
+                pride
+            </span>
+            in my
+            <span
+                class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+            >
+                attention to details,
+            </span>
+            meticulously examining even the smallest elements that could
+            potentially snowball into significant issues. Whether it's ensuring
+            code efficiency or perfecting a recipe, I believe that
+            <span
+                class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+            >
+                thoroughness in the details
+            </span>
+            is essential for overall success for building scalable, engaging, &
+            accessible digital experience.
+        </p>
+        <p>
+            When I’m not at the computer, I’m usually playing a guitar even
+            though I'm not a pro in it, trying to read books, walking outside,
+            having a home work out, eating a meal or playing a PUBG Mobile with
+            friends.
+        </p>
     </section>
 </template>
