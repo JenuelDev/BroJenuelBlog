@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
+            title: "Jenuel Ganawed - Software Engineer",
             link: [
                 { rel: "preconnect", href: "https://rsms.me/" },
                 { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },

@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+const { setMeta } = useMeta();
+const route = useRoute();
+
 const HomeAboutRef = ref();
 const aboutVisible = useElementVisibility(HomeAboutRef);
 
@@ -14,9 +17,20 @@ const visibleItem = computed(() => {
     if (projectsVisible.value) return "projects";
 });
 
+useHead({
+    ...setMeta({
+        title: "Jenuel Ganawed - Software Engineer",
+        description:
+            "I build web apps that are engaging, accessible and scalable.",
+        path: route.path,
+        keywords: ["brojenuel", "Jenuel", "Ganawed", "tech", "programming"],
+        lang: "en",
+    }),
+});
+
 defineOgImageComponent("BroJenuelOgImage", {
-    title: "Jenuel Ganawed",
-    about: "Experienced software developer with focus on building scalable, engaging, & accessible digital experience.",
+    title: "Jenuel Ganawed -  Software Engineer",
+    about: "I build web apps that are engaging, accessible and scalable.",
 });
 </script>
 <template>

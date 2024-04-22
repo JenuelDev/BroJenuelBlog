@@ -164,7 +164,9 @@ onMounted(() => {
                         :alt="blog.title"
                     />
 
-                    <div class="content-summary leading-5 col-span-6 text-slate-200">
+                    <div
+                        class="content-summary leading-5 col-span-6 text-slate-200"
+                    >
                         <div class="opacity-70 text-xs">
                             <span
                                 class="icon--solar icon--solar--calendar-bold-duotone"

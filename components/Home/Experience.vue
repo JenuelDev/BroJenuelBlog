@@ -29,7 +29,7 @@ const experiences: ExperienceItem[] = [
         ],
         link: "https://www.vocphone.com/",
         linkAreaLabel: "Software Engineer at VOCPhone (opens in a new tab)",
-        subPosition: ["Software Developer", "Lead Software Engineer"],
+        // subPosition: ["Software Developer", "Lead Software Engineer"],
         techs: [
             {
                 name: "PHP",
@@ -273,7 +273,7 @@ const experiences: ExperienceItem[] = [
                             class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"
                         ></div>
                         <header
-                            class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-gray-500 sm:col-span-2"
+                            class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-gray-300 sm:col-span-2"
                             aria-label="2018 to 2024"
                         >
                             {{ experience.from }} — {{ experience.to }}
@@ -306,18 +306,24 @@ const experiences: ExperienceItem[] = [
                                 <div v-if="experience.subPosition">
                                     <div
                                         v-for="subPosition in experience.subPosition"
-                                        class="text-gray-500"
+                                        class="text-gray-300 font-thin"
                                         aria-hidden="true"
                                     >
                                         {{ subPosition }}
                                     </div>
                                 </div>
                             </h3>
-                            <p class="mt-2 text-sm leading-normal pl-5">
-                                <ul class="list-disc">
-                                    <li v-for="desPoint in experience.description">{{ desPoint }}</li>
+                            <div>
+                                <ul
+                                    class="list-disc mt-2 text-sm leading-normal pl-5"
+                                >
+                                    <li
+                                        v-for="desPoint in experience.description"
+                                    >
+                                        {{ desPoint }}
+                                    </li>
                                 </ul>
-                            </p>
+                            </div>
                             <ul
                                 class="mt-2 flex flex-wrap gap-2"
                                 aria-label="Technologies used"
@@ -339,16 +345,16 @@ const experiences: ExperienceItem[] = [
             </ol>
             <div class="mt-12">
                 <a
-                    class="inline-flex items-baseline font-medium leading-tight text-gray-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold text-gray-200 group/link text-base"
+                    class="inline-flex items-baseline font-medium leading-tight hover:text-teal-300 focus-visible:text-teal-300 text-gray-200 group/link text-base"
                     href="/resume.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
-                    aria-label="View Full Résumé (opens in a new tab)"
+                    aria-label="View Full Resume (opens in a new tab)"
                 >
                     <span>
                         View
                         <span class="inline-block">
-                            Résumé
+                            Resume
                             <Icon name="ic:baseline-arrow-outward" />
                         </span>
                     </span>
