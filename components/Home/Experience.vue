@@ -13,7 +13,7 @@ interface ExperienceItem {
     subPosition?: string[];
     link: string;
     linkAreaLabel: string;
-    description: string;
+    description: Array<string>;
     techs: TechItem[];
 }
 
@@ -23,8 +23,10 @@ const experiences: ExperienceItem[] = [
         to: "Present",
         company: "VOCPhone",
         position: "Senior Software Engineer",
-        description: `As part of my role, I am deeply involved in programming, development, and leadership to ensure the successful implementation of programs that align with user stories. I take on the responsibility of overseeing task monitoring and monitoring the progress of programs that are being
-deployed. Drawing upon my expertise in technologies, I have the ability to create solutions that are functional and optimized. I also use python to work with AI functionalities.`,
+        description: [
+            "Implementation of programs aligned with user stories, ensuring successful project completion.",
+            "Leveraged expertise in Laravel, JavaScript (ES6+), Vue.js (2 & 3), TypeScript, SASS, C#, HTML, CSS, Node.js, and Python (AI) to design and deliver functional, optimized solutions.",
+        ],
         link: "https://www.vocphone.com/",
         linkAreaLabel: "Software Engineer at VOCPhone (opens in a new tab)",
         subPosition: ["Software Developer", "Lead Software Engineer"],
@@ -84,8 +86,10 @@ deployed. Drawing upon my expertise in technologies, I have the ability to creat
         position: "Software Developer",
         from: 2021,
         to: 2021,
-        description:
-            "Maintaining large-scale systems and projects, covering both the frontend and back-end. I excel at creating and building web applications and websites. I work with technologies like Laravel, Vue.js, JavaScript, TypeScript, SASS, HTML, and CSS to bring these projects to life.",
+        description: [
+            "Maintained and improved large-scale systems and projects, covering both front-end (Vue.js, JavaScript, TypeScript, SASS, HTML, CSS) and back-end (Laravel) development.",
+            "Built and delivered web applications and websites using technologies like Laravel, Vue.js, JavaScript, TypeScript, SASS, HTML, and CSS.",
+        ],
         link: "https://www.linkedin.com/company/revdojo/",
         linkAreaLabel: "Software Developer at Webinarinc (opens in a new tab)",
         techs: [
@@ -124,11 +128,12 @@ deployed. Drawing upon my expertise in technologies, I have the ability to creat
         to: 2021,
         company: "UTalk Philippines",
         position: "Software Developer",
-        description: `Maintaining Systems and services to lower the rate of system errors or
-bugs. Managing and creating front-end and back-end codes/programs.
-Engaged in different kinds of frameworks and tools like VueJs, AngularIO,
-Codeigniter, Lumen/Laravel, and Ruby on Rails. For the Database, we
-MySQL and Mongo Database.`,
+        description: [
+            "Maintain systems and services to reduce system errors and bugs",
+            "Manage both front-end and back-end programs",
+            "Work with various frameworks and tools including Vue.js, AngularIO, Codeigniter, Lumen/Laravel, and Ruby on Rails",
+            "Utilize MySQL and Mongo Database for database management",
+        ],
         link: "https://utalk.ph/",
         linkAreaLabel:
             "Software Developer at UTalk Philippines (opens in a new tab)",
@@ -168,9 +173,13 @@ MySQL and Mongo Database.`,
         to: 2019,
         company: "Dap-ayan Eatery La Trinidad",
         position: "Web Developer",
-        description: `My primary focus is on maintaining systems and services to minimize
-system errors and bugs. I am proficient in managing and creating both
-front-end and back-end codes and programs.`,
+        description: [
+            "Focus on maintaining systems and services to minimize errors and bugs",
+            "Proficient in managing and creating front-end and back-end code",
+            "Experienced with various frameworks and tools such as Vue.js, AngularIO, Codeigniter, Lumen/Laravel, and Ruby on Rails",
+            "Skilled in database management using MySQL and MongoDB",
+            "Ensure smooth and efficient functioning of applications and systems by leveraging these technologies",
+        ],
         link: "https://www.facebook.com/profile.php?id=100057698281360",
         linkAreaLabel:
             "Web Developer at Dap-ayan Eatery La Trinidad (opens in a new tab)",
@@ -202,13 +211,12 @@ front-end and back-end codes and programs.`,
         to: 2028,
         company: "ILearn Skills Development Academy",
         position: "Designer and Web Developer",
-        description: `I have been actively involved in design-oriented work, particularly in
-creating designs for simple magazines using Photoshop and Illustrator.
-Additionally, I possess expertise in video editing using Adobe Premiere. I
-am also engaged in web programming, specializing in algorithm
-development using JavaScript and PHP. By combining these skills, I
-contribute to the creation of visually appealing designs and seamless web
-experiences.`,
+        description: [
+            "Actively involved in design-oriented work, focusing on magazine designs and layouts using Photoshop and Illustrator",
+            "Proficient in video editing with Adobe Premiere",
+            "Specialize in web programming, particularly algorithm development using JavaScript and PHP",
+            "Combine design and programming skills to create visually appealing designs and seamless web experiences",
+        ],
         link: "https://www.ilearnskills.com/",
         linkAreaLabel:
             "Designer and Web Developer at Ilearn Skills Development Academy (opens in a new tab)",
@@ -305,8 +313,10 @@ experiences.`,
                                     </div>
                                 </div>
                             </h3>
-                            <p class="mt-2 text-sm leading-normal">
-                                {{ experience.description }}
+                            <p class="mt-2 text-sm leading-normal pl-5">
+                                <ul class="list-disc">
+                                    <li v-for="desPoint in experience.description">{{ desPoint }}</li>
+                                </ul>
                             </p>
                             <ul
                                 class="mt-2 flex flex-wrap gap-2"
