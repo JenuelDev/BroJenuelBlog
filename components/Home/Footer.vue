@@ -1,5 +1,5 @@
 <template>
-    <footer class="max-w-md pb-16 text-sm text-slate-300 sm:pb-0">
+    <footer class="max-w-md pb-16 text-sm text-slate-300 sm:pb-0 text-center sm:text-left">
         <p>
             Coded in
             <a

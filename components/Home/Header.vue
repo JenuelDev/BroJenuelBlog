@@ -53,7 +53,6 @@ const JumpLinks = [
                     <li v-for="JumLink in JumpLinks">
                         <a
                             v-if="!JumLink.isRoute"
-                            id="about-selector"
                             class="jum-link-item group flex items-center py-3"
                             :class="{ active: visible === JumLink.key }"
                             :href="`${JumLink.link}`"
@@ -70,7 +69,6 @@ const JumpLinks = [
                         </a>
                         <NuxtLink
                             v-else
-                            id="about-selector"
                             class="jum-link-item group flex items-center py-3"
                             :class="{ active: visible === JumLink.key }"
                             :href="`${JumLink.key}`"
