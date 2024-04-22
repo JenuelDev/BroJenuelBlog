@@ -313,11 +313,17 @@ const experiences: ExperienceItem[] = [
                                     </div>
                                 </div>
                             </h3>
-                            <p class="mt-2 text-sm leading-normal pl-5">
-                                <ul class="list-disc">
-                                    <li v-for="desPoint in experience.description">{{ desPoint }}</li>
+                            <div>
+                                <ul
+                                    class="list-disc mt-2 text-sm leading-normal pl-5"
+                                >
+                                    <li
+                                        v-for="desPoint in experience.description"
+                                    >
+                                        {{ desPoint }}
+                                    </li>
                                 </ul>
-                            </p>
+                            </div>
                             <ul
                                 class="mt-2 flex flex-wrap gap-2"
                                 aria-label="Technologies used"
@@ -339,16 +345,16 @@ const experiences: ExperienceItem[] = [
             </ol>
             <div class="mt-12">
                 <a
-                    class="inline-flex items-baseline font-medium leading-tight text-gray-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold text-gray-200 group/link text-base"
+                    class="inline-flex items-baseline font-medium leading-tight hover:text-teal-300 focus-visible:text-teal-300 text-gray-200 group/link text-base"
                     href="/resume.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
-                    aria-label="View Full Résumé (opens in a new tab)"
+                    aria-label="View Full Resume (opens in a new tab)"
                 >
                     <span>
                         View
                         <span class="inline-block">
-                            Résumé
+                            Resume
                             <Icon name="ic:baseline-arrow-outward" />
                         </span>
                     </span>
