@@ -54,10 +54,7 @@
             accessible digital experience.
         </p>
         <p>
-            When I’m not at the computer, I’m usually playing a guitar even
-            though I'm not a pro in it, trying to read books, walking outside,
-            having a home work out, eating a meal or playing a PUBG Mobile with
-            friends.
+            When I'm not on the computer, I like to do different things. I enjoy playing the guitar, even though I'm not an expert at it. I also try to read books, going for walks outside, doing a home workouts, eating meals, playing PUBG Mobile/ML with friends, or learning about technology.
         </p>
     </section>
 </template>
