@@ -25,7 +25,14 @@ useHead({
         description:
             "I build web apps that are engaging, accessible and scalable.",
         path: route.path,
-        keywords: ["brojenuel", "Jenuel", "Ganawed", "tech", "programming"],
+        keywords: [
+            "jenueldev",
+            "jenuel dev",
+            "Jenuel",
+            "Ganawed",
+            "tech",
+            "programming",
+        ],
         lang: "en",
     }),
 });
