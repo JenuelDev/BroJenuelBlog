@@ -2,6 +2,8 @@
 const { setMeta } = useMeta();
 const route = useRoute();
 
+const show = ref(false);
+
 const HomeAboutRef = ref();
 const aboutVisible = useElementVisibility(HomeAboutRef);
 
@@ -32,10 +34,14 @@ defineOgImageComponent("BroJenuelOgImage", {
     title: "Jenuel Ganawed -  Software Engineer",
     about: "I build web apps that are engaging, accessible and scalable.",
 });
+
+onMounted(() => {
+    show.value = true;
+});
 </script>
 <template>
     <HomeMobileMenu />
-    <div id="main-content" class="relative">
+    <div v-show="show" id="main-content" class="relative">
         <HomePointer />
         <div
             class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0"
